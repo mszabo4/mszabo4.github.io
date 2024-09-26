@@ -122,7 +122,15 @@ body {
         <!--script vol dir que canvio totalment de llenguatge de programació i deixem d'escriure HTML que
             té els simbols <> i que serveix per fer estuctures estatiques que no es mouen ni són
             interactives amb llenguatge Javascript-->
-     /*La funció "let" ens permet crear variables locals perquè estan a dins d'una funció (en aquest cas seria variable
+    <script>
+            function calculatePosition() {
+                //agafar les dades introduides per l'usuari
+                let a1 = parseFloat(document.getElementById('a1').value); //llargada primer braç
+                 let a2 = parseFloat(document.getElementById('a2').value); //llargada segon braç
+                 let q1_deg = parseFloat(document.getElementById('q1').value); //angle en graus del primer braç
+                 let q2_deg = parseFloat(document.getElementById('q2').value); //angle en graus del segon braç
+
+                 /*La funció "let" ens permet crear variables locals perquè estan a dins d'una funció (en aquest cas seria variable
                  global si estiguessin al principi del codi i afectés a tot el codi) que emmagatzemen els valors introduits per l'usuari
                  perquè a banda de fer getElementById aplico el mètode .value per assegurar-me que agafo el valor escrit i aplico la funció 
                  "parseFloat" per convertit el valor introduit per l'usuari en un nombre decimal o "Floating point number" en anglès 
