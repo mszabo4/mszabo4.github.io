@@ -126,9 +126,9 @@ body {
             function calculatePosition() {
                 //agafar les dades introduides per l'usuari
                 let a1 = parseFloat(document.getElementById('a1').value); //llargada primer braç
-                 let a2 = parseFloat(document.getElementById('a2').value); //llargada segon braç
-                 let q1_deg = parseFloat(document.getElementById('q1').value); //angle en graus del primer braç
-                 let q2_deg = parseFloat(document.getElementById('q2').value); //angle en graus del segon braç
+                let a2 = parseFloat(document.getElementById('a2').value); //llargada segon braç
+                let q1_deg = parseFloat(document.getElementById('q1').value); //angle en graus del primer braç
+                let q2_deg = parseFloat(document.getElementById('q2').value); //angle en graus del segon braç
 
                  /*La funció "let" ens permet crear variables locals perquè estan a dins d'una funció (en aquest cas seria variable
                  global si estiguessin al principi del codi i afectés a tot el codi) que emmagatzemen els valors introduits per l'usuari
@@ -137,6 +137,19 @@ body {
                  (si hagués posat "parseInt" el convertiria en nombres enters). En aquest tros de codi anterior de la l11 a la l14
                  hem aconseguit guardar les 4 dades geomètriques del nostre robot per fer càlculs de la seva posició en funció
                  de les 4 dades introduides per l'usuari */
+    
+    //convertir graus a radians per als càlculs trigonomètrics
+    let q1 = q1_deg * Math.PI/180;
+    let q2 = q2_deg * Math.PI/180;
+    //això és el mateix que 2PI/360
+
+    //mostrar les fórmules per calcular la posició del robot
+    let output += "<div class='equation'>\\[ x = a_1 \\cos(q_1) + a_2 \\cos(q_1+q_2) \\] </div>
+    let output += "<div class='equation'>\\[ x = a_1 \\cos(q_1) + a_2 \\sin(q_1+q_2) \\] </div>
+
+    /* Estic creant una variable anomenada "output"
+
+                
     <p>Em dic Miguel Angel i sóc alumne de programació de 1r de batxillerat tecnològic de <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/">l'institut Pompeu Fabra</a></p>
     <p>A continuació veuràs un llistat amb diferents projectes que farem durant el curs:</p>
     <ul><li>codi amb Javascript, CSS i HTML que construiran una pàgina web on l'usuari itroduirà diferents dades d'un braç robotic i el sistema ens calcularà altres dades i les representarà visuaoment<li>
