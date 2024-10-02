@@ -1,10 +1,24 @@
+let vmanos;
+let mic;
+function setup() {
+  createCanvas(600,400);
+  mic=new p5.AudioIn();
+  mic.start();
+}
+
+function draw() {
+  let vol = mic.getLevel();
+  let vmanos = map(vol,0,1,0,300);
+  console.log(vol);
+
+}
 function setup() {
   createCanvas(400, 400);
 }
 
 function draw() {
   background(220);
-  fill(254, 218, 99)
+  fill(254, 218+vmanos, 99);
  beginShape();
 curveVertex(172, 268.1875);
 curveVertex(174, 14.1875);
@@ -54,7 +68,7 @@ curveVertex(179, 282.1875);
 curveVertex(175, 274.1875);
 curveVertex(172, 267.1875);
 endShape(CLOSE);
-  fill(94, 160, 224)
+  fill(94, 127+vmanos, 224-vmanos);
   beginShape();
 curveVertex(268, 247.1875);
 curveVertex(273, 250.1875);
@@ -78,7 +92,7 @@ curveVertex(347, 284.1875);
 curveVertex(276, 246.1875);
 curveVertex(270, 245.1875);
 endShape();
-   fill(254, 218, 99)
+   fill(254, 218+vmanos, 99);
   beginShape();
 beginShape();
 curveVertex(174, 267.1875);
@@ -119,7 +133,7 @@ curveVertex(169, 276.1875);
 curveVertex(173, 270.1875);
 curveVertex(174, 264.1875);
 endShape(CLOSE);
-  fill(94, 160, 224)
+  fill(94, 127+vmanos, 224-vmanos);
   beginShape();
 curveVertex(78, 246.1875);
 curveVertex(74, 250.1875);
