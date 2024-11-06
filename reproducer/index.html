@@ -6,55 +6,18 @@
     <title>SVG Audio Visualizer</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
         }
-
-        h1 {
-            font-size: 2em;
-            margin-top: 20px;
-            color: #BB86FC;
-        }
-
-        .controls {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-        }
-
-        label, select, input[type="file"], audio {
-            margin: 10px 0;
-            color: #ffffff;
-        }
-
-        select, input[type="file"] {
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #333333;
-            color: #e0e0e0;
-        }
-
-        audio {
-            margin-top: 10px;
-            width: 100%;
-        }
-
         svg {
             display: block;
-            margin: 30px auto;
-            background-color: transparent;
+            margin: 20px auto;
+            background-color: #000;
+        }
+        .controls {
+            margin: 20px;
         }
     </style>
 </head>
@@ -65,8 +28,11 @@
         <select id="songSelect">
             <option value="song1">Song 1</option>
             <option value="song2">Song 2</option>
+            <!-- Easily add more songs here -->
         </select>
+        <br><br>
         <input type="file" id="audioFile" accept="audio/*">
+        <br><br>
         <audio id="audioPlayer" controls></audio>
     </div>
 
