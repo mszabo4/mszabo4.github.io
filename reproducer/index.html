@@ -70,13 +70,10 @@
         const audioPlayer = document.getElementById('audioPlayer');
         const songSelect = document.getElementById('songSelect');
         const shapes = {
-            circle: document.getElementById('circle'),
-            heart: document.getElementById('heart'),
-            wepray: document.getElementById('wepray'),
-            cross: document.getElementById('cross'),
             coldplay: document.getElementById('coldplay'),
             nube: document.getElementById('nube'),
-            corazon: document.getElementById('corazon')
+            corazon: document.getElementById('corazon'),
+           
         };
 
         let audioContext, analyser, frequencyData;
@@ -86,12 +83,12 @@
         // Configuration for each song (easily scalable)
         const songConfig = {
             song1: {
-                shapeOrder: ['coldplay', 'nube', 'corazon'],
-                durations: [8000, 8000, 8000]
+                shapeOrder: ['coldplay','nube', 'corazon'],
+                durations: [ 8000, 8000, 80000]
             },
             song2: {
-                shapeOrder: ['coldplay', 'nube', 'corazon'],
-                durations: [8000, 10000, 8000]
+                 shapeOrder: ['coldplay','nube', 'corazon'],
+                durations: [ 8000, 8000, 80000]
             }
         };
 
@@ -133,8 +130,8 @@
 
             const selectedShape = shapes[getCurrentShape()];
             const hue = Math.round((averageFrequency / 255) * 360);
-            selectedShape.setAttribute('fill', hsl(${hue}, 100%, 50%));
-            selectedShape.setAttribute('transform', scale(${scale + 0.5}));
+            selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
+            selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
         }
 
         function startCycleShapes() {
