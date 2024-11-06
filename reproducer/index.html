@@ -3,38 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG Audio Visualizer</title>
+    <title>Futuristic Audio Visualizer</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-        /* Global styles */
+        /* Global futuristic style */
         body {
             font-family: 'Orbitron', sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #000428, #004e92);
+            background: linear-gradient(135deg, #001f3f, #001233);
             color: #00ffcc;
             margin: 0;
             padding: 0;
             overflow: hidden;
+            position: relative;
         }
 
-        /* Animated Background */
+        /* Pulsating grid background */
         body::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 255, 204, 0.2), rgba(0, 78, 146, 0.2));
-            z-index: -1;
-            filter: blur(100px);
-            animation: gradientMovement 8s infinite alternate;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.1) 0px,
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 1px,
+                transparent 50px
+            ), repeating-linear-gradient(
+                0deg,
+                rgba(255, 255, 255, 0.1) 0px,
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 1px,
+                transparent 50px
+            );
+            animation: gridPulse 6s infinite alternate;
+            z-index: -2;
+            opacity: 0.4;
         }
 
-        @keyframes gradientMovement {
-            0% { transform: translate(-20px, -20px); }
-            100% { transform: translate(20px, 20px); }
+        @keyframes gridPulse {
+            0% { transform: scale(1.1); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 0.4; }
         }
 
         h1 {
@@ -46,18 +59,37 @@
         }
 
         @keyframes neonPulse {
-            from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
-            to { text-shadow: 0 0 20px #00e6b8, 0 0 30px #00e6b8, 0 0 40px #00ffcc; }
+            from { text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+            to { text-shadow: 0 0 40px #00e6b8, 0 0 50px #00ffcc; }
+        }
+
+        /* Floating robot */
+        .robot {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #00ffcc, #001233);
+            border-radius: 50%;
+            box-shadow: 0 0 15px #00ffcc;
+            animation: floatRobot 5s infinite ease-in-out alternate;
+        }
+
+        @keyframes floatRobot {
+            0% { transform: translateY(-10px) rotate(-5deg); }
+            100% { transform: translateY(10px) rotate(5deg); }
         }
 
         .controls {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.7);
             display: inline-block;
             margin-top: 15px;
             border: 2px solid #00ffcc;
+            position: relative;
             animation: borderGlow 2s infinite alternate;
         }
 
@@ -107,10 +139,7 @@
             animation: borderGlow 2s infinite alternate;
         }
 
-        option {
-            background-color: #0d0d0d;
-        }
-
+        /* Neon border on file input */
         input[type="file"]::file-selector-button {
             background-color: #00ffcc;
             color: #0d0d0d;
@@ -129,6 +158,8 @@
     </style>
 </head>
 <body>
+    <div class="robot"></div> <!-- Futuristic floating robot -->
+
     <h1>SVG Audio Visualizer</h1>
     <div class="controls">
         <label for="songSelect">Choose Song:</label>
