@@ -163,13 +163,7 @@
 <path d="M 241.319766 82.009219 C 241.319766 79.388203 239.183203 77.251641 236.549766 77.251641 C 233.916328 77.251641 231.792188 79.388203 231.792188 82.009219 C 231.792188 84.642656 233.916328 86.779219 236.549766 86.779219 C 239.183203 86.779219 241.319766 84.642656 241.319766 82.009219 Z M 241.319766 82.009219 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
 </g>
         
-function drawRainbow() {
-   let radius = 50;
-   let colors = [r, g, b];
-   for (let i = 0; i < colors.length; i++) {
-       stroke(colors[i]);
-       noFill();
-       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); // Dibuixar arcs concèntrics amb diferents colors
+
    }
     </svg>
 
@@ -203,7 +197,14 @@ function drawRainbow() {
 
         fileInput.addEventListener('change', handleFileUpload);
         songSelect.addEventListener('change', resetVisualizer);
-
+        
+function drawRainbow() {
+   let radius = 50;
+   let colors = [r, g, b];
+   for (let i = 0; i < colors.length; i++) {
+       stroke(colors[i]);
+       noFill();
+       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); // Dibuixar arcs concèntrics amb diferents colors
         function handleFileUpload(event) {
             const file = event.target.files[0];
             if (file && file.type.startsWith('audio/')) {
