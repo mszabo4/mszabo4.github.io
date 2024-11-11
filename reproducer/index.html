@@ -3,215 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <title>Coldplay</title>
+    <title>SVG Audio Visualizer</title>
     <style>
-        /* Estilos generales */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff4e50, #f9d423);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Cambiado a flex-start para permitir desplazamiento */
-            min-height: 100vh; /* Mínimo de altura completa */
-            overflow: auto; /* Permitir desplazamiento */
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
-            padding: 10px 20px;
-            border-bottom: 4px solid #ffdd40;
-            z-index: 10; /* Asegura que la barra esté siempre encima */
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            color: #fff !important;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: color 0.2s ease-in-out; /* Añadida la transición aquí */
-        }
-
-        .navbar-brand:hover {
-            color: #000 !important;
-        }
-
-        .navbar-brand img {
-            margin-right: 15px;
-            border-radius: 0;
-        }
-
-        /* [Resto del código CSS sin cambios] */
-        .nav-link {
-            color: #ffffff !important;
-            font-weight: 600;
-            margin-right: 15px;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #ffdd40 !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            width: 0%;
-            height: 3px;
-            background-color: #ffdd40;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .dropdown-menu {
-            background-color: #cc3f33;
-            border: none;
-            border-radius: 10px;
-        }
-
-        .dropdown-item {
-            color: #ffffff;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: #ff7f50;
-            color: #ffffff;
-        }
-
-        /* Contenedor principal */
-        .container {
-            margin-top: 80px; /* Ajusta el margen superior para evitar el solapamiento */
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
-            border: 5px solid rgba(255, 255, 255, 0.7);
-            position: relative;
-            z-index: 1;
-            width: 90%;
-            max-width: 600px;
+            font-family: Arial, sans-serif;
             text-align: center;
-            box-sizing: border-box;
-            overflow: hidden;
-            height: auto;
+            background-color: #1a1a1a;
+            color: #fff;
         }
-
-
-        /* Detalles de colores en las esquinas */
-        .container::before, .container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 15px; /* Esquinas redondeadas para pseudo-elementos */
-            z-index: -1; /* Colocar detrás del contenedor */
-            background: linear-gradient(135deg, rgba(255, 78, 78, 0.2), rgba(249, 212, 35, 0.2)); /* Fondo degradado */
-            filter: blur(25px); /* Efecto de desenfoque para el fondo */
-        }
-
-        /* Texto en los contenedores */
-        h1, h2, h3, p {
-            color: #333; /* Color del texto oscuro */
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8); /* Sombra de texto más suave */
-            margin: 10px 0; /* Ajustar margen superior e inferior */
-        }
-
-        /* SVG estilos */
         svg {
-            margin-top: 10px; /* Reducir espacio entre SVG y otros elementos */
-            max-width: 100%; /* SVG responsivo */
-            height: auto; /* Mantener proporción */
+            display: block;
+            margin: 20px auto;
+            background-color: #000;
+        }
+        .controls {
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://ecastro4.github.io">
-                <img src="logo.png" alt="Logo" width="50">
-                Web d'Eric
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Inici</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tema 1</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Programació p5.js
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://ecastro4.github.io/cara">Cara interactiva</a>
-                            <a class="dropdown-item" href="https://ecastro4.github.io/ocell">Ocell</a>
-                            <a class="dropdown-item" href="https://ecastro4.github.io/wepray">We Pray</a>
-                            <a class="dropdown-item" href="https://ecastro4.github.io/coldplay">Coldplay</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Braç robòtic
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="https://ecastro4.github.io/robotica/cdirecta">Cinemàtica directa</a>
-                            <a class="dropdown-item" href="https://ecastro4.github.io/robotica/cinversa">Cinemàtica inversa</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tema 2</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="container">
-        <h1>SVG Audio Visualizer</h1>
-        <div class="controls">
-            <label for="songSelect">Choose Song:</label>
-            <select id="songSelect">
-                <option value="song1">Good Feelings</option>
-                <option value="song2">Song 2</option>
-                <!-- Easily add more songs here -->
-            </select>
-            <br><br>
-            <input type="file" id="audioFile" accept="audio/*">
-            <br><br>
-            <audio id="audioPlayer" controls></audio>
-        </div>
+    <h1>SVG Audio Visualizer</h1>
+    <div class="controls">
+        <label for="songSelect">Choose Song:</label>
+        <select id="songSelect">
+            <option value="song1">Song 1</option>
+            <option value="song2">Song 2</option>
+            <!-- Easily add more songs here -->
+        </select>
+        <br><br>
+        <input type="file" id="audioFile" accept="audio/*">
+        <br><br>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
     <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
 
-           <g id="coldplay" style="display:none;" fill="hsl(200, 100%, 50%)">
+           <g id="coldplay"style="display:none;" fill="hsl(200, 100%, 50%)">
 <path d="M 66.109214 32.132353 C 69.689836 21.147978 81.490013 15.123162 92.496456 18.685662 C 103.485261 22.248162 109.517639 34.053309 105.954655 45.055147 C 102.391672 56.056985 90.591495 62.081801 79.585052 58.519301 C 68.578608 54.974265 62.546231 43.169118 66.109214 32.167279 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
 <path d="M 50.289062 6.660156 L 56.324219 12.753906 Z M 50.289062 6.660156 "/>
 <path d="M 288.195957 22.754596 C 263.378544 45.648897 301.84818 71.30239 316.347052 51.464154 C 290.55952 60.964154 277.965609 40.444853 288.195957 22.754596 Z M 288.195957 22.754596 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
@@ -223,7 +50,7 @@
 <path d="M 387.130477 23.330882 C 408.667123 27.591912 410.448615 54.694853 388.276981 61.872243 C 426.71134 64.71875 414.311453 14.89614 387.130477 23.330882 Z M 387.130477 23.330882 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
 <path d="M 411.630396 27.26011 C 412.90037 23.453125 417.098341 21.357537 421.049372 22.527574 C 425.000403 23.69761 427.240496 27.714154 426.093992 31.556066 C 424.947487 35.397978 420.820071 37.633272 416.833763 36.585478 C 412.847455 35.520221 410.466253 31.573529 411.489288 27.696691 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
 </g>
-        <g id="cloud" style="display:none;" fill="hsl(200, 100%, 50%)">
+        <g id="nube" style="display:none;" fill="hsl(200, 100%, 50%)">
 <path d="M 64.538086 25.637695 C 98.912109 -0.0439453 130.209961 4.798828 158.695312 27.404297 C 129.27832 2.460938 97.488281 2.258789 64.538086 25.637695 Z M 64.538086 25.637695 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
 <path d="M 64.538086 26.077148 C -13.543945 13.069336 -24.354492 122.888672 64.538086 121.12207 C -20.803711 118.248047 -10.212891 18.175781 64.538086 26.077148 Z M 64.538086 26.077148 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
 <path d="M 64.977539 120.234375 C 95.616211 149.730469 137.583984 143.384766 153.834961 123.776367 C 132.820312 139.385742 104.72168 148.623047 64.977539 120.234375 Z M 64.977539 120.234375 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
@@ -233,32 +60,9 @@
 <path d="M 78.75 73.87207 C 78.75 70.356445 77.739258 67.5 76.5 67.5 C 75.260742 67.5 74.25 70.356445 74.25 73.87207 C 74.25 77.396484 75.260742 80.25293 76.5 80.25293 C 77.739258 80.25293 78.75 77.396484 78.75 73.87207 Z M 78.75 73.87207 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
 <path d="M 129.75293 138.251953 L 117.74707 158.24707 L 133.751953 158.24707 C 141.987305 158.871094 145.59082 167.264648 139.253906 174.251953 L 102.251953 213.75 C 100.415039 216.193359 94.271484 215.586914 95.24707 209.99707 L 110.750977 179.499023 L 90.246094 180.74707 C 82.977539 181.186523 78.662109 175.614258 81.500977 168.249023 L 95.748047 138.75293 C 107.085938 141.890625 118.415039 142.426758 129.75293 138.251953 Z M 129.75293 138.251953 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
 </g>
-  <g id="heart" style="display:none;" fill="hsl(200, 100%, 50%)">
+  <g id="corazon"style="display:none;" fill="hsl(200, 100%, 50%)">
 <path d="M 147.101089 36.369877 C 84.897372 -15.13627 13.849471 38.905738 110.071023 117.709016 C 128.427517 132.755123 132.266414 162.328893 132.051255 162.610656 C 158.244081 151.295082 183.315814 129.216189 201.230666 111.228484 C 262.120778 50.063525 221.659485 -45.318648 147.101089 36.369877 Z M 147.101089 36.369877 " transform="matrix(0.344948,0,0,0.346591,0,0)"/>
 </g>
-        <g id="eyes" style="display:none;" fill="hsl(200, 100%, 50%)">
-<path d="M 97.449609 86.45625 C 97.449609 78.978281 91.300781 72.903984 83.711016 72.903984 C 76.12125 72.903984 69.972422 78.978281 69.972422 86.45625 C 69.972422 93.946641 76.12125 100.020938 83.711016 100.020938 C 91.300781 100.020938 97.449609 93.946641 97.449609 86.45625 Z M 97.449609 86.45625 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 94.157813 82.431562 C 94.157813 79.798125 92.02125 77.673984 89.387813 77.673984 C 86.766797 77.673984 84.630234 79.798125 84.630234 82.431562 C 84.630234 85.065 86.766797 87.189141 89.387813 87.189141 C 92.02125 87.189141 94.157813 85.065 94.157813 82.431562 Z M 94.157813 82.431562 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 30.036094 47.998125 L 41.402109 66.307969 Z M 30.036094 47.998125 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 54.581719 34.433438 L 59.711953 54.581719 Z M 54.581719 34.433438 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 83.524687 30.036094 L 83.897344 49.824141 Z M 83.524687 30.036094 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 113.200547 34.433438 L 106.977187 53.488594 Z M 113.200547 34.433438 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 137.746172 47.998125 L 127.125469 65.575078 Z M 137.746172 47.998125 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 32.967656 85.723359 C 59.177813 42.122578 118.368047 53.053828 134.814609 86.096016 C 122.839922 118.864922 60.457266 133.746328 32.967656 85.723359 Z M 32.967656 85.723359 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 111.734766 86.45625 C 111.734766 70.270547 98.704219 57.153047 82.617891 57.153047 C 66.531563 57.153047 53.488594 70.270547 53.488594 86.45625 C 53.488594 102.641953 66.531563 115.771875 82.617891 115.771875 C 98.704219 115.771875 111.734766 102.641953 111.734766 86.45625 Z M 111.734766 86.45625 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 244.611563 86.046328 C 244.611563 78.555937 238.462734 72.494062 230.872969 72.494062 C 223.283203 72.494062 217.134375 78.555937 217.134375 86.046328 C 217.134375 93.524297 223.283203 99.598594 230.872969 99.598594 C 238.462734 99.598594 244.611563 93.524297 244.611563 86.046328 Z M 244.611563 86.046328 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 177.198047 47.575781 L 188.564063 65.898047 Z M 177.198047 47.575781 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 201.743672 34.023516 L 206.873906 54.171797 Z M 201.743672 34.023516 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 230.686641 29.626172 L 231.059297 49.401797 Z M 230.686641 29.626172 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 260.3625 34.023516 L 254.139141 53.06625 Z M 260.3625 34.023516 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 284.908125 47.575781 L 274.287422 65.165156 Z M 284.908125 47.575781 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 180.129609 85.313438 C 206.339766 41.700234 265.53 52.631484 281.976562 85.673672 C 270.001875 118.455 207.619219 133.336406 180.129609 85.313438 Z M 180.129609 85.313438 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 258.896719 86.046328 C 258.896719 69.860625 245.85375 56.730703 229.779844 56.730703 C 213.693516 56.730703 200.650547 69.860625 200.650547 86.046328 C 200.650547 102.232031 213.693516 115.349531 229.779844 115.349531 C 245.85375 115.349531 258.896719 102.232031 258.896719 86.046328 Z M 258.896719 86.046328 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-<path d="M 241.319766 82.009219 C 241.319766 79.388203 239.183203 77.251641 236.549766 77.251641 C 233.916328 77.251641 231.792188 79.388203 231.792188 82.009219 C 231.792188 84.642656 233.916328 86.779219 236.549766 86.779219 C 239.183203 86.779219 241.319766 84.642656 241.319766 82.009219 Z M 241.319766 82.009219 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
-</g>
-        
-
-   }
     </svg>
 
     <script>
@@ -267,10 +71,9 @@
         const songSelect = document.getElementById('songSelect');
         const shapes = {
             coldplay: document.getElementById('coldplay'),
-            cloud: document.getElementById('cloud'),
-            heart: document.getElementById('heart'),
-            eyes: document.getElementById('eyes'),
-            rainbow: document.getElementById('rainbow'),
+            nube: document.getElementById('nube'),
+            corazon: document.getElementById('corazon'),
+           
         };
 
         let audioContext, analyser, frequencyData;
@@ -280,25 +83,18 @@
         // Configuration for each song (easily scalable)
         const songConfig = {
             song1: {
-                shapeOrder: ['coldplay','nube', 'corazon', 'ojos', 'rainbow'],
-                durations: [ 8000, 8000, 8000, 8000, 8000]
+                shapeOrder: ['coldplay','nube', 'corazon'],
+                durations: [ 8000, 8000, 80000]
             },
             song2: {
-                 shapeOrder: ['coldplay','nube', 'corazon', 'ojos', 'rainbow'],
-                durations: [ 8000, 8000, 8000, 8000, 8000]
+                 shapeOrder: ['coldplay','nube', 'corazon'],
+                durations: [ 8000, 8000, 80000]
             }
         };
 
         fileInput.addEventListener('change', handleFileUpload);
         songSelect.addEventListener('change', resetVisualizer);
-        
-function drawRainbow() {
-   let radius = 50;
-   let colors = [hue, hue-120, hue-240};
-   for (let i = 0; i < colors.length; i++) {
-       stroke(colors[i]);
-       noFill();
-       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); // Dibuixar arcs concèntrics amb diferents colors
+
         function handleFileUpload(event) {
             const file = event.target.files[0];
             if (file && file.type.startsWith('audio/')) {
@@ -334,9 +130,205 @@ function drawRainbow() {
 
             const selectedShape = shapes[getCurrentShape()];
             const hue = Math.round((averageFrequency / 255) * 360);
+            selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
+            selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
+        }
+
+        function startCycleShapes() {
+            const songData = songConfig[songSelect.value];
+            let totalTime = 0;
+
+            songData.shapeOrder.forEach((shape, index) => {
+                setTimeout(() => {
+                    currentShapeIndex = index;
+                    updateShapeVisibility();
+                }, totalTime);
+                totalTime += songData.durations[index];
+            });
+
+            cycleInterval = setInterval(() => {
+                currentShapeIndex = (currentShapeIndex + 1) % songData.shapeOrder.length;
+                updateShapeVisibility();
+            }, totalTime);
+        }
+
+        function resetVisualizer() {
+            clearInterval(cycleInterval);
+            audioPlayer.currentTime = 0;
+            audioPlayer.pause();
+            updateShapeVisibility();
+        }
+
+        function getCurrentShape() {
+            return songConfig[songSelect.value].shapeOrder[currentShapeIndex];
+        }
+
+        function updateShapeVisibility() {
+            Object.keys(shapes).forEach(key => {
+                shapes[key].style.display = key === getCurrentShape() ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Audio Visualizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        svg {
+            display: block;
+            margin: 20px auto;
+            background-color: #000;
+        }
+        .controls {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG Audio Visualizer</h1>
+    <div class="controls">
+        <label for="songSelect">Choose Song:</label>
+        <select id="songSelect">
+            <option value="song1">Song 1</option>
+            <option value="song2">Song 2</option>
+            <!-- Easily add more songs here -->
+        </select>
+        <br><br>
+        <input type="file" id="audioFile" accept="audio/*">
+        <br><br>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+    <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
+
+           <g id="coldplay"style="display:none;" fill="hsl(200, 100%, 50%)">
+<path d="M 66.109214 32.132353 C 69.689836 21.147978 81.490013 15.123162 92.496456 18.685662 C 103.485261 22.248162 109.517639 34.053309 105.954655 45.055147 C 102.391672 56.056985 90.591495 62.081801 79.585052 58.519301 C 68.578608 54.974265 62.546231 43.169118 66.109214 32.167279 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 50.289062 6.660156 L 56.324219 12.753906 Z M 50.289062 6.660156 "/>
+<path d="M 288.195957 22.754596 C 263.378544 45.648897 301.84818 71.30239 316.347052 51.464154 C 290.55952 60.964154 277.965609 40.444853 288.195957 22.754596 Z M 288.195957 22.754596 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 45.683795 18.703125 C 28.644974 25.880515 19.984456 48.111213 44.925338 59.567096 C 10.001047 59.375 15.627738 17.672794 45.683795 18.703125 Z M 45.683795 18.703125 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 133.788257 21.200368 C 109.129591 41.387868 143.101401 73.258272 162.115738 49.735294 C 130.384021 63.793199 126.679929 28.272978 133.788257 21.200368 Z M 133.788257 21.200368 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 182.364771 20.431985 C 220.023035 16.956801 210.798083 65.556985 181.588676 58.798713 C 190.760712 55.044118 205.171392 35.502757 182.364771 20.431985 Z M 182.364771 20.431985 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 226.708038 29.6875 C 243.041318 7.159926 281.863724 34.943934 254.277062 57.838235 C 262.761195 37.94761 246.145699 22.964154 226.708038 29.6875 Z M 226.708038 29.6875 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 333.879752 46.26011 C 346.314916 20.449449 368.063225 32.341912 373.213676 46.452206 C 374.307265 17.061581 332.592139 14.040441 333.879752 46.26011 Z M 333.879752 46.26011 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 387.130477 23.330882 C 408.667123 27.591912 410.448615 54.694853 388.276981 61.872243 C 426.71134 64.71875 414.311453 14.89614 387.130477 23.330882 Z M 387.130477 23.330882 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+<path d="M 411.630396 27.26011 C 412.90037 23.453125 417.098341 21.357537 421.049372 22.527574 C 425.000403 23.69761 427.240496 27.714154 426.093992 31.556066 C 424.947487 35.397978 420.820071 37.633272 416.833763 36.585478 C 412.847455 35.520221 410.466253 31.573529 411.489288 27.696691 " transform="matrix(0.221461,0,0,0.223684,0,0)"/>
+</g>
+        <g id="nube" style="display:none;" fill="hsl(200, 100%, 50%)">
+<path d="M 64.538086 25.637695 C 98.912109 -0.0439453 130.209961 4.798828 158.695312 27.404297 C 129.27832 2.460938 97.488281 2.258789 64.538086 25.637695 Z M 64.538086 25.637695 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+<path d="M 64.538086 26.077148 C -13.543945 13.069336 -24.354492 122.888672 64.538086 121.12207 C -20.803711 118.248047 -10.212891 18.175781 64.538086 26.077148 Z M 64.538086 26.077148 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+<path d="M 64.977539 120.234375 C 95.616211 149.730469 137.583984 143.384766 153.834961 123.776367 C 132.820312 139.385742 104.72168 148.623047 64.977539 120.234375 Z M 64.977539 120.234375 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+<path d="M 160.461914 27.852539 C 247.095703 8.824219 240.152344 137.074219 156.041016 125.542969 C 270.834961 119.232422 210.401367 1.854492 160.461914 27.852539 Z M 160.461914 27.852539 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+<path d="M 100.78418 75.146484 C 101.15332 82.810547 121.016602 84.858398 124.136719 73.898438 C 113.581055 81.641602 106.848633 78.319336 100.78418 75.146484 Z M 100.78418 75.146484 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+<path d="M 150.00293 73.125 C 150.00293 69.600586 148.992188 66.75293 147.75293 66.75293 C 146.504883 66.75293 145.50293 69.600586 145.50293 73.125 C 145.50293 76.649414 146.504883 79.49707 147.75293 79.49707 C 148.992188 79.49707 150.00293 76.649414 150.00293 73.125 Z M 150.00293 73.125 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+<path d="M 78.75 73.87207 C 78.75 70.356445 77.739258 67.5 76.5 67.5 C 75.260742 67.5 74.25 70.356445 74.25 73.87207 C 74.25 77.396484 75.260742 80.25293 76.5 80.25293 C 77.739258 80.25293 78.75 77.396484 78.75 73.87207 Z M 78.75 73.87207 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+<path d="M 129.75293 138.251953 L 117.74707 158.24707 L 133.751953 158.24707 C 141.987305 158.871094 145.59082 167.264648 139.253906 174.251953 L 102.251953 213.75 C 100.415039 216.193359 94.271484 215.586914 95.24707 209.99707 L 110.750977 179.499023 L 90.246094 180.74707 C 82.977539 181.186523 78.662109 175.614258 81.500977 168.249023 L 95.748047 138.75293 C 107.085938 141.890625 118.415039 142.426758 129.75293 138.251953 Z M 129.75293 138.251953 " transform="matrix(0.444444,0,0,0.444444,0,0)"/>
+</g>
+  <g id="corazon"style="display:none;" fill="hsl(200, 100%, 50%)">
+<path d="M 147.101089 36.369877 C 84.897372 -15.13627 13.849471 38.905738 110.071023 117.709016 C 128.427517 132.755123 132.266414 162.328893 132.051255 162.610656 C 158.244081 151.295082 183.315814 129.216189 201.230666 111.228484 C 262.120778 50.063525 221.659485 -45.318648 147.101089 36.369877 Z M 147.101089 36.369877 " transform="matrix(0.344948,0,0,0.346591,0,0)"/>
+</g>
+    </svg>
+
+    <script>
+
+
+function drawRainbow() {
+   let radius = 50;
+   let colors = [hue, hue-120, hue-240};
+   for (let i = 0; i < colors.length; i++) {
+       stroke(colors[i]);
+       noFill();
+       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); // Dibuixar arcs concèntrics amb diferents colors
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('audio/')) {
+                const audioURL = URL.createObjectURL(file);
+                audioPlayer.src = audioURL;
+                audioPlayer.load();
+                initAudio();
+            } else {
+                alert('Please upload a valid audio file.');
+            }
+        }
+
+        const fileInput = document.getElementById('audioFile');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const songSelect = document.getElementById('songSelect');
+        const shapes = {
+            coldplay: document.getElementById('coldplay'),
+            nube: document.getElementById('nube'),
+            corazon: document.getElementById('corazon'),
+           
+        };
+
+        let audioContext, analyser, frequencyData;
+        let currentShapeIndex = 0;
+        let cycleInterval;
+
+        // Configuration for each song (easily scalable)
+        const songConfig = {
+            song1: {
+                shapeOrder: ['coldplay','nube', 'corazon'],
+                durations: [ 8000, 8000, 80000]
+            },
+            song2: {
+                 shapeOrder: ['coldplay','nube', 'corazon'],
+                durations: [ 8000, 8000, 80000]
+            }
+        };
+
+        fileInput.addEventListener('change', handleFileUpload);
+        songSelect.addEventListener('change', resetVisualizer);
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('audio/')) {
+                const audioURL = URL.createObjectURL(file);
+                audioPlayer.src = audioURL;
+                audioPlayer.load();
+                initAudio();
+            } else {
+                alert('Please upload a valid audio file.');
+            }
+        }
+
+        function initAudio() {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256;
+            frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+            const source = audioContext.createMediaElementSource(audioPlayer);
+            source.connect(analyser);
+            analyser.connect(audioContext.destination);
+
+            visualize();
+            startCycleShapes();
+        }
+
+        function visualize() {
+            requestAnimationFrame(visualize);
+            analyser.getByteFrequencyData(frequencyData);
+
+            const averageFrequency = frequencyData.reduce((a, b) => a + b) / frequencyData.length;
+            const scale = averageFrequency / 255;
+
+             const selectedShape = shapes[getCurrentShape()];
+        const selectedShape = shapes[getCurrentShape()];
+            const hue = Math.round((averageFrequency / 255) * 360);
             const red = Math.round((averageFrequency / 255) * 20);
             const orange = Math.round(((averageFrequency / 255) * 20) +20);
             const yellow = Math.round(((averageFrequency / 255) * 20) +45);
+
             selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
             selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
         }
