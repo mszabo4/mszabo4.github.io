@@ -3,132 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Audio Visualizer</title>
+    <title>SVG Audio Visualizer</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-
-        /* Global futuristic style */
+        /* Estilo del fondo y del cuerpo */
         body {
             font-family: 'Orbitron', sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #001f3f, #001233);
+            background-color: #0d0d0d;
             color: #00ffcc;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Pulsating grid background */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                90deg,
-                rgba(255, 255, 255, 0.1) 0px,
-                rgba(255, 255, 255, 0.1) 1px,
-                transparent 1px,
-                transparent 50px
-            ), repeating-linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.1) 0px,
-                rgba(255, 255, 255, 0.1) 1px,
-                transparent 1px,
-                transparent 50px
-            );
-            animation: gridPulse 6s infinite alternate;
-            z-index: -2;
-            opacity: 0.4;
-        }
-
-        @keyframes gridPulse {
-            0% { transform: scale(1.1); opacity: 0.6; }
-            100% { transform: scale(1); opacity: 0.4; }
         }
 
         h1 {
-            font-size: 2.8rem;
-            margin-top: 30px;
+            font-size: 2.5rem;
             color: #00ffcc;
-            text-shadow: 0 0 15px #00ffcc, 0 0 25px #00e6b8, 0 0 35px #00ffcc;
-            animation: neonPulse 1.5s infinite alternate;
-        }
-
-        @keyframes neonPulse {
-            from { text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
-            to { text-shadow: 0 0 40px #00e6b8, 0 0 50px #00ffcc; }
-        }
-
-        .controls {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.7);
-            display: inline-block;
-            margin-top: 15px;
-            border: 2px solid #00ffcc;
-            position: relative;
-            animation: borderGlow 2s infinite alternate;
-        }
-
-        @keyframes borderGlow {
-            from { border-color: #00e6b8; }
-            to { border-color: #00ffcc; }
-        }
-
-        label {
-            font-size: 1.4rem;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00e6b8;
-        }
-
-        select, input[type="file"] {
-            background: #0d0d0d;
-            color: #00ffcc;
-            border: 2px solid #00e6b8;
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #00ffcc;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        select:hover, input[type="file"]::file-selector-button:hover {
-            background-color: #00e6b8;
-            color: #0d0d0d;
-        }
-
-        audio {
-            margin-top: 15px;
-            filter: drop-shadow(0 0 10px #00ffcc);
-        }
-
-        /* Futuristic panel graphic in SVG */
-        .futuristic-panel {
-            width: 100%;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            text-shadow: 0 0 10px #00ffcc;
             margin-top: 20px;
         }
 
-        .futuristic-panel svg {
-            max-width: 600px;
-            width: 80%;
-            height: auto;
-            background-color: rgba(0, 0, 0, 0.6);
+        .controls {
+            margin: 30px;
+            padding: 20px;
+            background: rgba(0, 255, 204, 0.1);
+            border: 2px solid #00ffcc;
             border-radius: 15px;
-            box-shadow: 0 0 25px #00ffcc;
-            border: 2px solid #00e6b8;
-            animation: borderGlow 2s infinite alternate;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px #00ffcc;
         }
+
+        label, select, input {
+            font-size: 1rem;
+            color: #00ffcc;
+            margin: 10px;
+            text-shadow: 0 0 5px #00ffcc;
+            background: transparent;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+
+        select, input[type="file"] {
+            padding: 10px;
+            border: 1px solid #00ffcc;
+            border-radius: 10px;
+        }
+
+        audio {
+            margin-top: 20px;
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        /* SVG visualizer estilo tecnología */
+        svg {
+            display: block;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: visible;
+        }
+
+        #svgVisualizer g {
+            fill: #00ffcc;
+            stroke: #00ffcc;
+            stroke-width: 0.5;
+            animation: pulse 1s infinite;
+        }
+
+        /* Animaciones */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+            50% { box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc; }
+            100% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+        }
+
     </style>
 </head>
 <body>
@@ -202,6 +162,15 @@
 <path d="M 258.896719 86.046328 C 258.896719 69.860625 245.85375 56.730703 229.779844 56.730703 C 213.693516 56.730703 200.650547 69.860625 200.650547 86.046328 C 200.650547 102.232031 213.693516 115.349531 229.779844 115.349531 C 245.85375 115.349531 258.896719 102.232031 258.896719 86.046328 Z M 258.896719 86.046328 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
 <path d="M 241.319766 82.009219 C 241.319766 79.388203 239.183203 77.251641 236.549766 77.251641 C 233.916328 77.251641 231.792188 79.388203 231.792188 82.009219 C 231.792188 84.642656 233.916328 86.779219 236.549766 86.779219 C 239.183203 86.779219 241.319766 84.642656 241.319766 82.009219 Z M 241.319766 82.009219 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
 </g>
+        
+function drawRainbow() {
+   let radius = 50;
+   let colors = [r, g b];
+   for (let i = 0; i < colors.length; i++) {
+       stroke(colors[i]);
+       noFill();
+       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); // Dibuixar arcs concèntrics amb diferents colors
+   }
     </svg>
 
     <script>
