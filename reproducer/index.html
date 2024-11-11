@@ -219,6 +219,9 @@ function drawRainbow() {
 
             const selectedShape = shapes[getCurrentShape()];
             const hue = Math.round((averageFrequency / 255) * 360);
+            const red = Math.round((averageFrequency / 255) * 20);
+            const orange = Math.round(((averageFrequency / 255) * 20) +20);
+            const yellow = Math.round(((averageFrequency / 255) * 20) +45);
             selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
             selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
         }
