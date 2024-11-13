@@ -331,7 +331,11 @@
             selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
             selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
         }
-    
+     function updateShapeVisibility() {
+            Object.keys(shapes).forEach(key => {
+                shapes[key].style.display = key === getCurrentShape() ? 'block' : 'none';
+            });
+        }
         function startCycleShapes() {
             const songData = songConfig[songSelect.value];
             updateShapeVisibility();
@@ -359,12 +363,6 @@
     
         function getCurrentShape() {
             return songConfig[songSelect.value].shapeOrder[currentShapeIndex];
-        }
-    
-        function updateShapeVisibility() {
-            Object.keys(shapes).forEach(key => {
-                shapes[key].style.display = key === getCurrentShape() ? 'block' : 'none';
-            });
         }
     </script>    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
