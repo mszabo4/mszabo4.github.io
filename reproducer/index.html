@@ -5,131 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Audio Visualizer</title>
     <style>
-        /* Base styling */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        /* Global styles */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             text-align: center;
-            background-color: #121212;
-            color: #fff;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #00ffcc;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             overflow: hidden;
         }
 
-        /* Container for controls */
-        .controls {
-            margin: 20px;
-            padding: 20px;
-            background-color: rgba(33, 33, 33, 0.8);
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.4);
+        /* Animated Background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.2), rgba(0, 78, 146, 0.2));
+            z-index: -1;
+            filter: blur(100px);
+            animation: gradientMovement 8s infinite alternate;
+        }
+
+        @keyframes gradientMovement {
+            0% { transform: translate(-20px, -20px); }
+            100% { transform: translate(20px, 20px); }
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #0ff;
+            font-size: 2.8rem;
+            margin-top: 30px;
+            color: #00ffcc;
+            text-shadow: 0 0 15px #00ffcc, 0 0 25px #00e6b8, 0 0 35px #00ffcc;
+            animation: neonPulse 1.5s infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+            to { text-shadow: 0 0 20px #00e6b8, 0 0 30px #00e6b8, 0 0 40px #00ffcc; }
+        }
+
+        .controls {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+            display: inline-block;
+            margin-top: 15px;
+            border: 2px solid #00ffcc;
+            animation: borderGlow 2s infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            from { border-color: #00e6b8; }
+            to { border-color: #00ffcc; }
         }
 
         label {
-            font-size: 1.2rem;
-            margin-right: 10px;
-            color: #0ff;
+            font-size: 1.4rem;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00e6b8;
         }
 
         select, input[type="file"] {
-            background-color: #333;
-            color: #0ff;
-            border: 2px solid #0ff;
+            background: #0d0d0d;
+            color: #00ffcc;
+            border: 2px solid #00e6b8;
             padding: 10px;
-            border-radius: 5px;
             font-size: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ffcc;
+            outline: none;
+            transition: 0.3s;
         }
 
-        input[type="file"] {
-            margin-top: 10px;
+        select:hover, input[type="file"]::file-selector-button:hover {
+            background-color: #00e6b8;
+            color: #0d0d0d;
         }
 
-        input[type="file"]:hover, select:hover {
-            background-color: #444;
+        audio {
+            margin-top: 15px;
+            filter: drop-shadow(0 0 10px #00ffcc);
         }
 
-        /* SVG styling */
         svg {
             display: block;
-            margin: 20px auto;
-            max-width: 90%;
+            margin: 30px auto;
+            width: 80%;
             height: auto;
-            transform: scale(1);
-            transition: transform 0.3s ease-in-out;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 25px #00ffcc;
+            border: 2px solid #00e6b8;
+            animation: borderGlow 2s infinite alternate;
         }
 
-        /* Animation for the SVG */
-        svg:hover {
-            transform: scale(1.1);
+        option {
+            background-color: #0d0d0d;
         }
 
-        /* Tech style for the music controls */
-        audio {
-            margin-top: 20px;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 600px;
-            background-color: #333;
-            border: 2px solid #0ff;
-            padding: 5px;
-            color: #fff;
+        input[type="file"]::file-selector-button {
+            background-color: #00ffcc;
+            color: #0d0d0d;
+            border: none;
+            padding: 5px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #00ffcc;
         }
 
-        /* Techy effect for buttons */
-        select:focus, input[type="file"]:focus {
-            outline: none;
-            box-shadow: 0 0 8px 2px rgba(0, 255, 255, 0.8);
+        input[type="file"]::file-selector-button:hover {
+            background-color: #00e6b8;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>SVG Audio Visualizer</h1>
-        <div class="controls">
-            <label for="songSelect">Choose Song:</label>
-            <select id="songSelect">
-                <option value="song1">Song 1</option>
-                <option value="song2">Song 2</option>
-                <!-- Easily add more songs here -->
-            </select>
-            <br><br>
-            <input type="file" id="audioFile" accept="audio/*">
-            <br><br>
-            <audio id="audioPlayer" controls></audio>
-        </div>
-
-        <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
-            <!-- Futuristic tech shape (robot, circuit, etc.) -->
-            <g id="techShape" fill="hsl(200, 100%, 50%)">
-                <path d="M 50,10 L 60,20 L 50,30 L 40,20 Z" stroke="white" stroke-width="1"/>
-                <circle cx="50" cy="50" r="30" fill="none" stroke="hsl(200, 100%, 50%)" stroke-width="3"/>
-                <line x1="50" y1="50" x2="50" y2="80" stroke="hsl(200, 100%, 50%)" stroke-width="2"/>
-                <line x1="50" y1="50" x2="30" y2="50" stroke="hsl(200, 100%, 50%)" stroke-width="2"/>
-                <line x1="50" y1="50" x2="70" y2="50" stroke="hsl(200, 100%, 50%)" stroke-width="2"/>
-            </g>
-        </svg>
-    </div>
-
-        <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
-            <!-- Futuristic tech shape (robot, circuit, etc.) -->
-            <g id="techShape" fill="hsl(200, 100%, 50%)">
-                <path d="M 50,10 L 60,20 L 50,30 L 40,20 Z" stroke="white" stroke-width="1"/>
-                <circle cx="50" cy="50" r="30" fill="none" stroke="hsl(200, 100%, 50%)" stroke-width="3"/>
-                <line x1="50" y1="50" x2="50" y2="80" stroke="hsl(200, 100%, 50%)" stroke-width="2"/>
-                <line x1="50" y1="50" x2="30" y2="50" stroke="hsl(200, 100%, 50%)" stroke-width="2"/>
-                <line x1="50" y1="50" x2="70" y2="50" stroke="hsl(200, 100%, 50%)" stroke-width="2"/>
-            </g>
-        </svg>
+    <h1>SVG Audio Visualizer</h1>
+    <div class="controls">
+        <label for="songSelect">Choose Song:</label>
+        <select id="songSelect">
+            <option value="song1">Song 1</option>
+            <option value="song2">Song 2</option>
+        </select>
+        <br><br>
+        <input type="file" id="audioFile" accept="audio/*">
+        <br><br>
+        <audio id="audioPlayer" controls></audio>
     </div>
          <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
       <g id="coldplay"style="display:none;" fill="hsl(200, 100%, 50%)">
