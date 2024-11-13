@@ -5,104 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Audio Visualizer</title>
     <style>
-        /* Estilo del fondo y del cuerpo */
+        /* Estilo general de la página */
         body {
             font-family: 'Orbitron', sans-serif;
-            text-align: center;
-            background-color: #0d0d0d;
-            color: #00ffcc;
+            background: linear-gradient(135deg, #1a1a1a, #222222);
+            color: #ffffff;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
-            margin-top: 20px;
+            font-size: 3rem;
+            text-align: center;
+            color: #e0e0e0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 50px;
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.7); }
+            100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5); }
         }
 
         .controls {
-            margin: 30px;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 20px;
             padding: 20px;
-            background: rgba(0, 255, 204, 0.1);
-            border: 2px solid #00ffcc;
-            border-radius: 15px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 15px #00ffcc;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        label, select, input {
+        .controls label {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin: 10px 0;
+        }
+
+        .controls select,
+        .controls input[type="file"] {
             font-size: 1rem;
-            color: #00ffcc;
-            margin: 10px;
-            text-shadow: 0 0 5px #00ffcc;
+            padding: 12px;
+            border: 2px solid #555;
+            border-radius: 10px;
+            margin: 10px 0;
             background: transparent;
-            border: none;
-            outline: none;
-            text-align: center;
+            color: #e0e0e0;
+            transition: all 0.3s;
         }
 
-        select, input[type="file"] {
-            padding: 10px;
-            border: 1px solid #00ffcc;
-            border-radius: 10px;
+        .controls select:hover,
+        .controls input[type="file"]:hover {
+            border-color: #888;
+            cursor: pointer;
         }
 
         audio {
             margin-top: 20px;
-            border: 2px solid #00ffcc;
-            border-radius: 15px;
             width: 100%;
             max-width: 300px;
-            box-shadow: 0 0 10px #00ffcc;
+            border-radius: 10px;
+            border: 2px solid #444;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            background-color: #333;
         }
 
-        /* SVG visualizer estilo tecnología */
         svg {
             display: block;
-            margin: 20px auto;
+            margin-top: 50px;
             width: 80%;
-            max-width: 500px;
-            height: 400px;
-            background-color: rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            height: auto;
+            background-color: transparent;
             border-radius: 15px;
-            overflow: visible;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
         }
 
+        /* Diseño futurista en los SVG */
         #svgVisualizer g {
-            fill: #00ffcc;
-            stroke: #00ffcc;
+            fill: #ffffff;
+            stroke: #444;
             stroke-width: 0.5;
-            animation: pulse 1s infinite;
+            animation: scaleAnimation 2s ease-in-out infinite;
         }
 
-        /* Animaciones */
+        @keyframes scaleAnimation {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Efectos y animaciones adicionales para mejorar el aspecto */
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
+            0%, 100% { transform: scale(1); opacity: 0.7; }
             50% { transform: scale(1.1); opacity: 1; }
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
-            50% { box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc; }
-            100% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
         }
 
     </style>
 </head>
 <body>
-    <h1>SVG Audio Visualizer</h1>
-    <div class="controls">
-        <label for="songSelect">Choose Song:</label>
-        <select id="songSelect">
-            <option value="song1">Song 1</option>
-            <option value="song2">Song 2</option>
-        </select>
-        <br><br>
-        <input type="file" id="audioFile" accept="audio/*">
-        <br><br>
-        <audio id="audioPlayer" controls></audio>
+    <div>
+        <h1>SVG Audio Visualizer</h1>
+        <div class="controls">
+            <label for="songSelect">Choose Song:</label>
+            <select id="songSelect">
+                <option value="song1">Song 1</option>
+                <option value="song2">Song 2</option>
+            </select>
+            <input type="file" id="audioFile" accept="audio/*">
+            <audio id="audioPlayer" controls></audio>
+        </div>
+
+        <svg id="svgVisualizer" viewBox="0 0 100 100">
+            <g id="futuristicShape1">
+                <path d="M50 10 L70 30 L50 50 L30 30 Z" />
+            </g>
+            <g id="futuristicShape2" style="display:none;">
+                <path d="M50 20 L80 40 L60 60 L40 40 Z" />
+            </g>
+        </svg>
     </div>
          <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
       <g id="coldplay"style="display:none;" fill="hsl(200, 100%, 50%)">
