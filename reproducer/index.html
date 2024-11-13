@@ -13,13 +13,13 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #4A90E2, #50E3C2); /* Colores de fondo en azul */
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            overflow: auto;
+            align-items: flex-start; /* Cambiado a flex-start para permitir desplazamiento */
+            min-height: 100vh; /* Mínimo de altura completa */
+            overflow: auto; /* Permitir desplazamiento */
         }
 
         .navbar {
@@ -27,10 +27,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(45deg, #007BFF, #0056b3); /* Colores azul para la navbar */
+            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
             padding: 10px 20px;
-            border-bottom: 4px solid #007BFF;
-            z-index: 10;
+            border-bottom: 4px solid #ffdd40;
+            z-index: 10; /* Asegura que la barra esté siempre encima */
         }
 
         .navbar-brand {
@@ -41,7 +41,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 1px;
-            transition: color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out; /* Añadida la transición aquí */
         }
 
         .navbar-brand:hover {
@@ -53,6 +53,7 @@
             border-radius: 0;
         }
 
+        /* [Resto del código CSS sin cambios] */
         .nav-link {
             color: #ffffff !important;
             font-weight: 600;
@@ -62,14 +63,14 @@
         }
 
         .nav-link:hover {
-            color: #007BFF !important; /* Azul claro en hover */
+            color: #ffdd40 !important;
         }
 
         .nav-link::after {
             content: '';
             width: 0%;
             height: 3px;
-            background-color: #007BFF;
+            background-color: #ffdd40;
             position: absolute;
             bottom: -5px;
             left: 0;
@@ -81,7 +82,7 @@
         }
 
         .dropdown-menu {
-            background-color: #0056b3; /* Azul oscuro */
+            background-color: #cc3f33;
             border: none;
             border-radius: 10px;
         }
@@ -92,13 +93,13 @@
         }
 
         .dropdown-item:hover {
-            background-color: #0069d9; /* Azul más claro para hover */
+            background-color: #ff7f50;
             color: #ffffff;
         }
 
         /* Contenedor principal */
         .container {
-            margin-top: 80px;
+            margin-top: 80px; /* Ajusta el margen superior para evitar el solapamiento */
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             padding: 20px;
@@ -114,6 +115,7 @@
             height: auto;
         }
 
+
         /* Detalles de colores en las esquinas */
         .container::before, .container::after {
             content: '';
@@ -122,24 +124,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border-radius: 15px;
-            z-index: -1;
-            background: linear-gradient(135deg, rgba(72, 144, 226, 0.2), rgba(80, 227, 194, 0.2)); /* Fondo azul */
-            filter: blur(25px);
+            border-radius: 15px; /* Esquinas redondeadas para pseudo-elementos */
+            z-index: -1; /* Colocar detrás del contenedor */
+            background: linear-gradient(135deg, rgba(255, 78, 78, 0.2), rgba(249, 212, 35, 0.2)); /* Fondo degradado */
+            filter: blur(25px); /* Efecto de desenfoque para el fondo */
         }
 
         /* Texto en los contenedores */
         h1, h2, h3, p {
-            color: #333;
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
-            margin: 10px 0;
+            color: #333; /* Color del texto oscuro */
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8); /* Sombra de texto más suave */
+            margin: 10px 0; /* Ajustar margen superior e inferior */
         }
 
         /* SVG estilos */
         svg {
-            margin-top: 10px;
-            max-width: 100%;
-            height: auto;
+            margin-top: 10px; /* Reducir espacio entre SVG y otros elementos */
+            max-width: 100%; /* SVG responsivo */
+            height: auto; /* Mantener proporción */
         }
     </style>
 </head>
@@ -149,7 +151,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="https://ecastro4.github.io">
                 <img src="logo.png" alt="Logo" width="50">
-                Web de Miguel Angel
+                Web d'Eric
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -200,13 +202,13 @@
             <select id="songSelect">
                 <option value="song1">Good Feelings</option>
                 <option value="song2">Song 2</option>
+                <!-- Easily add more songs here -->
             </select>
             <br><br>
             <input type="file" id="audioFile" accept="audio/*">
             <br><br>
             <audio id="audioPlayer" controls></audio>
         </div>
-    </div>
 
          <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
       <g id="coldplay"style="display:none;" fill="hsl(200, 100%, 50%)">
