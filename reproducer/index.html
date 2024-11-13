@@ -13,13 +13,13 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            background: linear-gradient(135deg, #4e79ff, #1d3e9c); /* Cambio a un azul degradado */
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Cambiado a flex-start para permitir desplazamiento */
-            min-height: 100vh; /* Mínimo de altura completa */
-            overflow: auto; /* Permitir desplazamiento */
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow: auto;
         }
 
         .navbar {
@@ -27,10 +27,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
-            padding: 10px 20px;
-            border-bottom: 4px solid #ffdd40;
-            z-index: 10; /* Asegura que la barra esté siempre encima */
+            background: linear-gradient(45deg, #1e3c72, #2a5298); /* Azul más oscuro para la barra */
+            padding: 15px 20px;
+            border-bottom: 4px solid #ffd700; /* Amarillo dorado para borde */
+            z-index: 10;
         }
 
         .navbar-brand {
@@ -41,19 +41,18 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 1px;
-            transition: color 0.2s ease-in-out; /* Añadida la transición aquí */
+            transition: color 0.2s ease-in-out;
         }
 
         .navbar-brand:hover {
-            color: #000 !important;
+            color: #ffd700 !important; /* Cambio a dorado al pasar el cursor */
         }
 
         .navbar-brand img {
             margin-right: 15px;
-            border-radius: 0;
+            border-radius: 50%; /* Hacemos la imagen circular */
         }
 
-        /* [Resto del código CSS sin cambios] */
         .nav-link {
             color: #ffffff !important;
             font-weight: 600;
@@ -63,14 +62,14 @@
         }
 
         .nav-link:hover {
-            color: #ffdd40 !important;
+            color: #ffd700 !important;
         }
 
         .nav-link::after {
             content: '';
             width: 0%;
             height: 3px;
-            background-color: #ffdd40;
+            background-color: #ffd700;
             position: absolute;
             bottom: -5px;
             left: 0;
@@ -82,7 +81,7 @@
         }
 
         .dropdown-menu {
-            background-color: #cc3f33;
+            background-color: #2a5298; /* Azul más oscuro */
             border: none;
             border-radius: 10px;
         }
@@ -93,17 +92,17 @@
         }
 
         .dropdown-item:hover {
-            background-color: #ff7f50;
+            background-color: #1e3c72; /* Azul más claro al pasar */
             color: #ffffff;
         }
 
         /* Contenedor principal */
         .container {
-            margin-top: 80px; /* Ajusta el margen superior para evitar el solapamiento */
+            margin-top: 80px;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
             border: 5px solid rgba(255, 255, 255, 0.7);
             position: relative;
             z-index: 1;
@@ -115,7 +114,6 @@
             height: auto;
         }
 
-
         /* Detalles de colores en las esquinas */
         .container::before, .container::after {
             content: '';
@@ -124,24 +122,58 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border-radius: 15px; /* Esquinas redondeadas para pseudo-elementos */
-            z-index: -1; /* Colocar detrás del contenedor */
-            background: linear-gradient(135deg, rgba(255, 78, 78, 0.2), rgba(249, 212, 35, 0.2)); /* Fondo degradado */
-            filter: blur(25px); /* Efecto de desenfoque para el fondo */
+            border-radius: 15px;
+            z-index: -1;
+            background: linear-gradient(135deg, rgba(78, 125, 255, 0.2), rgba(29, 62, 156, 0.2));
+            filter: blur(25px);
         }
 
         /* Texto en los contenedores */
         h1, h2, h3, p {
-            color: #333; /* Color del texto oscuro */
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8); /* Sombra de texto más suave */
-            margin: 10px 0; /* Ajustar margen superior e inferior */
+            color: #333;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
+            margin: 10px 0;
+        }
+
+        /* Estilo de los controles */
+        .controls {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls input[type="file"],
+        .controls select {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .controls select {
+            margin-top: 10px;
+        }
+
+        /* Estilo del botón de audio */
+        audio {
+            border-radius: 10px;
+            border: 2px solid #1d3e9c;
+            background-color: #f0f0f0;
+            padding: 10px;
+            width: 100%;
+            margin-top: 20px;
         }
 
         /* SVG estilos */
         svg {
-            margin-top: 10px; /* Reducir espacio entre SVG y otros elementos */
-            max-width: 100%; /* SVG responsivo */
-            height: auto; /* Mantener proporción */
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -201,14 +233,7 @@
             <label for="songSelect">Choose Song:</label>
             <select id="songSelect">
                 <option value="song1">Good Feelings</option>
-                <option value="song2">Song 2</option>
-                <!-- Easily add more songs here -->
-            </select>
-            <br><br>
-            <input type="file" id="audioFile" accept="audio/*">
-            <br><br>
-            <audio id="audioPlayer" controls></audio>
-        </div>
+                <option value="song2">
 
          <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
       <g id="coldplay"style="display:none;" fill="hsl(200, 100%, 50%)">
