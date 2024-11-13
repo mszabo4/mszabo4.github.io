@@ -4,61 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <title>Coldplay - Futuristic Style</title>
+    <title>Coldplay</title>
     <style>
-        /* General Body Styling */
+        /* Estilos generales */
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #00FFC6;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: #fff;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
+            align-items: flex-start; /* Cambiado a flex-start para permitir desplazamiento */
+            min-height: 100vh; /* Mínimo de altura completa */
+            overflow: auto; /* Permitir desplazamiento */
         }
 
-        /* Navbar Styling */
         .navbar {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: linear-gradient(45deg, #1a1a1a, #333);
+            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
             padding: 10px 20px;
-            border-bottom: 2px solid #00FFC6;
-            z-index: 10;
+            border-bottom: 4px solid #ffdd40;
+            z-index: 10; /* Asegura que la barra esté siempre encima */
         }
 
         .navbar-brand {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.7rem;
-            color: #00FFC6 !important;
-            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            color: #fff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: color 0.2s ease-in-out; /* Añadida la transición aquí */
         }
 
         .navbar-brand:hover {
-            color: #ff7f50 !important;
+            color: #000 !important;
         }
 
+        .navbar-brand img {
+            margin-right: 15px;
+            border-radius: 0;
+        }
+
+        /* [Resto del código CSS sin cambios] */
         .nav-link {
-            color: #fff !important;
+            color: #ffffff !important;
             font-weight: 600;
+            margin-right: 15px;
             position: relative;
             transition: color 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #00FFC6 !important;
+            color: #ffdd40 !important;
         }
 
         .nav-link::after {
             content: '';
-            width: 0;
+            width: 0%;
             height: 3px;
-            background-color: #00FFC6;
+            background-color: #ffdd40;
             position: absolute;
             bottom: -5px;
             left: 0;
@@ -70,79 +82,66 @@
         }
 
         .dropdown-menu {
-            background-color: #333;
-            border-radius: 8px;
+            background-color: #cc3f33;
+            border: none;
+            border-radius: 10px;
         }
 
         .dropdown-item {
-            color: #00FFC6;
+            color: #ffffff;
             transition: background-color 0.3s ease;
         }
 
         .dropdown-item:hover {
             background-color: #ff7f50;
-            color: #fff;
+            color: #ffffff;
         }
 
-        /* Container Styling */
+        /* Contenedor principal */
         .container {
-            margin-top: 100px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid #00FFC6;
+            margin-top: 80px; /* Ajusta el margen superior para evitar el solapamiento */
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0px 0px 20px rgba(0, 255, 198, 0.6);
-            max-width: 800px;
+            padding: 20px;
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
+            border: 5px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 1;
             width: 90%;
+            max-width: 600px;
             text-align: center;
-            color: #fff;
+            box-sizing: border-box;
+            overflow: hidden;
+            height: auto;
         }
 
-        /* Headings */
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            color: #ffdd40;
-            margin-bottom: 20px;
+
+        /* Detalles de colores en las esquinas */
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px; /* Esquinas redondeadas para pseudo-elementos */
+            z-index: -1; /* Colocar detrás del contenedor */
+            background: linear-gradient(135deg, rgba(255, 78, 78, 0.2), rgba(249, 212, 35, 0.2)); /* Fondo degradado */
+            filter: blur(25px); /* Efecto de desenfoque para el fondo */
         }
 
-        label {
-            font-weight: 600;
-            color: #00FFC6;
+        /* Texto en los contenedores */
+        h1, h2, h3, p {
+            color: #333; /* Color del texto oscuro */
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8); /* Sombra de texto más suave */
+            margin: 10px 0; /* Ajustar margen superior e inferior */
         }
 
-        /* Audio player and controls styling */
-        .controls {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        select, input[type="file"], audio {
-            margin-top: 15px;
-            background-color: #2b2b2b;
-            color: #fff;
-            border: 1px solid #00FFC6;
-            padding: 8px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            max-width: 300px;
-        }
-
-        select:hover, input[type="file"]:hover {
-            border-color: #ffdd40;
-            box-shadow: 0px 0px 8px rgba(255, 221, 64, 0.8);
-        }
-
-        /* SVG visualizer styling */
+        /* SVG estilos */
         svg {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 100%;
-            background: #1a1a1a;
-            border: 2px solid #00FFC6;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 198, 0.5);
+            margin-top: 10px; /* Reducir espacio entre SVG y otros elementos */
+            max-width: 100%; /* SVG responsivo */
+            height: auto; /* Mantener proporción */
         }
     </style>
 </head>
@@ -151,8 +150,8 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://ecastro4.github.io">
-                <img src="logo.png" alt="Logo" width="40">
-                Web de Miguel Angel 
+                <img src="logo.png" alt="Logo" width="50">
+                Web d'Eric
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -203,14 +202,13 @@
             <select id="songSelect">
                 <option value="song1">Good Feelings</option>
                 <option value="song2">Song 2</option>
+                <!-- Easily add more songs here -->
             </select>
+            <br><br>
             <input type="file" id="audioFile" accept="audio/*">
+            <br><br>
             <audio id="audioPlayer" controls></audio>
         </div>
-        
-        <!-- SVG Visualizer Placeholder -->
-        <svg id="visualizer" viewBox="0 0 500 200"></svg>
-    </div>
 
     <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
 
@@ -293,26 +291,28 @@ function drawRainbow() {
             rainbow: document.getElementById('rainbow'),
             eyes: document.getElementById('eyes'),
         };
-
+    
         let audioContext, analyser, frequencyData;
         let currentShapeIndex = 0;
-        let cycleInterval;
-
-        // Configuration for each song (easily scalable)
+        let cycleTimeout;
+    
         const songConfig = {
             song1: {
-                shapeOrder: ['coldplay','nube', 'corazon', 'eyes', 'rainbow'],
-                durations: [ 8000, 8000, 8000, 8000, 8000]
+                shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow'],
+                durations: [3000, 3000, 3000, 3000, 3000]
             },
             song2: {
-                 shapeOrder: ['coldplay','nube', 'corazon', 'eyes', 'rainbow'],
-                durations: [ 8000, 8000, 8000, 8000, 8000]
+               shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow'],
+                durations: [3000, 3000, 3000, 3000, 3000]
             }
         };
-
+        //COPIADLO DE AQUÍ HASTA EL FINAL
+        
         fileInput.addEventListener('change', handleFileUpload);
         songSelect.addEventListener('change', resetVisualizer);
-
+        audioPlayer.addEventListener('play', startCycleShapes);
+        audioPlayer.addEventListener('pause', stopCycleShapes);
+    
         function handleFileUpload(event) {
             const file = event.target.files[0];
             if (file && file.type.startsWith('audio/')) {
@@ -324,103 +324,69 @@ function drawRainbow() {
                 alert('Please upload a valid audio file.');
             }
         }
-
+    
         function initAudio() {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
             analyser = audioContext.createAnalyser();
             analyser.fftSize = 256;
             frequencyData = new Uint8Array(analyser.frequencyBinCount);
-
+    
             const source = audioContext.createMediaElementSource(audioPlayer);
             source.connect(analyser);
             analyser.connect(audioContext.destination);
-
+    
             visualize();
-            startCycleShapes();
         }
-
+    
         function visualize() {
             requestAnimationFrame(visualize);
             analyser.getByteFrequencyData(frequencyData);
-
+    
             const averageFrequency = frequencyData.reduce((a, b) => a + b) / frequencyData.length;
             const scale = averageFrequency / 255;
-
-             const selectedShape = shapes[getCurrentShape()];
-        const selectedShape = shapes[getCurrentShape()];
+    
+            const selectedShape = shapes[getCurrentShape()];
             const hue = Math.round((averageFrequency / 255) * 360);
-            const red = Math.round((averageFrequency / 255) * 20);
-            const orange = Math.round(((averageFrequency / 255) * 20) +20);
-            const yellow = Math.round(((averageFrequency / 255) * 20) +45);
-
             selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
             selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
         }
-
+    
         function startCycleShapes() {
             const songData = songConfig[songSelect.value];
-            let totalTime = 0;
-
-            songData.shapeOrder.forEach((shape, index) => {
-                setTimeout(() => {
-                    currentShapeIndex = index;
-                    updateShapeVisibility();
-                }, totalTime);
-                totalTime += songData.durations[index];
-            });
-
-            cycleInterval = setInterval(() => {
+            updateShapeVisibility();
+    
+            // Avanzar a la siguiente forma después de la duración actual solo si el audio está reproduciéndose
+            cycleTimeout = setTimeout(() => {
                 currentShapeIndex = (currentShapeIndex + 1) % songData.shapeOrder.length;
-                updateShapeVisibility();
-            }, totalTime);
+                if (!audioPlayer.paused) {
+                    startCycleShapes(); // Recursión controlada para que avance solo al reproducirse
+                }
+            }, songData.durations[currentShapeIndex]);
         }
-
+    
+        function stopCycleShapes() {
+            clearTimeout(cycleTimeout); // Detiene el cambio de formas cuando el audio se pausa
+        }
+    
         function resetVisualizer() {
-            clearInterval(cycleInterval);
+            clearTimeout(cycleTimeout);
             audioPlayer.currentTime = 0;
             audioPlayer.pause();
+            currentShapeIndex = 0;
             updateShapeVisibility();
         }
-
+    
         function getCurrentShape() {
             return songConfig[songSelect.value].shapeOrder[currentShapeIndex];
         }
-
+    
         function updateShapeVisibility() {
             Object.keys(shapes).forEach(key => {
                 shapes[key].style.display = key === getCurrentShape() ? 'block' : 'none';
             });
         }
-    </script>
+    </script>    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const audioPlayer = document.getElementById("audioPlayer");
-        const songSelect = document.getElementById("songSelect");
-        const audioFile = document.getElementById("audioFile");
-
-        // Manejo del menú desplegable de canciones
-        songSelect.addEventListener("change", function() {
-            const song = songSelect.value;
-            if (song === "song1") {
-                audioPlayer.src = "ruta_a_good_feelings.mp3";
-            } else if (song === "song2") {
-                audioPlayer.src = "ruta_a_song_2.mp3";
-            }
-            audioPlayer.play();
-        });
-
-        // Manejo del archivo de audio personalizado cargado por el usuario
-        audioFile.addEventListener("change", function() {
-            const file = audioFile.files[0];
-            if (file) {
-                const fileURL = URL.createObjectURL(file);
-                audioPlayer.src = fileURL;
-                audioPlayer.play();
-            }
-        });
-    });
-</script>
 </body>
 </html>
