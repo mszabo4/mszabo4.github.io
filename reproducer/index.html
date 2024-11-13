@@ -257,6 +257,9 @@
 <path d="M 258.896719 86.046328 C 258.896719 69.860625 245.85375 56.730703 229.779844 56.730703 C 213.693516 56.730703 200.650547 69.860625 200.650547 86.046328 C 200.650547 102.232031 213.693516 115.349531 229.779844 115.349531 C 245.85375 115.349531 258.896719 102.232031 258.896719 86.046328 Z M 258.896719 86.046328 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
 <path d="M 241.319766 82.009219 C 241.319766 79.388203 239.183203 77.251641 236.549766 77.251641 C 233.916328 77.251641 231.792188 79.388203 231.792188 82.009219 C 231.792188 84.642656 233.916328 86.779219 236.549766 86.779219 C 239.183203 86.779219 241.319766 84.642656 241.319766 82.009219 Z M 241.319766 82.009219 " transform="matrix(0.314465,0,0,0.314465,0,0)"/>
 </g>
+        <g id="star">
+<path d="M 119.615852 159.294383 L 72.9542 134.791434 L 26.317154 159.33551 L 35.20001 107.393204 L -2.554179 70.618216 L 49.594667 63.018107 L 72.896785 15.74773 L 96.248117 62.993431 L 148.405165 70.552414 L 110.683783 107.352078 Z M 119.615852 159.294383 " transform="matrix(0.476251,0,0,0.474911,16.673461,21.060294)"/>
+</g>
     </svg>
 
     <script>
@@ -269,6 +272,7 @@
             corazon: document.getElementById('corazon'),
             rainbow: document.getElementById('rainbow'),
             eyes: document.getElementById('eyes'),
+            star: document.getElementById('star'),
         };
     
         let audioContext, analyser, frequencyData;
@@ -277,11 +281,11 @@
     
         const songConfig = {
             song1: {
-                shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow'],
+                shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow','star'],
                 durations: [3000, 3000, 3000, 3000, 3000]
             },
             song2: {
-               shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow'],
+               shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow', 'star'],
                 durations: [3000, 3000, 3000, 3000, 3000]
             }
         };
