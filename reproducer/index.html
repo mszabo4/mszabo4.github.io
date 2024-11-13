@@ -260,27 +260,6 @@
     </svg>
 
     <script>
-
-
-function drawRainbow() {
-   let radius = 50;
-   let colors = [hue, hue-120, hue-240};
-   for (let i = 0; i < colors.length; i++) {
-       stroke(colors[i]);
-       noFill();
-       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); 
-        function handleFileUpload(event) {
-            const file = event.target.files[0];
-            if (file && file.type.startsWith('audio/')) {
-                const audioURL = URL.createObjectURL(file);
-                audioPlayer.src = audioURL;
-                audioPlayer.load();
-                initAudio();
-            } else {
-                alert('Please upload a valid audio file.');
-            }
-        }
-
         const fileInput = document.getElementById('audioFile');
         const audioPlayer = document.getElementById('audioPlayer');
         const songSelect = document.getElementById('songSelect');
