@@ -151,7 +151,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="https://ecastro4.github.io">
                 <img src="logo.png" alt="Logo" width="50">
-                Web de Miguel Angel
+                Web d'Eric
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -210,7 +210,7 @@
             <audio id="audioPlayer" controls></audio>
         </div>
 
-    <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
+         <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
       <g id="coldplay"style="display:none;" fill="hsl(200, 100%, 50%)">
  <path d="M 6.484375 0.191406 C -2.53125 -0.679688 -1.636719 11.554688 6.035156 10.199219 C 3.070312 9.28125 1.988281 7.316406 2.027344 5.261719 C 2.1875 2.601562 3.398438 1.171875 6.484375 0.191406 Z M 6.484375 0.191406 "/>
             <path d="M 21.96875 5.242188 C 21.96875 2.347656 19.550781 0 16.566406 0 C 13.582031 0 11.164062 2.347656 11.164062 5.242188 C 11.164062 8.140625 13.582031 10.488281 16.566406 10.488281 C 19.550781 10.488281 21.96875 8.140625 21.96875 5.242188 Z M 21.96875 5.242188 "/>
@@ -268,9 +268,9 @@
             coldplay: document.getElementById('coldplay'),
             nube: document.getElementById('nube'),
             corazon: document.getElementById('corazon'),
-            rainbow: document.getElementById('rainbow'),
             eyes: document.getElementById('eyes'),
             star: document.getElementById('star'),
+
         };
     
         let audioContext, analyser, frequencyData;
@@ -279,12 +279,12 @@
     
         const songConfig = {
             song1: {
-                shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow','star'],
-                durations: [8000, 8000, 8000, 8000, 8000]
+                shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'star'],
+                durations: [3000, 3000, 3000, 3000, 3000, 3000, 3000]
             },
             song2: {
-               shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'rainbow', 'star'],
-                durations: [8000, 8000, 8000, 8000, 8000]
+                shapeOrder: ['coldplay', 'nube', 'corazon', 'eyes', 'star'],
+                durations: [3000, 3000, 3000, 3000, 3000, 3000, 3000]
             }
         };
         //COPIADLO DE AQUÍ HASTA EL FINAL
@@ -331,11 +331,7 @@
             selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
             selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
         }
-     function updateShapeVisibility() {
-            Object.keys(shapes).forEach(key => {
-                shapes[key].style.display = key === getCurrentShape() ? 'block' : 'none';
-            });
-        }
+    
         function startCycleShapes() {
             const songData = songConfig[songSelect.value];
             updateShapeVisibility();
@@ -363,6 +359,12 @@
     
         function getCurrentShape() {
             return songConfig[songSelect.value].shapeOrder[currentShapeIndex];
+        }
+    
+        function updateShapeVisibility() {
+            Object.keys(shapes).forEach(key => {
+                shapes[key].style.display = key === getCurrentShape() ? 'block' : 'none';
+            });
         }
     </script>    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
