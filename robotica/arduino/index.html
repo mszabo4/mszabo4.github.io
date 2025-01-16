@@ -4,10 +4,19 @@
       table{ 
         width:50%; //Ocupa el 50% de l'amplada de la pàgina
         border-collapse: collapse;// Evita que apareixin dobles linies a les cel·les 
-        margin: 20px auto; //Marge de 20px a la part superior i centra la taulq
+        margin: 20px auto; //Marge de 20px a la part superior i centra la taula
       }
       th,td{
-        border: 1px;}
+        border: 1px solid ·ddd; // Afegeix una vora fina d'un píxel de color gris clar al voltant de totes les cel·les
+        padding: 10px
+        text-align. center
+      }
+      thead{
+           background: #f4f4f4;
+           font-weight: bold
+      }
+      tboddy tr: nth-child(even){
+        background-color: #f9f9f9;
     </style>
   </head>
 <h1>Conceptes generals de microcontroladors</h1>
@@ -61,5 +70,11 @@
     </tr>
   </tbody>
 </table>
+  <p>Nota: La taula HtML anterior té una capçalera com un document HTML, però es diu thead en comptes de head.
+  Té un cos anomenat tbody, en comptes de body i és la resta de la taula.
+  La taula la defineix el tag table que agrupa thead i tbody. Totes les fileres tant del thead com del tbody es defineixen amb el tag tr
+  Dintre de head hi han elements individuals que són cel·les que pertanyen a la primera filera que s'anomenen th o table heading.
+  En el table body hi ha també fileres tr però dintre d'aquestes fileres els elements individuals han de ser td, 
+  que significa table data</p>
 </body>
 </html>
