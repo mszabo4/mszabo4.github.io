@@ -92,6 +92,44 @@ modificar amb CSS i fer la taula amb un estil propi</p>
   un senyal contínu analògic en un senyal digital mostrejat segons la figura següent:</p>
 
   <img src="images.png" width="600" height="400">
-  <p>Nyquist és important perque si en el codi poso una freqüència de mosteig de 20 Hz per un so </p>
+  <p>Nyquist és important perque si en el codi poso una freqüència de mosteig de 20 Hz per un so no funcionarà perque la freqüència
+   mínima del so es 20 Hz i la màxima 20 kHz perque es refereix al so audible en humans. Això es perque agafem mostres massa grans i no podem veure 
+  pujades i baixades de la senyal</p>
+  <p>A continuació veurem una taula comparativa sobre els microcontroladors Arduino Uno i ESP32S3 i el circuit ADS1115</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Microcontrolador o circuit</th>
+        <th>Número de bits (nivells)</th>
+        <th>Voltatge</th>
+      </tr>
+      <tr>
+        <td>Arduino Uno</td>
+        <td>10 (0-1023)</td>
+        <td>0-5V, 0-3,3V</td>
+              </tr>
+
+      <tr>
+        <td>ESP32S3</td>
+        <td>12 (0-4095)</td>
+        <td>0-3,3V</td>
+      </tr>
+<tr>
+  <td>ADS1115</td>
+  <td>16 (0-65536)</td>
+  <td>0-3,3V</td>
+</tr>
+    </thead>
+  </table>
+<pre> <code>
+  int valor_ADC=0;
+  void setup(){
+  Serial.begin(9600),
+  }
+  void loop (){
+  valorADC0analog.Read(A.0);
+  Serial-println(valor.ADC)
+  delay(500);
+</code></pre>
 </body>
 </html>
