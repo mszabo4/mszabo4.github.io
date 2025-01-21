@@ -121,6 +121,19 @@ modificar amb CSS i fer la taula amb un estil propi</p>
 </tr>
     </thead>
   </table>
+  <p> A continuació tenim un codi general que pot servir per moltissimes coses diferents i totes relacionades 
+  amb la capacitat que té l'Arduino de llegir de 0 a 1023 en una entrada analògica, si fos un ESP32S3
+  llegiria de 0 a 4095 i si fos un ADS1115 llegiria de 0 a 65536. Per què?
+  Els microxips i els microcontroladors tenen transistors i els transistors nomes poden fer una cosa encendres o apagarse,
+  es a dir 0 o 1 i cada bit és un 0 o un 1. Si tenim 10 bits en un ADC (Analog Digital Converter) significa que té 2<sup>10</sup>
+  combinacions de zeros i uns es a dir 1024 nivells diferents que numericament van des del 0 a 1023</p>
+  <p>Si tenim 12 bits en un ADC (Analog Digital Converter) significa que té 2<sup>12</sup>
+  combinacions de zeros i uns es a dir 4096 nivells diferents que numericament van des del 0 a 4095. Ara justifiquem
+  el número 65536 seria correcte si fos 2<sup>16</sup> com diu el fabricant, pero al datasheet parla d'un nivell màxim
+  de 8000h (Número hexadecimal que correspon a 32768) es a dir, són 15 bits utilitzables. Sempre s'ha de comprobar 
+  el  <a href="https://cdn-shop.adafruit.com/datasheets/ads1115.pdf" datasheet o 
+  fulla de caracteristiques del fabricant</a></p>
+  
 <pre> <code>
   int valor_ADC=0;
   void setup(){
