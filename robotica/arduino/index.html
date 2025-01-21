@@ -132,15 +132,35 @@ modificar amb CSS i fer la taula amb un estil propi</p>
   el número 65536 seria correcte si fos 2<sup>16</sup> com diu el fabricant, pero al datasheet parla d'un nivell màxim
   de 8000h (Número hexadecimal que correspon a 32768) es a dir, són 15 bits utilitzables. Sempre s'ha de comprobar 
   el  <a href="https://cdn-shop.adafruit.com/datasheets/ads1115.pdf" datasheet o 
-  fulla de caracteristiques del fabricant</a></p>
+  fulla de caracteristiques del fabricant</a></p> 
   
 <pre> <code>
-  int valor_ADC=0;
-  void setup(){
-  Serial.begin(9600),
+  int valor_ADC=0; // Int significa integer o valor enter numèric (float seria floating point number o decimal, char
+  seria un character o caracter de lletra de l'alfabet, string seria una cadena de caracters o paraula, etc. El més important
+  es entendre que la primera paraula defineix el tipus de variable que tenim, en aquest cas enter). "valor_ADC" és un nom
+  que triem nosaltres per definir una variable, es a dir, un valor que no serà constant i que té inicialment un valor 0,
+  si posem int valor_ADC; es a dir no posem que és = a 0 per defecte hauria de donar valor 0. Si jo volgues posar un potenciometre
+  posaria pot i si volgues posar un LDR posaria ldr. Sempre la primera linia és la definició de les variables. A vegades
+  avanç de la primera linia necessitem carregar biblioteques.
+  void setup(){  // Sempre hi ha un setup o funció de configuració del microcontrolador en llenguatge Arduino que té un 
+  parentesis buit perquè no té cap parametre o argument del qual depengui en molts casos. La paraula void seria l'equivalent
+  a la paraula function en JavaScript. També es diu void setup en Processing perquè deriva de Processing aquest llenguatge.
+  Posem una clau per agrupar totes les instruccions que volem executar una sola vegada, perquè setup s'executa només al principi
+  quan arranquem o encenem l'Arduino o microcontrolador.
+  Serial.begin(9600); // Serial s'escriu amb mayuscules perquè és una classe que és una part important del codi Arduino
+  que antigament era una classe de Processing i té un mètode que es fa servir amb la sintaxi del punt, dot syntax que 
+  consisteix en que quan jo escric un punt estic aplicant un mètode normalment a un objecte de una classe i a vegades a una
+  classe, com aquí. El mètode begin connecta per al cable sèrie l'ordinador amb l'Arduino i té només un parametre que és
+  un número enter que correspon a la velocitat en bits/segon. Pel cas de l'Arduino uno 9600 bits/segon o bauds, mentres
+  que en ESP32S3 són 115200 bits/segon o bauds "Serial.begin(115200);". És molt important posar un ; en cada instrucció 
+  per informar que ja ha acabat.
   }
-  void loop (){
-  valorADC0analog.Read(A.0);
+  void loop (){ // És una funció que repeteix sense parar fins que desconecto fisicament o poso un codi per aturar-ho
+  valor_ADC=analogRead(A0); // La variable que hem creat abans que era 0 inicialment ara canviarà perquè la instucció
+  analogRead el que fa és llegir valors entre 0 i 1023 si és un Arduino uno, A0 és una de les 6 entrades analògiques 
+  d'Arduino uno
+  valor_ADC=analogRead(34); // La variable de valor 0 ara serà un valor entre 0 i 4095 perquè 34 és el numero de PIN d'un 
+  ESP32S3
   Serial-println(valor.ADC)
   delay(500);
 </code></pre>
