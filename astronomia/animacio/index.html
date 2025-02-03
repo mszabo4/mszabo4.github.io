@@ -407,9 +407,14 @@
 	   200 vegades.*/
 	// canvas.width / 2 és x de galaxy, es a dir, coloca la galàxia inicialment al centre del canvas o zona de dibuix, width/2 = centre de x
 	// canvas.height / 2 és y de galaxy, es a dir, coloca la galàxia inicialment al centre del canvas o zona de dibuix, height/2 = centre de y
-	// La funcio atemàtica crea numeros aleatories entre 1 i 4 pixels de gran de la galàxies
-	    
-        // Inicialitzem les galàxies
+	// La funcio matemàtica crea numeros aleatories entre 1 i 4 pixels de gran de la galàxies
+	    //math.random() * 3 + 1 // Mida aleatòria entre 1 i 4 píxels perquè Math.random() és una funció que genera un número aleatori entre zero i u
+	    // i si multipliquem per tres donarà un número entre zero i tres i si li sumem un donarà un númeor aleatori entre u i quatre
+	    // que tindrem totes les galaxies de mides aleatòries entre 1 i 4 píxels. Totes les galaxies surtiran al centre de la pantalla perquè
+	    // canvas.width significa amplada al area de l'àrea del dibuix i al dividir-ho per dos quedarà al centre de la pantalla.
+            // canvas.height significa amplada al area de l'àrea del dibuix i al dividir-ho per dos quedarà al centre de la pantalla.
+	    // El mètode push es un sistema que ens permet amb la sinta
+	    // Inicialitzem les galàxies
         function initGalaxies(numGalaxies) {
             galaxies = [];
             for (let i = 0; i &lt; numGalaxies; i++) {
