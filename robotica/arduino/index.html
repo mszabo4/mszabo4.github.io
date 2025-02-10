@@ -263,8 +263,9 @@ void loop()
   float millivolts = (value / 1023.0) * 5000;
   float celsius = millivolts / 10; 
   Serial.print(celsius);
-  Serial.println(" C");
-  delay(1000);
+  Serial.println(" C"); 
+  delay(1000); // Mirem aquest codi i quins valors donaria. Entre 0 i 500 graus, és a dir, no dona valors
+         negatius i no coincideix entre -55 i +150 graus amb resposta lineal mapejada.
 }       
      </code>
    </pre>
@@ -308,6 +309,25 @@ que no pot variar perquè si varia, varia tot el número de pin</p>
     </ul>
     <p>Amb això aconseguiriem millor resolució o presició, és a dir, el termometre o sensor agafa més valors diferents (seria més precis). En aquest cas value/4095, sempre
     serà un número entre 0 i 1, ja que value sempre va entre 0 i 4095, i si el multiplico per 3300, tindre un número de 0 a 3300 millivolts.</p>
-    <p><b>float celsius = millivolts / 10;</b> float demana un número decimal</p>
+    <p><b>float celsius = millivolts / 10;</b> float demana un número decimal millivolts sempre donara entre 0 i
+    5000. Que passa si divideixo entre 10? Que converteix els millivolts en graus i van de 0 a 500 graus. 
+    <b>Serial.print(celsius);</b> aquest codi imprimeix a la pantalla el valor de la variable
+    celsius que anira des de 0 fins a 500 graus. A continuació, posem <b>Serial.println(" C");</b> que imprimeix
+    una linea (println significa Print Line), i si ho posem entre cometas la C (" C") ho imprimeix tal
+    qual a diferencia de si no posem cometes com celsius que apareix el valor de la variable, és a dir, és un
+    número que canvia. <b>Serial</b> és una forma de comunicar-se a través del USB o Comunicació Sèrie, i en molts
+    llenguatges de programació existeix la biblioteca "Serial" o la classe serial. Un llenguatge de programació
+    és un conjunt de biblioteques, una bilioteca és un conjunt de classes, i una classe conté diferents funcions.</p>
+    <p>Per exemple, Arduino era i és encara una classe del llenguatge Processing, i s'utilitza molt més Arduino com a
+    llenguatde de programació actualment. Si utilitzo processing i la biblioteca Arduino l'avantatge que tinc és
+    que puc utilitzar totes les biblioteques de visió per ordinador, d'intel·ligencia artifial, de l'ordinador
+    i fer aplicacions que només amb Arduino serien imposibles.</p>
+    <img src="lm35.png">
+    <p>La imatge anterior procedeix de la fulla de característiques de LM35, i es veu que té una resposta
+    lineal del voltatge i de la temperatura, de forma que a 2.9V ens donaria -55 graus i a 4.15V ens 
+    donaria 155 graus. Com fariem un codi de mapeig per això?</p>
+    float temp = map (value,0,1023,2900,4150)
+    float celsius = map (temp,2900,4150,-55,155)
+    
 </body>
 </html>
