@@ -334,7 +334,52 @@
       </ul>
     <h4> SPI </h4>
       <p> Exemple de SPI amb Arduino Uno </p>
-      <p> El pin 11 és un MOSI que significa Master Out Slaif In, i el pin 12 és MISO Master In Slaif Out
+      <p> El pin 11 és un MOSI que significa Master Out Slave In, i el pin 12 és MISO Master In Slave Out </p>
+    <p> El pin MOSi envia dades des de l'Arduino (Mestre o master) cap els perifèrics (Slaves o esclaus). Per exemple, si conectem un mòdul SD
+        o tarjeta de memòria o una pantalla o display SPI significa que les dades s'enviarien pel pin 11 o MOSI. </p>
+        <p> El pin MISO farà el contrari que el pin MOSI, o sigui, rep dades des d'un esclau cap a l'Arduino i l'esclau pot ser el mateix
+            que l'anterior, conectem una tarjeta de memòria o una pantalla </p>
+        <p> A més s'utilitzen altres pins com el SCK (o pin 13 d'Arduino Uno) que significa Serial Clock, que enviarà un senyal de rellotge, que serveix per sincronitzar 
+            la comunicació, l'Arduino és el mestre que genera aquest senyal que segueixen tots els esclaus. </p>
+        <p> El pin 10 és el pin SS que significa Slave Select, diu quin esclau esta actiu en un moment determinat. </p>
+        <p> Es necessiten 2 pins més d'alimentació que són el VCC de 5v o el GND que és el terra, que tanca el circuit. </p>
+        <p> A continuació veurem un codi per comprovar si la targeta SD està connectada correctament. </p>
+
+          <pre><code>
+          #include <SPI.h> // Afegim la biblioteca de C++ Arduino que controla el protocol de la comunicació SPI.
+          #include <SD.h> // Afegim o importem la biblioteca que controlen els arxius per "Read Write Rewrite Delete" es a dir, per llegir arxius
+          //escriure'ls borrar-los...
+          const int chipSelect = 10; // Fem que el pin 10 sigui un número enter i constant i s'annomeni "chipSelect" perquè controlarà la
+          // selecció de la targeta SD. Aquest pin serveix per activar la targeta SD, quan l'Arduino vol comunicar-se amb ella.
+          void  setup(){
+          Serial.begin(9600); // 9600 són bauds, els bauds són la quantitat de simbols transmesos per segon, en la comunicació serie 
+          // 1 baud = 1 bit/segon, però en alguns casos 1 baud pot ser més de 1 bit/segon.
+          Serial.print("Inicialitzant la targeta SD...") // Això significa que sortirà a la consola aquest missatge.
+          if(!SD.Begin(chipSelect)){ // ! nega, vol dir que si no s'inicia la targeta SD.
+          Serial.println("Error: no s'ha detectat la targeta SD"); // Si es compleix la condició anterior, posa aquest missatge a la consola.
+          return; // Significa que acabi la funció setup si la targeta no està disponible
+              } // Aquesta clau tanca el condicional si no detecta la SD.
+          Serial.println("Targeta SD detectada correctament");
+          File fitxer = SD.open("dades.txt"); // File és una classe d'objectes que gestiona arxius i quan escric un nom al costat com "fitxer" declaro 
+          // una variable per gestionar un fitxer. Si el fitxer exsisteix i es pot obrir correctement la paraula fitxer serà valida, en cas contrari, el fitxer
+          // donarà com a resposta null.
+          if (fitxer){ // Vol dir si el fitxer s'ha pogut obrir perquè és vàlid, executa el codi següent, i si no passa directament per else i mostra un error.
+          Serial.println("Llegint dades.txt..."); // T'està dient que a començat a llegir el fitxer.
+          Serial.begin(9600); // 9600 són bauds  o  els bauds
+          while(fitxer.available()){ // "Mentre que hagi dades per llegir dintre del fitxer"
+          Serial.write(fitxer.read()); // El que faria és mostrar el contingut del fitxer. El mètode read el que fa amb la sintaxi del punt aplicada al fitxer
+          // va llegint caracter per caracter i el mostra al monitor sèrie fins que no hi ha més caràcters.
+          fitxer.close (); // Sempre s'ha de tancar el fitxer quan no es necessita, per evitar errors i alliberar memòria.
+              } // Aquesta clau tanca el bloc de configuració o setup.
+          void loop (){ // Aquesta part el codi és la que s'executaria tota l'estona de forma repetitiva. No posariem per exemple llegir un fitxer, ja que
+          // estaria llegint tota l'estona sense pausa
+            
+              }
+          
+              
+           </code></pre>
+
+            
       
 
     <p>You can work with different software as you can read under Microcontrollers>Software for microcontollers in this
