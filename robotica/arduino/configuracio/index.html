@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG Audio Visualizer</title>
+    <title>Arduino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-
         /* Global styles */
         body {
             font-family: 'Orbitron', sans-serif;
@@ -125,6 +127,119 @@
 
         input[type="file"]::file-selector-button:hover {
             background-color: #00e6b8;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
+            padding: 10px 20px;
+            border-bottom: 4px solid #ffdd40;
+            z-index: 10;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #fff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .navbar-brand:hover {
+            color: #000 !important;
+        }
+
+        .navbar-brand img {
+            margin-right: 15px;
+            border-radius: 0;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            margin-right: 15px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffdd40 !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background-color: #ffdd40;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            background-color: #cc3f33;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .dropdown-item {
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #ff7f50;
+            color: #ffffff;
+        }
+
+        .content-container {
+            margin: 120px auto 50px auto;
+            padding: 40px;
+            max-width: 900px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            border-left: 8px solid #ffdd40;
+            border-right: 8px solid #ffdd40;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
