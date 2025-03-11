@@ -1,282 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+<html lang="en">  
+<head>   
+    <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>   
+    <script>hljs.highlightAll();</script>   
+    <title>Openair</title>   
+    <style>     
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #eef5ff, #d6e6ff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        } 
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
-  <script src="https://mszabo4.github.io/robotica/arduino/programacio/arduino.min.js"></script>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            padding: 10px 20px;
+            border-bottom: 4px solid #00d4ff;
+            z-index: 10;
+        } 
 
-  <script>hljs.highlightAll();</script>
-  <title>Openair</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #f8f9fa, #ffe4b5);
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+        .navbar-brand {
+            color: #fff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: color 0.2s ease-in-out;
+        } 
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
-      padding: 10px 20px;
-      border-bottom: 4px solid #ffdd40;
-      z-index: 10;
-    }
+        .navbar-brand:hover {
+            color: #000 !important;
+        } 
 
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      color: #fff !important;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: color 0.2s ease-in-out;
-    }
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            margin-right: 15px;
+            position: relative;
+            transition: color 0.3s ease;
+        } 
 
-    .navbar-brand:hover {
-      color: #000 !important;
-    }
+        .nav-link:hover {
+            color: #00d4ff !important;
+        } 
 
-    .navbar-brand img {
-      margin-right: 15px;
-      border-radius: 0;
-    }
+        .nav-link::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background-color: #00d4ff;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        } 
 
-    .nav-link {
-      color: #ffffff !important;
-      font-weight: 600;
-      margin-right: 15px;
-      position: relative;
-      transition: color 0.3s ease;
-    }
+        .nav-link:hover::after {
+            width: 100%;
+        } 
 
-    .nav-link:hover {
-      color: #ffdd40 !important;
-    }
+        .content-container {
+            margin: 120px auto 50px auto;
+            padding: 40px;
+            max-width: 900px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            border-left: 8px solid #00d4ff;
+            border-right: 8px solid #00d4ff;
+        } 
 
-    .nav-link::after {
-      content: '';
-      width: 0%;
-      height: 3px;
-      background-color: #ffdd40;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      transition: width 0.3s ease;
-    }
+        h1 {
+            color: #007bff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+        } 
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
+        .custom-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            text-transform: uppercase;
+        } 
 
-    .dropdown-menu {
-      background-color: #cc3f33;
-      border: none;
-      border-radius: 10px;
-    }
-
-    .dropdown-item {
-      color: #ffffff;
-      transition: background-color 0.3s ease;
-    }
-
-    .dropdown-item:hover {
-      background-color: #ff7f50;
-      color: #ffffff;
-    }
-
-    .content-container {
-      margin: 120px auto 50px auto;
-      padding: 40px;
-      max-width: 900px;
-      background-color: #ffffff;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
-      border-left: 8px solid #ffdd40;
-      border-right: 8px solid #ffdd40;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    h1 {
-      color: #ff4500;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      background-color: #ffe4b5;
-      margin-bottom: 10px;
-      padding: 10px 15px;
-      border-left: 5px solid #ff7f50;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    ul li:hover {
-      background-color: #f5f32f5;
-    }
-
-    a {
-      color: #ff4430;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      color: #ff8f92;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .content-container {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .navbar-brand {
-        font-size: 1.25rem;
-      }
-
-      ul li {
-        font-size: 1rem;
-      }
-    }
-
-    table {
-      width: 50%;
-      /* Ocupa el 50% de la anchura de la página */
-      border-collapse: collapse;
-      /* Evita que aparezcan dobles líneas en las filas */
-      margin: 20px auto;
-      /* Margen de 20px en la parte superior y centra la tabla */
-    }
-
-    th,
-    td {
-      border: 1px solid #ddd;
-      /* Añade un borde fino de un píxel de color gris claro a todas las celdas (th y td) */
-      padding: 10px;
-      /* Espacio interno dentro de cada celda */
-      text-align: center;
-      /* Centra el texto dentro de cada celda */
-    }
-
-    thead {
-      background: #f14f4;
-      /* Cambia el color de fondo del thead a gris claro */
-      font-weight: bold;
-      /* Hace que la cabecera de la tabla esté en negrita */
-    }
-
-    tbody tr:nth-child(even) {
-      /* Aplica estilo a las filas pares */
-      background-color: #f9f2f9;
-    }
-
-    tbody tr:hover {
-      /* Cambia el color de fondo al pasar el ratón por encima */
-      background-color: #e2123e2;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      left: 50%;
-      background: linear-gradient(135deg, #ffe012b2, #ff231cbc);
-      /* Fondo degradado */
-    }
-
-    .custom-button {
-      background-color: #e63946;
-      color: white;
-      border: none;
-      padding: 18px 36px;
-      /* Botón más grande */
-      font-size: 20px;
-      font-family: 'Arial', sans-serif;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-radius: 50px;
-      /* Bordes más redondeados */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .custom-button:hover {
-      background-color: #f236f61;
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    pre {
-      background: #f4f4f9;
-      padding: 10px;
-      overflow-x: auto;
-      position: relative;
-    }
-
-    code {
-      font-family: monospace;
-    }
-
-    .copy-btn {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      color: #007bff;
-    }
-  </style>
+        .custom-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        } 
+    </style> 
   <script>
     function copyCode(button) {
       const codeBlock = button.nextElementSibling.innerText;
