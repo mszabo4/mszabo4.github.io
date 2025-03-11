@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -312,13 +311,12 @@
               Programació
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="https://ecastro4.github.io/cara">Cara interactiva</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/ocell">Ocell</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/wepray">We Pray</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/coldplay">Coldplay</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/python">Python</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/astronomia">Astronomia</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/openair">Openair</a>
+              <a class="dropdown-item" href="https://mszabo4.github.io/cara">Cara interactiva</a>
+              <a class="dropdown-item" href="https://mszabo4.github.io/ocell">Ocell</a>
+              <a class="dropdown-item" href="https://mszabo4.github.io/wepray">We Pray</a>
+              <a class="dropdown-item" href="https://mszabo4.github.io/coldplay">Coldplay</a>
+              <a class="dropdown-item" href="https://mszaboo4.github.io/astronomia">Astronomia</a>
+              <a class="dropdown-item" href="https://mszabo4.github.io/openair">Openair</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -327,183 +325,329 @@
               Robòtica
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-              <a class="dropdown-item" href="https://ecastro4.github.io/robotica/cdirecta">Cinemàtica
+              <a class="dropdown-item" href="https://mszabo4.github.io/robotica/cdirecta">Cinemàtica
                 directa</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/robotica/cinversa">Cinemàtica
+              <a class="dropdown-item" href="https://mszaboo4.github.io/robotica/cinversa">Cinemàtica
                 inversa</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/robotica/coldplay">Coldplay</a>
-              <a class="dropdown-item" href="https://ecastro4.github.io/robotica/arduino">Arduino</a>
+              <a class="dropdown-item" href="https://mszabo4.github.io/robotica/coldplay">Coldplay</a>
+              <a class="dropdown-item" href="https://mszabo4.github.io/robotica/arduino">Arduino</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://ecastro4.github.io/enllaços">Enllaços</a>
           </li>
         </ul.n>
       </div>
     </div>
   </nav>
 
-<div class="content-container">
-  <h1>Codis de R: tidyverse, lares i openair</h1>
-  <p>El primer que fem és instalar les biblioteques necessàries: Tidyverse serveix per ordenar les dades
-    (Els i les analistes dediquem el 80% del temps a netejar i preprar les dades per a l’anàlisi.) Lares la utilitzem
-    nomès per aconseguir una instrucció de remplaçar tot de forma eficaç. Openair ens permet fer gràfics d'anàlisi de
-    contaminació
-    com variacions temporals, rosa dels vents de contaminació, gràfics de tendències plurianuals, etc.</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+  <div class="content-container">
+    <h1>Codis de R: tidyverse, lares i openair</h1>
+    <p>El primer que fem és instalar les biblioteques necessàries: Tidyverse serveix per ordenar les dades
+      (Els i les analistes dediquem el 80% del temps a netejar i preprar les dades per a l’anàlisi.) Lares la utilitzem
+      nomès per aconseguir una instrucció de remplaçar tot de forma eficaç. Openair ens permet fer gràfics d'anàlisi de
+      contaminació
+      com variacions temporals, rosa dels vents de contaminació, gràfics de tendències plurianuals, etc.</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
       install.packages(c("openair","tidyverse", "lares"))
     </code></pre>
 
-  <p>Pujem i guardem a la variable city totes les dades csv que hem descarregat del servidor XVPCA de la Generalitat que
-    conté les
-    dades de contaminants aeris en format horari propi de la Generalitat </p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
-      city<-read.csv('lleida.csv')
+    <p>Pujem i guardem a la variable city totes les dades csv que hem descarregat del servidor XVPCA de la Generalitat
+      que
+      conté les
+      dades de contaminants aeris en format horari propi de la Generalitat </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+      city<-read.csv('perafort.csv')
     </code></pre>
 
-  <p>Carreguem la llibreria tidyverse per poder-la utilitzar per instruccions com pivot. La paraula pivot és clau perquè
-    vol dir canviar files per columnes o columnes per files i reordenar totes les dades.</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Carreguem la llibreria tidyverse per poder-la utilitzar per instruccions com pivot. La paraula pivot és clau
+      perquè
+      vol dir canviar files per columnes o columnes per files i reordenar totes les dades.</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
       library (tidyverse)
   </code></pre>
 
-  <p>Pivot_longer i la seva contrària pivot_wider, transformen files en columnes de la nostra base de dades. </p>
-  <ul>
-    <li>Pivot_longer transforma les columnes en files, fent així la base de dades més llarga (longer).</li>
-    <li>Pivot_wider transforma les files en columnes fent la base de dades més ample (wider)</li>
-  </ul>
-  <p>Els atributs names_to i values_to ens indiquen en què transformem totes les dades</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Pivot_longer i la seva contrària pivot_wider, transformen files en columnes de la nostra base de dades. </p>
+    <ul>
+      <li>Pivot_longer transforma les columnes en files, fent així la base de dades més llarga (longer).</li>
+      <li>Pivot_wider transforma les files en columnes fent la base de dades més ample (wider)</li>
+    </ul>
+    <p>Els atributs names_to i values_to ens indiquen en què transformem totes les dades</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city1<-pivot_longer(city,cols=c(h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14, h15,h16,h17,h18,h19,h20,h21,h22,h23,h24), names_to="hour", values_to = "value")
   </code></pre>
 
-  <p>Creem una nova variable de base de dades o dataframe city2 eliminants amb -c les columnes 1,2,4 i de las 6 a las 16
-    perquè
-    no ens interesen les seves dades.</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Creem una nova variable de base de dades o dataframe city2 eliminants amb -c les columnes 1,2,4 i de las 6 a las
+      16
+      perquè
+      no ens interesen les seves dades.</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
       city2<-city1[-c(1,2,4,6:16)]
   </code></pre>
 
-  <p>Carreguem la llibreria dplyr per transformar dades que és una part de tidyverse</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Carreguem la llibreria dplyr per transformar dades que és una part de tidyverse</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     library(dplyr)
   </code></pre>
 
-  <p>Canviem el nom i la posició de les columnes gràcies a l'operador pipe (%>%) de dplyr que permet encadenar diverses
-    operacions</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Canviem el nom i la posició de les columnes gràcies a l'operador pipe (%>%) de dplyr que permet encadenar
+      diverses
+      operacions</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
       city2 <- city2 %>% mutate(date=paste0(data, " ", hour))
   </code></pre>
 
-  <p>Per coneixer el nom de les columnes del nostre dataframe o base de dades city2 hem d'escriure colnames</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Per coneixer el nom de les columnes del nostre dataframe o base de dades city2 hem d'escriure colnames</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     colnames (city2)
   </code></pre>
 
-  <p>Eliminem les columnes 1 i 3</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Eliminem les columnes 1 i 3</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city2<-city2[-c(1,3)]
   </code></pre>
 
-  <p>Reordenem les columnes perquè volem "date en primer lloc</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Reordenem les columnes perquè volem "date en primer lloc</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city2<-city2[,c(3,1,2)]
   </code></pre>
 
-  <p>Obliguem a posar noms a les columnes </p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Obliguem a posar noms a les columnes </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     colnames (city2)<-c("date","pollutant","value")
   </code></pre>
 
-  <p>Comprovem que city2 és un dataframe perquè si no no podré treballar correctament</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Comprovem que city2 és un dataframe perquè si no no podré treballar correctament</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     class (city2)
   </code></pre>
 
-  <p>Obliguem a que sigue un dataframe amb la següent instrucció:</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Obliguem a que sigue un dataframe amb la següent instrucció:</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city2 <- as.data.frame(city2)
   </code></pre>
 
-  <p>Carreguem la llibreria lares per utilitzar una instrucció</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Carreguem la llibreria lares per utilitzar una instrucció</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     library (lares)
   </code></pre>
 
-  <p>la instrucció replaceall de lares aconsegueix fer 24 sustitucions moltes vegades diferents, fent milions de
-    sustitucions sense penja-se</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>la instrucció replaceall de lares aconsegueix fer 24 sustitucions moltes vegades diferents, fent milions de
+      sustitucions sense penja-se</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
       city2<-replaceall(city2, c("T00:00:00.000 h01", "T00:00:00.000 h02","T00:00:00.000 h03","T00:00:00.000 h04","T00:00:00.000 h05","T00:00:00.000 h06","T00:00:00.000 h07","T00:00:00.000 h08","T00:00:00.000 h09","T00:00:00.000 h10","T00:00:00.000 h11","T00:00:00.000 h12","T00:00:00.000 h13","T00:00:00.000 h14","T00:00:00.000 h15","T00:00:00.000 h16","T00:00:00.000 h17","T00:00:00.000 h18","T00:00:00.000 h19","T00:00:00.000 h20","T00:00:00.000 h21","T00:00:00.000 h22","T00:00:00.000 h23","T00:00:00.000 h24"), c(" 01:00:00", " 02:00:00", " 03:00:00", " 04:00:00"," 05:00:00", " 06:00:00"," 07:00:00", " 08:00:00"," 09:00:00", " 10:00:00"," 11:00:00", " 12:00:00"," 13:00:00", " 14:00:00"," 15:00:00", " 16:00:00"," 17:00:00", " 18:00:00"," 19:00:00", " 20:00:00"," 21:00:00", " 22:00:00"," 23:00:00", " 00:00:00"))
   </code></pre>
 
-  <p>Carreguem la bibliotexa openair per carregar instruccions</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Carreguem la bibliotexa openair per carregar instruccions</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     library(openair)
   </code></pre>
 
-  <p>Comprovem quin tipus de class és la columna de les dades, al principi ens dira character i desprès del codi seüent
-    serà posix.ct</p>
-  <p>les dates tenen format ISO, que és: any-mes-dia hora:minut:segon</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Comprovem quin tipus de class és la columna de les dades, al principi ens dira character i desprès del codi
+      seüent
+      serà posix.ct</p>
+    <p>les dates tenen format ISO, que és: any-mes-dia hora:minut:segon</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     class(city2$date)
   </code></pre>
 
-  <p>Hem de convertir els caràcters de la columna date en una data amb anys, mesos, dies, hores minuts i segons. </p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Hem de convertir els caràcters de la columna date en una data amb anys, mesos, dies, hores minuts i segons. </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city2$date<-as.POSIXct(city2$date,"%Y-%m-%d %H:%M:%S", tz="Europe/Madrid")
   </code></pre>
 
-  <p>La columna pollutant té escrits els noms dels contaminants i l'ordinador els detecta com a caràcters i hem
-    d'aconseguir que siguin factors,
-    és a dir, elements que quan tenen els mateixos caràcters són considerats iguals, per exemple no2 sempre serà el
-    mateix i no la suma dels caràcters n, o, 2.
-  </p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>La columna pollutant té escrits els noms dels contaminants i l'ordinador els detecta com a caràcters i hem
+      d'aconseguir que siguin factors,
+      és a dir, elements que quan tenen els mateixos caràcters són considerats iguals, per exemple no2 sempre serà el
+      mateix i no la suma dels caràcters n, o, 2.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city2$pollutant<-as.factor(city2$pollutant)
   </code></pre>
 
-  <p>Els levels ens serveixen per conèixer tots els factors que hi han dintre de la columa pollutant, és a dir tots els
-    contaminants</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Els levels ens serveixen per conèixer tots els factors que hi han dintre de la columa pollutant, és a dir tots
+      els
+      contaminants</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
       levels(city2$pollutant)
   </code></pre>
 
-  <p>Creem una nova variable on posem ampliant tots els contaminants en més columnes, de forma què els contaminants que
-    eren factors
-    que estaven a la mateixa columna ara estàn tots en diferents columnes
-  </p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Creem una nova variable on posem ampliant tots els contaminants en més columnes, de forma què els contaminants
+      que
+      eren factors
+      que estaven a la mateixa columna ara estàn tots en diferents columnes
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city3<-pivot_wider(city2,names_from = pollutant, values_from = value)
   </code></pre>
 
-  <p>Convertim city 3 en un dataframe</p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>Convertim city 3 en un dataframe</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
     city3 <- as.data.frame(city3)
   </code></pre>
-</div>
-<p>La funció timeVariation és una funció de Openair que obliga a que existeixi diverses columnes amb minúscules,
- cada columna en minúscules correspon a un pollutant. L'atribut main és un atribut de moltes funcions de Openair i correspon al títol del gràfic. 
- La funció time timeVariation pot ser un valor únic (pollutant = "o3") o un vector R (pollutant = c("o3", "no2", etc.))</p>
- trendLevel(city2, pollutant = "H2S", main="Hydrogen sulfide evolution in Martorell")
 
-<div class="content-container">
-  <h1>Codis de Python: pandas</h1>
-  <p></p>
-  <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    <p>La funció timeVariation és una funció de Openair que obliga a que existeixi diverses columnes amb minúscules,
+      cada columna en minúscules
+      correspon a un pollutant. L'atribut main és un atribut de moltes funcions de openair i correspon al títol del
+      gràfic. La funció time timeVariation
+      pot contenir diversos arguments, el primer és el nom del dataframe o cinjunt de dades a analitzar, el segon
+      argument sempre és pollutant i
+      pot ser un valor únic (pollutant = "o3") o un vector R (pollutant = c("o3", "no2",...)), el tercer argument és
+      main, altres arguments es
+      veuen al tutorial de R. És pot utilitzar filter per filtrar les dades xlab i ylab (les etiquetes "label" o títols
+      del eix x i del eix y),
+      es pot agrupar per anys o per dates o es pot normalitzar en base 100 com a màxim en diferents arguments.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    timeVariation(city4, pollutant=c("o3","no2","h2s","no","hcnm","co","so2","hct","nox","pm10","pm2.5"), main="Air pollution in Lleida (1991-2024)")
   </code></pre>
-</div>
+    <img src="TrenLevel.png" width="800" height="500">
 
-<div class="content-container">
-  <h1>Descàrrega</h1>
-  <p>També teniu l'opció de 	
-    <a href="https://ecastro4.github.io/openair/lleida.zip" download="lleida.zip">descarregar</a> un ZIP amb tot el projecte que he fet en RStudio</p>
-</div>
+    <p>S'utilitza trendLevel per veure les tendències i la evolució temporal de diversos anys.</p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    trendLevel(city4, pollutant = "h2s", main="Hydrogen sulfide evolution in Lleida")
+  </code></pre>
+    <img src="trendLevel.png" width="800" height="500">
 
-        <!-- Scripts necessaris -->
+    <p>Hem de fer una mitjana diària i ho fem amb un tiemAverage, què és una funció que està en Openair i que
+      permet tot tipus de timeAverage (dies, mesos, setmanes, anys...). Aquesta funció té un problema, dona l'hora de
+      cada dia 00:00:00 i volem
+      que solament surti el dia.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    daily<-timeAverage(city4,avg.time = "day")
+  </code></pre>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <p>Per a que surti el dia hem d'utilitzar el següent codi que elimina o reemplaça la hora 00:00:00 per res, amb la
+      funció replaceAll de la
+      biblioteca lares, però primer hem de carregar la biblioteca.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    library (lares)
+    daily<-replaceall(daily, c("00:00:00"), c(""))
+  </code></pre>
+
+    <p>Hem de convertir els caràcter a POSIXct que és un tipus de data internacional ISO 8601, significa: ANY-MES- DIA
+      HORA:MINUT:SEGON en aquest
+      cas nomès els tres primers. La classe POSIXct emmagatzema les dates com un número enter que són els segons que han
+      passat des del 1 de gener
+      de 1970. La classe POSIXlt l'emmagatzema en diversos números i la classe Date no sempre funciona perquè
+      emmagatzema el
+      número de dies desde el 1 de gener de 1870. Hi ha una biblioteca R molt coneguda quan hi ha problemes en dates, es
+      diu <b>lubridate</b>.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    daily$date<-as.POSIXct(daily$date,"%Y-%m-%d", tz="Europe/Madrid")
+  </code></pre>
+
+    <p>El calendarPlot ens permet veure un calendari molt personalitzable, puc fer que en vegin per defecte més
+      contaminació amb més color vermell
+      o canviar l'esquema de color o posar en comptes del dia del mes el nivell de contaminant en números.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    calendarPlot(daily, pollutant="no2", year="2024")
+  </code></pre>
+    <img src="CalendarPlot.png" width="800" height="500">
+
+    <p>El timePlot l'apliquem emb les dades anuals i peraixò abans hem de primer la mitjana anual, esborrar amb
+      replaceall els -01-01 que apareixen,
+      convertir-lo en un caràcter per desprès convertir-lo en un POSIXct.
+    </p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-r">
+    yearly<-timeAverage(daily,avg.time = "year")
+    yearly<-replaceall(daily, c("-01-01"), c(""))
+    yearly$date<-as.POSIXct(yearly$date,"%Y-%m-%d", tz="Europe/Madrid")
+    yearly2<-timeAverage(yearly,avg.time = "year")
+    yearly2<-replaceall(yearly2, c("-01-01"), c(""))
+    yearly2$date<-as.character(yearly2$date)
+    yearly2$date<-as.POSIXct(yearly2$date,"%Y", tz="Europe/Madrid")
+    timePlot(yearly2, pollutant =  c("co", "h2s", "hcnm", "hct","no", "no2", "nox", "o3", "pm10", "pm2.5", "so2"), avg.time = "year", lwd= 2, lty=1, group = TRUE, main="Lleida line Plot", ref.y = list(h = c(40, 20, 10), lty = c(1, 2, 3), lwd=c(3, 3, 3) ))
+  </code></pre>
+    <img src="CalendarPlot.png" width="800" height="500">
+
+
+  </div>
+
+  <div class="content-container">
+    <h1>Codis de Python: pandas</h1>
+    <p></p>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-python">
+    
+# Instal·lem llibreries necessàries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Pas 1: Pujar el fitxer CSV
+from google.colab import files
+uploaded = files.upload()
+
+# Pas 2: Carregar les dades
+filename = list(uploaded.keys())[0]
+df = pd.read_csv(filename)
+
+# Pas 3: Convertim la columna 'data' a format datetime
+df['data'] = pd.to_datetime(df['data'])
+
+# Pas 4: Transformem les hores en columnes a una sola mitjana diària
+hores = [f'h{i:02d}' for i in range(1, 25)]
+df['mitjana_diària'] = df[hores].mean(axis=1)
+
+# Pas 5: Afegim columnes 'any' i 'mes'
+df['any'] = df['data'].dt.year
+df['mes'] = df['data'].dt.month
+
+# Pas 6: Càlcul de les mitjanes anuals per cada contaminant
+mitjanes_anuals = df.groupby(['any', 'contaminant'])['mitjana_diària'].mean().reset_index()
+
+# Pas 7: Càlcul de les mitjanes mensuals i anuals només per 2024
+df_2024 = df[df['any'] == 2024]
+mitjanes_mensuals_2024 = df_2024.groupby(['mes', 'contaminant'])['mitjana_diària'].mean().reset_index()
+mitjana_anual_2024 = df_2024.groupby('contaminant')['mitjana_diària'].mean().reset_index()
+
+# Pas 8: Visualització de resultats
+# Mitjanes anuals
+plt.figure(figsize=(15, 7))
+for contaminant in mitjanes_anuals['contaminant'].unique():
+    data = mitjanes_anuals[mitjanes_anuals['contaminant'] == contaminant]
+    plt.plot(data['any'], data['mitjana_diària'], marker='o', label=contaminant)
+plt.title('Mitjanes Anuals per Contaminant')
+plt.xlabel('Any')
+plt.ylabel('Mitjana Diària (µg/m3 o mg/m3)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Pas 9: Guardar els resultats en fitxers CSV
+mitjanes_anuals.to_csv('mitjanes_anuals.csv', index=False)
+mitjanes_mensuals_2024.to_csv('mitjanes_mensuals_2024.csv', index=False)
+mitjana_anual_2024.to_csv('mitjana_anual_2024.csv', index=False)
+
+# Pas 10: Descarregar els fitxers
+from google.colab import files
+files.download('mitjanes_anuals.csv')
+files.download('mitjanes_mensuals_2024.csv')
+files.download('mitjana_anual_2024.csv')
+  </code></pre>
+    <img src="Captura de pantalla 2025-03-11 140334.png" width="800" height="500">
+  </div>
+  <div>
+  <img src="Rose.png" width="800" height="500">
+  <img src="polarPlot_no2.png" width="800" height="500">
+
+
+  <div class="content-container">
+    <h1>Descàrrega</h1>
+    <p>També teniu l'opció de
+      <a href="https://ecastro4.github.io/openair/lleida.zip" download="lleida.zip">descarregar</a> un ZIP amb tot el
+      projecte que he fet en RStudio
+    </p>
+  </div>
+
+  <!-- Scripts necessaris -->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
 </body>
 
