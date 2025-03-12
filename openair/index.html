@@ -56,7 +56,35 @@
             from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
             to { text-shadow: 0 0 20px #00e6b8, 0 0 30px #00e6b8, 0 0 40px #00ffcc; }
         }
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
 
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.8); /* Fondo de la pista de la barra de desplazamiento */
+    border-radius: 10px;
+    border: 2px solid #00ffcc; /* Borde neón */
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Sombra neón */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ffcc; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 10px;
+    border: 2px solid #00e6b8; /* Borde neón */
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Sombra neón */
+    transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00e6b8; /* Cambio de color al pasar el ratón */
+}
+
+/* Estilos para Firefox */
+* {
+    scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+    scrollbar-color: #00ffcc rgba(0, 0, 0, 0.8); /* Color del pulgar y de la pista */
+}
         .controls {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
