@@ -11,103 +11,129 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>   
     <script>hljs.highlightAll();</script>   
     <title>Openair</title>   
-    <style>     
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        /* Global styles */
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #eef5ff, #d6e6ff);
-            color: #333;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #00ffcc;
             margin: 0;
             padding: 0;
-        } 
+            overflow: hidden;
+        }
 
-        .navbar {
-            position: fixed;
+        /* Animated Background */
+        body::before {
+            content: "";
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            background: linear-gradient(45deg, #007bff, #0056b3);
-            padding: 10px 20px;
-            border-bottom: 4px solid #00d4ff;
-            z-index: 10;
-        } 
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.2), rgba(0, 78, 146, 0.2));
+            z-index: -1;
+            filter: blur(100px);
+            animation: gradientMovement 8s infinite alternate;
+        }
 
-        .navbar-brand {
-            color: #fff !important;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            transition: color 0.2s ease-in-out;
-        } 
-
-        .navbar-brand:hover {
-            color: #000 !important;
-        } 
-
-        .nav-link {
-            color: #ffffff !important;
-            font-weight: 600;
-            margin-right: 15px;
-            position: relative;
-            transition: color 0.3s ease;
-        } 
-
-        .nav-link:hover {
-            color: #00d4ff !important;
-        } 
-
-        .nav-link::after {
-            content: '';
-            width: 0%;
-            height: 3px;
-            background-color: #00d4ff;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        } 
-
-        .nav-link:hover::after {
-            width: 100%;
-        } 
-
-        .content-container {
-            margin: 120px auto 50px auto;
-            padding: 40px;
-            max-width: 900px;
-            background-color: #ffffff;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            border-left: 8px solid #00d4ff;
-            border-right: 8px solid #00d4ff;
-        } 
+        @keyframes gradientMovement {
+            0% { transform: translate(-20px, -20px); }
+            100% { transform: translate(20px, 20px); }
+        }
 
         h1 {
-            color: #007bff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-        } 
+            font-size: 2.8rem;
+            margin-top: 30px;
+            color: #00ffcc;
+            text-shadow: 0 0 15px #00ffcc, 0 0 25px #00e6b8, 0 0 35px #00ffcc;
+            animation: neonPulse 1.5s infinite alternate;
+        }
 
-        .custom-button {
-            background-color: #007bff;
-            color: white;
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+            to { text-shadow: 0 0 20px #00e6b8, 0 0 30px #00e6b8, 0 0 40px #00ffcc; }
+        }
+
+        .controls {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+            display: inline-block;
+            margin-top: 15px;
+            border: 2px solid #00ffcc;
+            animation: borderGlow 2s infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            from { border-color: #00e6b8; }
+            to { border-color: #00ffcc; }
+        }
+
+        label {
+            font-size: 1.4rem;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00e6b8;
+        }
+
+        select, input[type="file"] {
+            background: #0d0d0d;
+            color: #00ffcc;
+            border: 2px solid #00e6b8;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ffcc;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        select:hover, input[type="file"]::file-selector-button:hover {
+            background-color: #00e6b8;
+            color: #0d0d0d;
+        }
+
+        audio {
+            margin-top: 15px;
+            filter: drop-shadow(0 0 10px #00ffcc);
+        }
+
+        svg {
+            display: block;
+            margin: 30px auto;
+            width: 80%;
+            height: auto;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 25px #00ffcc;
+            border: 2px solid #00e6b8;
+            animation: borderGlow 2s infinite alternate;
+        }
+
+        option {
+            background-color: #0d0d0d;
+        }
+
+        input[type="file"]::file-selector-button {
+            background-color: #00ffcc;
+            color: #0d0d0d;
             border: none;
-            padding: 18px 36px;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 5px 15px;
             font-weight: bold;
-            text-transform: uppercase;
-        } 
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #00ffcc;
+        }
 
-        .custom-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        } 
-    </style> 
+        input[type="file"]::file-selector-button:hover {
+            background-color: #00e6b8;
+        }
+    </style>
   <script>
     function copyCode(button) {
       const codeBlock = button.nextElementSibling.innerText;
