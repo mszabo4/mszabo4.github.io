@@ -1,167 +1,138 @@
-<!DOCTYPE html> 
-<html lang="en">  
-<head>   
-    <meta charset="UTF-8">   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>   
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>   
-    <script>hljs.highlightAll();</script>   
-    <title>Openair</title>   
-     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-        /* Global styles */
-        body {
-            font-family: 'Orbitron', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #000428, #004e92);
-            color: #00ffcc;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
+    /* Global styles */
+    body {
+        font-family: 'Orbitron', sans-serif;
+        text-align: center;
+        background: linear-gradient(135deg, #000428, #004e92);
+        color: #00ffcc;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
 
-        /* Animated Background */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 255, 204, 0.2), rgba(0, 78, 146, 0.2));
-            z-index: -1;
-            filter: blur(100px);
-            animation: gradientMovement 8s infinite alternate;
-        }
+    /* Animated Background */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0, 255, 204, 0.2), rgba(0, 78, 146, 0.2));
+        z-index: -1;
+        filter: blur(100px);
+        animation: gradientMovement 8s infinite alternate;
+    }
 
-        @keyframes gradientMovement {
-            0% { transform: translate(-20px, -20px); }
-            100% { transform: translate(20px, 20px); }
-        }
+    @keyframes gradientMovement {
+        0% { transform: translate(-20px, -20px); }
+        100% { transform: translate(20px, 20px); }
+    }
 
-        h1 {
-            font-size: 2.8rem;
-            margin-top: 30px;
-            color: #00ffcc;
-            text-shadow: 0 0 15px #00ffcc, 0 0 25px #00e6b8, 0 0 35px #00ffcc;
-            animation: neonPulse 1.5s infinite alternate;
-        }
+    h1 {
+        font-size: 2.8rem;
+        margin-top: 30px;
+        color: #00ffcc;
+        text-shadow: 0 0 15px #00ffcc, 0 0 25px #00e6b8, 0 0 35px #00ffcc;
+        animation: neonPulse 1.5s infinite alternate;
+    }
 
-        @keyframes neonPulse {
-            from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
-            to { text-shadow: 0 0 20px #00e6b8, 0 0 30px #00e6b8, 0 0 40px #00ffcc; }
-        }
-/* Estilos para la barra de desplazamiento */
-::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */
-}
+    @keyframes neonPulse {
+        from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+        to { text-shadow: 0 0 20px #00e6b8, 0 0 30px #00e6b8, 0 0 40px #00ffcc; }
+    }
 
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.8); /* Fondo de la pista de la barra de desplazamiento */
-    border-radius: 10px;
-    border: 2px solid #00ffcc; /* Borde neón */
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Sombra neón */
-}
+    .controls {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+        display: inline-block;
+        margin-top: 15px;
+        border: 2px solid #00ffcc;
+        animation: borderGlow 2s infinite alternate;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #00ffcc; /* Color del pulgar de la barra de desplazamiento */
-    border-radius: 10px;
-    border: 2px solid #00e6b8; /* Borde neón */
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Sombra neón */
-    transition: background 0.3s;
-}
+    @keyframes borderGlow {
+        from { border-color: #00e6b8; }
+        to { border-color: #00ffcc; }
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #00e6b8; /* Cambio de color al pasar el ratón */
-}
+    label {
+        font-size: 1.4rem;
+        color: #00ffcc;
+        text-shadow: 0 0 10px #00e6b8;
+    }
 
-/* Estilos para Firefox */
-* {
-    scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
-    scrollbar-color: #00ffcc rgba(0, 0, 0, 0.8); /* Color del pulgar y de la pista */
-}
-        .controls {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
-            display: inline-block;
-            margin-top: 15px;
-            border: 2px solid #00ffcc;
-            animation: borderGlow 2s infinite alternate;
-        }
+    select, input[type="file"] {
+        background: #0d0d0d;
+        color: #00ffcc;
+        border: 2px solid #00e6b8;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #00ffcc;
+        outline: none;
+        transition: 0.3s;
+    }
 
-        @keyframes borderGlow {
-            from { border-color: #00e6b8; }
-            to { border-color: #00ffcc; }
-        }
+    select:hover, input[type="file"]::file-selector-button:hover {
+        background-color: #00e6b8;
+        color: #0d0d0d;
+    }
 
-        label {
-            font-size: 1.4rem;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00e6b8;
-        }
+    option {
+        background-color: #0d0d0d;
+    }
 
-        select, input[type="file"] {
-            background: #0d0d0d;
-            color: #00ffcc;
-            border: 2px solid #00e6b8;
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #00ffcc;
-            outline: none;
-            transition: 0.3s;
-        }
+    input[type="file"]::file-selector-button {
+        background-color: #00ffcc;
+        color: #0d0d0d;
+        border: none;
+        padding: 5px 15px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+        box-shadow: 0 0 10px #00ffcc;
+    }
 
-        select:hover, input[type="file"]::file-selector-button:hover {
-            background-color: #00e6b8;
-            color: #0d0d0d;
-        }
+    input[type="file"]::file-selector-button:hover {
+        background-color: #00e6b8;
+    }
 
-        audio {
-            margin-top: 15px;
-            filter: drop-shadow(0 0 10px #00ffcc);
-        }
+    /* Estilos para la barra de desplazamiento */
+    ::-webkit-scrollbar {
+        width: 12px; /* Ancho de la barra de desplazamiento */
+    }
 
-        svg {
-            display: block;
-            margin: 30px auto;
-            width: 80%;
-            height: auto;
-            max-width: 500px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            box-shadow: 0 0 25px #00ffcc;
-            border: 2px solid #00e6b8;
-            animation: borderGlow 2s infinite alternate;
-        }
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.8); /* Fondo de la pista de la barra de desplazamiento */
+        border-radius: 10px;
+        border: 2px solid #00ffcc; /* Borde neón */
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Sombra neón */
+    }
 
-        option {
-            background-color: #0d0d0d;
-        }
+    ::-webkit-scrollbar-thumb {
+        background: #00ffcc; /* Color del pulgar de la barra de desplazamiento */
+        border-radius: 10px;
+        border: 2px solid #00e6b8; /* Borde neón */
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Sombra neón */
+        transition: background 0.3s;
+    }
 
-        input[type="file"]::file-selector-button {
-            background-color: #00ffcc;
-            color: #0d0d0d;
-            border: none;
-            padding: 5px 15px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-            box-shadow: 0 0 10px #00ffcc;
-        }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #00e6b8; /* Cambio de color al pasar el ratón */
+    }
 
-        input[type="file"]::file-selector-button:hover {
-            background-color: #00e6b8;
-        }
-    </style>
+    /* Estilos para Firefox */
+    * {
+        scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+        scrollbar-color: #00ffcc rgba(0, 0, 0, 0.8); /* Color del pulgar y de la pista */
+    }
+</style>
   <script>
     function copyCode(button) {
       const codeBlock = button.nextElementSibling.innerText;
