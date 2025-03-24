@@ -6,6 +6,8 @@ function setup()
 }
 
 function draw() {
+  let x = 100 * noise(0.005 * frameCount);
+  let y = 100 * noise(0.005 * frameCount + 10000);
   let vol= mic.getLevel();
   let vulls= map(vol,0,1,0,100);
   let vboca= map(vol,0,1,0,300);
@@ -24,5 +26,10 @@ function draw() {
   ellipse(350,150,10*cos(frameCount*0.1)+15,15);
   fill(200,15,15);
   arc(300,250,200,3+vboca,0,PI,CHORD);
- 
+  fill(255);
+  ellipse(90,100,20,35);
+  ellipse(90,100,20,35);
+
+  fill(0);
+  ellipse(100,100,15,30);
 }
