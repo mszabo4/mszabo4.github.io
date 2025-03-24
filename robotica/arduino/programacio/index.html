@@ -680,6 +680,49 @@ void loop() {
                 flash amb dos peràmetres que eren números enters anomenat ledPin i de delayPeriod que identifiquen el pin que està connectat i el 
                 temps que ha d'estar encès o apagat.
             </p>
+        
+        <div class="content-container">
+        <p>L'objectiu del codi següent és entendre que les cadenes o strings són conjunts de caràcters ASCII i podem accedir
+        amb ells amb arrays que estan formats per parèntesis quadrats i el primer element és el 0. En llenguatge C i derivats
+        del C com Arduino podem utilitzar punters o pointers que permeten apuntar a un element. En python o JavaScript no hi ha punters</p>
+        <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+        <table>
+        <thead>
+        <tr>
+        <th>ASCII</th>
+        <th>DECIMAL</th>
+        <th>BINARI</th>
+        </tr>
+        <tr>
+        <tbody>
+        <tr>
+            <td>A-Z</td>
+            <td>65-90</td>
+            <td>0b000001-0b1011010</td>
+         </tr>
+        <tr>
+            <td>a-z</td>
+            <td>97-122</td>
+            <td></td>
+        </tr>
+        </tbody>
+        </thead>
+        </table>
+        <div class="content-container">
+
+            // sketch 05-03
+
+           char message[] = "Hello";
+
+           void setup() {
+           Serial.begin(9600);
+           message[0] = 'h';
+           }
+
+           void loop() {
+           Serial.println(message);
+           delay(1000);
+            }
         </div>
 
         <!-- Scripts necessaris -->
