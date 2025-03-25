@@ -680,12 +680,145 @@ void loop() {
                 flash amb dos peràmetres que eren números enters anomenat ledPin i de delayPeriod que identifiquen el pin que està connectat i el 
                 temps que ha d'estar encès o apagat.
             </p>
+          <p> Ara farem que un bucle for ss'executi 20 o x vegades dintre d'unbucle for localitzat dintre d'un bucle infinit loop. Ho aconseguim 
+                amb la paraula clau static, que fa que una variable s'inicialitzi una vegada que correm el codi  i mai més. La paraula static es deriva 
+                del llenguatge C i Arduino és un derviat de C++ i Processing, </p>
+        <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+            // 03_03_blink_20_faulty
+
+const int ledPin = 13;
+const int delayPeriod = 250;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  int count = 0;
+  digitalWrite(ledPin, HIGH);
+  delay(delayPeriod);
+  digitalWrite(ledPin, LOW);
+  delay(delayPeriod);
+  count ++;
+  if (count == 20) {
+    count = 0;
+    delay(3000);
+  }
+}
+            </code></pre>
+        </div>
+
+        <div class="content-container">
+            <h1>Arrays i Strings</h1>
+            <p>Una Array és una forma de contenir un llistat de valors, moltes vegades són valors enters i s'accedeix amb ells per la 
+                seva posició, sent la primera posició [0] del array o element 0. El codi següent el que fa és a la primera linia defineix una 
+                array amb 9 valors, i els imprimeix en el monitor sèrie els seus valors. Serà útil pel nostre codi morse.
+            </p>
+            <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+                
+int durations[] = {200, 200, 200, 500, 500, 500, 200, 200, 200};
+
+void setup() {
+  Serial.begin(9600);  
+  for (int i = 0; i < 9; i++) {
+    Serial.println(durations[i]);
+  }
+}
+
+void loop() {
+
+}
+            </code></pre>
+        </div>
         
+        <div class="content-container">
+            <p>El codi següent ja és un codi morse, perquè combina una array, un bucle for que llegeix l'array i l'aplica a la funció flash, 
+                d'aquesta forma és com si escrivis flash(200), flash(200), flash(200), flash(500), flash(500), flash(500), flash(200), flash(200), flash(200).
+            </p>
+        <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+const int ledPin = 13;
+
+int durations[] = {200, 200, 200, 500, 500, 500, 200, 200, 200};
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop()  {
+  for (int i = 0; i < 9; i++) {
+    flash(durations[i]);
+  }
+  delay(1000);
+}
+
+void flash(int duration) {
+   digitalWrite(ledPin, HIGH);
+   delay(duration);
+   digitalWrite(ledPin, LOW);
+   delay(duration);
+}
+        </code></pre>
+        </div>
+
+        <div class="content-container">
+            <p>Puc crear una funció que em serveix per quatre lletres i nomès quan la crido he de posar el número de repeticions com 
+                paràmetres o arguments</p>
+        </div>
+
+        <div class="content-container">
+            <h1>Normes internacionals de codi Morse</h1>
+            <ul>
+                <li>Una línia (dash) és igual a tres punts</li>
+                <li>L'espai entre les parts d'una meteixa lletra és igual a un punt (dot). (S = ···, l'espai entre cada punt és un punt)</li>
+                <li>L'espai entre dues lletres de la mateixa paraula són tres punts (Per exemple entre las S i la O de SOS)</li>
+                <li>L'espai entre dues parules és igual a set punts (Pa ······· tomàquet)</li> 
+            </ul>
+            <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+                void eosz (int numFlashes) {
+                    for (int i = 0; i < numFlashes; i++) {
+                        digitalWrite(ledPin, HIGH);
+                        delay(200);
+                        digitalWrite(ledPin, LOW);
+                        delay(200);
+                    }
+                }
+
+                void loop(){
+                    eosz(1); // Això és la lletra e
+                    eosz(3); // Això és la lletra s
+                    eosz(2); // Això és la lletra o
+                }
+            </code></pre>
+
+            <p>Crearem una funció que serà vàlida pels punts repetits i per les linies repetides amb dos paràametres.</p>
+
+            <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+
+
+                void eosztmo (int numFlashes, int d) {
+                    for (int i = 0; i < numFlashes; i++) {
+                        digitalWrite(ledPin, HIGH);
+                        delay(d);
+                        digitalWrite(ledPin, LOW);
+                        delay(d);
+                    }
+                }
+
+                void loop(){
+                    eosztmo(1, 600); //Això és la t
+                    eosztmo(3, 600); //Això és la o
+                    eosztmo(3, 200); //Això és la s
+                    eosztmo(1, 200); //Això és la e
+                }
+            </code></pre>
+        </div>
         <div class="content-container">
         <p>L'objectiu del codi següent és entendre que les cadenes o strings són conjunts de caràcters ASCII i podem accedir
         amb ells amb arrays que estan formats per parèntesis quadrats i el primer element és el 0. En llenguatge C i derivats
         del C com Arduino podem utilitzar punters o pointers que permeten apuntar a un element. En python o JavaScript no hi ha punters</p>
-        <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+       <p>A continuació veuras els caracter ASCII en una taula, que son els utilitzats en els strings o cadenes</p>
+       <p>La taula següent està basada en un codi binari de 7 bits, perque 2 elevat a 7 (2^7) es 128, hi hauran desde 0 a 
+               127 caràcters diferents</p>
         <table>
         <thead>
         <tr>
@@ -713,12 +846,17 @@ void loop() {
         </tr>
         </tbody>
         </table>
-            <p>ASCII significa American Standard Code for Information Interchane</p>
+        <p>ASCII significa American Standard Code for Information Interchange i va ser descrit a l'any 1967 amb l'objectiu 
+            d'intercambiar informació amb ordinadors</p>
+        <p>UTF8 és un sistema Unicode Transformation Format que permet escriure més d'un milió de caràcters diferents
+            “🙂” U+1F642</p>       
         <div class="content-container">
+        <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+
 
             // sketch 05-03
 
-           char message[] = "Hello";
+           char message[] = "Hello"; //Hi ha u
 
            void setup() {
            Serial.begin(9600);
