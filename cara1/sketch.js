@@ -10,8 +10,8 @@ function setup() {
 }
 
 function draw() {
- let faceX=300;
- let faceY=200;
+ let faceX=mouseX;
+ let faceY=mouseY;
  let leftEyeSize = 30+10*cos(frameCount*0.1);//mida variable segons el temps
  let rightEyeSize = 30+10*sin(frameCount*0.1);//mida variable segons el temps
  let vol=mic.getLevel(); //Apliquem el mètode "getLevel" que ens donarà el nivell de volum entre 0 i 1
