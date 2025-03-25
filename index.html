@@ -17,15 +17,9 @@
   <script>hljs.highlightAll();</script>
   <title>Web principal</title>
   <style>
-Aquí tienes un nuevo estilo completamente diferente, con un diseño moderno, minimalista y con un toque futurista.  
-
----
-
-### **Nuevo Estilo Moderno y Futurista**
-```css
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle, #0a0f24 20%, #050a1a 80%);
+  background: radial-gradient(circle, #0a0f24 30%, #050a1a 100%);
   color: #e5e7eb;
   margin: 0;
   padding: 0;
@@ -34,20 +28,21 @@ body {
   align-items: center;
 }
 
+/* Navbar con efecto Glassmorphism */
 .navbar {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 12px 30px;
+  backdrop-filter: blur(12px);
+  padding: 14px 35px;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
   z-index: 10;
   transition: all 0.3s ease-in-out;
 }
@@ -61,7 +56,147 @@ body {
   font-weight: 700;
   color: #38bdf8;
   text-transform: uppercase;
-  letter-spacing: 2px
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  color: #60a5fa;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  margin-right: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #38bdf8;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #60a5fa;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Contenedor Principal */
+.container {
+  margin: 140px auto 50px auto;
+  padding: 40px;
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border-left: 6px solid #38bdf8;
+  border-right: 6px solid #38bdf8;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Títulos */
+h1 {
+  color: #60a5fa;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Botón Moderno */
+.button {
+  background: linear-gradient(135deg, #38bdf8, #1e40af);
+  color: white;
+  border: none;
+  padding: 18px 42px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #60a5fa, #1e40af);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Tablas con efecto futurista */
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 25px auto;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+th, td {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px;
+  text-align: center;
+  color: #e0e7ff;
+}
+
+thead {
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+    margin: 120px 20px;
+  }
+  table {
+    width: 90%;
+  }
+  .button {
+    font-size: 18px;
+    padding: 15px 35px;
+  }
 }
 </style>
 </head>
@@ -137,11 +272,11 @@ body {
 
     window.addEventListener("scroll", function() {
       if (window.scrollY > 50) {
-        navbar.style.padding = "8px 20px";
-        navbar.style.backdropFilter = "blur(15px)";
+        navbar.style.padding = "10px 25px";
+        navbar.style.backdropFilter = "blur(18px)";
       } else {
-        navbar.style.padding = "12px 30px";
-        navbar.style.backdropFilter = "blur(10px)";
+        navbar.style.padding = "14px 35px";
+        navbar.style.backdropFilter = "blur(12px)";
       }
     });
   });
