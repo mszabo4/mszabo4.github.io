@@ -743,7 +743,19 @@ void flash(int duration) {
    <p>El punter llegeix una adreça a la memòria de l'ordinador i la posició de l'adreça d'ordinador, i manipular-la</p>
    <p>El punter serveix per tenir un control total per part del programador de la memòria i els recursos de l'ordinador</p>
    <p>El problema que té és que pot provocar errors a la memòria o accesos no pemesos si no saps com fer funcionar correctament el punter</p>
-        <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+   <p>Els dos símbols per utilitzar punters són: L'arterisc '*', que serveix per llegir el contingut de l'adreça de memòria. I l'ampersand '&', que llegeix la posició de l'adreça de memòria/p>
+   <p>La memòria de l'ordinador la podem imaginar com caixes d'una llista on cada caixa té un valor unic assiganat en hexadecimal que comença per 0x. Cada caixa té un contingut que pot ser buit(0) o pot contenir un valor</p>
+
+   <h4>Operacions avançades amb punters</h4>
+   <ul>
+   <li><b>Accés directe a la memòria:</b> Permet modificar valors en posicions específiques.</li>
+   <li><b>Manipulació eficient d'arrays i strings (cadenes):</b> L'array és en una lista d'adreces amb principi i final amb un punter al primer element</li>
+   <li><b>Passar grans quantitats de dades a funcions:</b> En lloc de copiar valors, els punters passen la seva adreça, estalviant memòria i temps. Aquest és un dels motius per els que C i derivats són més ràpids que Pytho.</li>
+   <li><b>Creacció d'estructures dinàmiques:</b> És pot crear coses com llistes enllaçades, grafics... de forma més fàcil</li>
+   <li><b>Interacció amb microcontroladors senzilla:</b> Els microcontroladors utilitzen llenguatgges de baix nivell (lox-level languages) que són més propers al hardware. Encara qué, gràcies a l'augment de la memòria, s'han pogut crear llenguatges com microPython o circuitPython </li>
+   </ul>
+   
+   <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
           const int ledPin = 13;
 const int dotDelay = 200;
 
