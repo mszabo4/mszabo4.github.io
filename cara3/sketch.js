@@ -29,7 +29,22 @@ function draw() {
  // Noise és un tipus de soroll anomenat Perlin que va ser famòs perquè va fer videojocs gràcies a les variacions suaus de números aleatoris
  // que fa aquesta funció. Permet fer números pseudoaleatoris propers
   let ales = 10*random(1);
- background(bgColor);  fill(27,192,139);
+  background(bgColor);  // Pinta el fons amb el color actual.
+fill(0);
+  print(20, 20, "Fotogrames: ", frameCount);
+  print("Noise: ", noise);
+  print("Tamany ull esquerra: ", leftEyeSize);
+  print("Tamany ull dret: ", rightEyeSize);
+  print("Volum: ", vol);
+  textSize(12);
+  //text("Fotogrames: " + frameCount, 50 , 100);
+  //text("Noise: " + noise, 50 , 100);
+  //text("Tamany ull esquerra: " + leftEyeSize, 50 , 100);
+  //text("Tamany ull dret: " + rightEyeSize, 50 , 100);
+  //text("Volum: " + vol, 50, 100);
+  //text("Ales: " + ales);
+  text("Cara con mosca" , 50, 350)
+  fill(255,223,196);//cara
   ellipse(300,200,20*cos(frameCount*0.5)+350,270);
   fill(19,23,29);
   ellipse(250,150,30,50);
@@ -40,14 +55,13 @@ function draw() {
   fill(19,23,29);
   ellipse(350,150,10*cos(frameCount*0.1)+15,15);
   fill(180,15,15);
-  arc(300,250,200,3+vboca,0,PI,CHORD);
+ arc(faceX, faceY + 50, 120, 30+h, 0, PI); // La variable "h" determina la alçada de la boca 
   fill(255);
  noStroke();
  ellipse(x-10,y, 15+ales,25);
  ellipse(x+10,y, 15+ales,25);
  fill(0);
  ellipse(x,y,10,20);
-text("Cara con mosca", 250, 370)
  
 }
        function changeBackground() {
