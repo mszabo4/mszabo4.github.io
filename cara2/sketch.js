@@ -43,23 +43,25 @@ fill(0);
   //text("Tamany ull dret: " + rightEyeSize, 50 , 100);
   //text("Volum: " + vol, 50, 100);
   //text("Ales: " + ales);
-  text("Cara con mosca" , 50, 350)
-  fill(255,223,196);//cara
- ellipse(faceX,faceY,220,300);
- fill(81,209,246);//ulls
- ellipse(faceX-50,faceY-50,50,leftEyeSize);
- ellipse(faceX+50,faceY-50,50,rightEyeSize);
- fill(0,0,0);//pupil·la
- ellipse(faceX-50,faceY-50,25,leftEyeSize/2);
- ellipse(faceX+50,faceY-50,25,rightEyeSize/2);
- fill(0,0,0);
- arc(faceX, faceY + 50, 120, 30+h, 0, PI); // La variable "h" determina la alçada de la boca 
- fill(255);
+  fill(27,192,139);
+  ellipse(300,200,20*cos(frameCount*0.5)+350,270);
+  fill(19,23,29);
+  ellipse(250,150,30,50);
+  fill(200,42,14);
+  ellipse(250,150,10*sin(frameCount*0.1)+15,15);
+  fill(200,42,14);
+  ellipse(350,150,30,50);
+  fill(19,23,29);
+  ellipse(350,150,10*cos(frameCount*0.1)+15,15);
+  fill(180,15,15);
+  arc(300,250,200,3+vboca,0,PI,CHORD);
+  fill(255);
  noStroke();
  ellipse(x-10,y, 15+ales,25);
  ellipse(x+10,y, 15+ales,25);
  fill(0);
  ellipse(x,y,10,20);
+text("Cara con mosca", 250, 370)
 }
 
  /* Funció per canviar el color de fons:
