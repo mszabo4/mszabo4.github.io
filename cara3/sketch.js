@@ -44,7 +44,7 @@ fill(0);
   //text("Volum: " + vol, 50, 100);
   //text("Ales: " + ales);
   text("Cara con mosca" , 50, 350)
-  fill(255,223,196);//cara
+  fill(27,192,139);
   ellipse(300,200,20*cos(frameCount*0.5)+350,270);
   fill(19,23,29);
   ellipse(250,150,30,50);
@@ -52,7 +52,7 @@ fill(0);
   ellipse(250,150,10*sin(frameCount*0.1)+15,15);
   fill(200,42,14);
   ellipse(350,150,30,50);
-  fill(19,23,29);
+    fill(19,23,29);
   ellipse(350,150,10*cos(frameCount*0.1)+15,15);
   fill(180,15,15);
  arc(faceX, faceY + 50, 120, 30+h, 0, PI); // La variable "h" determina la alçada de la boca 
