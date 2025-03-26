@@ -1,3 +1,4 @@
+
 let mic; //creem variable gloalper a un micròfon, ara es un espai a la memòria amb un nom.
 let bgColor;        // Variable per emmagatzemar el color de fons actual.
 function setup() {
@@ -10,8 +11,8 @@ function setup() {
 }
 
 function draw() {
- let faceX=mouseX;
- let faceY=mouseY;
+ let faceX=300;
+ let faceY=200;
  let leftEyeSize = 30+10*cos(frameCount*0.1);//mida variable segons el temps
  let rightEyeSize = 30+10*sin(frameCount*0.1);//mida variable segons el temps
  let vol=mic.getLevel(); //Apliquem el mètode "getLevel" que ens donarà el nivell de volum entre 0 i 1
@@ -44,16 +45,23 @@ fill(0);
   //text("Volum: " + vol, 50, 100);
   //text("Ales: " + ales);
   text("Cara con mosca" , 50, 350)
-  fill(255,223,196);//cara
+  fill(255,223,196);
+  //cara
  ellipse(faceX,faceY,220,300);
- fill(81,209,246);//ulls
+ fill(81,209,246);
+  //ulls
  ellipse(faceX-50,faceY-50,50,leftEyeSize);
  ellipse(faceX+50,faceY-50,50,rightEyeSize);
- fill(0,0,0);//pupil·la
- ellipse(faceX-50,faceY-50,25,leftEyeSize/2);
- ellipse(faceX+50,faceY-50,25,rightEyeSize/2);
  fill(0,0,0);
- arc(faceX, faceY + 50, 120, 30+h, 0, PI); // La variable "h" determina la alçada de la boca 
+//pupil·la
+  let xeye = map(mouseX,0,width,-10,60);
+let yeye = map(mouseY,0,height,-10,60);
+ ellipse(xeye-50,yeye-50,25,leftEyeSize/2);
+ ellipse(xeye+50,yeye-50,25,rightEyeSize/2);
+ fill(0,0,0);
+
+ arc(faceX, faceY + 50, 120, 30+h, 0, PI); 
+// La variable "h" determina la alçada de la boca 
  fill(255);
  noStroke();
  ellipse(x-10,y, 15+ales,25);
