@@ -756,16 +756,47 @@ void flash(int duration) {
    </ul>
    
    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
-          const int ledPin = 13;
-const int dotDelay = 200;
+// Al principi del codi, abans de la funció de configuració "setup" i la funció principal 
+// "loop" que s'executa continuament, hem d'escriure sempre variables o constants.
+// A més, al principi del codi trobem les constants i variables globals, anomenades així perquè es poden cridar
+// o executar des de qualsevol part del codi, a diferencia de les variables locals que es 
+// defineixen i s'utilitzen dintre de la mateixa funció "loop" o una funció addicional.
+// Davant de les variables i constants globals hauriem d'afegir les biblioteques necessàries per 
+// fer funcionar el nostre codi ( amb "#include <nom_biblioteca.h> ) l'extensió "h" deriva de C
+// i significa "biblioteca de headers" o encapçalaments.        
+     const int ledPin = 13;
+const int dotDelay = 200
 
+// "const" vol dir que la variable no es modificarà dins del codi, "int" vol dir integer, o sigui
+// que el nombre que agafem haurà de ser enter, ja que els pins tenen números enters. El pin 13
+// és especial, té una resistència interna en el cas d'Arduino uno que permet connectar directament
+// un led, perquè està al costat del pin GND i puc clavar o connectar un led sense cap circuit o placa.
+// "ledPin" és una variable constant i s'anomena així per l'usuari, utilitzant camelCase i referint-nos
+// al que fa aquest pin.
 char* letters[] = {
   ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",    // A-I
   ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",  // J-R
   "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."          // S-Z
 };
-
-char* numbers[] = {
+// Més amunt i més abaix tinc dos arrays composats cadascun d'ells per arrays interns i cada array intern
+// està composat de caracters que només poden ser "." o "-".
+// Quan jo crido "letter[0]" el que obtinc ".-" o sigui, la lletra A en codi Morse.
+// Aquesta forma de treballar és molt dolenta, des d'un punt de vista d'eficiència perquè estic utilitzant.
+// un byte ( un byte són 8 bits ) sencer per cada punt o ratlla. 
+// Un bit és un valor de 0 o 1 i això es podria utilitzar per fer els punts o ratlles perquè els dos valors
+// són dos estats, o 0 o 1, es podria asignar el 0 al punt i la ratlla l'1, fent-ho més eficient.
+// En un byte hi han 8 bits i per això es podrien fer 256 caracters diferents.
+// Quants bytes de memòria necesitarem utilitzant bytes o bits per codificar Morse?
+// Aproximadament el Morse té uns 109 punts o ratlles pels números o lletres, de la manera més eficient
+// tindriem un ús de 14 bytes i de la manera menys eficient 872 bytes.
+// Hem de tenir en compte
+// De fet ASCII utilitza 7 bits per crear 128 caracters ( de 0 a 127 ).
+// "*" és molt important, ja que ens indica que és un punter, "[]" ens indica que és una array,
+//  "numbers" m'indica el valor de l'array, i char m'indica el tipus d'element ( que són caracters ) que hi ha dins
+// de l'array.
+// L'array de sota es diu numbers però està constituit per caracters, perquè tant els números com les lletres
+// estan constituides per "." o "-" que són caracters
+  char* numbers[] = {
   "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----."};
 
 void setup() {
