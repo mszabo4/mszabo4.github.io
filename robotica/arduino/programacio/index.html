@@ -802,10 +802,45 @@ char* letters[] = {
 void setup() {
   pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
+  // En el setup o configuració del microcontrolador indiquem que el pin 13 que ara es diu "ledPin" sigui és una sortida o "Output"
+  // Indiquem a l'arduino que es comuniqui amb l'ordinador a traves del port serial o serie i comenci a una velocitat de 
+  // 9600 bauds o simbols/segon que són aprox. 9600 bits/segon.
 }
+  
 
 void loop() {
-  char ch;
+  // El loop és el codi principal, i el que el seu nom indica que es repeteix sense parar en un "loop".
+  // "char" signica que utilitzem una variable de tipus caracter i l'anomenem "ch".
+  // "Serial.available" significa si està disponible la comunicació serie o "serial monitor" que comunica  el microcontrolador
+  // arduino amb el nostre ordinador o dispositiu.
+  // La comunicació entre arduino i l'ordinador és complexa: 
+  // Primer pas: l'ordinador envia dades al monitor serie a traves de l'USB per un mecanisme que s'anomena "USB to Serial"
+  // Segon pas: la transformació anterior d'USB to Serial la fa un xip especial dintre d'Arduino.
+  // Tercer pas: les dades en format serie arriben a una part del microcontrolador anomenada UART que significa 
+  // "Universal Asynchronous Receiver Transmiter"
+  // Quart pas: l'UART envia les dades que rep a una memòria temporal o "buffer" que pot enmagatzemar 128 bytes fins que s'elimina en
+  // el moment que es llegeix
+  // La funció serial available retorna el número de bytes de dades en el "buffer" que estan esperant per ser llegits. Si no hi ha cap missatge
+  // esperant a ser llegit, la funció retorna a 0
+  // La funció "Serial.read" el que fa és llegir el primer o el següent caracter disponible i l'emmagatzema a la variable "ch"
+  // El símbol >= o <= s'utilitza per comparar amb el número d'ASCII que correspon per la lletra "a" per tant, podriem canviar l'a
+  // pel número 97 i la z és el número 122.
+  // Els altres caracters que podem canviar serien 'A' pel número 65, Z pel número 90.
+  // El caracter '0' correspon al número 48 i el caracter '9' correspon al número 57.
+  // El caracter ' ' correspon al número 32.
+  // Els condicionals que hi han dintre del condicional general "Serial.avaliable" el que fan és dir es que si el caracter és 
+  // entre la a i la z le restes el valor -a
+  // Imaginem que la primera lletra és una 'c', que equival al número 99, llavors si li restem la 'a' que és 97 quedaria un número 2.
+  // El número 2 està dintre d'un ([]) és a dir, dintre d'una array i correspondria al tercer element de l'array de les lletres.
+  // Aquest tercer element és "-.-."
+  // Un altre exemple seria la 'H' estaria avaluat en un altre condicional, el de les mayuscules, aquest caracter equival 
+  // al número 72, i li he de restar la 'A' que equival al número 65, per tant ch - 'A' és 7 que és el vuité element de l'array
+  // de majúscula [7] i letters[7] és "...." .
+  // Per qué s'ha de restar?
+  // Per conexier la posició de la lletra a l'array, perquè hem possat l'array ordenat 
+  // des de la 'a' fins la 'z' i des de la 'A' fins la 'Z'
+  // Ara tenim el número per exemple letters[7] igual a "...." i el que volem és aplicar una funió.
+    char ch;
   if (Serial.available() > 0) {
     ch = Serial.read();
     if (ch >= 'a' && ch <= 'z') {
