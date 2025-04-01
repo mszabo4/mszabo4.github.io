@@ -839,7 +839,9 @@ void loop() {
   // Per qué s'ha de restar?
   // Per conexier la posició de la lletra a l'array, perquè hem possat l'array ordenat 
   // des de la 'a' fins la 'z' i des de la 'A' fins la 'Z'
-  // Ara tenim el número per exemple letters[7] igual a "...." i el que volem és aplicar una funió.
+  // Ara tenim el número per exemple letters[7] igual a "...." i el que volem és aplicar una funció.
+  // Aquesta funció és la funció "flashSequence" que agafarà l'element vuité de l'array com a arguments 
+
     char ch;
   if (Serial.available() > 0) {
     ch = Serial.read();
@@ -857,8 +859,17 @@ void loop() {
     }
   }
 }
-
-void flashSequence(char* sequence) {
+// El "void flashSequence()" és una funció que rep un argument
+// El que fa amb aquest argument és utilitzar un punter i seguir la seqüencia que es troba amb letters[7]
+// que és "....", aquest quatre caracters o punts són una seqüencia de caracters ordenada gracies al punter*
+// El codi següent el que fa és amb la posició 'i' inicial de 0 que és el pointer al principi de l'array "...."
+// I el que fa és que mentre (While) aquest element 'i' de la seqüencia no sigui (!) = NULL, es a dir mentres 
+// hi hagi un caracter, crida una funció diferent anomenada "flashDotOrDash" que rep com a argument el valor de 'i'
+// concret en aquella seqüencia.
+// Després de rebre'l passa el següent valor de 'i', si la 'i' era el primer ".", la i++ primera o i = i+1 és 
+// el segon punt ".". I així fins al cinquè punt que s'atura tot, perqué és NULL, es a dir, no hi ha cinquè punt.
+// El Delay serveix per deixar espai entre lletres o sequences.
+  void flashSequence(char* sequence) {
   int i = 0;
   while (sequence[i] != NULL) {
     flashDotOrDash(sequence[i]);
@@ -866,7 +877,12 @@ void flashSequence(char* sequence) {
   }
   delay(dotDelay * 3);    // gap between letters
 }
-
+// La funció "flashSequence" que llegeix una determinada lletra que rep com a argument, letters[7] i reconeix que 
+// està formada per "...." i crida la funció "flashDotOrDash" fins que s'acaben els punts o ratjes i deixa un espai
+// al final per indicar que és una lletra.
+// La funció "flashDorOrDash" té un parametre intern anomenat "dotOrDash". Aquesta funció sempre encen un led, i sempre
+// el deixa un temps encés o delay. En el cas que sigui una ratlla, el fa 3 vegades més llarg que un punt, gracies
+// a un condicional "if" o en cas contrari "else". No diem si és una ratlla, diem si no és un punt
 void flashDotOrDash(char dotOrDash) {
   digitalWrite(ledPin, HIGH);
   if (dotOrDash == '.') {
@@ -879,7 +895,42 @@ void flashDotOrDash(char dotOrDash) {
   digitalWrite(ledPin, LOW);    
   delay(dotDelay); // gap between flashes
 }
-        <!-- Scripts necessaris -->
+// El "loop" és un bucle i continuament crida a la funció "flashSequence" que el que fa és llegir cada lletra i convertirles
+// en punts i ratlles, aquesta funció crida a la funció "flashDotOrDash" continuament que fa que s'encenguin els leds segon
+// els punts i ratlles. Sempre hem de dividir un codi en diverses funcions, primer per fer-lo més modular i entendre que fa 
+// cada funció i a més ens fa més facil el manteniment i canvis futurs.
+
+
+<h2>Input i Output: Entrades i sortides</h2>
+<p>Les entrades i sortdes poden ser de dues maneres diferents, digitals o analògiques, les digitals poden 
+ser de 0 voltso de 3,3 volts i en altres plaques arduino, poden ser 0 volts i 5 volts. Les analògiques
+serien graduals, de 0 a 3,3 volts o 5 volts en 2**n pasos, sent "n" el número de bits.</p>
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+
+const int outPin = 3;
+// pinMode és una funció predeterminada o "built-in", vol dir que està predefinida en el llenguatje
+// arduino i sempre ha de rebre 2 argument o parametres, el primer sempre ha de ser un númer enter o "int"
+// (integer) que correspon al número de pin que volem conectar (en aquet cas 3), el segon argument és el mode
+// que pot ser OUTPUT que significa sortida, o INPUT que significa entrada, també existeix INPUT_PULLUP
+void setup() {
+  pinMode(outPin, OUTPUT);
+  Serial.begin(9600); //Miguel Angel
+  Serial.println("Enter 1 or 0");
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char ch = Serial.read();
+    if (ch == '1') {
+      digitalWrite(outPin, HIGH);
+    }
+    else if (ch == '0') {
+      digitalWrite(outPin, LOW);
+    }
+  }
+}
+</code></pre>      
+      <!-- Scripts necessaris -->
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
