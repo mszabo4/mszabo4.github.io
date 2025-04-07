@@ -930,6 +930,64 @@ void loop() {
   }
 }
 </code></pre>      
+      <p> Quan tenim una entrada hem de possar mode input i en comptes de fer un digitalWrite que fem a les sortides hem de fer un digitalRead per obtenir l'entrada, que només pot ser un valor digital de 0 o 1 (binari).
+    Si el voltatge és menor a 2,5 volts es traduirà com un 0, en canvi si és superior com un 1</p>
+
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+
+    const int inputPin = 5;
+
+    void setup() {
+        pinMode(inputPin, INPUT);
+        Serial.begin(9600);
+    }
+
+    void loop() {
+        int reading = digitalRead(inputPin);
+        Serial.println(reading);
+        delay(1000);
+    }
+
+</code></pre>  
+
+<p>// El pullup estabilitza la senyal que rep per a que la transcripció a binari (0 i 1) sigui correcta. Si analitzem el que
+// passa amb un oscil·loscopi (mesura les oscil·lacions de la corrent) si mirem un oscil·loscopi unveurem que hi han 
+// pujades i baixades quan premo el botó no baixa de forma ideal sinó que té alguns pics que es diuen rebots 
+// (bouncing / debouncing) en el cas de debouncing és més correcte ja que el senyal per defecte és inestable i el que fem
+// és estabilitzar-lo -> desrebotar.</p>
+                    
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+const int inputPin = 5;
+
+void setup() {
+  pinMode(inputPin, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int reading = digitalRead(inputPin);
+  Serial.println(reading);
+  delay(1000);
+}
+</code></pre>
+<p>Negació. El signe d'admiració "!" significa negar la variable que esposa després del signe.</p>
+<p>Hi ha dos variables inicials, que són constants per definició del codi. La variable ledPin és el pin el qual per defecte perquè li hem dit que és un input pull-ip, significa que l'interruptor deixa par la corrent per defecte. Si fos un input només estaria a 0, és a dir, l'interruptor estaria obert. La variable </p>
+<pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
+    const int inputPin = 5;
+    const int ledPin = 13;
+    int ledValue = LOW;
+    
+    void setup()  {
+      pinMode(inputPin, INPUT_PULLUP);
+      pinMode(ledPin, OUTPUT);
+    }
+    
+    void loop()  {
+      if (digitalRead(inputPin) == LOW) {
+         ledValue = ! ledValue;
+         digitalWrite(ledPin, ledValue);
+      }
+    }
       <!-- Scripts necessaris -->
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
