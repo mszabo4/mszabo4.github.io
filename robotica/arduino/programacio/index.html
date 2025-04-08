@@ -1023,18 +1023,22 @@ l'apaguem perqué la variable switchOpen que estava a 1 es transforma a !switchO
     void loop() {
     if (digitalRead(inputPin) == LOW) {
      ledValue = ! ledValue;
-     digitalWrite(ledPin, ledValue);
+     digitalWrite(ledPin, ledValue); 
      delay(500);
     }
     }
 </code></pre>
 <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code class="language-arduino">
-<p></p>
-    #include <Bounce2.h>
+<p>El "contact bounce" podrríem traduir-ho com a rebot de contacte, és un problema comú a diferents dispositius com per exemple interruptors reles (interrruptors que canvia la posició d'una palanca interna mitjançant elctromagnetisme), contactes de bateria. Tots aquests elements tenen en comú que estan fets per metalls elàstics, de forma que quan jo apreto un interruptor mecànic, el metall que tanca el circuit rebota diverses vegades sobre el contacte, provocant una inestabilitat en el senyal</p>
+<p>Els moviments que veiem a dalt poden ser poc importants en un circuit de potència que utilitza 220 volts a vegades no s'aprecien aquests canvis, però en un circuit de contol que funciona amb un voltatge de 3.3 volts o 5 volts i que està dissenyat per entedre i respondre senyals digitals i analògiques pot provocar que entenguin les pujades i baixades com un flux de dades</p>   
+<p>Com es pot evitar?</p>
+<p>Ho podem evitar per software com veiem més avall amb una biblioteca  per hardware, que vol dir, modificar físicament els elements per reduir el rebot. Per exemple, una superfície llisa de contacte seria millor perquè donaria menys rebot, si el metall fos menys elàstic, rebotaria menys. Antigament els contactes dels interruptors es mullaven en mercuri, per evitar el rebot</p>
+  #include <Bounce2.h>
         const int inputPin = 5;
         const int ledPin = 13;
         int ledValue = LOW;
         Bounce bouncer = Bounce(); 
+    // La majúscula
 
         void setup() {
         pinMode(inputPin, INPUT_PULLUP);
@@ -1044,7 +1048,7 @@ l'apaguem perqué la variable switchOpen que estava a 1 es transforma a !switchO
         }
 
         void loop() {
-        if (bouncer.update() && bouncer.read() == LOW) {
+        if (bouncer.update() && bouncer.read() == LOW) { // Linea clau perquè
           ledValue = ! ledValue;
           digitalWrite(ledPin, ledValue);
         }
