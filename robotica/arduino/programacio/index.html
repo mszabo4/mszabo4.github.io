@@ -1067,8 +1067,9 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) { // Serial.avalable és un mètode que espera caràcters, major a 0 és que hi ha caràcters
-    float volts = Serial.parseFloat();
-    int pwmValue = volts * 255.0 / 5.0;
+    float volts = Serial.parseFloat(); // parseFloat és una funció o mètode que s'aplica a l'objecte serial i la seva funció és parsejar o analitzar el contingut de caràcters que arriba per port serial i si és de tipus decimal o floating point number o variable tipus float. Les variables float inclouen les variables int. També existeix parseInt que només acceptaria números enters
+   // El float volts el que fa és crear un espai a la memòria de l'ordinador anomenat volts que hauria de ser del tipus floating point number que emmagatzemarà el que li arribi del port serial per l'usuari, o sigui, emmagatzema el número decimal quue escriu l'usuari
+  int pwmValue = volts * 255.0 / 5.0; // Els volts no serveixen directament perquè
     analogWrite(outputPin, pwmValue);
   }
 }
