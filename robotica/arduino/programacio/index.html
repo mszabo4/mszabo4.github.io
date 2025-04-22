@@ -1062,22 +1062,34 @@ diverses vegades sobre el contacte, provocant una inestabilitat en el senyal.</p
 void setup() {
   pinMode(outputPin, OUTPUT);
   Serial.begin(9600);
-  Serial.println("Enter Volts 0 to 5");
-}
+  Serial.println("Enter Volts 0 to 5"); // Demana que l'usuari que entri per la consola o srial monitor de l'ARDUINO IDE introdueixi un número entre 0 i 5
+} // println significa imprimeix una linea i li apliquem en la sintaxi del punt a la classe serial pot rebre diversos parametres, si els posem entre cometes s'escriu tal cual i si no, escriu el valor de la variable
 
 void loop() {
-  if (Serial.available() > 0) {
+  if (Serial.available() > 0) { // Serial.avalable és un mètode que espera caràcters, major a 0 és que hi ha caràcters
     float volts = Serial.parseFloat();
     int pwmValue = volts * 255.0 / 5.0;
     analogWrite(outputPin, pwmValue);
   }
 }
 </code></pre>
-<p> El "const int outputPin" defeneix el in de sortida constant que no es pot canviar. Després de definir el pin de sortida 3 i en output (sortida) i la velocitat bands (9600), el codi demana que escrigui a la consla del programa Arduino IDE: Enter volts 0-5. </p>
-<p> Al loop principal comprova que hi hagi caràcters escrits a la consola, després agafa el valor que hem donat i el guarda a la variable volts. El valor pot ser en decimals perquè posa float ("Floating point number"). El mètode parseFloat l'apliquem amb la sintaxi del punt a l'objecte Serial (Que es posa en majúscula, normalment seria una classe en majúscula) i agafa el valor de la consola sèrie </p>
-      <p> La variable pmwValue és entera (int o "integer") i el que fa és convertir el valor de volts (0-5) a valors sheet o fulla de característiques del ESP32-S3 la linea de codi seria:
-"Serial.println("Enter Volts 0-3,3")
-"int pwmValue = volts * 16384.0 / 3.3"</p>
+        <p> El "const int outputPin" defineix el pin de sortida constant que no es pot canviar. Després de definir
+            el pin de sortida 3 i en output (sortida) i la velocitat bauds (9600), el codi demana que escrigui a la consola
+            del programa Arduino IDE: Enter volts 0-5.</p>
+            <p> Al loop principal comprova que hi hagi caràcters escrits a la consola, després agafa el valor que hem 
+            donat i el guarda en la variable volts. El valor pot ser en decimals perquè posa float ("Floating point number").
+            El mètode parseFloat l'apliquem amb la sintaxi del punt al objecte Serial (Que es posa en majúscula, normalment
+            seria una classe en majúscula) i agafa el valor de la consola sèrie</p>
+            <p> La variable pwmValue és entera (int o "integer") i el que fa és convertir el valor de volts (0-5) a valors
+            de 0-255, que és el numero de bits (2^8=256). Si fos un ESP32-S3 de 14 bits tal com indica el data
+            sheet o fulla de caracteristiques de el ESP32-S3la linea de codi seria:
+            "Serial.println("Enter Volts 0-3.3")
+            "int pwmValue = volts * 16384.0 / 3.3" </p>
+            
+            <p> El ESP32-S3 te l'avantatge de tenir més resolució, es a dir,  pot donar 16384 valors diferents entre 0-3,3 volts
+                Aixó pot que no es noti en un led, peró es nota en un motor, on l'ESP32 permet accedir a més velocitats diferents. Els
+                motors poden arribar a 16 bits, que es 2^16 o 65536 valors diferents, depenent del tipus de motor, pot ser observat o no
+                </p>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
