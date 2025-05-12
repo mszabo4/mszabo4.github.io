@@ -223,13 +223,9 @@
         // Utilitza una estructura switch per triar el dibuix en funció del sentiment detectat
         switch (dominant) {
           case "happy":
-            // Cas: expressió "happy" (feliç) → es dibuixen ones radials
-            for (let i = 1; i <= 10; i++) {
-              // Es recorre des de 1 fins a 10 per dibuixar cercles creixents
-              stroke(random(200,255), random(200,255), 0, 150);
-              // Cada cercle té un traç amb tonalitats grogues (el color és aleatori entre 200 i 255 per vermell i verd)
-              ellipse(0, 0, i * 20 * intensity, i * 20 * intensity);
-              // Dibuixa una el·lipse centrada, amb mida en funció del número d'iteració i la intensitat de l'expressió
+              stroke(255,203,219);
+              fill(255,203,219);
+              ellipse(300,238,387,387);
             }
             break;
           case "sad":
