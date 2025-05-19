@@ -103,10 +103,19 @@ void setup() {
 #define NOTE_Mi 329,628
 #define NOTE_Fa 349,228
 #define NOTE_La 440,000
-  int sol_solet[]
-
-
+  int sol_solet[]{
+    NOTE_Sol, NOTE_Mi, NOTE_Fa, NOTE_Sol, NOTE_La, NOTE_Fa,  NOTE_Fa,  NOTE_Fa,  NOTE_La,   NOTE_Sol,  NOTE_Mi,  NOTE_Sol,  NOTE_Mi,  NOTE_Fa,  NOTE_Sol,  NOTE_La,  NOTE_Fa,  NOTE_Fa,  NOTE_Fa,  NOTE_Sol,  NOTE_Mi
+}
+int durades[]{
+ 100, 50, 50, 100, 50, 50, 50, 50, 50, 100, 100, 100, 50, 50, 100, 50, 50, 50, 50, 50, 100
 
   }
+    void setup(){
+    
+        }
 
-void loop() {}
+        void loop() {
+    int numNotes= sizeof(harrypotter)/sizeof(harrypotter[0]), 
+    //Calculem el número de notes dividint el número de bytes totals de la canço que ho calcula la funció "sizeof" entre el número de bytes de una de les notes (en aquest cas la primera). En aquest exemple tenim 5 notes i cada nota ocuparà un número enter que es igual a 2 bytes en arduino. Per tant harry potter ocupa 10 bytes que dividit entre el tamany de la primera nota que son 2 bytes dona 5 notes musicals. El número 5 el guardem a la variable numNotes 
+    // L'avantatge que té aquest codi és que sempre contarà les notes i puc canviar quan vulgi la cançó
+        }
