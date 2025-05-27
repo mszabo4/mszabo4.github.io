@@ -147,20 +147,16 @@
     }
 
     // Figures irregulars per a cada sentiment
-    function figuraFelic(intensity) {
-function setup() {
-  createCanvas(900, 900);
-}
-
-function draw() {
-  background(220);
+ function figuraFelic(intensity) {
   push();
-translate(width/2 - 300, height/2 - 400);
-  beginShape();
+  translate(width/2 - 300, height/2 - 400);
   
+  // Dibuja la figura aquí (todo el código de vértices y formas)
+  // Elimina los setup() y draw() internos
+  
+  beginShape();
   fill(247, 169, 94);
-
-ellipse(300,238,394,397);
+  ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
 vertex(273, 205.1875);
@@ -923,17 +919,15 @@ break;
     }
 
     function figuraTrist(intensity) {
-      function setup() {
-  createCanvas(900, 900);
-}
-
-function draw() {
-  background(220);
-  beginShape();
+  push();
+  translate(width/2 - 300, height/2 - 400);
   
+  // Dibuja la figura aquí (todo el código de vértices y formas)
+  // Elimina los setup() y draw() internos
+  
+  beginShape();
   fill(247, 169, 94);
-
-ellipse(300,238,394,397);
+  ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
 vertex(273, 205.1875);
@@ -1690,21 +1684,22 @@ vertex(164, 655.1875);
 vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
+        pop();
+break;
+
 }
     }
 
     function figuraEnfadat(intensity) {
-    function setup() {
-  createCanvas(900, 900);
-}
-
-function draw() {
-  background(220);
-  beginShape();
+  push();
+  translate(width/2 - 300, height/2 - 400);
   
+  // Dibuja la figura aquí (todo el código de vértices y formas)
+  // Elimina los setup() y draw() internos
+  
+  beginShape();
   fill(247, 169, 94);
-
-ellipse(300,238,394,397);
+  ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
 vertex(273, 205.1875);
@@ -2461,23 +2456,24 @@ vertex(164, 655.1875);
 vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
+        pop();
+break;
+
 }
 
 
     }
 
     function figuraFastiguejat(intensity) {
-      function setup() {
-  createCanvas(900, 900);
-}
-
-function draw() {
-  background(220);
-  beginShape();
+  push();
+  translate(width/2 - 300, height/2 - 400);
   
+  // Dibuja la figura aquí (todo el código de vértices y formas)
+  // Elimina los setup() y draw() internos
+  
+  beginShape();
   fill(247, 169, 94);
-
-ellipse(300,238,394,397);
+  ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
 vertex(273, 205.1875);
@@ -3234,23 +3230,24 @@ vertex(164, 655.1875);
 vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
+        pop();
+break;
+
 }
 
 
     }
 
     function figuraSorprès(intensity) {
-     function setup() {
-  createCanvas(900, 900);
-}
-
-function draw() {
-  background(220);
-  beginShape();
+  push();
+  translate(width/2 - 300, height/2 - 400);
   
+  // Dibuja la figura aquí (todo el código de vértices y formas)
+  // Elimina los setup() y draw() internos
+  
+  beginShape();
   fill(247, 169, 94);
-
-ellipse(300,238,394,397);
+  ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
 vertex(273, 205.1875);
@@ -4007,22 +4004,24 @@ vertex(164, 655.1875);
 vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
+        pop();
+break;
+
 }
 
     }
 
     function figuraEspantat(intensity) {
-function setup() {
-  createCanvas(900, 900);
-}
-
-function draw() {
-  background(220);
-  beginShape();
+function figuraFelic(intensity) {
+  push();
+  translate(width/2 - 300, height/2 - 400);
   
+  // Dibuja la figura aquí (todo el código de vértices y formas)
+  // Elimina los setup() y draw() internos
+  
+  beginShape();
   fill(247, 169, 94);
-
-ellipse(300,238,394,397);
+  ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
 vertex(273, 205.1875);
@@ -4779,23 +4778,24 @@ vertex(164, 655.1875);
 vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
+  pop();
+break;
+
 }
 
 
     }
 
     function figuraNeutral(intensity) {
-    function setup() {
-  createCanvas(900, 900);
-}
-
-function draw() {
-  background(220);
-  beginShape();
+  push();
+  translate(width/2 - 300, height/2 - 400);
   
+  // Dibuja la figura aquí (todo el código de vértices y formas)
+  // Elimina los setup() y draw() internos
+  
+  beginShape();
   fill(247, 169, 94);
-
-ellipse(300,238,394,397);
+  ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
 vertex(273, 205.1875);
@@ -5552,6 +5552,9 @@ vertex(164, 655.1875);
 vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
+pop();
+break;
+
 }
 
 
