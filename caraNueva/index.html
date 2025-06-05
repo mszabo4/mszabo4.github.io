@@ -191,9 +191,37 @@
   fill(205+50*intensity, 205+50*intensity, 0);
 stroke(0)
 ellipse(300,238,394,397);
-ellipse(30,100,100+40*intensity,100+40*intensity);
-  
+endShape();
+beginShape();
+ fill(255, 204, 0); // color del sol
 
+        let centerX = 30;
+        let centerY = 100;
+        let sunSize = 100 + 40 * intensity;
+
+        // Dibuja el sol
+        ellipse(centerX, centerY, sunSize, sunSize);
+
+        // Dibuja los rayos
+        let rayLength = 30;
+        let rayWidth = 6;
+        let rayCount = 8;
+
+        for (let i = 0; i < rayCount; i++) {
+          let angle = TWO_PI / rayCount * i;
+          let rayX = centerX + cos(angle) * (sunSize / 2 + rayLength / 2);
+          let rayY = centerY + sin(angle) * (sunSize / 2 + rayLength / 2);
+
+          push();
+          translate(rayX, rayY);
+          rotate(angle);
+          rectMode(CENTER);
+          rect(0, 0, rayLength, rayWidth);
+          pop();
+        }
+
+        noLoop(); // Dibuja solo una vez  
+endShape();
 
 beginShape();
 vertex(271, 206.1875);
