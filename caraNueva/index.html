@@ -2911,10 +2911,9 @@ vertex(294, 207.1875);
 endShape();
 }
      function figuraEspantat(intensity) {
-    background(220);
-  beginShape();
-  stroke(0)
-  fill(204+40*intensity, 169, 221);
+beginShape();
+  
+  fill(204, 169, 221);
 
 ellipse(300,238,394,397);
 beginShape();
@@ -3414,9 +3413,11 @@ vertex(272, 498.1875);
 vertex(269, 481.1875);
 endShape(CLOSE);
     beginShape() //Boca
-  ellipse(300,268,30+40*intensity, 30+40*intensity);
+  ellipse(300,268,36+10*intensity, 30+10*intensity);
 endShape(CLOSE);
   fill(139,00,00)
+    ellipse(300,278,20+10*intensity, 10+10*intensity);
+
    beginShape(); //Corbata
 vertex(301, 570.1875);
 vertex(288, 546.1875);
@@ -3652,15 +3653,14 @@ vertex(161, 657.1875);
 endShape(CLOSE);
 fill(255,255,255)
   beginShape();
-     rect(300,275+25*intensity,5,9)
-      rect(295,275+25*intensity,5,9)
-      rect(290,274+25*intensity,5,7)
-      rect(305,274+25*intensity,5,7)
-      rect(285,272+25*intensity,5,5)
-      rect(310,272+25*intensity,5,5)
+     rect(300,254,5+10*intensity,9+10*intensity)
+      rect(295,254,5+10*intensity,9+10*intensity)
+      rect(290,256,5+10*intensity,7+10*intensity)
+      rect(305,256,5+10*intensity,7+10*intensity)
+      rect(285,258,5+10*intensity,5+10*intensity)
+      rect(310,258,5+10*intensity,5+10*intensity)
 
 endShape()
-
     }
     function figuraNeutral(intensity) {
   beginShape();
