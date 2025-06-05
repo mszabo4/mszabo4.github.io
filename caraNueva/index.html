@@ -199,7 +199,7 @@
    beginShape();
   beginShape()
   fill(255, 255, 0);
-
+stroke(0)
 ellipse(300,238,394,397);
 ellipse(30,100,100,100);
   
@@ -2137,15 +2137,15 @@ fill(0)
 vertex(289, 205.1875);
 vertex(269, 195.1875+40*intensity);
 vertex(272, 189.1875+40*intensity);
-vertex(291, 202.1875-40*intensity);
-vertex(289, 205.1875-40*intensity);
+vertex(291, 202.1875+40*intensity);
+vertex(289, 205.1875+40*intensity);
 endShape();
   beginShape();//Ceja derecha
 vertex(305, 205.1875);
 vertex(325, 194.1875+40*intensity);
 vertex(321, 187.1875+40*intensity);
-vertex(302, 201.1875-40*intensity);
-vertex(304, 205.1875-40*intensity);
+vertex(302, 201.1875+40*intensity);
+vertex(304, 205.1875+40*intensity);
 endShape();
   beginShape();
 vertex(294, 209.1875);
@@ -2476,10 +2476,10 @@ endShape();
     }
 
     function figuraSorprès(intensity) {
-        stroke(0)
 
 background(220);
 beginShape();
+  stroke(0)
 fill(76,40,130);
 ellipse(300,238,394,397);
 fill(244,244,244)
@@ -3650,7 +3650,7 @@ endShape()
   beginShape();
   
   fill(247, 169, 94);
-
+stroke(0)
 ellipse(300,238,394,397);
 beginShape();
 vertex(271, 206.1875);
