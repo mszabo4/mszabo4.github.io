@@ -737,7 +737,7 @@ vertex(307, 247.1875);
 vertex(307, 247.1875);
 vertex(309, 247.1875);
 vertex(311, 247.1875);
-vertex(311, 250.1875+40*smoothIntensity);
+vertex(311, 250.1875);
 vertex(309, 252.1875);
 vertex(307, 253.1875);
 vertex(303, 254.1875);
@@ -745,7 +745,7 @@ vertex(300, 254.1875);
 vertex(296, 254.1875);
 vertex(293, 253.1875);
 vertex(292, 252.1875);
-vertex(290, 249.1875+40*smoothIntensity);
+vertex(290, 249.1875);
 vertex(291, 250.1875);
 vertex(309, 250.1875);
 endShape(CLOSE);
@@ -1740,25 +1740,25 @@ vertex(161, 657.1875);
 endShape(CLOSE);
   fill(0, 0, 255);
 beginShape();
-ellipse(285,310,4,24)
-ellipse(275,275,4,30)
-ellipse(280,238,4,25)
-ellipse(270,318,4,20)
-ellipse(265,288,4,30)
-ellipse(259,350,4,30)
-ellipse(268,260,4,20)
+ellipse(285,310+40*intensity,4,24)
+ellipse(275,275+40*intensity,4,30)
+ellipse(280,238+40*intensity,4,25)
+ellipse(270,318+40*intensity,4,20)
+ellipse(265,288+40*intensity,4,30)
+ellipse(259,350+40*intensity,4,30)
+ellipse(268,260+40*intensity,4,20)
 
-ellipse(335,310,4,24)
-ellipse(325,275,4,30)
-ellipse(330,238,4,25)
-ellipse(320,318,4,20)
-ellipse(315,288,4,30)
-ellipse(309,350,4,30)
-ellipse(318,260,4,20)
-ellipse(329,360,4,50)
-ellipse(309,400,4,30)
-ellipse(250,400,4,30)
-ellipse(275,380,4,30)
+ellipse(335,310+40*intensity,4,24)
+ellipse(325,275+40*intensity,4,30)
+ellipse(330,238+40*intensity,4,25)
+ellipse(320,318+40*intensity,4,20)
+ellipse(315,288+40*intensity,4,30)
+ellipse(309,350+40*intensity,4,30)
+ellipse(318,260+40*intensity,4,20)
+ellipse(329,360+40*intensity,4,50)
+ellipse(309,400+40*intensity,4,30)
+ellipse(250,400+40*intensity,4,30)
+ellipse(275,380+40*intensity,4,30)
 
 
 
@@ -1769,7 +1769,7 @@ endShape(CLOSE);
     function figuraEnfadat(intensity) {
  background(220);
   beginShape();
-  
+  stroke(0)
   fill(255,0,0);
 
 ellipse(300,238,394,397);
@@ -2495,6 +2495,8 @@ endShape();
     }
 
     function figuraSorprès(intensity) {
+        stroke(0)
+
 background(220);
 beginShape();
 fill(76,40,130);
@@ -2914,7 +2916,7 @@ endShape();
      function figuraEspantat(intensity) {
     background(220);
   beginShape();
-  
+  stroke(0)
   fill(204, 169, 221);
 
 ellipse(300,238,394,397);
