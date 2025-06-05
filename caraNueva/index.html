@@ -194,30 +194,10 @@
 
     // Figures irregulars per a cada sentiment
     function figuraFelic(intensity) {
-   background(220);
-  
+
+  background(220);
    beginShape();
-
-  stroke(255, 153, 0);
-  strokeWeight(2);
-  
-  let cx = 30;        // centro x
-  let cy = 100;       // centro y
-  let r_in = 50;      // radio del sol
-  let r_out = 65;     // largo de los rayos
-  let num_rays = 16;  // número de rayos
-
-  for (let i = 0; i < num_rays; i++) {
-    let angle = TWO_PI / num_rays * i;
-    let x1 = cx + cos(angle) * r_in;
-    let y1 = cy + sin(angle) * r_in;
-    let x2 = cx + cos(angle) * r_out;
-    let y2 = cy + sin(angle) * r_out;
-    line(x1, y1, x2, y2); 
-  }
   beginShape()
-    stroke(50);
-
   fill(255, 255, 0);
 
 ellipse(300,238,394,397);
@@ -721,7 +701,7 @@ vertex(272, 498.1875);
 vertex(269, 481.1875);
 endShape(CLOSE);
   fill(139,00,00)
-  beginShape()
+ beginShape()
 vertex(290, 248.1875);
 vertex(292, 247.1875);
 vertex(294, 247.1875);
@@ -996,8 +976,9 @@ fill(255,255,255);
   fill(150, 0, 0);
   ellipse(30, 120, 30, 15);
     endShape();
-    }
-
+     
+  
+ }
     function figuraTrist(intensity) {
  background(220);
   beginShape();
@@ -1740,25 +1721,25 @@ vertex(161, 657.1875);
 endShape(CLOSE);
   fill(0, 0, 255);
 beginShape();
-ellipse(285,310+40*intensity,4,24)
-ellipse(275,275+40*intensity,4,30)
-ellipse(280,238+40*intensity,4,25)
-ellipse(270,318+40*intensity,4,20)
+ellipse(285,310+30*intensity,4,24)
+ellipse(275,275+50*intensity,4,30)
+ellipse(280,238+20*intensity,4,25)
+ellipse(270,318+60*intensity,4,20)
 ellipse(265,288+40*intensity,4,30)
-ellipse(259,350+40*intensity,4,30)
-ellipse(268,260+40*intensity,4,20)
+ellipse(259,350+20*intensity,4,30)
+ellipse(268,260+30*intensity,4,20)
 
 ellipse(335,310+40*intensity,4,24)
-ellipse(325,275+40*intensity,4,30)
-ellipse(330,238+40*intensity,4,25)
-ellipse(320,318+40*intensity,4,20)
-ellipse(315,288+40*intensity,4,30)
-ellipse(309,350+40*intensity,4,30)
-ellipse(318,260+40*intensity,4,20)
-ellipse(329,360+40*intensity,4,50)
-ellipse(309,400+40*intensity,4,30)
-ellipse(250,400+40*intensity,4,30)
-ellipse(275,380+40*intensity,4,30)
+ellipse(325,275+50*intensity,4,30)
+ellipse(330,238+60*intensity,4,25)
+ellipse(320,318+20*intensity,4,20)
+ellipse(315,288+30*intensity,4,30)
+ellipse(309,350+50*intensity,4,30)
+ellipse(318,260+70*intensity,4,20)
+ellipse(329,360+10*intensity,4,50)
+ellipse(309,400+80*intensity,4,30)
+ellipse(250,400+20*intensity,4,30)
+ellipse(275,380+50*intensity,4,30)
 
 
 
@@ -2152,19 +2133,19 @@ vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
 fill(0)
-  beginShape();
+  beginShape();//Ceja izquierda
 vertex(289, 205.1875);
-vertex(269, 195.1875);
-vertex(272, 189.1875);
-vertex(291, 202.1875);
-vertex(289, 205.1875);
+vertex(269, 195.1875+40*intensity);
+vertex(272, 189.1875+40*intensity);
+vertex(291, 202.1875-40*intensity);
+vertex(289, 205.1875-40*intensity);
 endShape();
-  beginShape();
+  beginShape();//Ceja derecha
 vertex(305, 205.1875);
-vertex(325, 194.1875);
-vertex(321, 187.1875);
-vertex(302, 201.1875);
-vertex(304, 205.1875);
+vertex(325, 194.1875+40*intensity);
+vertex(321, 187.1875+40*intensity);
+vertex(302, 201.1875-40*intensity);
+vertex(304, 205.1875-40*intensity);
 endShape();
   beginShape();
 vertex(294, 209.1875);
@@ -3417,7 +3398,7 @@ vertex(272, 498.1875);
 vertex(269, 481.1875);
 endShape(CLOSE);
     beginShape() //Boca
-  ellipse(300,268,30, 30);
+  ellipse(300,268,30+50*intensity, 30+50*intensity);
 endShape(CLOSE);
   fill(139,00,00)
    beginShape(); //Corbata
@@ -3666,17 +3647,7 @@ endShape()
 
     }
     function figuraNeutral(intensity) {
-  
-    r = map(intensity, 0, 1, 255, 0);
-    g = map(intensity, 0, 1, 255, 255);
-    b = map(intensity, 0, 1, 255, 0);
-
-  background(r, g, b);
-
-// Cos
-fill(r,g,b);
-stroke(0);
-beginShape();
+  beginShape();
   
   fill(247, 169, 94);
 
@@ -4177,35 +4148,11 @@ vertex(272, 498.1875);
 vertex(269, 481.1875);
 endShape(CLOSE);
   fill(139,00,00)
-  beginShape()
+  beginShape() //Boca
 vertex(290, 248.1875);
-vertex(292, 247.1875);
-vertex(294, 247.1875);
-vertex(295, 247.1875);
-vertex(297, 247.1875);
-vertex(298, 247.1875);
-vertex(299, 247.1875);
-vertex(301, 247.1875);
-vertex(303, 247.1875);
-vertex(305, 247.1875);
-vertex(307, 247.1875);
-vertex(307, 247.1875);
-vertex(307, 247.1875);
-vertex(309, 247.1875);
-vertex(311, 247.1875);
-vertex(311, 250.1875);
-vertex(309, 252.1875);
-vertex(307, 253.1875);
-vertex(303, 254.1875);
-vertex(300, 254.1875);
-vertex(296, 254.1875);
-vertex(293, 253.1875);
-vertex(292, 252.1875);
-vertex(290, 249.1875);
-vertex(291, 250.1875);
 vertex(309, 250.1875);
 endShape(CLOSE);
-   beginShape();
+   beginShape(); //Corbata
 vertex(301, 570.1875);
 vertex(288, 546.1875);
 vertex(289, 540.1875);
@@ -4228,7 +4175,7 @@ vertex(313, 546.1875);
 vertex(301, 570.1875);
 endShape(CLOSE);
 fill(205,205,205)
-  beginShape();
+  beginShape(); //Mur dret
 vertex(440, 659.1875);
 vertex(598, 659.1875);
 vertex(599, 724.1875);
@@ -4262,7 +4209,7 @@ vertex(557, 677.1875);
 vertex(470, 679.1875);
 vertex(437, 679.1875);
 endShape(CLOSE);
-  beginShape();
+  beginShape();// Mur esquerre
 vertex(0, 661.1875);
 vertex(68, 659.1875);
 vertex(54, 681.1875);
@@ -4437,6 +4384,7 @@ vertex(164, 655.1875);
 vertex(163, 657.1875);
 vertex(161, 657.1875);
 endShape(CLOSE);
+
  }
   </script>
 </body>
