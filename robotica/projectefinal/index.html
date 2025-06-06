@@ -213,13 +213,19 @@
 
   <h1 class="text-center my-4" style="font-size: 3rem; color: #0ea5e9; text-shadow: 2px 2px #0f172a;">QUÈ HEM FET?</h1>
 
-  <p>
-    Primer de tot, vam crear el nostre codi font que es
-    basava en fer amb notes musicals amb Arduino i reproduir-les
-    amb un altaveu. La placa que vam utilitzar inicialment va ser la 
-    <strong>ESP32-S3 WROOM</strong>, aquesta va ser la primera de totes i també la primera que ens va donar errors. Els errors van ser els següents.
-  </p>
+ <p>
+  El nostre projecte es basa en la creació d’un <strong>sistema interactiu capaç d’escoltar i respondre amb so</strong>, 
+  una mena de dispositiu que “escolta” l’entorn a través d’un <strong>micròfon</strong> i reprodueix 
+  <strong>sons o melodies</strong> mitjançant un <strong>altaveu</strong>, controlat amb una 
+  <strong>placa microcontroladora</strong>.
+</p>
 
+<p>
+  Inicialment, vam crear el nostre codi font per generar notes musicals amb Arduino i reproduir-les amb un altaveu. 
+  La primera placa que vam utilitzar va ser la <strong>ESP32-S3 WROOM</strong>, que va ser també la primera a donar-nos 
+  problemes tècnics. Aquests són alguns dels errors amb què ens vam trobar:
+</p>
+    
   <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Que significa l'error GND a Arduino?</h2>
   <p>No és un error oficial del programari d'Arduino, sinó un <strong>problema habitual de maquinari</strong>.</p>
   <p>Pot presentar-se de diverses formes:</p>
@@ -249,14 +255,83 @@
   <p>Aquest número per si sol no dona gaire informació; el més important és llegir el <strong>missatge d'error complet</strong> que apareix just abans a la consola de l'IDE. Allà trobaràs la causa real del problema.</p>
 
   <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px; margin-top: 40px;">Quines plaques noves vam utilitzar?</h2>
+ <p>
+  A més de la <strong>ESP32-S3</strong>, també vam provar les <strong>Seeed XIAO</strong> i algunes de les seves variants. 
+  Tot i això, <strong>cap no ens va funcionar correctament</strong>:
+</p>
 
-  <p>
-    Les úniques plaques noves que vam probar van ser les:
-    <strong>Seeed XIAO</strong> i versions diferents de XIAO.
-    Pero no van funcionar. La <strong>XIAO</strong> va donar error de
-    exit status i les altres <strong>no ens sortien al port COM</strong>.
-    L’únic que ens quedava era <strong>canviar de MU</strong>.
-  </p>
+<ul>
+  <li>La <strong>XIAO</strong> donava errors d'exit status.</li>
+  <li>Les altres <strong>ni apareixien al port COM</strong>.</li>
+</ul>
+
+<p>
+  Finalment, vam decidir <strong>canviar de microcontrolador (MU)</strong> per continuar desenvolupant el projecte.
+</p>
+    <h3 style="font-size: 1.6rem; color: #7dd3fc;">Aquest es el codi que hem ulitzat:</h3>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code>const int micPin = A0;
+const int speakerPin = 5;
+
+const int threshold = 300;
+
+#define DO  262
+#define RE  294
+#define MI  330
+#define FA  349
+#define SOL 392
+#define LA  440
+#define SI  494
+#define DO2 523
+
+const int baseDuration = 400;
+
+int melody[] = {
+  DO, DO, RE, MI,
+  MI, RE, DO, RE,
+  MI, MI, MI, 0,
+  RE, RE, RE, 0,
+  DO, DO, DO, 0,
+  DO, RE, MI, MI, RE, DO
+};
+
+int noteDurations[] = {
+  400, 400, 400, 400,
+  400, 400, 400, 400,
+  600, 400, 400, 400,
+  600, 400, 400, 400,
+  600, 400, 400, 400,
+  400, 400, 400, 400, 400, 600
+};
+
+void setup() {
+  pinMode(speakerPin, OUTPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  int micValue = analogRead(micPin);
+  Serial.println(micValue);
+
+  if (micValue > threshold) {
+    for (int i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) {
+      int note = melody[i];
+      int duration = noteDurations[i];
+
+      if (note == 0) {
+        noTone(speakerPin);
+      } else {
+        tone(speakerPin, note, duration);
+      }
+      delay(duration * 1.3);
+    }
+    delay(1000);
+  } else {
+    noTone(speakerPin);
+  }
+
+  delay(50);
+}
+</code></pre>
 </div>
 </body>
 </html>
