@@ -236,40 +236,6 @@ amb un altaveu. La placa que vam utilitzar inicialment va ser la
 <h3>3. GNDs no compartits entre diferents fonts</h3>
 <p>Si utilitzes, per exemple, una bateria i un USB sense unir els seus GNDs, els dispositius <strong>no “parlen el mateix idioma elèctric”</strong>.</p>
 
-<h2>Exemple pràctic</h2>
-<p>Tens un sensor connectat a 5V i GND de l’Arduino, però el cable GND està mal connectat. El sensor no funcionarà correctament perquè el seu <strong>“terra elèctric” està flotant</strong>, i Arduino no pot interpretar bé el senyal.</p>
-
-<h2>Solució ràpida</h2>
-<ul>
-  <li>Assegura’t que <strong>tots els components comparteixen el mateix GND</strong>.</li>
-  <li>Utilitza cables i connexions fermes.</li>
-  <li>Si utilitzes diverses fonts d’alimentació, <strong>connecta tots els seus GND entre si</strong>.</li>
-</ul>
-
-<h2>🔧 Exemple de codi amb sensor</h2>
-<p>Encara que el codi sigui correcte, fallarà si el GND està mal connectat:</p>
-
-<pre><code>
-// Exemple de lectura d’un sensor de temperatura analògic
-const int sensorPin = A0;
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  int lectura = analogRead(sensorPin);
-  float voltatge = lectura * (5.0 / 1023.0);
-  float temperatura = (voltatge - 0.5) * 100.0; // fórmula per al LM35
-
-  Serial.print("Temperatura: ");
-  Serial.print(temperatura);
-  Serial.println(" °C");
-
-  delay(1000);
-}
-</code></pre>
-
  <h1>Què significa l'error "Exit Status"?</h1>
 
   <p>L'<strong>exit status</strong> (o codi de sortida) és un número que un programa retorna al sistema operatiu quan acaba la seva execució.</p>
