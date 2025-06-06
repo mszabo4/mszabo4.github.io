@@ -209,10 +209,34 @@
   </nav>
 
   <div class="content-container">
-  <p><strong>Pedro Diéguez Miguel Ángel Szabo</strong> - <em>6/06/2025</em></p>
+  <p><strong>Pedro Diéguez // Miguel Ángel Szabo</strong> - <em>6/06/2025</em></p>
 
-  <h1 class="text-center my-4" style="font-size: 3rem; color: #0ea5e9; text-shadow: 2px 2px #0f172a;">QUÈ HEM FET?</h1>
+ <h1 class="text-center my-4" style="font-size: 3rem; color: #0ea5e9; text-shadow: 2px 2px #0f172a;">PROJECTE FINAL</h1>
+    <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Parla’m i et cantaré: projecte d’interacció sonora amb microcontrolador</h2>
 
+<p>
+L’objectiu principal del nostre projecte era desenvolupar un sistema capaç d’escoltar l’entorn mitjançant un micròfon i respondre-hi reproduint sons o melodies amb un altaveu, utilitzant una placa microcontroladora ESP32 o Seeed XIAO.
+</p>
+
+<p>
+La idea era que el dispositiu detectés sons ambientals i, en resposta, reproduís la cançó infantil <em>“Cargol treu banya”</em> mitjançant tons generats per programació. Per controlar el so i amplificar-lo, pensàvem utilitzar un transistor com a commutador per l’altaveu.
+</p>
+
+<p>
+Durant el desenvolupament, vam programar el codi per generar les notes musicals i vam muntar el circuit amb el micròfon i l’altaveu connectats a la placa. Tanmateix, vam trobar problemes tècnics amb la placa microcontroladora, que no ens va permetre fer funcionar correctament el sistema. Vam provar diferents plaques, però no vam aconseguir que funcionés la detecció i la reproducció del so.
+</p>
+
+<p>
+Per aquest motiu, tot i que la idea i el codi estaven encaminats, no vam poder completar el projecte fins al final ni veure’n el funcionament real. Aquesta experiència ens ha permès aprendre sobre la programació amb Arduino, l’electrònica bàsica i els problemes habituals que poden sorgir en projectes amb microcontroladors.
+</p>
+<h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Components que hem utilitzat:</h2>
+    <ul>
+  <li>Placa ESP32/Seeed XIAO</li>
+  <li>Micròfon</li>
+  <li>Altaveu</li>
+  <li>Transistor</li>
+</ul>
+<h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Que hem fet?</h2>
  <p>
   El nostre projecte es basa en la creació d’un <strong>sistema interactiu capaç d’escoltar i respondre amb so</strong>, 
   una mena de dispositiu que “escolta” l’entorn a través d’un <strong>micròfon</strong> i reprodueix 
@@ -226,7 +250,7 @@
   problemes tècnics. Aquests són alguns dels errors amb què ens vam trobar:
 </p>
     
-  <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Que significa l'error GND a Arduino?</h2>
+  <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Què significa l'error GND a Arduino?</h2>
   <p>No és un error oficial del programari d'Arduino, sinó un <strong>problema habitual de maquinari</strong>.</p>
   <p>Pot presentar-se de diverses formes:</p>
 
@@ -289,7 +313,8 @@
   El nostre sistema és més senzill, però funciona com un <strong>prototip funcional</strong> de tots aquests exemples: quan el micròfon capta so, l’altaveu respon amb una melodia predeterminada.
 </p>
 
-<h3 style="font-size: 1.6rem; color: #7dd3fc;">Codi per detectar sons i activar una melodia</h3>    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code>const int micPin = A0;
+<h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Codi per detectar sons i activar una melodia:</h2>
+    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code>const int micPin = A0;
 const int speakerPin = 5;
 
 const int threshold = 300;
@@ -352,6 +377,8 @@ void loop() {
   delay(50);
 }
 </code></pre>
+    <h3 style="font-size: 1.6rem; color: #7dd3fc;">Fotografia del nostre projecte</h3>
+    <img src="projecte.jpeg" alt="Fotografia del nostre projecte" style="max-width: 400px; width: 100%; height: auto;">
 </div>
 </body>
 </html>
