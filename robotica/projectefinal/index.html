@@ -268,8 +268,28 @@
 <p>
   Finalment, vam decidir <strong>canviar de microcontrolador (MU)</strong> per continuar desenvolupant el projecte.
 </p>
-    <h3 style="font-size: 1.6rem; color: #7dd3fc;">Aquest es el codi que hem ulitzat:</h3>
-    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code>const int micPin = A0;
+<h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px; margin-top: 40px;">Com funciona el nostre sistema de micròfon i altaveu?</h2>
+<p>
+  Volíem que la nostra placa <strong>reaccionés quan detectava so</strong> mitjançant un <strong>micròfon analògic</strong>. 
+  Quan el micròfon detecta que algú parla o fa soroll per sobre d’un cert llindar, la placa <strong>reprodueix una melodia</strong> 
+  automàticament a través d’un <strong>altaveu</strong>.
+</p>
+
+<p>
+  Aquesta idea ens va venir després d’estudiar <strong>sistemes de reconeixement de veu bàsics</strong>, molt utilitzats a la indústria per a sistemes d’atenció automàtica, alarmes activades per veu, 
+  o joguines intel·ligents que reaccionen al que dius.
+</p>
+
+<p>
+  Un exemple real és el <strong>ninot de peluix "Furby"</strong>, que detecta sons i reacciona parlant o movent-se. 
+  També s'utilitza en sistemes industrials com <strong>assistents de veu en línies de producció</strong>, on un treballador pot donar una ordre verbal simple perquè una màquina comenci o pari un procés.
+</p>
+
+<p>
+  El nostre sistema és més senzill, però funciona com un <strong>prototip funcional</strong> de tots aquests exemples: quan el micròfon capta so, l’altaveu respon amb una melodia predeterminada.
+</p>
+
+<h3 style="font-size: 1.6rem; color: #7dd3fc;">Codi per detectar sons i activar una melodia</h3>    <pre><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button><code>const int micPin = A0;
 const int speakerPin = 5;
 
 const int threshold = 300;
