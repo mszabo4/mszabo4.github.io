@@ -209,40 +209,40 @@
   </nav>
 
   <div class="content-container">
-<p><strong>Pedro Diéguez Miguel Ángel Szabo</strong> - <em>6/06/2025</em></p>
+  <p><strong>Pedro Diéguez Miguel Ángel Szabo</strong> - <em>6/06/2025</em></p>
 
-<h1>QUÈ HEM FET?</h1>
+  <h1 class="text-center my-4" style="font-size: 3rem; color: #0ea5e9; text-shadow: 2px 2px #0f172a;">QUÈ HEM FET?</h1>
 
-<p>
-Primer de tot, vam crear el nostre codi font que es
-basava en fer amb notes musicals amb Arduino i reproduir-les
-amb un altaveu. La placa que vam utilitzar inicialment va ser la 
-  <strong>ESP32-S3 WROOM</strong>, aquesta va ser la primera de totes i també la primera que ens va donar errors. Els errors van ser els següents.
-</p>
+  <p>
+    Primer de tot, vam crear el nostre codi font que es
+    basava en fer amb notes musicals amb Arduino i reproduir-les
+    amb un altaveu. La placa que vam utilitzar inicialment va ser la 
+    <strong>ESP32-S3 WROOM</strong>, aquesta va ser la primera de totes i també la primera que ens va donar errors. Els errors van ser els següents.
+  </p>
 
-<h2>Error GND a Arduino</h2>
+  <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px;">Error GND a Arduino</h2>
 
-<h3>Què és GND?</h3>
-<ul>
-  <li><strong>GND</strong> significa <em>"ground"</em> o <em>"terra"</em>.</li>
-  <li>És el punt de <strong>referència de voltatge 0V</strong> al circuit.</li>
-  <li>Tots els components han de compartir aquest punt per comunicar-se correctament.</li>
-</ul>
+  <h3 style="font-size: 1.75rem; color: #7dd3fc; margin-top: 30px; text-decoration: underline;">Què és GND?</h3>
+  <ul>
+    <li><strong>GND</strong> significa <em>"ground"</em> o <em>"terra"</em>.</li>
+    <li>És el punt de <strong>referència de voltatge 0V</strong> al circuit.</li>
+    <li>Tots els components han de compartir aquest punt per comunicar-se correctament.</li>
+  </ul>
 
-<h4>Què és l'"error GND"?</h4>
-<p>No és un error oficial del programari d'Arduino, sinó un <strong>problema habitual de maquinari</strong>.</p>
-<p>Pot presentar-se de diverses formes:</p>
+  <h4 style="font-size: 1.5rem; color: #60a5fa; margin-top: 20px;">Què és l'"error GND"?</h4>
+  <p>No és un error oficial del programari d'Arduino, sinó un <strong>problema habitual de maquinari</strong>.</p>
+  <p>Pot presentar-se de diverses formes:</p>
 
-<h3>1. Falta de connexió al GND</h3>
-<p>Si connectes sensors o mòduls sense unir els seus GND amb el de l’Arduino, <strong>no hi ha una referència comuna de voltatge</strong>. Resultat: fallades aleatòries o mal funcionament.</p>
+  <h3 style="font-size: 1.6rem; color: #7dd3fc; margin-top: 25px;">1. Falta de connexió al GND</h3>
+  <p>Si connectes sensors o mòduls sense unir els seus GND amb el de l’Arduino, <strong>no hi ha una referència comuna de voltatge</strong>. Resultat: fallades aleatòries o mal funcionament.</p>
 
-<h3>2. Connexions dolentes o cables solts</h3>
-<p>Un GND mal connectat pot provocar errors de lectura, reinicis o fallades de comunicació.</p>
+  <h3 style="font-size: 1.6rem; color: #7dd3fc;">2. Connexions dolentes o cables solts</h3>
+  <p>Un GND mal connectat pot provocar errors de lectura, reinicis o fallades de comunicació.</p>
 
-<h3>3. GNDs no compartits entre diferents fonts</h3>
-<p>Si utilitzes, per exemple, una bateria i un USB sense unir els seus GNDs, els dispositius <strong>no “parlen el mateix idioma elèctric”</strong>.</p>
+  <h3 style="font-size: 1.6rem; color: #7dd3fc;">3. GNDs no compartits entre diferents fonts</h3>
+  <p>Si utilitzes, per exemple, una bateria i un USB sense unir els seus GNDs, els dispositius <strong>no “parlen el mateix idioma elèctric”</strong>.</p>
 
- <h2>Què significa l'error "Exit Status"?</h2>
+  <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px; margin-top: 40px;">Què significa l'error "Exit Status"?</h2>
 
   <p>L'<strong>exit status</strong> (o codi de sortida) és un número que un programa retorna al sistema operatiu quan acaba la seva execució.</p>
 
@@ -257,16 +257,15 @@ amb un altaveu. La placa que vam utilitzar inicialment va ser la
 
   <p>Aquest número per si sol no dona gaire informació; el més important és llegir el <strong>missatge d'error complet</strong> que apareix just abans a la consola de l'IDE. Allà trobaràs la causa real del problema.</p>
 
+  <h2 style="font-size: 2.2rem; color: #38bdf8; border-left: 6px solid #0ea5e9; padding-left: 15px; margin-top: 40px;">PLAQUES NOVES?</h2>
 
-<h2>PLAQUES NOVES?</h2>
-
-<p>
-Les úniques plaques noves que vam probar van ser les:
-<strong>Seeed XIAO</strong> i versions diferents de XIAO.
-Pero no van funcionar. La <strong>XIAO</strong> va donar error de
-exit status i les altres <strong>no ens sortien al port COM</strong>.
-L’únic que ens quedava era <strong>canviar de MU</strong>.
-</p>
-
+  <p>
+    Les úniques plaques noves que vam probar van ser les:
+    <strong>Seeed XIAO</strong> i versions diferents de XIAO.
+    Pero no van funcionar. La <strong>XIAO</strong> va donar error de
+    exit status i les altres <strong>no ens sortien al port COM</strong>.
+    L’únic que ens quedava era <strong>canviar de MU</strong>.
+  </p>
+</div>
 </body>
 </html>
