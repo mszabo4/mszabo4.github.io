@@ -1,1 +1,252 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Problemes de Tecnologia i Enginyeria</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+    <script src="questions.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h2>
+    Problemes de Tecnologia i Enginyeria 
+    <span id="dark-toggle" style="cursor:pointer; margin-left:10px;">🌙</span>
+</h2>
 
+<div class="filter-group-container">
+    <label>Tipus de preguntes:</label>
+    <div id="type-filter-buttons" class="filter-group">
+        <button class="filter-button active" data-filter="totes" onclick="selectFilter(this, 'type')">Totes</button>
+        <button class="filter-button" data-filter="questions" onclick="selectFilter(this, 'type')">Qüestions</button>
+        <button class="filter-button" data-filter="exercicis" onclick="selectFilter(this, 'type')">Exercicis</button>
+    </div>
+
+    <label>Tria una categoria:</label>
+    <div id="category-filter-buttons" class="filter-group">
+        <button class="filter-button active" data-filter="tot" onclick="selectFilter(this, 'category')">Tot</button>
+        <button class="filter-button" data-filter="energia" onclick="selectFilter(this, 'category')">Energia</button>
+        <button class="filter-button" data-filter="materials" onclick="selectFilter(this, 'category')">Materials i assaigs</button>
+        <button class="filter-button" data-filter="metrologia" onclick="selectFilter(this, 'category')">Metrologia i normalització</button>
+        <button class="filter-button" data-filter="pneumatica" onclick="selectFilter(this, 'category')">Sistemes pneumàtics i oleohidràulics</button>
+        <button class="filter-button" data-filter="motors" onclick="selectFilter(this, 'category')">Motors reductors</button>
+        <button class="filter-button" data-filter="maquines" onclick="selectFilter(this, 'category')">Principis de les màquines</button>
+        <button class="filter-button" data-filter="electrics" onclick="selectFilter(this, 'category')">Màquines i sistemes elèctrics i electrotècnics</button>
+        <button class="filter-button" data-filter="control" onclick="selectFilter(this, 'category')">Control lògic i funcions lògiques</button>
+        <button class="filter-button" data-filter="organitzacio" onclick="selectFilter(this, 'category')">Organització industrial</button>
+    </div>
+</div>
+<div id="quiz-container"></div>
+
+<style>
+/* Estos estilos son básicos y se complementan con styles.css */
+.ocult { display: none; }
+.visible { display: block; }
+.solution-button { margin-top: 10px; }
+.question-images { margin: 10px 0; }
+</style>
+<div id="load-time" style="margin-top:20px; font-style:italic; color: #555;"></div>
+
+<script>
+let domReadyTime = 0;  // guardarem temps DOM
+
+document.addEventListener("DOMContentLoaded", () => {
+    domReadyTime = (performance.now()).toFixed(2);
+    console.log(`DOM carregat en: ${domReadyTime} ms`);
+});
+
+window.addEventListener('load', async () => {
+    const loadCompleteTime = (performance.now()).toFixed(2);
+    console.log(`Pàgina completament carregada en: ${loadCompleteTime} ms`);
+
+    await MathJax.typesetPromise();
+    const mathjaxDoneTime = (performance.now()).toFixed(2);
+    console.log(`MathJax complet en: ${mathjaxDoneTime} ms`);
+
+    const loadDiv = document.getElementById("load-time");
+    loadDiv.innerHTML = `
+        <strong>Temps de càrrega:</strong><br>
+        DOM llest: ${domReadyTime} ms<br>
+        Pàgina completa: ${loadCompleteTime} ms<br>
+        MathJax renderitzat: ${mathjaxDoneTime} ms
+    `;
+});
+</script>
+
+
+<script>
+/* ----------------- Mode fosc ----------------- */
+const toggle = document.getElementById("dark-toggle");
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+});
+document.addEventListener("DOMContentLoaded", () => {
+    if(localStorage.getItem("theme")==="dark") { document.body.classList.add("dark-mode"); toggle.textContent="☀️"; }
+});
+
+/* ----------------- Funció auxiliar per imatges ----------------- */
+function renderImages(q) {
+    let html = '';
+    if(q.images) html += `<div class="question-images">${q.images}</div>`;
+    if(q.answerImage) html += `<img src="${q.answerImage}" alt="Imatge de la resposta" style="max-width:100%; height:auto;">`;
+    return html;
+}
+
+/* ----------------- Funció per opcions ----------------- */
+function generateOptions(options, idx, correctAnswer) {
+    if(!options) return '';
+    
+    // 1. Encontrar el TEXTO de la respuesta correcta 
+    const correctOption = options.find(o => o.value.trim().toLowerCase() === correctAnswer.trim().toLowerCase());
+    const correctText = correctOption ? correctOption.text : correctAnswer; 
+    
+    // 2. Generar los botones, pasando el TEXTO de la respuesta correcta y el elemento 'this' (el botón)
+    return `<ul>${options.map(o => `
+        <li>
+            <button onclick="checkAnswer('${o.value}','${correctAnswer}','answer${idx}','steps${idx}','result${idx}', '${correctText}', this)">
+                ${o.text}
+            </button>
+        </li>`).join('')}</ul>`;
+}
+
+/* ----------------- Almacenamiento Global de Filtros Activos ----------------- */
+let activeFilters = {
+    type: 'totes',
+    category: 'tot'
+};
+
+/* ----------------- Càlcul de Contadors Globals (FIX: Envuelto en función para ejecución tardía) ----------------- */
+function calculateGlobalNumbers() {
+    let globalQuestionCount = 1;
+    let globalExerciciCount = 1;
+
+    // Se asume que 'questions' existe aquí porque se llama en initializeQuiz
+    if (typeof questions === 'undefined' || !Array.isArray(questions)) {
+        console.error("Error: Array 'questions' no encontrado.");
+        return;
+    }
+
+    questions.forEach(q => {
+        if (q.type === 'questions') {
+            q.globalNumber = globalQuestionCount++;
+            q.typeText = 'Qüestió';
+        } else if (q.type === 'exercicis') {
+            q.globalNumber = globalExerciciCount++;
+            q.typeText = 'Exercici';
+        } else {
+            // Fallback para tipos desconocidos
+            q.globalNumber = 0; 
+            q.typeText = q.type ? q.type.charAt(0).toUpperCase() + q.type.slice(1) : 'Element';
+        }
+    });
+}
+/* ----------------- Fin Càlcul Contadors Globals ----------------- */
+
+
+/* ----------------- Función para Botones de Filtro ----------------- */
+function selectFilter(button, filterType) {
+    const parent = button.parentElement;
+    
+    // 1. Quitar la clase 'active' de todos los hermanos
+    parent.querySelectorAll('.filter-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // 2. Añadir la clase 'active' al botón pulsado
+    button.classList.add('active');
+    
+    // 3. Actualizar el filtro global
+    activeFilters[filterType] = button.getAttribute('data-filter');
+    
+    // 4. Renderizar el quiz con los nuevos filtros
+    renderQuiz();
+}
+
+/* ----------------- Render Quiz combinat (FINAL y CORREGIDO) ----------------- */
+function renderQuiz() {
+    const quizContainer = document.getElementById("quiz-container");
+    const selectedCategory = activeFilters.category; 
+    const selectedType = activeFilters.type; 
+
+    quizContainer.innerHTML = '';
+
+    const filtered = questions.map((q,i)=>({...q, originalIndex:i}))
+        .filter(q => (selectedCategory==='tot' || q.category===selectedCategory)
+                  && (selectedType==='totes' || q.type===selectedType));
+    
+    // El forEach simplemente usa los valores fijos calculados en initializeQuiz
+
+    filtered.forEach(q => {
+        // Usamos el número y texto pre-calculado y fijo
+        let typeText = q.typeText; 
+        let currentNumber = q.globalNumber; 
+        
+        // Fallback si no tiene número global asignado (por si hay un error en questions.js)
+        if (!currentNumber || currentNumber === 0) {
+            currentNumber = q.originalIndex + 1;
+        }
+        
+        const div = document.createElement("div");
+        div.className = 'quiz-item'; 
+        div.innerHTML = `
+            <h3>${typeText} ${currentNumber}</h3> 
+            <div class="question-text">${q.text}</div>
+            ${renderImages(q)}
+            ${generateOptions(q.options,q.originalIndex,q.correctAnswer)}
+            <div id="result${q.originalIndex}" class="result-box ocult">
+                <div id="answer${q.originalIndex}" class="feedback-container"></div>
+                <p><strong>Solució pas a pas:</strong></p>
+                <p id="steps${q.originalIndex}">${q.steps || ''}</p>
+            </div>
+            ${q.type==='exercicis'?`<button class="solution-button" onclick="toggleSolution(${q.originalIndex},this)">Mostra solució</button>`:''}
+        `;
+        quizContainer.appendChild(div);
+    });
+
+    MathJax.typesetPromise();
+}
+
+/* ----------------- Comprovació resposta ----------------- */
+function checkAnswer(selected, correct, answerId, stepsId, resultId, correctText, buttonElement) {
+    const a = document.getElementById(answerId), s = document.getElementById(stepsId), r = document.getElementById(resultId);
+
+    // --- Lógica para marcar la opción seleccionada ---
+    const ul = buttonElement.closest('ul');
+    ul.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('selected');
+    });
+    buttonElement.classList.add('selected');
+    // --- Fin Lógica de selección ---
+    
+    // Retroalimentación visual
+    a.innerHTML = selected.trim().toLowerCase()===correct.trim().toLowerCase() 
+        ? "<span class='correcta'>Correcte! Has seleccionat la resposta correcta.</span>"
+        : `<span class='incorrecta'>Incorrecte. La resposta correcta és: ${correctText}.</span>`;
+        
+    r.classList.add('visible');
+    const btn = r.previousElementSibling;
+    if(btn && btn.classList.contains('solution-button')) btn.style.display='block';
+    MathJax.typesetPromise();
+}
+
+/* ----------------- Toggle solució ----------------- */
+async function toggleSolution(idx, btn) {
+    const r = document.getElementById(`result${idx}`);
+    if(r.classList.contains('visible')) { r.classList.replace('visible','ocult'); btn.textContent='Mostra solució'; }
+    else { r.classList.replace('ocult','visible'); btn.textContent='Amaga solució'; }
+    await MathJax.typesetPromise();
+}
+
+/* ----------------- Inicialització (Nuevo punto de entrada) ----------------- */
+function initializeQuiz() {
+    // 1. PRIMERO: Calcular los números fijos globales, asegurando que questions.js ha cargado.
+    calculateGlobalNumbers(); 
+    // 2. SEGUNDO: Renderizar la web.
+    renderQuiz(); 
+}
+
+document.addEventListener("DOMContentLoaded", initializeQuiz);
+</script>
+</body>
+</html>
