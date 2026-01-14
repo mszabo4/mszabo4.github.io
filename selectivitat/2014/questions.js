@@ -54,12 +54,13 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
        type: "questions",
         category: "electrics",
-        text: `Un motor de corrent altern asíncron de dos parells de pols, que està connectat a una xarxa amb una tensió U = 230 V i una freqüència &#402 = 50 Hz, té un lliscament relatiu s = 0,04 en condicions nominals. Quina és la velocitat de gir nominal n del motor?`,
+        text: `Un cargol M12 de pas (avanç per volta) p = 1,75 mm es cargola a una velocitat de rotació 
+n = 300 min–1. Quina és la velocitat d’avanç del cargol?`,
         options: [
-            { text: "1440 min<sup>–1</sup>", value: "a" },
-            { text: "1500 min<sup>–1</sup>", value: "b" },
-            { text: "2880 min<sup>–1</sup>", value: "c" },
-            { text: "3000 min<sup>–1</sup>", value: "d" }
+            { text: "14,29 mm/s", value: "a" },
+            { text: "54,98 mm/s", value: "b" },
+            { text: "25 mm/s", value: "c" },
+            { text: "8,75 mm/s", value: "d" }
         ],
         correctAnswer: "a",
         steps: `
@@ -78,12 +79,14 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
         type: "questions",
         category: "electrics",
-        text: `Es connecten en paral·lel dos altaveus que tenen una impedància (resistència) de 8 Ω cadascun. Quina és la impedància equivalent del conjunt?`,
+        text: `Un motor elèctric té un consum de 216 W de potència i s’alimenta amb una tensió 
+U = 36 V mitjançant una bateria de 10 A h de capacitat. Quant de temps durarà la bateria si 
+està totalment carregada?`,
         options: [
-            { text: "16 Ω", value: "a" },
-            { text: "8 Ω", value: "b" },
-            { text: "4 Ω", value: "c" },
-            { text: "2 Ω", value: "d" }
+            { text: "21,6 h", value: "a" },
+            { text: "3,6 h", value: "b" },
+            { text: "6 h", value: "c" },
+            { text: "1,67 h", value: "d" }
         ],
         correctAnswer: "c",
         steps: `
@@ -99,12 +102,13 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
        type: "questions",
         category: "energia",
-        text: `Un motor de combustió d'un automòbil emet 2,35 kg de CO<sub>2</sub> per cada litre de gasolina consumit. Si l'automòbil consumeix 6 L cada 100 km, quina és l'emissió de CO<sub>2</sub> en un recorregut de 350 km?`,
+        text: `En un circuit elèctric, es connecten en paraŀlel dues resistències iguals de valor nominal 
+50 Ω i tolerància ± 2 %. Quina és la resistència equivalent?`,
         options: [
-            { text: "14,1 kg", value: "a" },
-            { text: "49,35 kg", value: "b" },
-            { text: "21,0 kg", value: "c" },
-            { text: "8,22 kg", value: "d" }
+            { text: "100 Ω ± 4 %", value: "a" },
+            { text: "100 Ω ± 2 %", value: "b" },
+            { text: "25 Ω ± 2 %", value: "c" },
+            { text: "25 Ω ± 1 %", value: "d" }
         ],
         correctAnswer: "b",
         steps: `
@@ -118,17 +122,18 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
             `,
     },
     {
-      type: "questions",
+      type: "exercicis",
         category: "materials",
-        text: `L'argent de llei és un aliatge que conté un 92,5 % d'argent (Ag) i un 7,5 % de coure (Cu). Quina quantitat de coure cal per a aliar-lo amb 500 g d'argent pur per a obtenir argent de llei?`,
-        options: [
-            { text: "37,5 g", value: "a" },
-            { text: "40,54 g", value: "b" },
-            { text: "462,5 g", value: "c" },
-            { text: "540,54 g", value: "d" }
-        ],
-        correctAnswer: "b",
-        steps: `
+        text: `Una loteria duu a terme un sorteig escollint a l’atzar un número de tres xifres. Les 
+butlletes resulten premiades si dues o tres xifres coincideixen amb les del número escollit. 
+Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:`,
+      //Imagen del problema  
+         <br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
+         <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+         <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]
+         <br><br> ,
+               
+    steps: `
             \\[
             \text{Massa total} = \frac{500 \text{ g Ag}}{0,925} = 540,54 \text{ g total}
             \\]
@@ -141,10 +146,12 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
       type: "exercicis",
         category: "logica",
-        text: `Un sistema per determinar si un any és de traspàs rep tres senyals lògics d'un calendari digital: <i>c</i> (divisible per 100), <i>q</i> (divisible per 400) i <i>v</i> (divisible per 4). L'any és de traspàs ($t=1$) si és divisible per 400 O BÉ si és divisible per 4 però NO per 100. 
-        <br><strong>a)</strong> Elaboreu la taula de veritat. [1 punt]
-        <br><strong>b)</strong> Determineu la funció lògica $t(c, q, v)$ simplificada. [1 punt]
-        <br><strong>c)</strong> Dibuixeu l'esquema de portes lògiques. [0,5 punts]`,
+        text: `Es vol construir una estrella com la de la figura a partir d’un tauler de fusta. La botiga en calcula el cost segons l’expressió c = c1 s + c2 p, en què s és la superfície de fusta utilitzada i p és el perímetre de les peces tallades. El primer coeficient de cost és c1 = 10 €/m2 i l’altre coeficient de cost és c2 = 0,5 €/m si el perfil és senzill (com, per exemple, un triangle) o c2 = 1,3 €/m si el perfil és complex (com, per exemple, una estrella). Determineu: 
+        <br><strong>a)</strong> La superfície, s, de fusta utilitzada. [0,5 punt]
+        <br><strong>b)</strong> El perímetre tallat, p1, si es construeix a partir de triangles com el de la figura. [1 punt]
+        <br><strong>c)</strong> El perímetre tallat, p2, si es construeix tallant el perfil exterior de l’estrella. [0,5 punts]
+        <br><strong>d)</strong> El cost de cadascuna de les opcions. Quina és la més econòmica?  [0,5 punts]`,
+
         correctAnswer: "",
         steps: `
             <strong>a) Taula de veritat (resum):</strong>
@@ -159,14 +166,15 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
             <br><br>
             `,
     },
-    // --- SÈRIE 3: MECÀNICA (ESTÀTICA) ---
     {
         type: "exercicis",
         category: "mecanica",
-        text: `Una grua de construcció té una fletxa de $L = 20 \text{ m}$ i un contrapès de massa $m_{c} = 4000 \text{ kg}$ situat a $d = 5 \text{ m}$ de l'eix vertical. La massa de la fletxa és $m_{f} = 1500 \text{ kg}$ i es considera concentrada al seu punt mig.
+        text: `Un vehicle utilitza gasolina de poder calorífic pc = 42 MJ/L. Quan circula per un terreny horitzontal a una velocitat v = 100 km/h, el motor gasta ce = 4,7 L/(100 km) i desenvolupa una potència mecànica Pmec = 21 kW. Determineu:
         <br><img src="https://tu-repositorio.com/img/grua_pau2014.png" alt="Esquema de la grua" width="600">
-        <br><strong>a)</strong> Determineu el moment de bolcament respecte a l'eix quan no hi ha càrrega. [1 punt]
-        <br><strong>b)</strong> Quina és la càrrega màxima $M_{max}$ que pot aixecar a l'extrem de la fletxa sense que la grua bolqui cap endavant? [1,5 punts]`,
+        <br><strong>a)</strong> El consum, c, de gasolina en L/s. [0,5 punt]
+        <br><strong>b)</strong> La potència tèrmica consumida, Ptèrm [0,5 punts]
+        <br><strong>a)</strong> El rendiment, η, del motor. [0,5 punt]
+        <br><strong>a)</strong> La distància, d, que pot recórrer el vehicle si el dipòsit de combustible té una capacitat V = 45 L.  [1 punt]`,
         correctAnswer: "",
         steps: `
             <strong>a) Moment sense càrrega (respecte l'eix):</strong>
@@ -189,13 +197,17 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
             <br><br>
             `,
    },
-    // --- SÈRIE 4: HIDRÀULICA ---
     {
         type: "exercicis",
         category: "hidraulica",
-        text: `Una bomba d'aigua puja un cabal de $q = 10 \text{ m}^3/\text{h}$ a una alçada de $h = 30 \text{ m}$. El rendiment de la bomba és $\eta = 0,7$.
-        <br><strong>a)</strong> Determineu el treball útil fet en una hora. [1 punt]
-        <br><strong>b)</strong> Calculeu la potència elèctrica consumida pel motor de la bomba en kW. [1,5 punts]`,
+        text: `La figura mostra les dimensions d’una grua amb contrapès a la base. La massa del contrapès és mc = 12 500 kg i la massa de la resta d’elements de la grua es considera negligible. Determineu:
+        <br><strong>a)</strong> La massa màxima, mmàx, que pot elevar la grua, amb el ganxo situat a l’extrem, sense que bolqui.  [1 punt]
+        <br><strong>b)</strong> Calculeu la potència elèctrica consumida pel motor de la bomba en kW. [1,5 punts]
+        `,
+        text: `La grua s’utilitza per a fer pujar una massa m = 1 000 kg fins a una altura Δh = 20 m, amb el ganxo situat a 15 m de l’eix de la torre. La velocitat d’elevació de la càrrega és v = 30 m/min. Determineu:
+        <br><strong>b)</strong> L’energia mecànica, Emec, necessària per a fer l’elevació.  [1 punt]
+        <br><strong>c)</strong> La potència, Pm, que ha de desenvolupar el motor.   [1 punt]
+        `,
         correctAnswer: "",
         steps: `
             <strong>a) Treball útil (1h):</strong>
@@ -213,25 +225,31 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
             `,
     },
     {
-        type: "questions", // Tipus de pregunta
-        category: "electrics",
-        text: `La velocitat de sincronisme d’un motor asíncron, que està connectat a una xarxa de tensió U = 230 V i freqüència f = 50 Hz, és de 750 min<sup>–1</sup>. Quina serà la velocitat de sincronisme si es connecta a una xarxa de tensió U = 120 V i freqüència f = 60 Hz?`,
-        options: [
-            { text: "900 min<sup>–1</sup>", value: "a" },
-            { text: "552 min<sup>–1</sup>", value: "b" },
-            { text: "750 min<sup>–1</sup>", value: "c" },
-            { text: "391 min<sup>–1</sup>", value: "d" }
-        ],
-        correctAnswer: "a",
+        type: "exercicis",
+        category: "mecanica",
+        text: `En un centre d’ensenyament, el consum diari d’aigua calenta sanitària és c = 850 L. Cal incrementar la temperatura de l’aigua Δt = 20 °C i per això s’hi instaŀlen 20 captadors solars de rendiment η = 0,45 i superfície s = 1,3 m2. La calor específica de l’aigua és ce = 4,18 J/(g °C). Determineu:
+        <br><img src="https://tu-repositorio.com/img/grua_pau2014.png" alt="Esquema de la grua" width="600">
+        <br><strong>a)</strong> L’energia diària que cal per a escalfar l’aigua. [0,5 punt]
+        <br><strong>b)</strong> L’energia diària que ha de captar cadascun dels captadors. [0,5 punts]
+        <br><strong>c)</strong> Si la població on està situat el centre té una mitjana anual de sol de 2 600 h, quina és la potència mitjana necessària de radiació solar per unitat de superfície? [0,5 punt]`,
+        correctAnswer: "",
         steps: `
-            \\[	
-            {n_{s}} = \\frac{120 \\cdot \\text{&#402}}{\\text{p}} \\; \\text{&#8594} \\; \\text{p} = \\frac{120 cdot \\text{&#402}}{{n_{s}}}
+            <strong>a) Moment sense càrrega (respecte l'eix):</strong>
+            \\[
+            M_0 = m_c \cdot g \cdot d - m_f \cdot g \cdot \frac{L}{2}
             \\]
             \\[
-            p = \\frac{120 \\cdot 50 \\, \\text{Hz}}{750 \\; \\text{min}^{-1}} \\, = 8 \\, pols
+            M_0 = 4000 \cdot 9,8 \cdot 5 - 1500 \cdot 9,8 \cdot 10 = 196\,000 - 147\,000 = 49\,000 \text{ Nm}
+            \\]
+            <strong>b) Càrrega màxima a l'extrem (L=20m):</strong>
+            \\[
+            \sum M = 0 \rightarrow m_c \cdot g \cdot d = m_f \cdot g \cdot \frac{L}{2} + M_{max} \cdot g \cdot L
             \\]
             \\[
-            {n_{s}} = \\frac{120 \\cdot 60 \\, \\text{Hz}}{8} = 900 \\; \\text{min}^{-1}
+            196\,000 = 147\,000 + M_{max} \cdot 9,8 \cdot 20
+            \\]
+            \\[
+            49\,000 = 196 \cdot M_{max} \rightarrow M_{max} = 250 \text{ kg}
             \\]
             <br><br>
             `,
@@ -239,12 +257,12 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
         type: "questions", // Tipus de pregunta
         category: "materials",
-        text: `El límit elàstic d'un aliatge d'alumini és σ<sub>e</sub> = 85 MPa. Si una peça cilíndrica d'aquest material està sotmesa a una força de tracció de 1 400 N, quin és el diàmetre mínim que ha de tenir la secció perquè no es produeixi deformació plàstica?`,
+        text: `questió 2 serie 4`,
         options: [
-            { text: "3,24 mm", value: "a" },
-            { text: "16,47 mm", value: "b" },
-            { text: "4,58 mm", value: "c" },
-            { text: "2,29 mm", value: "d" }
+            { text: "22 μm", value: "a" },
+            { text: "47 μm", value: "b" },
+            { text: "34 μm", value: "c" },
+            { text: "No hi ha joc en aquest ajust.", value: "d" }
         ],
         correctAnswer: "c",
         steps: `
@@ -266,12 +284,12 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
         type: "questions", // Tipus de pregunta
         category: "organitzacio",
-        text: `Dues terminals d'un aeroport estan comunicades per un tren autònom que en un trajecte pot transportar fins a tres-centes persones. El temps del trajecte és de 3 min i 15 s; i el temps d'espera entre dos trajectes és de 45 s de les 5.30 h a les 23.30 h, i d'1 min i 15 s de les 23.30 h a les 5.30 h. Quin és el nombre màxim de viatgers que pot transportar un tren durant tot un dia?`,
+        text: `La substitució de 10 bombetes incandescents de 60 W per 10 bombetes de LED de 7 W comporta un estalvi energètic, després de 100 h de funcionament, de`,
         options: [
-            { text: "105 000", value: "a" },
-            { text: "96 000", value: "b" },
-            { text: "108 000", value: "c" },
-            { text: "101 647", value: "d" }
+            { text: "530 kW h.", value: "a" },
+            { text: "60 kW h.", value: "b" },
+            { text: "53 kW h.", value: "c" },
+            { text: "16,67 kW h.", value: "d" }
         ],
         correctAnswer: "a",
         steps: `
@@ -326,12 +344,12 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
         type: "questions", // Tipus de pregunta
         category: "metrologia",
-        text: `En un circuit elèctric, es connecten en paral·lel dues resistències de 30 Ω cadascuna i toleràncies de ± 2 % i ± 5 %, respectivament. Entre quins valors es troba la resistència equivalent?`,
+        text: `El full de característiques d’un acceleròmetre indica que, per a l’interval de mesures comprès entre 0,5 m/s2 i 100 m/s2, la precisió és de ± 10 mm/s2 i ± 0,5 % de la lectura. Quin és l’error màxim d’una lectura de 15 m/s2?`,
         options: [
-            { text: "57,90 Ω i 62,10 Ω", value: "a" },
-            { text: "14,47 Ω i 15,52 Ω", value: "b" },
-            { text: "14,25 Ω i 15,75 Ω", value: "c" },
-            { text: "57 Ω i 63 Ω", value: "d" }
+            { text: "85 mm/s2", value: "a" },
+            { text: "15 mm/s2", value: "b" },
+            { text: "10,5 mm/s2", value: "c" },
+            { text: "500 mm/s2", value: "d" }
         ],
         correctAnswer: "b",
         steps: `
@@ -362,12 +380,12 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
     {
         type: "questions", // Tipus de pregunta
         category: "pneumatica",
-        text: `Un cotxe té un motor de combustió V6 amb sis cilindres. La cilindrada és de 2 792 cm<sup>3</sup> i la cursa dels cilindres és de 90 mm. Quant fa el diàmetre dels cilindres?`,
+        text: `Una barra d’acer inoxidable té una llargària L = 250 mm a 20 °C. El coeficient de dilatació tèrmica de l’acer inoxidable és αinox = 17,3 × 10–6 K–1. A quina temperatura la barra s’haurà allargat un 0,1 %?`,
         options: [
-            { text: "70,32 mm", value: "a" },
-            { text: "40,57 mm", value: "b" },
-            { text: "198,74 mm", value: "c" },
-            { text: "81,14 mm", value: "d" }
+            { text: "58,70 °C", value: "a" },
+            { text: "173 °C", value: "b" },
+            { text: "32,50 °C", value: "c" },
+            { text: "77,80 °C", value: "d" }
         ],
         correctAnswer: "d",
         steps: `
@@ -384,42 +402,26 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
             `,
     },
     {
-        type: "questions", // Tipus de pregunta
+        type: "exercicis",
         category: "energia",
-        text: `En un gran premi de Fórmula 1, un vehicle ha tingut un consum mitjà de combustible per volta c<sub>m</sub> = 2,9 kg. El combustible utilitzat té una densitat ρ = 0,75 kg/L. Si el circuit té una longitud d = 5,543 km, quin ha estat el consum del vehicle en L/(100 km)?`,
-        options: [
-            { text: "75 L/(100 km)", value: "a" },
-            { text: "52,32 L/(100 km)", value: "b" },
-            { text: "254,9 L/(100 km)", value: "c" },
-            { text: "69,76 L/(100 km)", value: "d" }
-        ],
-        correctAnswer: "d",
-        steps: `
-            \\[	
-            V = \\frac{m}{\\rho} = \\frac{2,9}{0,75} = 3,57 \\; \\text{L/Volta}
-            \\]
-            \\[
-            C_{1\\; \\text{km}} = \\frac{V}{d} = \\frac{3,87 \\; \\text{L/Volta}}{5,543 \\; \\text{km}} = 0,698 \\; \\text{L/km}
-            \\]
-            \\[
-            C_{100\\; \\text{km}} = 0,698 \\; \\cdot \\; 100 = 69,8 \\; \\text{L/100 km}
-            \\]
-            <br><br>
+        text: `Una màquina expenedora automàtica disposa d’una pantalla tàctil amb un sistema de menús. La màquina retorna al menú principal si es prem el botó habilitat per a aquesta finalitat, després de fer una comanda o quan transcorren 30 segons sense que ningú toqui la pantalla. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+               <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex1/imatgePregunta.png" alt="Imatge relacionada amb la pregunta" width="900">
+              
+               <br><strong>a)</strong> Escriviu la taula de veritat del sistema i indiqueu els casos que no són possibles. [1 punt]
+               <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+               <br><strong>c)</strong> Dibuixeu l’esquema de portes lògiques equivalent. [0,5 punts]
+               <br><br>
             `,
     },  
 {
         type: "exercicis",
         category: "energia",
-        text: `Per a controlar la velocitat dels vehicles a l'entrada d'una població s'ha instaŀlat un semàfor que generalment és verd, però que canvia a vermell quan es detecta un vehicle que s'hi
-        apropa a una velocitat superior o igual a \\(60 \\; \\text{km/h}\\). Perquè els vianants puguin travessar la
-        carretera, el semàfor dels cotxes també canvia a vermell si com a mínim fa un minut que és
-        verd i, a més, un vianant prem el polsador que incorpora el mateix semàfor. Responeu a les
-        qüestions que hi ha a continuació utilitzant les variables d'estat següents:
+        text: `La porta de garatge de la figura s’acciona manualment fent una força vertical, F, a l’extrem A. En el punt B,  la porta rep l’acció d’un contrapès Fcp = 500 N, el pes  de la porta, Fpes, i una força horitzontal provinent de la guia, Fguia. La massa de la porta és m = 30 kg. Per tal de mantenir la porta immobilitzada a α = 45°, determineu:
                <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex1/imatgePregunta.png" alt="Imatge relacionada amb la pregunta" width="900">
               
-               <br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
-               <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-               <br><strong>c)</strong> Dibuixeu l’esquema de portes lògiques equivalent. [0,5 punts]
+               <br><strong>a)</strong> La força, F, necessària. [1 punt]
+               <br><strong>b)</strong> La força que fa la barra CD. [1 punt]
+               <br><strong>c)</strong> La força horitzontal, Fguia, que rep la porta de la guia en el punt B. [0,5 punts]
                <br><br>
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
@@ -430,27 +432,10 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
         type: "exercicis",
         category: "materials",
         text: `
-        <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex2/imatgePregunta.png" alt="Imatge relacionada amb la pregunta" width="900">
-
-        Es vol construir una estrella de sis puntes com la de la figura a partir d'un tauler de fusta.
-L'estrella es pot construir a partir de triangles equilàters o de rombes com els que es mostren
-en la figura. El cost de producció de l'estrella es calcula segons l'expressió 
-\\[
-c = c_{1} s + c_{2} p
-\\]
-en què s és la superfície de fusta utilitzada i p és el perímetre de les peces tallades per a construir
-l'estrella. El primer coeficient de cost és \\(c_{1} = 15 \\; \\text{€/m}^2\\)
-, i el segon és \\(c_{2} = 0,6 \\; \\text{€/m}\\)  si el perfil és
-senzill (com, per exemple, un triangle o un rombe) o \\(c_{2} = 1,4 \\; \\text{€/m} \\) si el perfil és complex (com,
-per exemple, una estrella). Determineu:
-              
-               <br><strong>a)</strong> El nombre de triangles equilàters \\(n_{T}\\) que calen per a construir l'estrella i el perímetre
-                                        de les peces tallades \\(p_{T}\\) en aquest cas. [0,5 punts]
-               <br><strong>b)</strong> El nombre de rombes \\(n_{R}\\) que calen per a construir l'estrella i el perímetre de les peces
-                                        tallades \\(p_{R}\\) en aquest cas. [0,5 punts]
-               <br><strong>c)</strong> El perímetre tallat \\(p_{E}\\) si l'estrella es construeix tallant-ne directament el perfil exterior. [0,5 punts]
-               <br><strong>d)</strong> La superfície \\(s\\) de fusta necessària per a construir l’estrella, i el cost \\(c_{T}\\), \\(c_{R}\\) i \\(c_{E}\\)
- de cadascuna de les tres opcions anteriors. Quina és l'opció més econòmica?
+       En un habitatge, s’utilitza una bomba elèctrica per a fer pujar l’aigua procedent d’una cisterna. La bomba eleva un volum V = 45 600 L d’aigua en un temps t = 8 h de funcionament a una altura h = 10,4 m. Determineu:
+               <br><strong>a)</strong> El treball, W, fet per la bomba.  [0,5 punts]
+               <br><strong>b)</strong> El rendiment de la bomba, ηb, si s’acciona mitjançant un motor elèctric de potència Pm = 525 W. [0,5 punts]
+               <br><strong>c)</strong> La pressió mitjana, p, de funcionament de la bomba. [0,5 punts]
                <br><br>
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
@@ -504,16 +489,21 @@ per exemple, una estrella). Determineu:
         type: "exercicis",
         category: "motors",
         text: `
-        Un elevador puja amb una velocitat constant una càrrega \\(m = 2 500 \\; \\text{kg}\\) fins a una altura
-\\(Δh = 5 \\; \\text{m} \\) en un temps \\(t = 60 \\; \\text{s} \\). L'elevador s'acciona amb un motor elèctric de corrent continu en sèrie amb un reductor d'engranatges. Segons el catàleg del fabricant, el rendiment del
-reductor d'engranatges és \\(η_{red} = 0,70\\). El motor s'alimenta amb una tensió \\( U = 220 \\; \\text{V} \\), gira a
-una velocitat \\(n = 1 500 \\; \\text{min}^{–1}\\) i té un rendiment electromecànic \\(η_{mot} = 0,78\\). Si les resistències
-passives a l'elevador es consideren negligibles, determineu:
+        Una torradora de pa consta, bàsicament, de dues resistències, coŀlocades a banda i banda 
+de l’espai on s’introdueix la llesca de pa, i d’un termòstat que permet regular el grau de torrat 
+que es desitja. Les dues resistències són de fil de nicrom de diàmetre d = 0,4 mm i de llargària 
+L = 3,5 m cadascuna i estan connectades en sèrie. La torradora s’alimenta amb una tensió 
+U = 230 V i la resistivitat del nicrom a 20 °C és ρ20
+ = 10,8 × 10–7 Ω m. Determineu:
               
-               <br><strong>a)</strong> La potència mecànica \\(P_{càrrega}\\) requerida per a elevar la càrrega. [0,5 punts]
-               <br><strong>b)</strong> La potència \\(P_{m}\\) i el parell \\(Γ_{m}\\) a l'eix de sortida del motor. [1 punt]
-               <br><strong>c)</strong> La intensitat \\(I\\) que consumeix el motor elèctric. [0,5 punts]
-               <br><strong>d)</strong> La potència total dissipada \\(P_{diss}\\) pel conjunt motor-reductor. [0,5 punts]
+               <br><strong>a)</strong> La resistència total, R20, de la torradora a 20 °C.  [0,5 punts]
+               La resistivitat varia amb la temperatura segons l’expressió següent, en què α = 0,4 × 10–3 °C–1 
+és el coeficient de temperatura de la resistència elèctrica del nicrom i ΔT és l’increment de 
+temperatura des del valor de referència de 20 °C:
+ρ = ρ20 (1 + α ΔT) //poner la formula en foto
+Si el fil de nicrom s’escalfa fins a 600 °C, determineu:
+               <br><strong>b)</strong>La resistència total, R600, de la torradora quan el fil de nicrom és a 600 °C. [1 punt]
+               <br><strong>c)</strong>La variació de la intensitat que circula per les resistències a 20 °C i a 600 °C. [0,5 punts]
                <br><br>
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
@@ -563,21 +553,16 @@ passives a l'elevador es consideren negligibles, determineu:
         type: "exercicis",
         category: "maquines",
         text: `
-        <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgePregunta.png" alt="Imatge relacionada amb la pregunta" width="900">
-        La placa d’alumini de la figura, de gruix
-\\(e = 5 \\; \\text{mm}\\), està articulada a terra en el punt
-O. Per a mantenir-la en repòs s’utilitza un
-cable d’acer que es fixa en el punt A i que té la
-direcció que es mostra en la figura. El cable té
-una secció circular de diàmetre \\(d = 2 \\; \\text{mm}\\). La
-densitat de l’alumini és \\(ρ_{alumini} = 2 710 kg/m^{3}\\) i el mòdul elàstic de l'acer és \\(E_{acer} = 207 \\; \\text{GPa}\\).
+       En un gran premi de Fórmula 1 del circuit de Montmeló, un vehicle ha circulat a 
+una velocitat mitjana v = 192 km/h i ha tingut un consum mitjà de combustible per volta 
+cm
+ = 2,5 kg. El combustible utilitzat tenia una densitat ρ = 0,74 kg/L. El circuit té una longitud 
+d = 4,655 km i el gran premi es disputava a 66 voltes. Determineu:
               
-               <br><strong>a)</strong> Dibuixeu el diagrama de cos lliure de la placa. [0,5 punts]
-               <br><strong>Determineu:)</strong>
-               <br><strong>b)</strong> La massa \\(m\\) de la placa. [0,5 punts]
-               <br><strong>c)</strong> La força \\(T\\) que fa el cable, i les forces horitzontal \\(F_{h}\\) i vertical \\(F_{v}\\) en el punt O. [1 punt]
-               <br><strong>d)</strong>  La tensió normal \\(σ\\) del cable i el seu allargament unitari \\(ε\\). Si el límit elàstic de l’acer
-és \\(σ_{e,acer} = 350 \\; \\text{MPa}\\), el cable s’arriba a deformar de manera permanent? [0,5 punts]
+               <br><strong>a)</strong> El consum del vehicle, c, en L/(100 km).  [0,5 punts]
+               <br><strong>b)</strong> El temps, t, que ha necessitat el vehicle per a completar el gran premi en hores, 
+minuts, segons i miŀlèsimes de segon. [0,5 punts]
+               <br><strong>c)</strong> La massa de combustible, mcomb, que portava inicialment el vehicle si en finalitzar la cursa li n’ha sobrat un 1,5 %.  [1 punt]
                <br><br>
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
