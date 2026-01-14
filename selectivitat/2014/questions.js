@@ -123,28 +123,6 @@ està totalment carregada?`,
     },
     {
       type: "exercicis",
-        category: "materials",
-        text: `Una loteria duu a terme un sorteig escollint a l’atzar un número de tres xifres. Les 
-butlletes resulten premiades si dues o tres xifres coincideixen amb les del número escollit. 
-Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:`,
-      //Imagen del problema  
-         <br><strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
-         <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-         <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]
-         <br><br> ,
-               
-    steps: `
-            \\[
-            \text{Massa total} = \frac{500 \text{ g Ag}}{0,925} = 540,54 \text{ g total}
-            \\]
-            \\[
-            \text{Massa Cu} = 540,54 - 500 = 40,54 \text{ g}
-            \\]
-            <br><br>
-            `,
-    },
-    {
-      type: "exercicis",
         category: "logica",
         text: `Es vol construir una estrella com la de la figura a partir d’un tauler de fusta. La botiga en calcula el cost segons l’expressió c = c1 s + c2 p, en què s és la superfície de fusta utilitzada i p és el perímetre de les peces tallades. El primer coeficient de cost és c1 = 10 €/m2 i l’altre coeficient de cost és c2 = 0,5 €/m si el perfil és senzill (com, per exemple, un triangle) o c2 = 1,3 €/m si el perfil és complex (com, per exemple, una estrella). Determineu: 
         <br><strong>a)</strong> La superfície, s, de fusta utilitzada. [0,5 punt]
