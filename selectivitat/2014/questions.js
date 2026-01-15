@@ -1395,69 +1395,91 @@ minuts, segons i miŀlèsimes de segon. [0,5 punts]
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Diagrama del cos lliure:</strong>
-            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+           <strong>Qüestió 4 – Gran Premi de Fórmula 1</strong>
+<br>
 
-            <strong>b) Massa de la placa:</strong>
-            <br>
-            \\[
-            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
-            \\]
-            \\[
-            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
-            \\]
-            \\[
-            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
-            \\]
-            <br>
-            <strong>c) Tensió del cable i forces a O:</strong>
-            <br>
-            \\[
-            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
-            \\]
-            \\[
-            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
-            \\]
-            \\[
-            T = 265,8 \\; \\text{N}
-            \\]
-            \\[
-            - Eix y
-            \\]
-            \\[
-            F_{v} + T \\text{sin}30º - W = 0
-            \\]
-            \\[
-            F_{v} + 132,9 - 265,8 = 0
-            \\]
-            \\[
-            F_{v} = 132,9 \\; \\text{N}
-            \\]
-            \\[
-            - Eix x
-            \\]
-            \\[
-            F_{h} - T \\text{sin}30º = 0
-            \\]
-            \\[
-            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
-            \\]
-            <br>
-            <strong>d) Tensió normal i allargament unitari del cable:</strong>
-            <br>
-            \\[
-            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
-            \\]
-            \\[
-            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
-            \\]
-            \\[
-            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
-            \\]
-            \\[
-            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
-            \\]
-            <strong>El cable NO es deforma permanentment</strong>
+<strong>Dades:</strong>
+<br>
+- Velocitat mitjana del vehicle:  
+\\[
+v = 192 \\, \\text{km/h}
+\\]
+- Consum mitjà per volta:  
+\\[
+c_m = 2{,}5 \\, \\text{kg/volta}
+\\]
+- Densitat del combustible:  
+\\[
+\\rho = 0{,}74 \\, \\text{kg/L}
+\\]
+- Longitud del circuit:  
+\\[
+d = 4{,}655 \\, \\text{km}
+\\]
+- Nombre de voltes:  
+\\[
+N = 66
+\\]
+<br><br>
+
+<strong>Pas 1: Consum en L/100 km (apartat a)</strong>
+<br>
+Consum total en kg:
+\\[
+m_{tot} = c_m \\cdot N = 2{,}5 \\cdot 66 = 165 \\, \\text{kg}
+\\]
+Convertim a litres:
+\\[
+V_{tot} = \\frac{m_{tot}}{\\rho} = \\frac{165}{0{,}74} \\approx 222{,}97 \\, \\text{L}
+\\]
+Distància total recorreguda:
+\\[
+D = N \\cdot d = 66 \\cdot 4{,}655 \\approx 307{,}23 \\, \\text{km}
+\\]
+Consum en L/100 km:
+\\[
+c = \\frac{V_{tot}}{D} \\cdot 100 = \\frac{222{,}97}{307{,}23} \\cdot 100 \\approx 72{,}55 \\, \\text{L/100 km}
+\\]
+<br>
+
+<strong>Pas 2: Temps total del gran premi (apartat b)</strong>
+<br>
+\\[
+t = \\frac{D}{v} = \\frac{307{,}23}{192} \\approx 1{,}600 \\, \\text{h}
+\\]
+Convertim a hores, minuts, segons i mil·lèsimes:
+- Hores: 1 h  
+- Restant: 0,600 h × 60 min/h = 36,0 min  
+- Segons: 0,0 min × 60 s/min = 0 s  
+- Mil·lèsimes: 0 ms  
+\\[
+\\text{Temps total: } 1 \\, \\text{h} \\, 36 \\, \\text{min} \\, 0 \\, \\text{s} \\, 0 \\, \\text{ms}
+\\]
+<br>
+
+<strong>Pas 3: Massa de combustible inicial (apartat c)</strong>
+<br>
+Consum final (sobrant 1,5 %):
+\\[
+m_{comb} = \\frac{m_{tot}}{1 - 0{,}015} = \\frac{165}{0{,}985} \\approx 167{,}5 \\, \\text{kg}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Consum del vehicle:
+\\[
+\\boxed{c \\approx 72{,}55 \\, \\text{L/100 km}}
+\\]  
+Temps total del gran premi:
+\\[
+\\boxed{t = 1 \\, \\text{h} \\, 36 \\, \\text{min} \\, 0 \\, \\text{s} \\, 0 \\, \\text{ms}}
+\\]  
+Massa de combustible inicial:
+\\[
+\\boxed{m_{comb} \\approx 167{,}5 \\, \\text{kg}}
+\\]
+
             <br><br>
             `,
          },
@@ -1474,27 +1496,69 @@ ven a 90 € la unitat, a partir de quin nombre d’unitats venudes la producci�
         ],
         correctAnswer: "a",
         steps: `
-            \\[	
-            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
-            \\]
-            \\[
+            <strong>Qüestió 1 – Benefici de producció</strong>
+<br>
 
-            \\]
-            \\[
-            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
-            \\]
-            \\[
-            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
-            \\]
+<strong>Dades:</strong>
+<br>
+- Cost de producció:  
+\\[
+C(n) = 50\,000 + 20 n \\, €
+\\]
+- Preu de venda per unitat:  
+\\[
+P = 90 \\, €
+\\]
+- Nombre d’unitats:  
+\\[
+n
+\\]
+<br><br>
+
+<strong>Pas 1: Ingressos per n unitats</strong>
+<br>
+\\[
+I(n) = P \\cdot n = 90 \\cdot n
+\\]
+<br>
+
+<strong>Pas 2: Condició de benefici</strong>
+<br>
+El benefici és positiu quan els ingressos superen el cost:
+\\[
+I(n) > C(n)
+\\]
+\\[
+90 n > 50\,000 + 20 n
+\\]
+<br>
+
+<strong>Pas 3: Resoldre per n</strong>
+<br>
+\\[
+90 n - 20 n > 50\,000
+\\]
+\\[
+70 n > 50\,000
+\\]
+\\[
+n > \\frac{50\,000}{70} \\approx 714{,}2857
+\\]
+<br>
+
+<strong>Pas 4: Nombre mínim d’unitats</strong>
+<br>
+Com que no es poden vendre fraccions d’unitats:
+\\[
+n_{min} = 715
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{n_{min} = 715 \\, \\text{unitats}} \\quad \\text{(opció a))}
+\\]
             <br><br>
             `,
          },
@@ -1512,27 +1576,59 @@ Quina és la velocitat nominal del motor?`,
         ],
         correctAnswer: "c",
         steps: `
-            \\[	
-            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
-            \\]
-            \\[
+           <strong>Qüestió – Velocitat nominal d’un motor asíncron</strong>
+<br>
 
-            \\]
-            \\[
-            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
-            \\]
-            \\[
-            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
-            \\]
+<strong>Dades:</strong>
+<br>
+- Tensió:  
+\\[
+U = 230 \\, \\text{V}
+\\]
+- Freqüència:  
+\\[
+f = 50 \\, \\text{Hz}
+\\]
+- Lliscament:  
+\\[
+s = 0{,}10
+\\]
+- Nombre de parells de pols:  
+\\[
+p = 2
+\\]
+<br><br>
+
+<strong>Pas 1: Càlcul de la velocitat síncrona</strong>
+<br>
+La velocitat síncrona (en rpm) del camp magnètic giratori és:
+\\[
+n_s = \\frac{60 \\cdot f}{p}
+\\]
+Substituïm:
+\\[
+n_s = \\frac{60 \\cdot 50}{2} = 1\,500 \\, \\text{rpm}
+\\]
+<br>
+
+<strong>Pas 2: Càlcul de la velocitat nominal del rotor</strong>
+<br>
+La velocitat real del rotor es veu afectada pel lliscament:
+\\[
+n = n_s (1 - s)
+\\]
+\\[
+n = 1\,500 (1 - 0{,}10) = 1\,500 \\cdot 0{,}9 = 1\,350 \\, \\text{rpm}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Velocitat nominal del motor:
+\\[
+\\boxed{n = 1\,350 \\, \\text{min}^{-1}} \\quad \\text{(opció c))}
+\\]
+
             <br><br>
             `,
          },
@@ -1549,27 +1645,48 @@ amplificador. Quina és la impedància del conjunt d’altaveus en aquesta confi
         ],
         correctAnswer: "b",
         steps: `
-            \\[	
-            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
-            \\]
-            \\[
+          <strong>Qüestió – Impedància de tres altaveus en paral·lel</strong>
+<br>
 
-            \\]
-            \\[
-            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
-            \\]
-            \\[
-            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
-            \\]
+<strong>Dades:</strong>
+<br>
+- Impedàncies dels altaveus:  
+\\[
+R_1 = 16 \\, \\Omega, \\quad R_2 = 16 \\, \\Omega, \\quad R_3 = 8 \\, \\Omega
+\\]
+- Connexió: paral·lel
+<br><br>
+
+<strong>Pas 1: Fórmula de resistències en paral·lel</strong>
+<br>
+\\[
+\\frac{1}{R_{eq}} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\frac{1}{R_3}
+\\]
+<br>
+
+<strong>Pas 2: Substituir valors</strong>
+<br>
+\\[
+\\frac{1}{R_{eq}} = \\frac{1}{16} + \\frac{1}{16} + \\frac{1}{8} 
+\\]
+\\[
+\\frac{1}{R_{eq}} = 0{,}0625 + 0{,}0625 + 0{,}125 = 0{,}25
+\\]
+<br>
+
+<strong>Pas 3: Invertir per trobar la impedància equivalent</strong>
+<br>
+\\[
+R_{eq} = \\frac{1}{0{,}25} = 4 \\, \\Omega
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Impedància del conjunt d’altaveus en paral·lel:
+\\[
+\\boxed{R_{eq} = 4 \\, \\Omega} \\quad \\text{(opció b))}
+\\]
             <br><br>
             `,
          },
@@ -1591,27 +1708,55 @@ consumit. En un recorregut de 40 km, quants kilograms de CO2
         ],
         correctAnswer: "d",
         steps: `
-            \\[	
-            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
-            \\]
-            \\[
+            <strong>Qüestió – Emissions de CO₂ per recorregut</strong>
+<br>
 
-            \\]
-            \\[
-            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
-            \\]
-            \\[
-            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
-            \\]
+<strong>Dades:</strong>
+<br>
+- Motor de gasolina:  
+  - Emissions: 2,32 kg CO₂/L  
+  - Consum: 13 km/L  
+- Motor dièsel:  
+  - Emissions: 2,6 kg CO₂/L  
+  - Consum: 16 km/L  
+- Recorregut:  
+\\[
+D = 40 \\, \\text{km}
+\\]
+<br><br>
+
+<strong>Pas 1: Consum de combustible per cada versió</strong>
+<br>
+Gasolina:
+\\[
+V_{gas} = \\frac{D}{13} = \\frac{40}{13} \\approx 3{,}077 \\, \\text{L}
+\\]
+
+Dièsel:
+\\[
+V_{dies} = \\frac{D}{16} = \\frac{40}{16} = 2{,}5 \\, \\text{L}
+\\]
+<br>
+
+<strong>Pas 2: Emissions de CO₂</strong>
+<br>
+Gasolina:
+\\[
+m_{CO₂,gas} = V_{gas} \\cdot 2{,}32 = 3{,}077 \\cdot 2{,}32 \\approx 7{,}138 \\, \\text{kg}
+\\]
+
+Dièsel:
+\\[
+m_{CO₂,dies} = V_{dies} \\cdot 2{,}6 = 2{,}5 \\cdot 2{,}6 = 6{,}5 \\, \\text{kg}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Emissions de CO₂ per 40 km:
+\\[
+\\boxed{m_{CO₂,gas} \\approx 7{,}138 \\, \\text{kg},\\quad m_{CO₂,dies} \\approx 6{,}5 \\, \\text{kg}} \\quad \\text{(opció d))}
+\\]
             <br><br>
             `,
         },
@@ -1629,27 +1774,48 @@ plata pura cal per a obtenir 300 kg d’aliatge?`,
         ],
         correctAnswer: "d",
         steps: `
-            \\[	
-            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
-            \\]
-            \\[
+           <strong>Qüestió – Composició d’un aliatge de plata</strong>
+<br>
 
-            \\]
-            \\[
-            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
-            \\]
-            \\[
-            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
-            \\]
+<strong>Dades:</strong>
+<br>
+- Percentatges de l’aliatge:  
+\\[
+\\text{Cd} = 0{,}5\%, \\quad \\text{Cu} = 28\%, \\quad \\text{Zn} = 11{,}5\%, \\quad \\text{Ag} = ? 
+\\]
+- Massa total de l’aliatge:  
+\\[
+m_{aliatge} = 300 \\, \\text{kg}
+\\]
+<br><br>
+
+<strong>Pas 1: Sumar els percentatges dels altres metalls</strong>
+<br>
+\\[
+\text{Cd + Cu + Zn} = 0{,}5 + 28 + 11{,}5 = 40\%
+\\]
+<br>
+
+<strong>Pas 2: Percentatge de plata</strong>
+<br>
+\\[
+\text{Ag} = 100 - 40 = 60\%
+\\]
+<br>
+
+<strong>Pas 3: Càlcul de la massa de plata</strong>
+<br>
+\\[
+m_{Ag} = m_{aliatge} \\cdot \frac{\text{Ag}}{100} = 300 \\cdot 0{,}60 = 180 \\, \\text{kg}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Massa de plata necessària:
+\\[
+\\boxed{m_{Ag} = 180 \\, \\text{kg}} \\quad \\text{(opció d))}
+\\]
             <br><br>
             `,
         },
@@ -1841,69 +2007,115 @@ R4 = 1,8 kΩ, i el circuit s’alimenta amb una tensió U = 230 V. Determineu:
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Diagrama del cos lliure:</strong>
-            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+           <strong>Qüestió 3 – Estoreta elèctrica amb commutador</strong>
+<br>
 
-            <strong>b) Massa de la placa:</strong>
-            <br>
-            \\[
-            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
-            \\]
-            \\[
-            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
-            \\]
-            \\[
-            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
-            \\]
-            <br>
-            <strong>c) Tensió del cable i forces a O:</strong>
-            <br>
-            \\[
-            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
-            \\]
-            \\[
-            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
-            \\]
-            \\[
-            T = 265,8 \\; \\text{N}
-            \\]
-            \\[
-            - Eix y
-            \\]
-            \\[
-            F_{v} + T \\text{sin}30º - W = 0
-            \\]
-            \\[
-            F_{v} + 132,9 - 265,8 = 0
-            \\]
-            \\[
-            F_{v} = 132,9 \\; \\text{N}
-            \\]
-            \\[
-            - Eix x
-            \\]
-            \\[
-            F_{h} - T \\text{sin}30º = 0
-            \\]
-            \\[
-            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
-            \\]
-            <br>
-            <strong>d) Tensió normal i allargament unitari del cable:</strong>
-            <br>
-            \\[
-            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
-            \\]
-            \\[
-            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
-            \\]
-            \\[
-            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
-            \\]
-            \\[
-            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
-            \\]
-            <strong>El cable NO es deforma permanentment</strong>
+<strong>Dades:</strong>
+<br>
+- Resistències del circuit:  
+\\[
+R_3 = 1{,}4 \\, \\text{kΩ} = 1400 \\, \\Omega
+\\]  
+\\[
+R_4 = 1{,}8 \\, \\text{kΩ} = 1800 \\, \\Omega
+\\]
+- Tensió d’alimentació:  
+\\[
+U = 230 \\, \\text{V}
+\\]
+- Combinacions d’interruptors possibles:  
+1‑3‑4, 1‑3, 1‑4 i 2‑4.  
+<br><br>
+
+<strong>Pas 1: Resistència mínima del circuit (apartat a)</strong>
+<br>
+La combinació que dóna menor resistència és quan totes les resistències estan en paral·lel o es redueixen al màxim.  
+Aquest cas és la combinació **1‑3‑4**, on R3 i R4 es troben en paral·lel:  
+\\[
+\\frac{1}{R_{mín}} = \\frac{1}{R_3} + \\frac{1}{R_4}
+\\]
+\\[
+\\frac{1}{R_{mín}} = \\frac{1}{1400} + \\frac{1}{1800}
+\\]
+\\[
+R_{mín} \\approx 787{,}5 \\, \\Omega
+\\]
+<br>
+
+<strong>Pas 2: Corrent consumit amb Rmín (apartat b)</strong>
+<br>
+Usant la llei d’Ohm:
+\\[
+I_{mín} = \\frac{U}{R_{mín}} = \\frac{230}{787{,}5} \\approx 0{,}2921 \\, \\text{A}
+\\]
+<br>
+
+<strong>Pas 3: Potències subministrades per cada combinació (apartat c)</strong>
+<br>
+Recorda que la potència es pot expressar com:  
+\\[
+P = U \\cdot I = \\frac{U^2}{R}
+\\]
+
+1) **Combinació 1‑3‑4 (R3 i R4 en paral·lel):**  
+\\[
+R_{1} = 787{,}5 \\, \\Omega
+\\]
+\\[
+P_1 = \\frac{230^2}{787{,}5} \\approx 67{,}17 \\, \\text{W}
+\\]
+
+2) **Combinació 1‑3 (només R3):**  
+\\[
+R_{2} = R_3 = 1400 \\, \\Omega
+\\]
+\\[
+P_2 = \\frac{230^2}{1400} \\approx 37{,}79 \\, \\text{W}
+\\]
+
+3) **Combinació 1‑4 (només R4):**  
+\\[
+R_{3} = R_4 = 1800 \\, \\Omega
+\\]
+\\[
+P_3 = \\frac{230^2}{1800} \\approx 29{,}38 \\, \\text{W}
+\\]
+
+4) **Combinació 2‑4 (R3 i R4 en sèrie):**  
+\\[
+R_{4} = R_3 + R_4 = 1400 + 1800 = 3200 \\, \\Omega
+\\]
+\\[
+P_4 = \\frac{230^2}{3200} \\approx 16{,}53 \\, \\text{W}
+\\]
+<br>
+
+<strong>Pas 4: Energia consumida a màxima potència (apartat d)</strong>
+<br>
+La màxima potència és quan R és mínima (R1); si l’estoreta funciona 2 h a **P1 = 67{,}17 W**:  
+\\[
+E_{elèctr} = P_1 · t = 67{,}17 \\cdot 2 = 134{,}34 \\, \\text{Wh}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+La resistència mínima del circuit:
+\\[
+\\boxed{R_{mín} \\approx 787{,}5 \\, \\Omega}
+\\]
+El corrent consumit a la resistència mínima:
+\\[
+\\boxed{I_{mín} \\approx 0{,}2921 \\, \\text{A}}
+\\]
+Les quatre potències subministrades:
+\\[
+\\boxed{P_1 = 67{,}17 \\, \\text{W},\\quad P_2 = 37{,}79 \\, \\text{W},\\quad P_3 = 29{,}38 \\, \\text{W},\\quad P_4 = 16{,}53 \\, \\text{W}}
+\\]
+Energia consumida en 2 h a màxima potència:
+\\[
+\\boxed{E_{elèctr} \\approx 134{,}34 \\, \\text{Wh}}
+\\]
             <br><br>
             `,
          },
