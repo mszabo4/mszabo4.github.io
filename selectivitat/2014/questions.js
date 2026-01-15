@@ -326,68 +326,46 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
     steps: `
 <strong>OPCIÓ A – Exercici 3</strong>
 <br><br>
-
 <strong>a) Càlcul de la superfície</strong>
 <br>
-La superfície del triangle és:
+La superfície total es calcula com:
 \\[
-s = 10 \\cdot \\frac{b \\cdot h}{2}
-\\]
-Substituint els valors:
-\\[
-s = 1{,}869 \\; \\text{m}^2
+s = 10 \cdot \frac{b \cdot h}{2} = 1,869 \; \text{m}^2
 \\]
 <br>
-
-<strong>b) Càlcul del costat inclinat</strong>
+<strong>b) Càlcul de la longitud del costat inclinat i perímetre</strong>
 <br>
-La longitud del costat inclinat és:
+Primer trobem la longitud $L$:
 \\[
-L = \\sqrt{\\left(\\frac{b}{2}\\right)^2 + h^2}
+L = \sqrt{\left(\frac{b}{2}\right)^2 + h^2} = 0,6260 \; \text{m}
 \\]
-Substituint:
+I el perímetre $p_1$:
 \\[
-L = 0{,}6260 \\; \\text{m}
-\\]
-<br>
-
-El perímetre corresponent és:
-\\[
-p_1 = 10(b + 2L)
-\\]
-\\[
-p_1 = 22{,}62 \\; \\text{m}
+p_1 = 10(b + 2L) = 22,62 \; \text{m}
 \\]
 <br>
-
 <strong>c) Càlcul del segon perímetre</strong>
 <br>
 \\[
-p_2 = 10L
-\\]
-\\[
-p_2 = 6{,}260 \\; \\text{m}
+p_2 = 10L = 6,260 \; \text{m}
 \\]
 <br>
-
 <strong>d) Comparació de costos</strong>
 <br>
-Cost de l’opció A:
+Cost de l'opció A:
 \\[
-c_A = 10 \\cdot 1{,}869 + 0{,}5 \\cdot 22{,}62 = 30{,}00 \\; €
+c_A = 10 \cdot 1,869 + 0,5 \cdot 22,62 = 30,00 \; €
+\\]
+Cost de l'opció B:
+\\[
+c_B = 10 \cdot 1,869 + 1,3 \cdot 6,260 = 26,82 \; €
 \\]
 <br>
-
-Cost de l’opció B:
-\\[
-c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82 \\; €
-\\]
-<br>
-
 <strong>Conclusió:</strong>
 <br>
 \\[
-\\boxed{L’opció\\; B\\; resulta\\
+\boxed{\text{L'opció B resulta més econòmica.}}
+\\]
             <br><br>
             `,
     },
@@ -402,55 +380,31 @@ c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82 \\; €
         correctAnswer: "",
       steps: `
 <strong>Exercici 4</strong>
+<br>
+Un vehicle utilitza gasolina de poder calorífic $p_c = 42 \; \text{MJ/L}$. Quan circula per un terreny horitzontal a una velocitat $v = 100 \; \text{km/h}$, el motor gasta $c_e = 4,7 \; \text{L/(100 km)}$ i desenvolupa una potència mecànica $P_{\text{mec}} = 21 \; \text{kW}$. Determineu:
 <br><br>
-<strong>a) Càlcul del cabal de consum</strong>
+<strong>a) El consum, c, de gasolina en L/s.</strong>
 <br>
-El cabal de consum es calcula com:
 \\[
-c = c_e \cdot v = 0{,}047 \cdot \frac{100}{3600}
-\\]
-Substituint els valors:
-\\[
-c = 1{,}306 \cdot 10^{-3} \; \text{L/s}
+c = c_e \cdot v = 0,047 \cdot \frac{100}{3600} = 1,306 \cdot 10^{-3} \; \text{L/s}
 \\]
 <br>
-<strong>b) Càlcul de la potència tèrmica</strong>
+<strong>b) La potència tèrmica consumida, $P_{\text{tèrm}}$.</strong>
 <br>
-La potència tèrmica es defineix per:
 \\[
-P_{\text{tèrm}} = c \cdot p_c = 1{,}306 \cdot 10^{-3} \cdot 42 \cdot 10^6
-\\]
-Substituint els valors:
-\\[
-P_{\text{tèrm}} = 54{,}83 \; \text{kW}
+P_{\text{tèrm}} = c \cdot p_c = 1,306 \cdot 10^{-3} \cdot 42 \cdot 10^6 = 54,83 \; \text{kW}
 \\]
 <br>
-<strong>c) Càlcul del rendiment</strong>
+<strong>c) El rendiment, $\eta$, del motor.</strong>
 <br>
-El rendiment del sistema és:
 \\[
-\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54{,}83}
-\\]
-Substituint els valors:
-\\[
-\eta = 0{,}3833
+\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54,83} = 0,3833
 \\]
 <br>
-<strong>d) Càlcul de la distància</strong>
-<br>
-La distància total recorreguda és:
-\\[
-d = \frac{V}{c_e} = \frac{45}{0{,}047}
-\\]
-Substituint els valors:
-\\[
-d = 957{,}4 \; \text{km}
-\\]
-<br>
-<strong>Conclusió:</strong>
+<strong>d) La distància, d, que pot recórrer el vehicle si el dipòsit té una capacitat $V = 45 \; \text{L}$.</strong>
 <br>
 \\[
-\boxed{d = 957{,}4 \; \text{km}}
+d = \frac{V}{c_e} = \frac{45}{0,047} = 957,4 \; \text{km}
 \\]
 `,
    },
@@ -515,47 +469,30 @@ P_m = 4904 \; \text{W}
         <br><strong>c)</strong> Si la població on està situat el centre té una mitjana anual de sol de 2 600 h, quina és la potència mitjana necessària de radiació solar per unitat de superfície? [0,5 punt]`,
         correctAnswer: "",
         steps: `
-          <strong>Exercici 4</strong>
+         <strong>Exercici 4</strong>
 <br><br>
-<strong>a) Càlcul del cabal de consum (c)</strong>
+<strong>a) Càlcul del cabal de consum</strong>
 <br>
-Es calcula a partir del consum específic i la velocitat:
 \\[
-c = c_e \cdot v = 0,047 \cdot \frac{100}{3600}
-\\]
-Substituint els valors:
-\\[
-c = 1,306 \cdot 10^{-3} \; \text{L/s}
+c = c_e \cdot v = 0,047 \cdot \frac{100}{3600} = 1,306 \cdot 10^{-3} \; \text{L/s}
 \\]
 <br>
-<strong>b) Càlcul de la potència tèrmica ($P_{\text{tèrm}}$)</strong>
+<strong>b) Càlcul de la potència tèrmica</strong>
 <br>
-Utilitzant el cabal trobat i el poder calorífic del combustible:
 \\[
-P_{\text{tèrm}} = c \cdot p_c = 1,306 \cdot 10^{-3} \cdot 42 \cdot 10^6
-\\]
-\\[
-P_{\text{tèrm}} = 54,83 \; \text{kW}
+P_{\text{tèrm}} = c \cdot p_c = 1,306 \cdot 10^{-3} \cdot 42 \cdot 10^6 = 54,83 \; \text{kW}
 \\]
 <br>
-<strong>c) Càlcul del rendiment ($\eta$)</strong>
+<strong>c) Càlcul del rendiment</strong>
 <br>
-El rendiment és la relació entre la potència mecànica i la potència tèrmica:
 \\[
-\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54,83}
-\\]
-\\[
-\eta = 0,3833
+\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54,83} = 0,3833
 \\]
 <br>
-<strong>d) Càlcul de la distància (d)</strong>
+<strong>d) Càlcul de l'autonomia</strong>
 <br>
-L'autonomia o distància màxima es calcula amb el volum del dipòsit i el consum específic:
 \\[
-d = \frac{V}{c_e} = \frac{45}{0,047}
-\\]
-\\[
-d = 957,4 \; \text{km}
+d = \frac{V}{c_e} = \frac{45}{0,047} = 957,4 \; \text{km}
 \\]
             <br><br>
             `,
