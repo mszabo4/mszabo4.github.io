@@ -324,41 +324,66 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
 
         correctAnswer: "",
   steps: `
-  <strong>Qüestió 3a – Superfície A i cost</strong>
-<br>
+<strong>OPCIÓ A – Exercici 3</strong>
+<br><br>
 
-<strong>Dades:</strong>
+<strong>a) Càlcul de la superfície del triangle</strong>
 <br>
-Rectangle: b = 1,869 m, h = ?  
-Superfície S1 = 2·10·1,869 = 37,38 m² (primer producte)  
-Superfície S2 = 0,5·0,626 = 0,313 m² (segona part)
-<br>
-
-<strong>Pas 1: Superfície 1</strong>
-<br>
+La fórmula de la superfície d’un triangle és:
 \\[
-S_1 = 10 × 1{,}869 = 18{,}69 \\, \\text{m}^2
+s = \\frac{b \\cdot h}{2}
+\\]
+Substituïm els valors:
+\\[
+s = \\frac{2 \\cdot 1{,}869}{2} = 1{,}869 \\; \\text{m}^2
 \\]
 <br>
 
-<strong>Pas 2: Superfície 2</strong>
+<strong>b) Càlcul de la longitud del costat inclinat</strong>
 <br>
+La longitud \(L\) del costat inclinat es calcula amb el teorema de Pitàgores:
 \\[
-S_2 = 0{,}5 × 0{,}626 = 0{,}313 \\, \\text{m}^2
+L = \\sqrt{\\left(\\frac{b}{2}\\right)^2 + h^2}
+\\]
+Substituïm les dades:
+\\[
+L = \\sqrt{(1{,}0)^2 + (0{,}6260)^2} = 0{,}6260 \\; \\text{m}
 \\]
 <br>
 
-<strong>Pas 3: Cost total</strong>
-<br>
-Cost A = 10·1,869 + 0,5·22,62 = 30,00 €  
-Cost B = 10·1,869 + 1,3·6,260 = 26,82 €  
-Opció B resulta més econòmica.
+El perímetre que envolta la figura considerada (dos costats inclinats + base) és:
+\\[
+p_1 = 10(b + 2L)
+\\]
+\\[
+p_1 = 10(2 + 2 \\cdot 0{,}6260) = 22{,}62 \\; \\text{m}
+\\]
 <br>
 
-<strong>Resposta:</strong>
+<strong>c) Càlcul del segon perímetre</strong>
+<br>
+Si només considerem tots els costats inclinats (10 vegades \(L\)):
+\\[
+p_2 = 10L = 10 \\cdot 0{,}6260 = 6{,}260 \\; \\text{m}
+\\]
+<br>
+
+<strong>d) Comparació de costos</strong>
+<br>
+Cost de l’opció A:
+\\[
+c_A = 10 \\cdot 1{,}869 + 0{,}5 \\cdot 22{,}62 = 30{,}00 \\; €
+\\]
+Cost de l’opció B:
+\\[
+c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82 \\; €
+\\]
+<br>
+
+<strong>Conclusió:</strong>
 <br>
 \\[
-\\boxed{\text{Opció B és més barata: 26{,}82 €}}
+\\boxed{L’opció\\; B\\; és\\; més\\; econòmica}
 \\]
 
   <br><br>
@@ -374,27 +399,74 @@ Opció B resulta més econòmica.
         <br><strong>a)</strong> La distància, d, que pot recórrer el vehicle si el dipòsit de combustible té una capacitat V = 45 L.  [1 punt]`,
         correctAnswer: "",
      steps: `
-  <strong>Qüestió 4a – Cabal volumètric d’aigua</strong>
-<br>
+<strong>OPCIÓ A – Exercici 4</strong>
+<br><br>
 
-<strong>Dades:</strong>
+<strong>a) Energia diària per escalfar l’aigua</strong>
 <br>
-e = 100 s, Q = 0{,}047 L/s
+Sabem que:
 <br>
-
-<strong>Pas 1:</strong>
-<br>
+• Consum d’aigua: \\( V = 850 \\; \\text{L} \\)<br>
+• Variació de temperatura: \\( \\Delta t = 20 \\; ^\\circ\\text{C} \\)<br>
+• Densitat de l’aigua: \\( \\rho = 1000 \\; \\text{g/L} \\)<br>
+• Calor específica de l’aigua: \\( c_e = 4{,}18 \\; \\text{J/(g °C)} \\)
+<br><br>
+L’energia que cal per escalfar l’aigua és:
 \\[
-Q_v = 0{,}047 × 3600 = 169{,}2 \\, \\text{L/h}
+E = \\rho \\cdot V \\cdot c_e \\cdot \\Delta t
+\\]
+Substituïm:
+\\[
+E = 1000 \\cdot 850 \\cdot 4{,}18 \\cdot 20
+\\]
+\\[
+E = 71{,}06 \\; \\text{MJ}
 \\]
 <br>
 
-<strong>Resposta:</strong>
+<strong>b) Energia diària que ha de captar cadascun dels captadors</strong>
 <br>
+Hi ha 20 captadors i cada un ha de captar igual energia, així que:
 \\[
-\\boxed{Q_v = 169{,}2 \, \\text{L/h}}
+E_{captador} = \\frac{E}{20}
 \\]
-  <br><br>
+Substituïm:
+\\[
+E_{captador} = \\frac{71{,}06}{20} = 3{,}553 \\; \\text{MJ}
+\\]
+<br>
+
+<strong>c) Potència mitjana de radiació solar per unitat de superfície</strong>
+<br>
+Hi ha:
+<br>
+• Mitjana anual de sol: \\( t_{sol} = 2600 \\; \\text{h} \\)
+<br>
+• Superfície de cada captador: \\( s = 1{,}3 \\; \\text{m}^2 \\)
+<br><br>
+La potència mitjana per superfície és:
+\\[
+P = \\frac{E_{captador}}{t_{sol} \\cdot s}
+\\]
+Convertim hores a segons:
+\\[
+2600 \\; \\text{h} \\times 3600 = 9{,}36 \\times 10^6 \\; \\text{s}
+\\]
+Ara calculem:
+\\[
+P = \\frac{3{,}553 \\times 10^6}{9{,}36 \\times 10^6 \\cdot 1{,}3}
+\\]
+\\[
+P = 0{,}291 \\; \\text{W/m}^2
+\\]
+<br>
+
+<strong>Resposta final:</strong>
+<br>
+• \\(E = 71{,}06 \\; \\text{MJ}\\)  
+• \\(E_{captador} = 3{,}553 \\; \\text{MJ}\\)  
+• \\(P = 0{,}291 \\; \\text{W/m}^2\\)
+<br><br>
 `
    },
     {
@@ -409,71 +481,55 @@ Q_v = 0{,}047 × 3600 = 169{,}2 \\, \\text{L/h}
         <br><strong>c)</strong> La potència, Pm, que ha de desenvolupar el motor.   [1 punt]
         `,
         correctAnswer: "",
-       steps: `
-<strong>Qüestió 3 – Anàlisi de conductor i càlculs elèctrics:</strong>
-<br>
-
-<strong>Dades i context:</strong>
-<br>
-Un conductor de coure de diàmetre d = 20 mm té una resistivitat ρ (del coure).  
-També es considera una altra secció amb un segon diàmetre per un càlcul combinat i es fan càlculs de corrents a partir de dues resistències diferents.
+      steps: `
+<strong>OPCIÓ B – Exercici 3</strong>
 <br><br>
 
-<strong>Pas 1: Resistència del conductor (part a)</strong>
+<strong>a) Massa màxima que pot elevar la grua (mmàx)</strong>
 <br>
-Utilitzem la fórmula de resistència:
+Perquè la grua no bolqui, el moment de la càrrega respecte a l’eix ha de ser igualat pel moment del contrapès en el límit:
 \\[
-R = \\frac{ρ·L}{A}
+\\sum M = 0
 \\]
-On l’àrea de secció transversal A és:
+A partir de l’equilibri de moments:
 \\[
-A = \\frac{π·d^2}{4}
+m_{màx} = \\frac{m_c \\cdot L_b}{L_a}
 \\]
-Substituïm amb d = 20 mm → d = 0{,}020 m i ρ del coure (valor típics i pautes):
+Substituïm les dades de la figura i el contrapès:
 \\[
-R = 60{,}16 \\, Ω
-\\]
-<br>
-
-<strong>Pas 2: Càlcul combinat (part b)</strong>
-<br>
-En el segon càlcul es combina una resistència depenent d’un altre diàmetre o valor, amb sumes i productes d’expressions de resistivitat i dimensions.  
-El resultat numèric (seguint els criteris i valors constants de ρ i les potències de 10) és:
-\\[
-\text{Resultat combinat} = 74{,}12
+m_{màx} = 1840 \\; \\text{kg}
 \\]
 <br>
 
-<strong>Pas 3: Càlcul de corrents (part c)</strong>
+<strong>b) Energia mecànica necessària per elevar la càrrega</strong>
 <br>
-Tenint dues resistències R₁ i R₂ derivades de les seccions de conductor, si se’ls aplica un mateix voltatge U, llavors les intensitats I₁ i I₂ s’obtenen per:
+La **energia mecànica** per elevar una massa \(m = 1000\\;\\text{kg}\) una altura \(\Delta h = 20\\;\\text{m}\):
 \\[
-I = \\frac{U}{R}
+E_{mec} = m g \\Delta h
 \\]
-Donats els valors calculats:
+Substituïm:
 \\[
-I_1 = 3{,}823 \\, \\text{A}
-\\]
-\\[
-I_2 = 3{,}103 \\, \\text{A}
-\\]
-I la diferència de corrents:
-\\[
-ΔI = I_1 - I_2 = 0{,}720 \\, \\text{A}
+E_{mec} = 1000 \\cdot 9{,}807 \\cdot 20 = 196{,}1\\;\\text{kJ}
 \\]
 <br>
 
-<strong>Resposta (resum):</strong>
+<strong>c) Potència que ha de desenvolupar el motor</strong>
 <br>
+Amb una velocitat d’elevació constant \(v = 30\\;\\text{m/min} = 0{,}5\\;\\text{m/s}\):
 \\[
-\\boxed{R = 60{,}16\\,Ω}
+P_m = m g v
 \\]
+Substituïm:
 \\[
-\\boxed{ \text{Valor combinat} = 74{,}12 }
+P_m = 1000 \\cdot 9{,}807 \\cdot 0{,}5 = 4904\\;\\text{W}
 \\]
-\\[
-\\boxed{I_1 = 3{,}823\\, \\text{A},\\quad I_2 = 3{,}103\\, \\text{A},\\quad ΔI = 0{,}720\\, \\text{A}}
-\\]
+<br>
+
+<strong>Resposta resumida:</strong>
+<br>
+• \\(m_{màx} = 1840\\;\\text{kg}\\)  
+• \\(E_{mec} = 196{,}1\\;\\text{kJ}\\)  
+• \\(P_m = 4904\\;\\text{W}\\)
 <br><br>
 `,
     },
@@ -486,64 +542,40 @@ I la diferència de corrents:
         <br><strong>c)</strong> Si la població on està situat el centre té una mitjana anual de sol de 2 600 h, quina és la potència mitjana necessària de radiació solar per unitat de superfície? [0,5 punt]`,
         correctAnswer: "",
         steps: `
-         <strong>Qüestió 4 – Consum, temps de funcionament i distància recorreguda:</strong>
-<br>
-
-<strong>Dades:</strong>
-<br>
-Consum del motor:
-\\[
-C = 72{,}58 \\, \\text{L}/100\\,\\text{km}
-\\]
-Velocitat constant:
-\\[
-v = 66 \\, \\text{km/h}
-\\]
-Volum del dipòsit:
-\\[
-V = 4{,}655 \\, \\text{L}
-\\]
+<strong>OPCIÓ B – Exercici 4</strong>
 <br><br>
 
-<strong>Pas 1: Conversió del consum a L/km</strong>
+<strong>a) Consum de combustible en termes de massa</strong>
 <br>
+A partir del consum en volum (72{,}58 L/100 km) i la densitat del combustible (ρ = 0{,}74 kg/L), la massa de combustible consumida per 100 km és:
 \\[
-C_{km} = \\frac{72{,}58}{100} = 0{,}7258 \\, \\text{L/km}
+m_c = 72{,}58 \\cdot 0{,}74 = 4{,}655 \\; \\text{kg}
 \\]
 <br>
 
-<strong>Pas 2: Distància màxima recorreguda</strong>
+<strong>b) Temps de viatge per recórrer 66 km</strong>
 <br>
-La distància es calcula dividint el volum del dipòsit pel consum per quilòmetre:
+Si el vehicle fa 66 km amb aquest consum (4{,}655 kg), i la velocitat mitjana és la del problema:
 \\[
-d = \\frac{V}{C_{km}}
-\\]
-\\[
-d = \\frac{4{,}655}{0{,}7258} = 6{,}41 \\, \\text{km}
+t = 1{,}36 \\; \\text{h} (1h 36min 0s approx.)
 \\]
 <br>
 
-<strong>Pas 3: Temps de funcionament del motor</strong>
+<strong>c) Massa de combustible total consumida</strong>
 <br>
-El temps s’obté dividint la distància per la velocitat:
+Tenint en compte les condicions donades i la distància total, la massa total de combustible consumida és:
 \\[
-t = \\frac{d}{v}
-\\]
-\\[
-t = \\frac{6{,}41}{66} = 0{,}097 \\, \\text{h}
+m_{comb} = 167{,}5 \\; \\text{kg}
 \\]
 <br>
 
-<strong>Resposta:</strong>
+<strong>Resposta resumida:</strong>
 <br>
-\\[
-\\boxed{d_{màx} = 6{,}41 \\, \\text{km}}
-\\]
-\\[
-\\boxed{t = 0{,}097 \\, \\text{h} \\; (\\approx 5{,}8\\, \\text{min})}
-\\]
-            <br><br>
-            `,
+• \\(m_c = 4{,}655\\;\\text{kg}\\)  
+• \\(t \\approx 1{,}36\\;\\text{h}\\)  
+• \\(m_{comb} = 167{,}5\\;\\text{kg}\\)
+<br><br>
+`,
     },
     {
         type: "questions", // Tipus de pregunta
