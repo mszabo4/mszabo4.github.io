@@ -134,7 +134,7 @@ n = 300 min–1. Quina és la velocitat d’avanç del cargol?`,
             { text: "25 mm/s", value: "c" },
             { text: "8,75 mm/s", value: "d" }
         ],
-        correctAnswer: "a",
+        correctAnswer: "d",
         steps: `
           <strong>Qüestió 3 – Velocitat d’avanç d’un cargol:</strong>
 <br>
@@ -185,56 +185,60 @@ està totalment carregada?`,
         ],
         correctAnswer: "d",
         steps: `
-          <strong>Qüestió 4 – Càlcul de potència del motor:</strong>
+<strong>Qüestió – Durada d’una bateria:</strong>
 <br>
-Un motor mou una càrrega horitzontal amb una força de:
+Un motor elèctric té una **potència** de:
 \\[
-F = 620 \\; \\text{N}
+P = 216 \\; \\text{W}
 \\]
-i una velocitat constant de:
+i funciona amb una **tensió** de:
 \\[
-v = 3{,}5 \\; \\text{m/s}
+U = 36 \\; \\text{V}
 \\]
-El rendiment del sistema és:
+La bateria té una **capacitat** de:
 \\[
-\\eta = 0{,}82
-\\]
-<br>
-
-<strong>Pas 1: Potència útil al moviment:</strong>
-<br>
-La potència útil és:
-\\[
-P_{útil} = F \\cdot v
-\\]
-\\[
-P_{útil} = 620 \\cdot 3{,}5 = 2170 \\; \\text{W}
+C = 10 \\; \\text{Ah}
 \\]
 <br>
 
-<strong>Pas 2: Potència d’entrada al motor:</strong>
+<strong>Pas 1: Calcular la intensitat que consumeix el motor</strong>
 <br>
-Tenint en compte el rendiment:
+Fem servir la relació entre potència, tensió i intensitat:
 \\[
-P_{entrada} = \\frac{P_{útil}}{\\eta}
+P = U \\cdot I
 \\]
+Aïllem la intensitat:
 \\[
-P_{entrada} = \\frac{2170}{0{,}82} = 2646{,}34 \\; \\text{W}
+I = \\frac{P}{U}
+\\]
+Substituïm les dades:
+\\[
+I = \\frac{216}{36} = 6 \\; \\text{A}
 \\]
 <br>
 
-<strong>Pas 3: Expressar en kW:</strong>
+<strong>Pas 2: Calcular el temps de durada de la bateria</strong>
 <br>
+La durada de la bateria es calcula amb:
 \\[
-P = 2{,}646{,}34 \\; \\text{kW} \\approx 2{,}65 \\; \\text{kW}
+t = \\frac{C}{I}
+\\]
+Substituïm:
+\\[
+t = \\frac{10}{6} = 1{,}67 \\; \\text{h}
 \\]
 <br>
 
 <strong>Resposta:</strong>
 <br>
 \\[
-\\boxed{d) \\; 2{,}65 \\; \\text{kW}}
+\\boxed{1{,}67 \\; \\text{h}}
 \\]
+<br>
+La resposta correcta és la <strong>d)</strong>
+<br><br>
+
+
             <br><br>
             `,
     },
@@ -319,28 +323,71 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         <br><strong>d)</strong> El cost de cadascuna de les opcions. Quina és la més econòmica?  [0,5 punts]`,
 
         correctAnswer: "",
-        steps: `
-           % Solución Exercici 3 – PAU Tecnologia Industrial 2014 (Juny) – Opció B
+    steps: `
+<strong>OPCIÓ A – Exercici 3</strong>
+<br><br>
 
-% a) Càlcul de la resistència òhmica d’un element
-\[
-R = \frac{7\, (20-20)\, 2\, 2\, 3}{3{,}5\, 2\, 2\, 10{,}8\times 10\, 60{,}16}\,\frac{\pi\pi}{\rho}
-      = \Omega
-\]
+<strong>a) Càlcul de la superfície</strong>
+<br>
+La superfície del triangle és:
+\\[
+s = 10 \\cdot \\frac{b \\cdot h}{2}
+\\]
+Substituint els valors:
+\\[
+s = 1{,}869 \\; \\text{m}^2
+\\]
+<br>
 
-% b) Càlcul ampliat combinant termes resistius i geomètrics
-\[
-R_{\text{eq}} = \left( \cdots \right) = 74{,}12\,\Omega
-\]
+<strong>b) Càlcul del costat inclinat</strong>
+<br>
+La longitud del costat inclinat és:
+\\[
+L = \\sqrt{\\left(\\frac{b}{2}\\right)^2 + h^2}
+\\]
+Substituint:
+\\[
+L = 0{,}6260 \\; \\text{m}
+\\]
+<br>
 
-% c) Càlcul de corrents
-\[
-I_1 = \frac{20}{600},\quad
-I_2 = \frac{20}{600},\quad
-I_3 = 3{,}823\,\text{A},\quad
-I_{\text{dif}} = 0{,}720\,\text{A}
-\]
+El perímetre corresponent és:
+\\[
+p_1 = 10(b + 2L)
+\\]
+\\[
+p_1 = 22{,}62 \\; \\text{m}
+\\]
+<br>
 
+<strong>c) Càlcul del segon perímetre</strong>
+<br>
+\\[
+p_2 = 10L
+\\]
+\\[
+p_2 = 6{,}260 \\; \\text{m}
+\\]
+<br>
+
+<strong>d) Comparació de costos</strong>
+<br>
+Cost de l’opció A:
+\\[
+c_A = 10 \\cdot 1{,}869 + 0{,}5 \\cdot 22{,}62 = 30{,}00 \\; €
+\\]
+<br>
+
+Cost de l’opció B:
+\\[
+c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82 \\; €
+\\]
+<br>
+
+<strong>Conclusió:</strong>
+<br>
+\\[
+\\boxed{L’opció\\; B\\; resulta\\
             <br><br>
             `,
     },
@@ -348,35 +395,64 @@ I_{\text{dif}} = 0{,}720\,\text{A}
         type: "exercicis",
         category: "mecanica",
         text: `Un vehicle utilitza gasolina de poder calorífic pc = 42 MJ/L. Quan circula per un terreny horitzontal a una velocitat v = 100 km/h, el motor gasta ce = 4,7 L/(100 km) i desenvolupa una potència mecànica Pmec = 21 kW. Determineu:
-        <br><img src="https://tu-repositorio.com/img/grua_pau2014.png" alt="Esquema de la grua" width="600">
         <br><strong>a)</strong> El consum, c, de gasolina en L/s. [0,5 punt]
         <br><strong>b)</strong> La potència tèrmica consumida, Ptèrm [0,5 punts]
         <br><strong>a)</strong> El rendiment, η, del motor. [0,5 punt]
         <br><strong>a)</strong> La distància, d, que pot recórrer el vehicle si el dipòsit de combustible té una capacitat V = 45 L.  [1 punt]`,
         correctAnswer: "",
-        steps: `
-           % Solución Exercici 4 – PAU Tecnologia Industrial 2014 (Juny) – Opció A
-
-% a) Càlcul del consum de combustible
-\[
-m_c = \frac{2{,}5\,\text{L}}{100\,\text{km}} \cdot 100\,\text{km} = 72{,}58\,\text{L/(100 km)}
-\]
-\[
-0{,74} = \rho_c \cdot 4{,}655
-\]
-
-% b) Càlcul del temps del recorregut
-\[
-t = \frac{66}{66 \cdot 4{,}655} = 1\,\text{h}\,36\,\text{min}\,0\,\text{s}\,563\,\text{ms}
-\]
-
-% c) Càlcul de la massa de combustible consumida
-\[
-m_{\text{comb}} = \left( \frac{1{,}5 \cdot 66}{1} \right) = 167{,}5\,\text{kg}
-\]
-
-            <br><br>
-            `,
+      steps: `
+<strong>Exercici 4</strong>
+<br><br>
+<strong>a) Càlcul del cabal de consum</strong>
+<br>
+El cabal de consum es calcula com:
+\\[
+c = c_e \cdot v = 0{,}047 \cdot \frac{100}{3600}
+\\]
+Substituint els valors:
+\\[
+c = 1{,}306 \cdot 10^{-3} \; \text{L/s}
+\\]
+<br>
+<strong>b) Càlcul de la potència tèrmica</strong>
+<br>
+La potència tèrmica es defineix per:
+\\[
+P_{\text{tèrm}} = c \cdot p_c = 1{,}306 \cdot 10^{-3} \cdot 42 \cdot 10^6
+\\]
+Substituint els valors:
+\\[
+P_{\text{tèrm}} = 54{,}83 \; \text{kW}
+\\]
+<br>
+<strong>c) Càlcul del rendiment</strong>
+<br>
+El rendiment del sistema és:
+\\[
+\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54{,}83}
+\\]
+Substituint els valors:
+\\[
+\eta = 0{,}3833
+\\]
+<br>
+<strong>d) Càlcul de la distància</strong>
+<br>
+La distància total recorreguda és:
+\\[
+d = \frac{V}{c_e} = \frac{45}{0{,}047}
+\\]
+Substituint els valors:
+\\[
+d = 957{,}4 \; \text{km}
+\\]
+<br>
+<strong>Conclusió:</strong>
+<br>
+\\[
+\boxed{d = 957{,}4 \; \text{km}}
+\\]
+`,
    },
     {
         type: "exercicis",
@@ -390,86 +466,176 @@ m_{\text{comb}} = \left( \frac{1{,}5 \cdot 66}{1} \right) = 167{,}5\,\text{kg}
         <br><strong>c)</strong> La potència, Pm, que ha de desenvolupar el motor.   [1 punt]
         `,
         correctAnswer: "",
-        steps: `
-            % Solució Exercici 3 – PAU Tecnologia Industrial 2014 (Juny) – Opció B
-
-% a) Massa màxima que pot elevar la grua
-\[
-m_{\max} = \frac{(1{,}5 + 1{,}9)\cdot m_c}{25 - 1{,}9}
-            = \frac{3{,}4\cdot12500}{23{,}1}
-            \approx 1840\ \text{kg}
-\]
-
-% b) Energia mecànica necessària
-\[
-E_{\text{mec}} = m\cdot g\cdot \Delta h
-               = 1000\cdot9{,}807\cdot20
-               \approx 196{,}1\ \text{kJ}
-\]
-
-% c) Potència del motor
-\[
-P_m = m\cdot g\cdot v
-    = 1000\cdot9{,}807\cdot\frac{30}{60}
-    \approx 4904\ \text{W}
-\]
-
-            <br><br>
-            `,
+       steps: `
+<strong>OPCIÓ B – Exercici 3</strong>
+<br><br>
+<strong>a) Càlcul de la massa màxima</strong>
+<br>
+La grua començarà a bolcar quan la força $F_B = 0$. Analitzant el sumatori de moments respecte al punt A:
+\\[
+\sum M(A) = 0 \quad \rightarrow \quad m_{\text{màx}} g (L_1 - b) - m_c g (L_2 + b) = 0
+\\]
+Aïllant la massa màxima:
+\\[
+m_{\text{màx}} = m_c \frac{L_2 + b}{L_1 - b} = 12500 \frac{1,5 + 1,9}{25 - 1,9}
+\\]
+Substituint els valors:
+\\[
+m_{\text{màx}} = 1840 \; \text{kg}
+\\]
+<br>
+<strong>b) Càlcul de l'energia mecànica</strong>
+<br>
+L'energia potencial guanyada és:
+\\[
+E_{\text{mec}} = m g \Delta h = 1000 \cdot 9,807 \cdot 20
+\\]
+\\[
+E_{\text{mec}} = 196,1 \; \text{kJ}
+\\]
+<br>
+<strong>c) Càlcul de la potència mecànica</strong>
+<br>
+La potència mecànica en funció de la velocitat és:
+\\[
+P_m = m g v = 1000 \cdot 9,807 \cdot \frac{30}{60}
+\\]
+\\[
+P_m = 4904 \; \text{W}
+\\]
+<br><br>
+`,
     },
     {
         type: "exercicis",
         category: "mecanica",
         text: `En un centre d’ensenyament, el consum diari d’aigua calenta sanitària és c = 850 L. Cal incrementar la temperatura de l’aigua Δt = 20 °C i per això s’hi instaŀlen 20 captadors solars de rendiment η = 0,45 i superfície s = 1,3 m2. La calor específica de l’aigua és ce = 4,18 J/(g °C). Determineu:
-        <br><img src="https://tu-repositorio.com/img/grua_pau2014.png" alt="Esquema de la grua" width="600">
         <br><strong>a)</strong> L’energia diària que cal per a escalfar l’aigua. [0,5 punt]
         <br><strong>b)</strong> L’energia diària que ha de captar cadascun dels captadors. [0,5 punts]
         <br><strong>c)</strong> Si la població on està situat el centre té una mitjana anual de sol de 2 600 h, quina és la potència mitjana necessària de radiació solar per unitat de superfície? [0,5 punt]`,
         correctAnswer: "",
         steps: `
-           % Solució Exercici 4 – PAU Tecnologia Industrial 2014 (Opció A)
-
-% a) Energia mecànica necessària
-\[
-p = \frac{W}{m g h} = \frac{1000\cdot 9{,}807\cdot 10{,}4}{?} = 4{,}651\,\text{MJ}
-\]
-
-% b) Potència mecànica desenvolupada
-\[
-P_m = \frac{4{,}651\cdot10^6}{525{,}8\cdot3600} \approx 0{,}3076\,\text{W}
-\]
-
-% c) Pressió
-\[
-p = 1{,}020\ \text{bar}
-\]
+          <strong>Exercici 4</strong>
+<br><br>
+<strong>a) Càlcul del cabal de consum (c)</strong>
+<br>
+Es calcula a partir del consum específic i la velocitat:
+\\[
+c = c_e \cdot v = 0,047 \cdot \frac{100}{3600}
+\\]
+Substituint els valors:
+\\[
+c = 1,306 \cdot 10^{-3} \; \text{L/s}
+\\]
+<br>
+<strong>b) Càlcul de la potència tèrmica ($P_{\text{tèrm}}$)</strong>
+<br>
+Utilitzant el cabal trobat i el poder calorífic del combustible:
+\\[
+P_{\text{tèrm}} = c \cdot p_c = 1,306 \cdot 10^{-3} \cdot 42 \cdot 10^6
+\\]
+\\[
+P_{\text{tèrm}} = 54,83 \; \text{kW}
+\\]
+<br>
+<strong>c) Càlcul del rendiment ($\eta$)</strong>
+<br>
+El rendiment és la relació entre la potència mecànica i la potència tèrmica:
+\\[
+\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54,83}
+\\]
+\\[
+\eta = 0,3833
+\\]
+<br>
+<strong>d) Càlcul de la distància (d)</strong>
+<br>
+L'autonomia o distància màxima es calcula amb el volum del dipòsit i el consum específic:
+\\[
+d = \frac{V}{c_e} = \frac{45}{0,047}
+\\]
+\\[
+d = 957,4 \; \text{km}
+\\]
             <br><br>
             `,
     },
     {
         type: "questions", // Tipus de pregunta
         category: "materials",
-        text: `questió 2 serie 4`,
+        text: `El Vitallium és un aliatge utilitzat en odontologia i en la fabricació de pròtesis que 
+conté un 65 % de cobalt (Co), un 30 % de crom (Cr) i un 5 % de molibdè (Mb). Quina 
+quantitat de Vitallium es pot obtenir amb 15 kg de crom?`,
+        options: [
+            { text: "15 kg", value: "a" },
+            { text: "30 kg", value: "b" },
+            { text: "70 kg", value: "c" },
+            { text: "50 kg", value: "d" }
+        ],
+        correctAnswer: "d",
+        steps: `
+           <strong>Qüestió 1</strong>
+<br><br>
+El Vitallium és un aliatge utilitzat en odontologia i en la fabricació de pròtesis que conté un 65 % de cobalt (Co), un 30 % de crom (Cr) i un 5 % de molibdè (Mb). Quina quantitat de Vitallium es pot obtenir amb 15 kg de crom?
+<br><br>
+<strong>Resolució:</strong>
+<br>
+Sabem que el crom representa el 30 % de la massa total de l'aliatge. Per tant, podem aplicar una proporció o regla de tres:
+\\[
+\text{Massa total} = \frac{\text{massa de Cr}}{\% \text{ de Cr}} = \frac{15}{0,30}
+\\]
+Substituint els valors:
+\\[
+\text{Massa total} = 50 \; \text{kg}
+\\]
+<br>
+<strong>Conclusió:</strong>
+<br>
+\\[
+\boxed{\text{Resposta d) } 50 \; \text{kg}}
+\\]
+            <br><br>
+            `,
+         },
+    {
+        type: "questions", // Tipus de pregunta
+        category: "materials",
+        text: `El Vitallium és un aliatge utilitzat en odontologia i en la fabricació de pròtesis que 
+conté un 65 % de cobalt (Co), un 30 % de crom (Cr) i un 5 % de molibdè (Mb). Quina 
+quantitat de Vitallium es pot obtenir amb 15 kg de crom?`,
         options: [
             { text: "22 μm", value: "a" },
             { text: "47 μm", value: "b" },
             { text: "34 μm", value: "c" },
             { text: "No hi ha joc en aquest ajust.", value: "d" }
         ],
-        correctAnswer: "c",
+        correctAnswer: "b",
         steps: `
-            \\[	
-            {σ_{e}} = \\frac{\\text{F}}{\\text{A}} \\; \\text{&#8594} \\; \\text{A} = \\frac{\\text{F}}{{σ_{e}}}            
-            \\]
-            \\[
-            \\text{A} = \\frac{\\text{F}}{{σ_{e}}} = \\frac{1400}{85} = 16{,}47 \\; \\text{mm}^2
-            \\]
-            \\[
-            A = \\frac{\\pi \\cdot \\text{d}^2}{4} \\; \\text{&#8594} \\; \\text{d} = \\sqrt{\\frac{\\text{A} \\cdot 4}{\\pi}}
-            \\]
-            \\[
-            d = \\sqrt{\\frac{16{,}47 \\cdot 4}{\\pi}} = 4{,}58 \\; \\text{mm}
-            \\]
+          <strong>Qüestió 2</strong>
+<br><br>
+En l'ajust $36 \text{ G7/h6}$, la tolerància $\text{G7}$ del forat és $\binom{+34}{+9} \mu\text{m}$ i la $\text{h6}$ de l'eix és $\binom{0}{-13} \mu\text{m}$. Quin és el joc màxim d'aquest ajust?
+<br><br>
+<strong>Resolució:</strong>
+<br>
+El joc màxim ($J_{\text{màx}}$) es calcula restant la mida mínima de l'eix a la mida màxima del forat:
+\\[
+J_{\text{màx}} = D_{\text{màx}} - d_{\text{mín}}
+\\]
+On:
+<ul>
+    <li>$D_{\text{màx}} (\text{forat}) = 36 + 0,034 = 36,034 \text{ mm}$</li>
+    <li>$d_{\text{mín}} (\text{eix}) = 36 - 0,013 = 35,987 \text{ mm}$</li>
+</ul>
+Càlcul final:
+\\[
+J_{\text{màx}} = 36,034 - 35,987 = 0,047 \text{ mm} = 47 \mu\text{m}
+\\]
+<br>
+<strong>Conclusió:</strong>
+<br>
+\\[
+\boxed{\text{Resposta b) } 47 \mu\text{m}}
+\\]
             <br><br>
             `,
     },
@@ -483,53 +649,34 @@ p = 1{,}020\ \text{bar}
             { text: "53 kW h.", value: "c" },
             { text: "16,67 kW h.", value: "d" }
         ],
-        correctAnswer: "a",
+        correctAnswer: "c",
         steps: `
-            \\[	
-            \\text{Temps per trajecte:}\\; 3 \\; \\text{min} \\; 15 \\; \\text{s} = 195 \\; \\text{s}   
-            \\]
-            \\[
-            \\text{Cicle dia:}\\; 195 \\; \\text{s} + 45 \\; \\text{s}  = 240 \\; \\text{s} = 4 \\; \\text{min}
-            \\]
-            \\[
-            \\text{Cicle nit:}\\; 195 \\; \\text{s} + 75 \\; \\text{s}  = 270 \\; \\text{s} = 4,5 \\; \\text{min}
-            \\]
-            \\[
-
-            \\]
-            \\[
-            Viatges \\; dia
-            \\]
-            \\[
-            \\text{Temps funcionant:}\\; 18 \\; \\text{h} = 18 \\; \\cdot \\; 60 = 1080 \\; \\text{s}
-            \\]
-            \\[
-            \\frac{1080}{4} = 270 \\; \\text{viatges}
-            \\]
-            \\[
-
-            \\]
-            \\[
-            Viatges \\; nit
-            \\]
-            \\[
-            \\text{Temps funcionant:}\\; 6 \\; \\text{h} = 6 \\; \\cdot \\; 60 = 360 \\; \\text{s}
-            \\]
-            \\[
-            \\frac{360}{4,5} = 80 \\; \\text{viatges}
-            \\]
-            \\[
-
-            \\]
-            \\[
-            \\text{Viatges totals:}\\; 270 + 80 = 350 \\; \\text{viatges}
-            \\]
-            \\[
-
-            \\]
-            \\[
-            \\textbf{Total viatgers:}\\; 350 \\; \\cdot \\; 300 = 105000 \\; \\text{viatgers}
-            \\]
+          <strong>Qüestió 3</strong>
+<br><br>
+La substitució de 10 bombetes incandescents de 60 W per 10 bombetes de LED de 7 W comporta un estalvi energètic, després de 100 h de funcionament, de:
+<br><br>
+<strong>Resolució:</strong>
+<br>
+Primer, calculem la potència total estalviada:
+\\[
+P_{\text{estalvi}} = 10 \cdot (60 \; \text{W} - 7 \; \text{W}) = 10 \cdot 53 \; \text{W} = 530 \; \text{W}
+\\]
+<br>
+A continuació, calculem l'energia estalviada durant 100 hores:
+\\[
+E_{\text{estalvi}} = P_{\text{estalvi}} \cdot t = 530 \; \text{W} \cdot 100 \; \text{h} = 53\,000 \; \text{Wh}
+\\]
+<br>
+Convertint a quilowatts-hora (kW h):
+\\[
+E_{\text{estalvi}} = \frac{53\,000}{1000} = 53 \; \text{kW h}
+\\]
+<br>
+<strong>Conclusió:</strong>
+<br>
+\\[
+\boxed{\text{Resposta c) } 53 \; \text{kW h}}
+\\]
             <br><br>
             `,
     },
@@ -543,29 +690,40 @@ p = 1{,}020\ \text{bar}
             { text: "10,5 mm/s2", value: "c" },
             { text: "500 mm/s2", value: "d" }
         ],
-        correctAnswer: "b",
+        correctAnswer: "a",
         steps: `
-            \\[	
-            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
-            \\]
-            \\[
-            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
-            \\]
-            \\[
-
-            \\]
-            \\[
-            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
-            \\]
-            \\[
-            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
-            \\]
+          <strong>Qüestió 4</strong>
+<br><br>
+El full de característiques d'un acceleròmetre indica que, per a l'interval de mesures comprès entre $0,5 \; \text{m/s}^2$ i $100 \; \text{m/s}^2$, la precisió és de $\pm 10 \; \text{mm/s}^2$ i $\pm 0,5 \; \%$ de la lectura. Quin és l'error màxim d'una lectura de $15 \; \text{m/s}^2$?
+<br><br>
+<strong>Resolució:</strong>
+<br>
+L'error total és la suma de l'error absolut fix i l'error relatiu respecte a la lectura.
+<br>
+Primer, identifiquem l'error fix:
+\\[
+e_1 = 10 \; \text{mm/s}^2
+\\]
+<br>
+Segon, calculem l'error percentual sobre la lectura de $15 \; \text{m/s}^2$:
+\\[
+e_2 = 15 \; \text{m/s}^2 \cdot \frac{0,5}{100} = 0,075 \; \text{m/s}^2
+\\]
+Convertim aquest valor a $\text{mm/s}^2$ per poder sumar-los ($1 \; \text{m/s}^2 = 1000 \; \text{mm/s}^2$):
+\\[
+e_2 = 0,075 \cdot 1000 = 75 \; \text{mm/s}^2
+\\]
+<br>
+Finalment, sumem ambdós errors per obtenir l'error màxim total:
+\\[
+e_{\text{total}} = e_1 + e_2 = 10 \; \text{mm/s}^2 + 75 \; \text{mm/s}^2 = 85 \; \text{mm/s}^2
+\\]
+<br>
+<strong>Conclusió:</strong>
+<br>
+\\[
+\boxed{\text{Resposta a) } 85 \; \text{mm/s}^2}
+\\]
             <br><br>
             `,
     },
@@ -581,15 +739,34 @@ p = 1{,}020\ \text{bar}
         ],
         correctAnswer: "d",
         steps: `
-            \\[	
-            {V_{Cilindre}} = \\frac{C_{total}}{N_{cilindres}} = \\frac{2792}{6} = 465,33 \\; \\text{cm}^{3}
-            \\]
-            \\[
-            V = \\frac{\\pi \\cdot D^{2}}{4} \\cdot C \\; \\text{&#8594} \\; D = \\sqrt{\\frac{V \\cdot 4}{\\pi \\cdot C}}
-            \\]
-            \\[
-            D = \\sqrt{\\frac{V \\cdot 4}{\\pi \\cdot C}} = \\sqrt{\\frac{465,33 \\cdot 4}{\\pi \\cdot 9}} = 8,114 \\; \\text{cm} = 81{,}14 \\; \\text{mm}
-            \\]
+           <strong>Qüestió 5</strong>
+<br><br>
+Una barra d’acer inoxidable té una llargària $L = 250 \; \text{mm}$ a $20 \; \text{°C}$. El coeficient de dilatació tèrmica de l’acer inoxidable és $\alpha_{\text{inox}} = 17,3 \cdot 10^{-6} \; \text{K}^{-1}$. A quina temperatura la barra s’haurà allargat un $0,1 \; \%$?
+<br><br>
+<strong>Resolució:</strong>
+<br>
+L'allargament relatiu es defineix per la fórmula de la dilatació lineal:
+\\[
+\frac{\Delta L}{L} = \alpha \cdot \Delta t
+\\]
+Sabem que l'allargament és del $0,1 \; \%$, és a dir, $\frac{\Delta L}{L} = 0,001$. Podem aïllar l'increment de temperatura ($\Delta t$):
+\\[
+\Delta t = \frac{\Delta L / L}{\alpha} = \frac{0,001}{17,3 \cdot 10^{-6}}
+\\]
+Calculant el valor:
+\\[
+\Delta t = 57,80 \; \text{°C}
+\\]
+La temperatura final ($t_f$) serà la temperatura inicial més l'increment:
+\\[
+t_f = t_i + \Delta t = 20 \; \text{°C} + 57,80 \; \text{°C} = 77,80 \; \text{°C}
+\\]
+<br>
+<strong>Conclusió:</strong>
+<br>
+\\[
+\boxed{\text{Resposta d) } 77,80 \; \text{°C}}
+\\]
             <br><br>
             `,
     },
