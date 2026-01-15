@@ -810,7 +810,7 @@ plata pura cal per a obtenir 300 kg d’aliatge?`,
       Un any és de traspàs si és divisible per 4, excepte els que són divisibles per 100. Entre els
 divisibles per 100, només són de traspàs els que també són divisibles per 400. Responeu a les
 qüestions que hi ha a continuació utilitzant les variables d’estat següents:
-               <img src="https://mszabo4.github.io/selectivitat/2014/images/201706s1p2.png" alt="Imatge relacionada amb la pregunta" width="900">
+               <img src="https://mszabo4.github.io/selectivitat/2014/images/201409S5P2.png" alt="Imatge relacionada amb la pregunta" width="900">
                <br><strong>a)</strong>Escriviu la taula de veritat del sistema i indiqueu els casos que no són possibles.  [0,5 punts]
                <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [0,5 punts]
                <br><strong>c)</strong> Dibuixeu l’esquema de portes lògiques equivalent. [1 punt]
@@ -819,7 +819,7 @@ qüestions que hi ha a continuació utilitzant les variables d’estat següents
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
             <strong>a) Diagrama del cos lliure:</strong>
-            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+            <img src="https://mszabo4.github.io/selectivitat/2014/images/201409S5R2.png" alt="Imatge relacionada amb la resposta" width="900">
 
             <strong>b) Massa de la placa:</strong>
             <br>
