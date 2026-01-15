@@ -14,14 +14,55 @@ mínim d’una unitat dins de la línia?`,        options: [
         ],
         correctAnswer: "c",
        steps: `
+<strong>Qüestió 1 – Temps mínim d’una unitat dins la línia:</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
 \\[
-\text{Operacions simultànies: } \max(t_A, t_B) = \max(25, 30) = 30 \text{ s}
+t_A = 25 \\, \\text{s}, \\quad t_B = 30 \\, \\text{s}
 \\]
 \\[
-\text{Operacions seqüencials: } t_C + t_D = 30 + 45 = 75 \text{ s}
+t_C = 30 \\, \\text{s}, \\quad t_D = 45 \\, \\text{s}
+\\]
+
+Les operacions A i B es poden dur a terme simultàniament, mentre que C i D no.
+<br>
+Les operacions C i D s’han de fer necessàriament després d’A i B.
+<br>
+En règim estacionari entra una unitat cada 25 s.
+<br><br>
+
+<strong>Pas 1: Temps del primer bloc (A i B):</strong>
+<br>
+Com que A i B són simultànies, el temps ve determinat per l’operació més llarga:
+\\[
+t_{AB} = \\max(25, 30) = 30 \\, \\text{s}
+\\]
+<br>
+
+<strong>Pas 2: Temps del segon bloc (C i D):</strong>
+<br>
+Com que C i D no es poden fer simultàniament, els temps se sumen:
+\\[
+t_{CD} = 30 + 45 = 75 \\, \\text{s}
+\\]
+<br>
+
+<strong>Pas 3: Temps mínim total dins la línia:</strong>
+<br>
+\\[
+t_{total} = t_{AB} + t_{CD}
 \\]
 \\[
-\text{Temps total d'una unitat dins la línia} = \max(t_A, t_B) + t_C + t_D = 30 + 75 = 105 \text{ s}
+t_{total} = 30 + 75 = 105 \\, \\text{s}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{t_{min} = 105 \\, \\text{s}}
 \\]
 `
 
@@ -39,17 +80,48 @@ transportar 50 cotxes de 1 200 kg cadascun. Quants viatges haurà de fer?`,
         ],
         correctAnswer: "c",
        steps: `
+<strong>Qüestió 2 – Nombre de viatges del camió:</strong>
+<br>
+
+<strong>Enunciat:</strong>
+<br>
+Un camió amb capacitat per a transportar fins a 10 tones (1 tona = 1000 kg) ha de transportar 50 cotxes de 1200 kg cadascun. Quants viatges haurà de fer?
+<br><br>
+
+<strong>Resolució:</strong>
+<br>
+Cada cotxe pesa:
 \\[
-\text{Massa d'un cotxe: } 1 \text{ 200 kg} = 1,2 \text{ t}
+m_{cotxe} = 1200 \\, \\text{kg}
+\\]
+El pes total dels 50 cotxes és:
+\\[
+M_{total} = 50 \\cdot 1200 = 60\,000 \\, \\text{kg}
+\\]
+La capacitat del camió és:
+\\[
+C = 10 \\; \\text{tonnes} = 10 \\cdot 1000 = 10\,000 \\, \\text{kg}
+\\]
+El nombre de viatges necessaris és:
+\\[
+n = \\frac{M_{total}}{C}
 \\]
 \\[
-\text{Nombre de cotxes per viatge: } \left\lfloor \frac{\text{capacitat del camió}}{\text{massa d'un cotxe}} \right\rfloor = \left\lfloor \frac{10 \text{ t}}{1,2 \text{ t}} \right\rfloor = 8 \text{ cotxes per viatge}
+n = \\frac{60\,000}{10\,000} = 6
 \\]
+Però com que no es pot fer un viatge parcial per a carregar tot just 6 cotxes, cal **arrodonir cap amunt**:
 \\[
-\text{Nombre de viatges necessaris: } \left\lceil \frac{50 \text{ cotxes}}{8 \text{ cotxes/viatge}} \right\rceil = \left\lceil 6,25 \right\rceil = 7 \text{ viatges}
+n = \\lceil 6 \\rceil = 7 \\; \\text{viatges}
 \\]
-`
-,
+<br>
+
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{7 \\; \\text{viatges}}
+\\]
+
+`,
     },
     {
        type: "questions",
@@ -64,15 +136,38 @@ n = 300 min–1. Quina és la velocitat d’avanç del cargol?`,
         ],
         correctAnswer: "a",
         steps: `
-            \\[
-            n_s = \frac{60 \cdot f}{p} = \frac{60 \cdot 50}{2} = 1500 \text{ min}^{-1}
-            \\]
-            \\[
-            n = n_s \cdot (1 - s) = 1500 \cdot (1 - 0,04) = 1500 \cdot 0,96
-            \\]
-            \\[
-            n = 1440 \text{ min}^{-1}
-            \\]
+          <strong>Qüestió 3 – Velocitat d’avanç d’un cargol:</strong>
+<br>
+Un cargol M12 té un **pas** (avanç per volta) de:
+\\[
+p = 1{,}75 \\; \\text{mm}
+\\]
+i gira a:
+\\[
+n = 300 \\; \\text{min}^{-1}
+\\]
+<br>
+
+La **velocitat d’avanç** (v) és el producte del pas pel nombre de voltes per segon:
+\\[
+v = p \\cdot n
+\\]
+Primer convertim la velocitat de rotació a voltes per segon:
+\\[
+n_{s} = \\frac{300}{60} = 5 \\; \\text{rev/s}
+\\]
+Després calculem l’avanç per segon:
+\\[
+v = 1{,}75 \\cdot 5 = 8{,}75 \\; \\text{mm/s}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{8{,}75 \\; \\text{mm/s}}
+\\]
+
             <br><br>
             `,
     },
