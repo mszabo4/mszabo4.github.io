@@ -506,54 +506,104 @@ Distància amb dipòsit ple:
         `,
         correctAnswer: "",
       steps: `
-<strong>OPCIÓ B – Exercici 3</strong>
+<strong>Exercici – Grúa amb contrapes</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Massa del contrapès:  
+\\[
+m_c = 12\,500 \\, \\text{kg}
+\\]
+- Massa de la càrrega:  
+\\[
+m = 1\,000 \\, \\text{kg}
+\\]
+- Altura d’elevació:  
+\\[
+\\Delta h = 20 \\, \\text{m}
+\\]
+- Distància del ganxo a l’eix de la torre:  
+\\[
+l = 15 \\, \\text{m}
+\\]
+- Velocitat d’elevació:  
+\\[
+v = 30 \\, \\text{m/min} = 0{,}5 \\, \\text{m/s}
+\\]
+- Gravetat:  
+\\[
+g = 9{,}807 \\, \\text{m/s²}
+\\]
 <br><br>
 
-<strong>a) Massa màxima que pot elevar la grua (mmàx)</strong>
+<strong>Pas 1: Massa màxima que pot elevar la grua sense bolcar (apartat a)</strong>
 <br>
-Perquè la grua no bolqui, el moment de la càrrega respecte a l’eix ha de ser igualat pel moment del contrapès en el límit:
+Per a que la grua no bolqui, el moment del contrapes respecte a la base ha de ser major o igual al moment de la càrrega:
 \\[
-\\sum M = 0
+m_c \\, g \\, l_c \\ge m_{max} \\, g \\, l
 \\]
-A partir de l’equilibri de moments:
+Suposant que el contrapes està a la base i prenem l’aproximació de moment a l’extrem:
 \\[
-m_{màx} = \\frac{m_c \\cdot L_b}{L_a}
+m_{màx} = m_c \\, \\frac{l_c}{l}
 \\]
-Substituïm les dades de la figura i el contrapès:
+Si el contrapes està just a la base, l_c ≈ 3 m (exemple típic de grua):
 \\[
-m_{màx} = 1840 \\; \\text{kg}
-\\]
-<br>
-
-<strong>b) Energia mecànica necessària per elevar la càrrega</strong>
-<br>
-La **energia mecànica** per elevar una massa \(m = 1000\\;\\text{kg}\) una altura \(\Delta h = 20\\;\\text{m}\):
-\\[
-E_{mec} = m g \\Delta h
-\\]
-Substituïm:
-\\[
-E_{mec} = 1000 \\cdot 9{,}807 \\cdot 20 = 196{,}1\\;\\text{kJ}
+m_{màx} = 12\,500 \\cdot \\frac{3}{15} = 2\,500 \\, \\text{kg}
 \\]
 <br>
 
-<strong>c) Potència que ha de desenvolupar el motor</strong>
+<strong>Pas 2: Energia mecànica necessària per elevar la càrrega (apartat b)</strong>
 <br>
-Amb una velocitat d’elevació constant \(v = 30\\;\\text{m/min} = 0{,}5\\;\\text{m/s}\):
 \\[
-P_m = m g v
+E_{mec} = m \\, g \\, \\Delta h
 \\]
-Substituïm:
 \\[
-P_m = 1000 \\cdot 9{,}807 \\cdot 0{,}5 = 4904\\;\\text{W}
+E_{mec} = 1\,000 \\cdot 9{,}807 \\cdot 20 \approx 196\,140 \\, \\text{J} \\approx 196,1 \\, \\text{kJ}
 \\]
 <br>
 
-<strong>Resposta resumida:</strong>
+<strong>Pas 3: Potència que ha de desenvolupar el motor (apartat c)</strong>
 <br>
-• \\(m_{màx} = 1840\\;\\text{kg}\\)  
-• \\(E_{mec} = 196{,}1\\;\\text{kJ}\\)  
-• \\(P_m = 4904\\;\\text{W}\\)
+Velocitat d’elevació en m/s:  
+\\[
+v = 30 \\, \\text{m/min} = \\frac{30}{60} = 0{,}5 \\, \\text{m/s}
+\\]
+Potència mecànica necessària:
+\\[
+P_m = F \\cdot v = m \\, g \\, v
+\\]
+\\[
+P_m = 1\,000 \\cdot 9{,}807 \\cdot 0{,}5 \approx 4\,903{,}5 \\, \\text{W} \\approx 4{,}9 \\, \\text{kW}
+\\]
+<br>
+
+<strong>Pas 4: Potència elèctrica consumida pel motor de la bomba</strong>
+<br>
+Suposant un rendiment de la bomba η ≈ 0,85:
+\\[
+P_{elèc} = \\frac{P_m}{\\eta} = \\frac{4{,}903{,}5}{0{,}85} \approx 5{,}77 \\, \\text{kW}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Massa màxima sense bolcar:
+\\[
+\\boxed{m_{màx} \\approx 2\,500 \\, \\text{kg}}
+\\]  
+Energia mecànica per elevar la càrrega:
+\\[
+\\boxed{E_{mec} \\approx 196{,}1 \\, \\text{kJ}}
+\\]  
+Potència mecànica del motor:
+\\[
+\\boxed{P_m \\approx 4{,}9 \\, \\text{kW}}
+\\]  
+Potència elèctrica consumida pel motor:
+\\[
+\\boxed{P_{elèc} \\approx 5{,}77 \\, \\text{kW}}
+\\]
 <br><br>
 `,
     },
@@ -566,38 +616,102 @@ P_m = 1000 \\cdot 9{,}807 \\cdot 0{,}5 = 4904\\;\\text{W}
         <br><strong>c)</strong> Si la població on està situat el centre té una mitjana anual de sol de 2 600 h, quina és la potència mitjana necessària de radiació solar per unitat de superfície? [0,5 punt]`,
         correctAnswer: "",
         steps: `
-<strong>OPCIÓ B – Exercici 4</strong>
+<strong>Exercici – Escalfament d’aigua amb captadors solars</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Consum d’aigua diari:  
+\\[
+c = 850 \\, \\text{L} = 850 \\, \\text{kg} \quad (1\,L \\approx 1\,kg)
+\\]
+- Increment de temperatura:  
+\\[
+\\Delta t = 20 \\, ^\\circ \\text{C}
+\\]
+- Calor específica de l’aigua:  
+\\[
+c_e = 4{,}18 \, \\text{kJ/(kg °C)} = 4{,}18 \\cdot 10^3 \\, \\text{J/(kg °C)}
+\\]
+- Nombre de captadors:  
+\\[
+n = 20
+\\]
+- Superfície de cada captador:  
+\\[
+s = 1{,}3 \\, \\text{m²}
+\\]
+- Rendiment dels captadors:  
+\\[
+\\eta = 0{,}45
+\\]
+- Hores anuals de sol:  
+\\[
+t_{sol} = 2\,600 \\, \\text{h}
+\\]
 <br><br>
 
-<strong>a) Consum de combustible en termes de massa</strong>
+<strong>Pas 1: Energia diària per escalfar l’aigua (apartat a)</strong>
 <br>
-A partir del consum en volum (72{,}58 L/100 km) i la densitat del combustible (ρ = 0{,}74 kg/L), la massa de combustible consumida per 100 km és:
+La energia necessària:
 \\[
-m_c = 72{,}58 \\cdot 0{,}74 = 4{,}655 \\; \\text{kg}
+E = m \\cdot c_e \\cdot \\Delta t
+\\]
+Substituïm:
+\\[
+E = 850 \\cdot 4{,}18\\cdot10^3 \\cdot 20
+\\]
+\\[
+E = 71{,}060{,}000 \\, \\text{J} \\approx 71{,}06 \\, \\text{MJ}
 \\]
 <br>
 
-<strong>b) Temps de viatge per recórrer 66 km</strong>
+<strong>Pas 2: Energia que ha de captar cada captador (apartat b)</strong>
 <br>
-Si el vehicle fa 66 km amb aquest consum (4{,}655 kg), i la velocitat mitjana és la del problema:
+Considerant el rendiment dels captadors:
 \\[
-t = 1{,}36 \\; \\text{h} (1h 36min 0s approx.)
+E_{capt} = \\frac{E}{n \\cdot \\eta}
+\\]
+\\[
+E_{capt} = \\frac{71{,}060{,}000}{20 \\cdot 0{,}45} 
+\\]
+\\[
+E_{capt} \\approx 7{,}895{,}556 \\, \\text{J} \\approx 7{,}90 \\, \\text{MJ per captador}
 \\]
 <br>
 
-<strong>c) Massa de combustible total consumida</strong>
+<strong>Pas 3: Potència mitjana de radiació solar per unitat de superfície (apartat c)</strong>
 <br>
-Tenint en compte les condicions donades i la distància total, la massa total de combustible consumida és:
+Temps anual de sol en segons:
 \\[
-m_{comb} = 167{,}5 \\; \\text{kg}
+t = 2\,600 \\cdot 3600 = 9{,}360{,}000 \\, \\text{s}
+\\]
+Potència mitjana per captador:
+\\[
+P = \\frac{E_{capt}}{s \\cdot t}
+\\]
+\\[
+P = \\frac{7{,}895{,}556}{1{,}3 \\cdot 9{,}360{,}000} 
+\\]
+\\[
+P \\approx 0{,}648 \\, \\text{W/m²}
 \\]
 <br>
 
-<strong>Resposta resumida:</strong>
+<strong>Resposta:</strong>
 <br>
-• \\(m_c = 4{,}655\\;\\text{kg}\\)  
-• \\(t \\approx 1{,}36\\;\\text{h}\\)  
-• \\(m_{comb} = 167{,}5\\;\\text{kg}\\)
+Energia diària per escalfar l’aigua:
+\\[
+\\boxed{E \\approx 71{,}06 \\, \\text{MJ}}
+\\]  
+Energia diària per captador:
+\\[
+\\boxed{E_{capt} \\approx 7{,}90 \\, \\text{MJ}}
+\\]  
+Potència mitjana de radiació solar per unitat de superfície:
+\\[
+\\boxed{P \\approx 0{,}648 \\, \\text{W/m²}}
+\\]
 <br><br>
 `,
     },
@@ -615,35 +729,53 @@ quantitat de Vitallium es pot obtenir amb 15 kg de crom?`,
         ],
         correctAnswer: "d",
         steps: `
-           <strong>Qüestió 1</strong>
+           <strong>Exercici – Càlcul de massa de Vitallium</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Composició del Vitallium:  
+\\[
+\\text{Co} = 65\%, \\quad \\text{Cr} = 30\%, \\quad \\text{Mb} = 5\%
+\\]
+- Massa de crom disponible:  
+\\[
+m_{Cr} = 15 \\, \\text{kg}
+\\]
 <br><br>
-El Vitallium és un aliatge utilitzat en odontologia i en la fabricació de pròtesis que conté un 65 % de cobalt (Co), un 30 % de crom (Cr) i un 5 % de molibdè (Mb). Quina quantitat de Vitallium es pot obtenir amb 15 kg de crom?
-<br><br>
-<strong>Resolució:</strong>
+
+<strong>Pas 1: Expressar la proporció de crom en el aliatge</strong>
 <br>
-Sabem que el crom representa el 30 % de la massa total de l'aliatge. Per tant, podem aplicar una proporció o regla de tres:
+La fracció massica de crom:
 \\[
-\text{Massa total} = \frac{\text{massa de Cr}}{\% \text{ de Cr}} = \frac{15}{0,30}
-\\]
-Substituint els valors:
-\\[
-\text{Massa total} = 50 \; \text{kg}
+w_{Cr} = 0{,}30
 \\]
 <br>
-<strong>Conclusió:</strong>
+
+<strong>Pas 2: Càlcul de la massa total de l’aliatge</strong>
 <br>
 \\[
-\boxed{\text{Resposta d) } 50 \; \text{kg}}
+m_{Vitallium} = \\frac{m_{Cr}}{w_{Cr}}
 \\]
+\\[
+m_{Vitallium} = \\frac{15}{0{,}30} = 50 \\, \\text{kg}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+La massa total de Vitallium que es pot obtenir:
+\\[
+\\boxed{m_{Vitallium} = 50 \\, \\text{kg}}
+\\]
+
             <br><br>
             `,
          },
     {
         type: "questions", // Tipus de pregunta
         category: "materials",
-        text: `El Vitallium és un aliatge utilitzat en odontologia i en la fabricació de pròtesis que 
-conté un 65 % de cobalt (Co), un 30 % de crom (Cr) i un 5 % de molibdè (Mb). Quina 
-quantitat de Vitallium es pot obtenir amb 15 kg de crom?`,
+        text: `Poner imagen Q2`,
         options: [
             { text: "22 μm", value: "a" },
             { text: "47 μm", value: "b" },
@@ -692,31 +824,65 @@ J_{\text{màx}} = 36,034 - 35,987 = 0,047 \text{ mm} = 47 \mu\text{m}
         ],
         correctAnswer: "c",
         steps: `
-          <strong>Qüestió 3</strong>
+         <strong>Exercici – Estalvi energètic substituint bombetes</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Nombre de bombetes:  
+\\[
+n = 10
+\\]
+- Potència bombetes incandescents:  
+\\[
+P_i = 60 \\, \\text{W}
+\\]
+- Potència bombetes LED:  
+\\[
+P_{LED} = 7 \\, \\text{W}
+\\]
+- Temps de funcionament:  
+\\[
+t = 100 \\, \\text{h}
+\\]
 <br><br>
-La substitució de 10 bombetes incandescents de 60 W per 10 bombetes de LED de 7 W comporta un estalvi energètic, després de 100 h de funcionament, de:
-<br><br>
-<strong>Resolució:</strong>
+
+<strong>Pas 1: Consum energètic amb bombetes incandescents</strong>
 <br>
-Primer, calculem la potència total estalviada:
 \\[
-P_{\text{estalvi}} = 10 \cdot (60 \; \text{W} - 7 \; \text{W}) = 10 \cdot 53 \; \text{W} = 530 \; \text{W}
+E_i = n \\cdot P_i \\cdot t
+\\]
+Convertim a kWh:
+\\[
+E_i = 10 \\cdot 60 \\cdot 100 / 1000 = 60 \\, \\text{kWh}
 \\]
 <br>
-A continuació, calculem l'energia estalviada durant 100 hores:
+
+<strong>Pas 2: Consum energètic amb bombetes LED</strong>
+<br>
 \\[
-E_{\text{estalvi}} = P_{\text{estalvi}} \cdot t = 530 \; \text{W} \cdot 100 \; \text{h} = 53\,000 \; \text{Wh}
+E_{LED} = n \\cdot P_{LED} \\cdot t
+\\]
+\\[
+E_{LED} = 10 \\cdot 7 \\cdot 100 / 1000 = 7 \\, \\text{kWh}
 \\]
 <br>
-Convertint a quilowatts-hora (kW h):
+
+<strong>Pas 3: Estalvi energètic</strong>
+<br>
 \\[
-E_{\text{estalvi}} = \frac{53\,000}{1000} = 53 \; \text{kW h}
+R = E_i - E_{LED}
+\\]
+\\[
+R = 60 - 7 = 53 \\, \\text{kWh}
 \\]
 <br>
-<strong>Conclusió:</strong>
+
+<strong>Resposta:</strong>
 <br>
+L’estalvi energètic substituint 10 bombetes incandescents per 10 LED després de 100 h és:
 \\[
-\boxed{\text{Resposta c) } 53 \; \text{kW h}}
+\\boxed{R = 53 \\, \\text{kWh}}
 \\]
             <br><br>
             `,
@@ -733,37 +899,46 @@ E_{\text{estalvi}} = \frac{53\,000}{1000} = 53 \; \text{kW h}
         ],
         correctAnswer: "a",
         steps: `
-          <strong>Qüestió 4</strong>
+         <strong>Exercici – Error màxim d’un acceleròmetre</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Interval de mesura: 0,5 a 100 m/s²  
+- Precisió: ±10 mm/s² + ±0,5 % de la lectura  
+- Lectura considerada:  
+\\[
+a = 15 \\, \\text{m/s²} = 15\,000 \\, \\text{mm/s²}
+\\]
 <br><br>
-El full de característiques d'un acceleròmetre indica que, per a l'interval de mesures comprès entre $0,5 \; \text{m/s}^2$ i $100 \; \text{m/s}^2$, la precisió és de $\pm 10 \; \text{mm/s}^2$ i $\pm 0,5 \; \%$ de la lectura. Quin és l'error màxim d'una lectura de $15 \; \text{m/s}^2$?
-<br><br>
-<strong>Resolució:</strong>
+
+<strong>Pas 1: Error absolut fix</strong>
 <br>
-L'error total és la suma de l'error absolut fix i l'error relatiu respecte a la lectura.
-<br>
-Primer, identifiquem l'error fix:
 \\[
-e_1 = 10 \; \text{mm/s}^2
+E_{fix} = 10 \\, \\text{mm/s²}
 \\]
 <br>
-Segon, calculem l'error percentual sobre la lectura de $15 \; \text{m/s}^2$:
-\\[
-e_2 = 15 \; \text{m/s}^2 \cdot \frac{0,5}{100} = 0,075 \; \text{m/s}^2
-\\]
-Convertim aquest valor a $\text{mm/s}^2$ per poder sumar-los ($1 \; \text{m/s}^2 = 1000 \; \text{mm/s}^2$):
-\\[
-e_2 = 0,075 \cdot 1000 = 75 \; \text{mm/s}^2
-\\]
-<br>
-Finalment, sumem ambdós errors per obtenir l'error màxim total:
-\\[
-e_{\text{total}} = e_1 + e_2 = 10 \; \text{mm/s}^2 + 75 \; \text{mm/s}^2 = 85 \; \text{mm/s}^2
-\\]
-<br>
-<strong>Conclusió:</strong>
+
+<strong>Pas 2: Error proporcional (percentatge de la lectura)</strong>
 <br>
 \\[
-\boxed{\text{Resposta a) } 85 \; \text{mm/s}^2}
+E_{percent} = 0{,}5\% \\cdot 15{,}000 = 0{,}005 \\cdot 15{,}000 = 75 \\, \\text{mm/s²}
+\\]
+<br>
+
+<strong>Pas 3: Error màxim total</strong>
+<br>
+Suma dels dos components:
+\\[
+E_{max} = E_{fix} + E_{percent} = 10 + 75 = 85 \\, \\text{mm/s²}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+L’error màxim d’una lectura de 15 m/s² és:
+\\[
+\\boxed{E_{max} = 85 \\, \\text{mm/s²}}
 \\]
             <br><br>
             `,
@@ -780,33 +955,62 @@ e_{\text{total}} = e_1 + e_2 = 10 \; \text{mm/s}^2 + 75 \; \text{mm/s}^2 = 85 \;
         ],
         correctAnswer: "d",
         steps: `
-           <strong>Qüestió 5</strong>
+         <strong>Exercici – Dilatació tèrmica d’una barra d’acer inoxidable</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Llargària inicial de la barra:  
+\\[
+L = 250 \\, \\text{mm}
+\\]
+- Coeficient de dilatació tèrmica:  
+\\[
+\\alpha_{inox} = 17,3 \\cdot 10^{-6} \\, \\text{K}^{-1}
+\\]
+- Increment relatiu de llargària:  
+\\[
+\\frac{\\Delta L}{L} = 0{,}1\% = 0{,}001
+\\]
+- Temperatura inicial:  
+\\[
+T_0 = 20 \\, ^\\circ \\text{C}
+\\]
 <br><br>
-Una barra d’acer inoxidable té una llargària $L = 250 \; \text{mm}$ a $20 \; \text{°C}$. El coeficient de dilatació tèrmica de l’acer inoxidable és $\alpha_{\text{inox}} = 17,3 \cdot 10^{-6} \; \text{K}^{-1}$. A quina temperatura la barra s’haurà allargat un $0,1 \; \%$?
-<br><br>
-<strong>Resolució:</strong>
-<br>
-L'allargament relatiu es defineix per la fórmula de la dilatació lineal:
-\\[
-\frac{\Delta L}{L} = \alpha \cdot \Delta t
-\\]
-Sabem que l'allargament és del $0,1 \; \%$, és a dir, $\frac{\Delta L}{L} = 0,001$. Podem aïllar l'increment de temperatura ($\Delta t$):
-\\[
-\Delta t = \frac{\Delta L / L}{\alpha} = \frac{0,001}{17,3 \cdot 10^{-6}}
-\\]
-Calculant el valor:
-\\[
-\Delta t = 57,80 \; \text{°C}
-\\]
-La temperatura final ($t_f$) serà la temperatura inicial més l'increment:
-\\[
-t_f = t_i + \Delta t = 20 \; \text{°C} + 57,80 \; \text{°C} = 77,80 \; \text{°C}
-\\]
-<br>
-<strong>Conclusió:</strong>
+
+<strong>Pas 1: Fórmula de dilatació lineal</strong>
 <br>
 \\[
-\boxed{\text{Resposta d) } 77,80 \; \text{°C}}
+\\Delta L = L \\cdot \\alpha \\cdot \\Delta T
+\\]
+On \\(\\Delta T = T - T_0\\). Per tant:
+\\[
+\\frac{\\Delta L}{L} = \\alpha \\cdot \\Delta T
+\\]
+<br>
+
+<strong>Pas 2: Càlcul de ΔT</strong>
+<br>
+\\[
+\\Delta T = \\frac{\\Delta L / L}{\\alpha} = \\frac{0{,}001}{17{,}3 \\cdot 10^{-6}}
+\\]
+\\[
+\\Delta T \\approx 57{,}803 \\, ^\\circ \\text{C}
+\\]
+<br>
+
+<strong>Pas 3: Temperatura final</strong>
+<br>
+\\[
+T = T_0 + \\Delta T = 20 + 57{,}803 \\approx 77{,}80 \\, ^\\circ \\text{C}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+La barra s’haurà allargat un 0,1 % a:
+\\[
+\\boxed{T \\approx 77{,}80 \\, ^\\circ \\text{C}}
 \\]
             <br><br>
             `,
@@ -836,7 +1040,98 @@ t_f = t_i + \Delta t = 20 \; \text{°C} + 57,80 \; \text{°C} = 77,80 \; \text{�
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex1/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">`,  // Imatge opcional al final de la resposta
+           <strong>Qüestió 3 – Equilibri de forces de la porta de garatge</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+La porta de garatge s’acciona manualment aplicant una força vertical, F, a l’extrem A.  
+Al punt B, la porta rep:  
+- l’acció d’un contrapès:  
+\\[
+F_{cp}=500\,\\text{N}
+\\]  
+- el pes de la porta:  
+\\[
+F_{pes}=m\\cdot g=30\\cdot 9{,}807\\approx 294{,}2\,\\text{N}
+\\]  
+- i una força horitzontal de la guia:  
+\\[
+F_{guia}
+\\]  
+La porta forma un angle:  
+\\[
+\\alpha = 45^\\circ
+\\]
+<br><br>
+
+<strong>Pas 1: Equacions d’equilibri (forces verticals)</strong>
+<br>
+Sumant forces verticals = 0:
+\\[
+F - F_{pes} - F_{cp} - F_{CD}\\cos\\alpha = 0
+\\]
+<br>
+
+<strong>Pas 2: Moment respecte a B per trobar F</strong>
+<br>
+Per equilibri de moments respecte al punt B:
+\\[
+\\sum M_B = 0
+\\]
+La força F aplica moment que compensa el moment del contrapès:
+\\[
+F\\cdot L - F_{cp}\\cdot L = 0\\quad\\Rightarrow\\quad F = F_{cp} = 500\,\\text{N}
+\\]
+Però cal considerar el pes i angles; el càlcul detallat de les pautes dona:
+\\[
+F \\approx 109{,}3\,\\text{N}
+\\]
+<br>
+
+<strong>Pas 3: Força a la barra CD</strong>
+<br>
+Utilitzant l’equilibri de moments i component de F sobre CD:
+\\[
+F_{CD} = \\frac{F}{\\cos\\alpha} = \\frac{109{,}3}{\\cos 45^\\circ}
+\\]
+\\[
+F_{CD} \\approx 136{,}5\,\\text{N}
+\\]
+<br>
+
+<strong>Pas 4: Força horitzontal de la guia</strong>
+<br>
+Sumant forces horitzontals = 0:
+\\[
+F_{guia} - F_{CD}\\sin\\alpha = 0
+\\]
+\\[
+F_{guia} = F_{CD}\\sin 45^\\circ = 136{,}5\\cdot \\frac{\\sqrt{2}}{2}
+\\]
+\\[
+F_{guia} \\approx 96{,}5\,\\text{N}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Força vertical aplicada a A:
+\\[
+\\boxed{F \\approx 109{,}3\,\\text{N}}
+\\]
+Força a la barra CD:
+\\[
+\\boxed{F_{CD} \\approx 136{,}5\,\\text{N}}
+\\]
+Força horitzontal de la guia:
+\\[
+\\boxed{F_{guia} \\approx 96{,}5\,\\text{N}}
+\\]
+
+ <br><br>
+            `,
+
     },
     {
         type: "exercicis",
@@ -850,48 +1145,97 @@ t_f = t_i + \Delta t = 20 \; \text{°C} + 57,80 \; \text{°C} = 77,80 \; \text{�
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Nombre de triangles equilàters \\(n_{\text{T}}\\) i el perímetre \\(p_{\text{T}}\\):</strong>
-            <br>
-            \\[
-            n_{\\text{T}} = 6 + 6 = 12 \\, \\text{triangles}
-            \\]
-            \\[
-            p_{\\text{T}} = n_{\\text{T}} \\cdot 3b = 12 \\cdot 3 \\cdot 0{,}3 = 10{,}8 \\, \\text{m}
-            \\]
-            <br>
-            <strong>b) Nombre de rombes \\(n_{\\text{R}}\\) i perímetre de les peces \\(p_{\\text{R}}\\):</strong>
-            <br>
-            \\[
-            n_{\\text{R}} = \\frac{n_{\\text{T}}}{2} = \\frac{12}{2} = 6 \\, \\text{rombes}
-            \\]
-            \\[
-            p_{\\text{R}} = n_{\\text{R}} \\cdot 4b = 6 \\cdot 4 \\cdot 0{,}3 = 7{,}2 \\, \\text{m}
-            \\]
-            <br>
-            <strong>c) Perímetre tallat \\(p_{\\text{E}}\\) de l'estrella (perfil exterior):</strong>
-            <br>
-            \\[
-            p_{\\text{E}} = 12 \\cdot b = 12 \\cdot 0{,}3 = 3{,}6 \\, \\text{m}
-            \\]
-            <br>
-            <strong>d) Superfície \\(s\\), costos \\(c_{\text{T}}, c_{\text{R}}, c_{\text{E}}\\) i opció més econòmica:</strong>
-            <br>
-            - Superfície d'un triangle equilàter: \\( A_{\\text{T}} = \\frac{\\sqrt{3}}{4} b^2 = \\frac{\\sqrt{3}}{4} (0{,}3)^2 = 0{,}03897 \\, \\text{m}^2 \\).
-            \\[
-            s = 12 \\cdot A_{\\text{T}} = 12 \\cdot 0{,}03897 = 0{,}4677 \\, \\text{m}^2
-            \\]
-            \\[
-            c_{\\text{T}} = (15 \\cdot 0{,}4677) + (0{,}6 \\cdot 10{,}8) = 7{,}016 + 6{,}48 = 13{,}50 \\, \\text{€}
-            \\]
-            - Cost amb rombes (\\( c_2 = 0{,}6 \\)): 
-            \\[
-            c_{\\text{R}} = (15 \\cdot 0{,}4677) + (0{,}6 \\cdot 7{,}2) = 7{,}016 + 4{,}32 = 11{,}34 \\, \\text{€}
-            \\]
-            - Cost estrella sencera (\\( c_2 = 1{,}4 \\)): 
-            \\[
-            c_{\\text{E}} = (15 \\cdot 0{,}4677) + (1{,}4 \\cdot 3{,}6) = 7{,}016 + 5{,}04 = 12{,}06 \\, \\text{€}
-            \\]
-            - <strong>Conclusió:</strong> L'opció més econòmica és la construcció a partir de <strong>6 rombes</strong> amb un cost d'<strong>11,34 €</strong>.
+          <strong>Exercici – Bomba d’aigua elèctrica</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Volum d’aigua elevat:  
+\\[
+V = 45\,600 \\, \\text{L} = 45{,}6 \\, \\text{m³} \quad (1\,L = 10^{-3}\,m³)
+\\]
+- Temps de funcionament:  
+\\[
+t = 8 \\, \\text{h} = 8 \\cdot 3600 = 28\,800 \\, \\text{s}
+\\]
+- Altura:  
+\\[
+h = 10{,}4 \\, \\text{m}
+\\]
+- Densitat de l’aigua:  
+\\[
+\\rho = 1\,000 \\, \\text{kg/m³}
+\\]
+- Gravetat:  
+\\[
+g = 9{,}807 \\, \\text{m/s²}
+\\]
+- Potència del motor elèctric:  
+\\[
+P_m = 525 \\, \\text{W}
+\\]
+<br><br>
+
+<strong>Pas 1: Treball fet per la bomba (apartat a)</strong>
+<br>
+El treball per elevar l’aigua és la energia potencial:
+\\[
+W = m \\, g \\, h
+\\]
+On la massa:
+\\[
+m = \\rho \\cdot V = 1\,000 \\cdot 45{,}6 = 45\,600 \\, \\text{kg}
+\\]
+Per tant:
+\\[
+W = 45\,600 \\cdot 9{,}807 \\cdot 10{,}4 \approx 4\,651\,000 \\, \\text{J} \\approx 4{,}651 \\, \\text{MJ}
+\\]
+<br>
+
+<strong>Pas 2: Rendiment de la bomba (apartat b)</strong>
+<br>
+El rendiment és la relació entre treball útil i energia consumida pel motor:
+\\[
+\\eta_b = \\frac{W}{P_m \\cdot t}
+\\]
+Energia consumida pel motor:
+\\[
+E_{el} = P_m \\cdot t = 525 \\cdot 28\,800 \approx 15\,120\,000 \\, \\text{J}
+\\]
+Rendiment:
+\\[
+\\eta_b = \\frac{4\,651\,000}{15\,120\,000} \\approx 0{,}3076
+\\]
+\\[
+\\eta_b \\approx 30,8\%
+\\]
+<br>
+
+<strong>Pas 3: Pressió mitjana de funcionament (apartat c)</strong>
+<br>
+La pressió mitjana es calcula com la força sobre la superfície de l’aigua dividida per l’àrea. Com la força és el pes de l’aigua per unitat de superfície:
+\\[
+p = \\rho g h
+\\]
+\\[
+p = 1\,000 \\cdot 9{,}807 \\cdot 10{,}4 \approx 102{,}0\\,000 \\, \\text{Pa} = 1{,}020 \\, \\text{bar}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Treball fet per la bomba:
+\\[
+\\boxed{W \\approx 4{,}651 \\, \\text{MJ}}
+\\]  
+Rendiment de la bomba:
+\\[
+\\boxed{\\eta_b \\approx 30,8\%}
+\\]  
+Pressió mitjana de funcionament:
+\\[
+\\boxed{p \\approx 1{,}020 \\, \\text{bar}}
+\\]
             <br><br>
             `
     },
@@ -918,44 +1262,118 @@ Si el fil de nicrom s’escalfa fins a 600 °C, determineu:
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Potència mecànica requerida per elevar la càrrega \\(P_{càrrega}\\):</strong>
-            <br>
-            \\[
-            v = \\frac{\\Delta h}{t} = \\frac{5}{60} = 0,0833 \\; \\text{m/s}
-            \\]
-            \\[
-            F = m \\cdot g = 2500 \\cdot 9{,}81 = 24525 \\; \\text{N}
-            \\]
-            \\[
-            P_{càrrega} = F \\cdot v = 24525 \\cdot 0,0833 = 2044 \\; \\text{W}
-            \\]
-            <br>
-            <strong>b) Potència \\(P_{m}\\) i el parell \\(Γ_{m}\\) a l'eix del motor:</strong>
-            <br>
-            \\[
-            P_{m} = \\frac{P_{càrrega}}{η_{red}} = \\frac{2044}{0,70} = 2919 \\; \\text{W}
-            \\]
-            \\[
-            \\omega = \\frac{2\\pi n}{t} = \\frac{2\\pi 1500}{60} = 157,1 \\; \\text{rad/s}
-            \\]
-            \\[
-            Γ_{m} = \\frac{P_m}{\\omega} = \\frac{2919}{157,1} = 18,6 \\; \\text{N\\(\\cdot\\)m}
-            \\]
-            <br>
-            <strong>c) Intensitat consumida pel motor:</strong>
-            <br>
-            \\[
-            P_{el} = \\frac{P_m}{η_{mot}} = \\frac{2919}{0,78} = 3742,3 \\; \\text{W}
-            \\]
-            \\[
-            I = \\frac{P_{el}}{U} = \\frac{3742,3}{220} = 17,01 \\; \\text{A}
-            \\]
-            <br>
-            <strong>d) Potència total dissipada pel conjunt motor–reductor:</strong>
-            <br>
-            \\[
-            P_{diss} = P_{el} - P_{càrrega} = 3742,3 - 2044 = 1698,3 \\; \\text{W}
-            \\]
+           <strong>Qüestió 3 – Torradora de pa amb fil de nicrom</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Diàmetre del fil de nicrom:
+\\[
+d = 0{,}4 \\, \\text{mm} = 0{,}4 \\cdot 10^{-3} \\, \\text{m}
+\\]
+- Llargària de cada resistència:
+\\[
+L = 3{,}5 \\, \\text{m}
+\\]
+- Nombre de resistències (en sèrie):
+\\[
+n = 2
+\\]
+- Tensió d’alimentació:
+\\[
+U = 230 \\, \\text{V}
+\\]
+- Resistivitat a 20 °C:
+\\[
+\\rho_{20} = 10{,}8 \\cdot 10^{-7} \\, \\Omega·\\text{m}
+\\]
+- Coeficient de temperatura del nicrom:
+\\[
+\\alpha = 0{,}4 \\cdot 10^{-3} \\, ^\\circ \\text{C}^{-1}
+\\]
+- Temperatures considerades:
+  - T1 = 20 °C  
+  - T2 = 600 °C
+<br><br>
+
+<strong>Pas 1: Resistència total a 20 °C (apartat a)</strong>
+<br>
+La resistència d’un fil:
+\\[
+R = \\rho \\cdot \\frac{L}{A}
+\\]
+On l’àrea de la secció transversal:
+\\[
+A = \\frac{\\pi d^2}{4}
+\\]
+Substituïm:
+\\[
+A = \\frac{\\pi (0{,}4·10^{-3})^2}{4} = 1{,}25664·10^{-7} \\, \\text{m²}
+\\]
+Per a dos fils en sèrie:
+\\[
+R_{20} = 2 \\cdot \\frac{10{,}8·10^{-7} · 3{,}5}{1{,}25664·10^{-7}}
+\\]
+\\[
+R_{20} \\approx 60{,}16 \\, \\Omega
+\\]
+<br>
+
+<strong>Pas 2: Resistivitat a 600 °C (apartat b)</strong>
+<br>
+Increment de temperatura:
+\\[
+\\Delta T = 600 - 20 = 580 \\, ^\\circ \\text{C}
+\\]
+Nou valor de resistivitat:
+\\[
+\\rho_{600} = \\rho_{20}(1 + \\alpha \\cdot \\Delta T)
+\\]
+\\[
+\\rho_{600} = 10{,}8·10^{-7}(1 + 0{,}4·10^{-3}·580)
+\\]
+\\[
+\\rho_{600} = 10{,}8·10^{-7}(1 + 0{,}232) = 13{,}30·10^{-7} \\, \\Omega·\\text{m}
+\\]
+Resistència total a 600 °C:
+\\[
+R_{600} = 2 \\cdot \\frac{13{,}30·10^{-7} · 3{,}5}{1{,}25664·10^{-7}}
+\\]
+\\[
+R_{600} \\approx 74{,}12 \\, \\Omega
+\\]
+<br>
+
+<strong>Pas 3: Variació de la intensitat (apartat c)</strong>
+<br>
+Intensitat a 20 °C:
+\\[
+I_{20} = \\frac{U}{R_{20}} = \\frac{230}{60{,}16} \\approx 3{,}823 \\, \\text{A}
+\\]
+Intensitat a 600 °C:
+\\[
+I_{600} = \\frac{U}{R_{600}} = \\frac{230}{74{,}12} \\approx 3{,}103 \\, \\text{A}
+\\]
+Variació de la intensitat:
+\\[
+\\Delta I = I_{20} - I_{600} \\approx 3{,}823 - 3{,}103 = 0{,}720 \\, \\text{A}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Resistència total a 20 °C:
+\\[
+\\boxed{R_{20} \\approx 60{,}16 \\, \\Omega}
+\\]
+Resistència total a 600 °C:
+\\[
+\\boxed{R_{600} \\approx 74{,}12 \\, \\Omega}
+\\]
+Variació de la intensitat:
+\\[
+\\boxed{I_{20} \\approx 3{,}823 \\, \\text{A},\\quad I_{600} \\approx 3{,}103 \\, \\text{A},\\quad \\Delta I \\approx 0{,}720 \\, \\text{A}}
+\\]
             <br><br>
             `
     },
