@@ -818,69 +818,7 @@ qüestions que hi ha a continuació utilitzant les variables d’estat següents
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Diagrama del cos lliure:</strong>
             <img src="https://mszabo4.github.io/selectivitat/2014/images/201409S5R2.png" alt="Imatge relacionada amb la resposta" width="900">
-
-            <strong>b) Massa de la placa:</strong>
-            <br>
-            \\[
-            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
-            \\]
-            \\[
-            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
-            \\]
-            \\[
-            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
-            \\]
-            <br>
-            <strong>c) Tensió del cable i forces a O:</strong>
-            <br>
-            \\[
-            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
-            \\]
-            \\[
-            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
-            \\]
-            \\[
-            T = 265,8 \\; \\text{N}
-            \\]
-            \\[
-            - Eix y
-            \\]
-            \\[
-            F_{v} + T \\text{sin}30º - W = 0
-            \\]
-            \\[
-            F_{v} + 132,9 - 265,8 = 0
-            \\]
-            \\[
-            F_{v} = 132,9 \\; \\text{N}
-            \\]
-            \\[
-            - Eix x
-            \\]
-            \\[
-            F_{h} - T \\text{sin}30º = 0
-            \\]
-            \\[
-            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
-            \\]
-            <br>
-            <strong>d) Tensió normal i allargament unitari del cable:</strong>
-            <br>
-            \\[
-            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
-            \\]
-            \\[
-            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
-            \\]
-            \\[
-            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
-            \\]
-            \\[
-            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
-            \\]
-            <strong>El cable NO es deforma permanentment</strong>
             <br><br>
             `,
          },
@@ -892,7 +830,8 @@ qüestions que hi ha a continuació utilitzant les variables d’estat següents
 sostre mitjançant dos cables fixats en els punts A i B. Els cables,
 que tenen una longitud L1 = 5 m i un diàmetre d = 8 mm, són fets
 d’un material que té un mòdul d’elasticitat E = 50 GPa.
-              
+<img src="https://mszabo4.github.io/selectivitat/2014/images/201409S5P3.png" alt="Imatge relacionada amb la resposta" width="900">
+
                <br><strong>a)</strong>Determineu l’angle, α, que formen els cables amb l’horitzontal.  [0,5 punts]
                <br><strong>b)</strong> Determineu la força, F, que fa cadascun dels cables en funció de la massa, m, del llum.[0,5 punts]
                <br><strong>c)</strong>Representeu, de manera aproximada i indicant les escales, la tensió normal, σ, dels cables deguda a la forçaque exerceixen, en funció de la massa, m, del llum per a 200 kg ≤ m ≤ 600 kg. [1 punt]
@@ -901,69 +840,63 @@ d’un material que té un mòdul d’elasticitat E = 50 GPa.
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Diagrama del cos lliure:</strong>
-            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+          <strong>a) Determinació de l’angle α:</strong>
+<br>
+\\[
+L_2 = 2L_1 \\cos \\alpha
+\\]
+\\[
+\\alpha = \\arccos\\left(\\frac{L_2}{2L_1}\\right)
+\\]
+\\[
+\\alpha = \\arccos\\left(\\frac{6}{2 \\cdot 5}\\right) = 53,13^{\\circ}
+\\]
+<br>
 
-            <strong>b) Massa de la placa:</strong>
-            <br>
-            \\[
-            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
-            \\]
-            \\[
-            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
-            \\]
-            \\[
-            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
-            \\]
-            <br>
-            <strong>c) Tensió del cable i forces a O:</strong>
-            <br>
-            \\[
-            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
-            \\]
-            \\[
-            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
-            \\]
-            \\[
-            T = 265,8 \\; \\text{N}
-            \\]
-            \\[
-            - Eix y
-            \\]
-            \\[
-            F_{v} + T \\text{sin}30º - W = 0
-            \\]
-            \\[
-            F_{v} + 132,9 - 265,8 = 0
-            \\]
-            \\[
-            F_{v} = 132,9 \\; \\text{N}
-            \\]
-            \\[
-            - Eix x
-            \\]
-            \\[
-            F_{h} - T \\text{sin}30º = 0
-            \\]
-            \\[
-            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
-            \\]
-            <br>
-            <strong>d) Tensió normal i allargament unitari del cable:</strong>
-            <br>
-            \\[
-            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
-            \\]
-            \\[
-            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
-            \\]
-            \\[
-            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
-            \\]
-            \\[
-            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
-            \\]
-            <strong>El cable NO es deforma permanentment</strong>
+<strong>b) Força al cable:</strong>
+<br>
+\\[
+\\sum F = 0
+\\]
+\\[
+2F \\sin \\alpha - mg = 0
+\\]
+\\[
+F = \\frac{mg}{2 \\sin \\alpha}
+\\]
+\\[
+F = \\frac{9,81}{2 \\sin 53,13^{\\circ}} \\, m = 6,129 \\, m \\; \\text{N} \\quad (m \\text{ en kg})
+\\]
+<br>
+
+<strong>c) Tensió normal al cable:</strong>
+<br>
+\\[
+\\sigma = \\frac{F}{S}
+\\]
+\\[
+S = \\pi \\left(\\frac{d}{2}\\right)^2
+\\]
+\\[
+\\sigma = \\frac{F}{\\pi \\left(\\frac{d}{2}\\right)^2}
+\\]
+\\[
+\\sigma = 121,9 \\cdot 10^{3} \\, m \\; \\text{Pa} \\quad (m \\text{ en kg})
+\\]
+<img src="https://mszabo4.github.io//selectivitat/2014/images/201409S5R3.png" alt="Imatge relacionada amb la resposta" width="900">
+<br>
+
+<strong>d) Deformació unitària del cable:</strong>
+<br>
+\\[
+\\varepsilon = \\frac{\\sigma}{E}
+\\]
+\\[
+\\varepsilon = \\frac{121,9 \\cdot 10^{3} \\cdot 450}{50 \\cdot 10^{9}}
+\\]
+\\[
+\\varepsilon = 1,097 \\cdot 10^{-3}
+\\]
             <br><br>
             `,
          },
@@ -988,69 +921,55 @@ Tenint en compte que el poder calorífic de la biomassa és pb=12,54MJ/kg i la c
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Diagrama del cos lliure:</strong>
-            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+          <strong>a) Energia diària necessària:</strong>
+<br>
+\\[
+m_a = V \\cdot \\rho = 530 \\cdot 10^{3} \\cdot 1 = 530 \\cdot 10^{3} \\; \\text{kg}
+\\]
+\\[
+E_{dia} = m_a \\, c_e \\, \\Delta T
+\\]
+\\[
+E_{dia} = 530 \\cdot 10^{3} \\cdot 4,187 \\cdot 10^{3} \\cdot (28 - 20)
+\\]
+\\[
+E_{dia} = 17,75 \\; \\text{GJ} = 4931 \\; \\text{kWh}
+\\]
+<br>
 
-            <strong>b) Massa de la placa:</strong>
-            <br>
-            \\[
-            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
-            \\]
-            \\[
-            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
-            \\]
-            \\[
-            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
-            \\]
-            <br>
-            <strong>c) Tensió del cable i forces a O:</strong>
-            <br>
-            \\[
-            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
-            \\]
-            \\[
-            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
-            \\]
-            \\[
-            T = 265,8 \\; \\text{N}
-            \\]
-            \\[
-            - Eix y
-            \\]
-            \\[
-            F_{v} + T \\text{sin}30º - W = 0
-            \\]
-            \\[
-            F_{v} + 132,9 - 265,8 = 0
-            \\]
-            \\[
-            F_{v} = 132,9 \\; \\text{N}
-            \\]
-            \\[
-            - Eix x
-            \\]
-            \\[
-            F_{h} - T \\text{sin}30º = 0
-            \\]
-            \\[
-            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
-            \\]
-            <br>
-            <strong>d) Tensió normal i allargament unitari del cable:</strong>
-            <br>
-            \\[
-            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
-            \\]
-            \\[
-            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
-            \\]
-            \\[
-            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
-            \\]
-            \\[
-            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
-            \\]
-            <strong>El cable NO es deforma permanentment</strong>
+<strong>b) Massa de biomassa i energia dissipada:</strong>
+<br>
+\\[
+m_b = \\frac{E_{dia}}{\\eta \\, p_b}
+\\]
+\\[
+m_b = \\frac{17,75 \\cdot 10^{9}}{0,78 \\cdot 12,54 \\cdot 10^{6}}
+\\]
+\\[
+m_b = 1815 \\; \\text{kg}
+\\]
+\\[
+E_{dis} = m_b \\, p_b \\, (1 - \\eta)
+\\]
+\\[
+E_{dis} = 1815 \\cdot 12,54 \\cdot 10^{6} \\cdot (1 - 0,78)
+\\]
+\\[
+E_{dis} = 5,007 \\; \\text{GJ} = 1391 \\; \\text{kWh}
+\\]
+<br>
+
+<strong>c) Cabal volumètric:</strong>
+<br>
+\\[
+q = \\frac{V}{t}
+\\]
+\\[
+q = \\frac{530 \\cdot 10^{3}}{16 \\cdot 3600}
+\\]
+\\[
+q = 9,201 \\; \\text{L/s}
+\\]
             <br><br>
             `,
          },
@@ -1058,6 +977,7 @@ Tenint en compte que el poder calorífic de la biomassa és pb=12,54MJ/kg i la c
         type: "exercicis",
         category: "maquines",
         text: `
+ <img src="https://mszabo4.github.io/selectivitat/2014/images/201409S5P4.png" alt="Imatge relacionada amb la resposta" width="900">
     En la figura es mostra el circuit d’una estoreta elèctrica que té un commutador per a
 seleccionar la potència que subministra. El comandament només permet les combinacions
 d’interruptors tancats: 1-3-4, 1-3, 1-4 i 2-4. Les dues resistències tenen els valors R3 = 1,4 kΩ i
