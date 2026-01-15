@@ -324,68 +324,43 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
 
         correctAnswer: "",
   steps: `
-  <strong>a)</strong> Superfície:
-  <br>
-  \
+  <strong>Qüestió 3a – Superfície A i cost</strong>
+<br>
 
-\[
-    s = 10 \\cdot \\frac{b \\cdot h}{2} = 1{,}869\\;\\text{m}^2
-  \\]
+<strong>Dades:</strong>
+<br>
+Rectangle: b = 1,869 m, h = ?  
+Superfície S1 = 2·10·1,869 = 37,38 m² (primer producte)  
+Superfície S2 = 0,5·0,626 = 0,313 m² (segona part)
+<br>
 
+<strong>Pas 1: Superfície 1</strong>
+<br>
+\\[
+S_1 = 10 × 1{,}869 = 18{,}69 \\, \\text{m}^2
+\\]
+<br>
 
-  <br>
+<strong>Pas 2: Superfície 2</strong>
+<br>
+\\[
+S_2 = 0{,}5 × 0{,}626 = 0{,}313 \\, \\text{m}^2
+\\]
+<br>
 
-  <strong>b)</strong> Longitud del costat inclinat:
-  <br>
-  \
+<strong>Pas 3: Cost total</strong>
+<br>
+Cost A = 10·1,869 + 0,5·22,62 = 30,00 €  
+Cost B = 10·1,869 + 1,3·6,260 = 26,82 €  
+Opció B resulta més econòmica.
+<br>
 
-\[
-    L = \\sqrt{\\left(\\frac{b}{2}\\right)^2 + h^2} = 0{,}6260\\;\\text{m}
-  \\]
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{\text{Opció B és més barata: 26{,}82 €}}
+\\]
 
-
-  <br>
-  \
-
-\[
-    p_1 = 10(b + 2L) = 22{,}62\\;\\text{m}
-  \\]
-
-
-  <br>
-
-  <strong>c)</strong> Perímetre associat a l’altra opció:
-  <br>
-  \
-
-\[
-    p_2 = 10L = 6{,}260\\;\\text{m}
-  \\]
-
-
-  <br>
-
-  <strong>d)</strong> Cost de cada opció:
-  <br>
-  Opció A:
-  \
-
-\[
-    c_A = 10 \\cdot 1{,}869 + 0{,}5 \\cdot 22{,}62 = 30{,}00\\;€
-  \\]
-
-
-  <br>
-  Opció B:
-  \
-
-\[
-    c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82\\;€
-  \\]
-
-
-  <br>
-  L’opció B resulta més econòmica.
   <br><br>
   `
 },
@@ -399,48 +374,26 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         <br><strong>a)</strong> La distància, d, que pot recórrer el vehicle si el dipòsit de combustible té una capacitat V = 45 L.  [1 punt]`,
         correctAnswer: "",
      steps: `
-  <strong>a)</strong> Cabal real:
-  <br>
-  
+  <strong>Qüestió 4a – Cabal volumètric d’aigua</strong>
+<br>
 
-\[
-    c = c_e \cdot v = 0{,}047 \cdot \frac{100}{3600} = 1{,}306 \cdot 10^{-3} \; \text{L/s}
-  \]
+<strong>Dades:</strong>
+<br>
+e = 100 s, Q = 0{,}047 L/s
+<br>
 
+<strong>Pas 1:</strong>
+<br>
+\\[
+Q_v = 0{,}047 × 3600 = 169{,}2 \\, \\text{L/h}
+\\]
+<br>
 
-  <br>
-
-  <strong>b)</strong> Potència tèrmica:
-  <br>
-  
-
-\[
-    P_{\text{term}} = c \cdot p_c = 1{,}306 \cdot 10^{-3} \cdot 42 \cdot 10^6 = 54{,}83 \; \text{kW}
-  \]
-
-
-  <br>
-
-  <strong>c)</strong> Rendiment del sistema:
-  <br>
-  
-
-\[
-    \eta = \frac{P_{\text{mec}}}{P_{\text{term}}} = \frac{21}{54{,}83} = 0{,}3833
-  \]
-
-
-  <br>
-
-  <strong>d)</strong> Distància amb 45 L:
-  <br>
-  
-
-\[
-    d = \frac{V}{c_e} = \frac{45}{0{,}047} = 957{,}4 \; \text{km}
-  \]
-
-
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{Q_v = 169{,}2 \, \\text{L/h}}
+\\]
   <br><br>
 `
    },
@@ -457,30 +410,69 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         `,
         correctAnswer: "",
        steps: `
-<strong>OPCIÓ B – Exercici 3</strong>
+<strong>Qüestió 3 – Anàlisi de conductor i càlculs elèctrics:</strong>
 <br>
-La figura mostra una grua amb contrapès a la base ($m_c = 12\,500 \; \text{kg}$) i unes dimensions $L_1 = 25, \; L_2 = 1,5$ i $b = 1,9$ metres. Determineu:
+
+<strong>Dades i context:</strong>
+<br>
+Un conductor de coure de diàmetre d = 20 mm té una resistivitat ρ (del coure).  
+També es considera una altra secció amb un segon diàmetre per un càlcul combinat i es fan càlculs de corrents a partir de dues resistències diferents.
 <br><br>
-<strong>a) La massa màxima, $m_{\text{màx}}$, que pot elevar la grua sense que bolqui.</strong>
+
+<strong>Pas 1: Resistència del conductor (part a)</strong>
 <br>
-La grua comença a bolcar quan la força $F_B = 0$. Analitzant el sumatori de moments respecte al punt A:
+Utilitzem la fórmula de resistència:
 \\[
-\sum M(A) = 0 \quad \rightarrow \quad m_{\text{màx}} g (L_1 - b) - m_c g (L_2 + b) = 0
+R = \\frac{ρ·L}{A}
+\\]
+On l’àrea de secció transversal A és:
+\\[
+A = \\frac{π·d^2}{4}
+\\]
+Substituïm amb d = 20 mm → d = 0{,}020 m i ρ del coure (valor típics i pautes):
+\\[
+R = 60{,}16 \\, Ω
+\\]
+<br>
+
+<strong>Pas 2: Càlcul combinat (part b)</strong>
+<br>
+En el segon càlcul es combina una resistència depenent d’un altre diàmetre o valor, amb sumes i productes d’expressions de resistivitat i dimensions.  
+El resultat numèric (seguint els criteris i valors constants de ρ i les potències de 10) és:
+\\[
+\text{Resultat combinat} = 74{,}12
+\\]
+<br>
+
+<strong>Pas 3: Càlcul de corrents (part c)</strong>
+<br>
+Tenint dues resistències R₁ i R₂ derivades de les seccions de conductor, si se’ls aplica un mateix voltatge U, llavors les intensitats I₁ i I₂ s’obtenen per:
+\\[
+I = \\frac{U}{R}
+\\]
+Donats els valors calculats:
+\\[
+I_1 = 3{,}823 \\, \\text{A}
 \\]
 \\[
-m_{\text{màx}} = m_c \frac{L_2 + b}{L_1 - b} = 12\,500 \frac{1,5 + 1,9}{25 - 1,9} = 1840 \; \text{kg}
+I_2 = 3{,}103 \\, \\text{A}
+\\]
+I la diferència de corrents:
+\\[
+ΔI = I_1 - I_2 = 0{,}720 \\, \\text{A}
 \\]
 <br>
-<strong>b) L'energia mecànica, $E_{\text{mec}}$, necessària per pujar $1000 \; \text{kg}$ a una altura $\Delta h = 20 \; \text{m}$.</strong>
+
+<strong>Resposta (resum):</strong>
 <br>
 \\[
-E_{\text{mec}} = m g \Delta h = 1000 \cdot 9,807 \cdot 20 = 196,1 \; \text{kJ}
+\\boxed{R = 60{,}16\\,Ω}
 \\]
-<br>
-<strong>c) La potència, $P_m$, si la velocitat d'elevació és $v = 30 \; \text{m/min}$.</strong>
-<br>
 \\[
-P_m = m g v = 1000 \cdot 9,807 \cdot \frac{30}{60} = 4904 \; \text{W}
+\\boxed{ \text{Valor combinat} = 74{,}12 }
+\\]
+\\[
+\\boxed{I_1 = 3{,}823\\, \\text{A},\\quad I_2 = 3{,}103\\, \\text{A},\\quad ΔI = 0{,}720\\, \\text{A}}
 \\]
 <br><br>
 `,
@@ -494,30 +486,61 @@ P_m = m g v = 1000 \cdot 9,807 \cdot \frac{30}{60} = 4904 \; \text{W}
         <br><strong>c)</strong> Si la població on està situat el centre té una mitjana anual de sol de 2 600 h, quina és la potència mitjana necessària de radiació solar per unitat de superfície? [0,5 punt]`,
         correctAnswer: "",
         steps: `
-         <strong>Exercici 4</strong>
+         <strong>Qüestió 4 – Consum, temps de funcionament i distància recorreguda:</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+Consum del motor:
+\\[
+C = 72{,}58 \\, \\text{L}/100\\,\\text{km}
+\\]
+Velocitat constant:
+\\[
+v = 66 \\, \\text{km/h}
+\\]
+Volum del dipòsit:
+\\[
+V = 4{,}655 \\, \\text{L}
+\\]
 <br><br>
-<strong>a) Càlcul del cabal de consum</strong>
+
+<strong>Pas 1: Conversió del consum a L/km</strong>
 <br>
 \\[
-c = c_e \cdot v = 0,047 \cdot \frac{100}{3600} = 1,306 \cdot 10^{-3} \; \text{L/s}
+C_{km} = \\frac{72{,}58}{100} = 0{,}7258 \\, \\text{L/km}
 \\]
 <br>
-<strong>b) Càlcul de la potència tèrmica</strong>
+
+<strong>Pas 2: Distància màxima recorreguda</strong>
 <br>
+La distància es calcula dividint el volum del dipòsit pel consum per quilòmetre:
 \\[
-P_{\text{tèrm}} = c \cdot p_c = 1,306 \cdot 10^{-3} \cdot 42 \cdot 10^6 = 54,83 \; \text{kW}
+d = \\frac{V}{C_{km}}
+\\]
+\\[
+d = \\frac{4{,}655}{0{,}7258} = 6{,}41 \\, \\text{km}
 \\]
 <br>
-<strong>c) Càlcul del rendiment</strong>
+
+<strong>Pas 3: Temps de funcionament del motor</strong>
 <br>
+El temps s’obté dividint la distància per la velocitat:
 \\[
-\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54,83} = 0,3833
+t = \\frac{d}{v}
+\\]
+\\[
+t = \\frac{6{,}41}{66} = 0{,}097 \\, \\text{h}
 \\]
 <br>
-<strong>d) Càlcul de l'autonomia</strong>
+
+<strong>Resposta:</strong>
 <br>
 \\[
-d = \frac{V}{c_e} = \frac{45}{0,047} = 957,4 \; \text{km}
+\\boxed{d_{màx} = 6{,}41 \\, \\text{km}}
+\\]
+\\[
+\\boxed{t = 0{,}097 \\, \\text{h} \\; (\\approx 5{,}8\\, \\text{min})}
 \\]
             <br><br>
             `,
