@@ -183,14 +183,58 @@ està totalment carregada?`,
             { text: "6 h", value: "c" },
             { text: "1,67 h", value: "d" }
         ],
-        correctAnswer: "c",
+        correctAnswer: "d",
         steps: `
-            \\[
-            \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{8} + \frac{1}{8} = \frac{2}{8}
-            \\]
-            \\[
-            R_{eq} = \frac{8}{2} = 4 \text{ Ω}
-            \\]
+          <strong>Qüestió 4 – Càlcul de potència del motor:</strong>
+<br>
+Un motor mou una càrrega horitzontal amb una força de:
+\\[
+F = 620 \\; \\text{N}
+\\]
+i una velocitat constant de:
+\\[
+v = 3{,}5 \\; \\text{m/s}
+\\]
+El rendiment del sistema és:
+\\[
+\\eta = 0{,}82
+\\]
+<br>
+
+<strong>Pas 1: Potència útil al moviment:</strong>
+<br>
+La potència útil és:
+\\[
+P_{útil} = F \\cdot v
+\\]
+\\[
+P_{útil} = 620 \\cdot 3{,}5 = 2170 \\; \\text{W}
+\\]
+<br>
+
+<strong>Pas 2: Potència d’entrada al motor:</strong>
+<br>
+Tenint en compte el rendiment:
+\\[
+P_{entrada} = \\frac{P_{útil}}{\\eta}
+\\]
+\\[
+P_{entrada} = \\frac{2170}{0{,}82} = 2646{,}34 \\; \\text{W}
+\\]
+<br>
+
+<strong>Pas 3: Expressar en kW:</strong>
+<br>
+\\[
+P = 2{,}646{,}34 \\; \\text{kW} \\approx 2{,}65 \\; \\text{kW}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{d) \\; 2{,}65 \\; \\text{kW}}
+\\]
             <br><br>
             `,
     },
@@ -205,14 +249,62 @@ està totalment carregada?`,
             { text: "25 Ω ± 2 %", value: "c" },
             { text: "25 Ω ± 1 %", value: "d" }
         ],
-        correctAnswer: "b",
+        correctAnswer: "c",
         steps: `
-            \\[
-            \text{Consum total} = \frac{6 \text{ L}}{100 \text{ km}} \cdot 350 \text{ km} = 21 \text{ L}
-            \\]
-            \\[
-            \text{Emissions} = 21 \text{ L} \cdot 2,35 \text{ kg/L} = 49,35 \text{ kg}
-            \\]
+           <strong>Qüestió 5 – Resistència equivalent i tolerància:</strong>
+<br>
+Es connecten en paral·lel dues resistències **iguals** de valor:
+\\[
+R = 50 \\; \\Omega
+\\]
+i amb tolerància:
+\\[
+\\pm 2 \\%
+\\]
+<br>
+
+<strong>Pas 1: Resistència equivalent de dues resistències en paral·lel:</strong>
+<br>
+La fórmula d’equivalència en paral·lel és:
+\\[
+R_{eq} = \\frac{R \\cdot R}{R + R} = \\frac{R^2}{2R}
+\\]
+Substituïm:
+\\[
+R_{eq} = \\frac{50^2}{2 \\cdot 50} = \\frac{2500}{100} = 25 \\; \\Omega
+\\]
+<br>
+
+<strong>Pas 2: Tolerància de la resistència equivalent:</strong>
+<br>
+Com que les dues resistències són **iguals** i tenen la **mateixa tolerància ±2 %**, la tolerància del valor equivalent també serà:
+\\[
+\\pm 2 \\%
+\\]
+(no es redueix, perquè en paral·lel amb components iguals la variació relativa no es cancela).
+<br>
+
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{c) \\; 25 \\; \\Omega \\; \\pm 2\\%}
+\\]
+            <br><br>
+            `,
+         },
+    {
+      type: "exercicis",
+        category: "logica",
+        text: `Una loteria duu a terme un sorteig escollint a l’atzar un número de tres xifres. Lesutlletes resulten premiades si dues o tres xifres coincideixen amb les del número escollit.Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+   <img src="https://mszabo4.github.io/selectivitat/2014/images/201406S3P2.png" alt="Imatge relacionada amb la pregunta" width="900">
+        <br><strong>a)</strong> Escriviu la taula de veritat del sistema. [0,5 punt]
+        <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+        <br><strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]`,
+
+        correctAnswer: "",
+        steps: `
+  <img src="https://mszabo4.github.io/selectivitat/2014/images/201406S3R2.png" alt="Imatge relacionada amb la pregunta" width="900">
+
             <br><br>
             `,
     },
