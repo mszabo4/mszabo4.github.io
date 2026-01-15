@@ -609,7 +609,7 @@ p = 1{,}020\ \text{bar}
         type: "exercicis",
         category: "energia",
         text: `La porta de garatge de la figura s’acciona manualment fent una força vertical, F, a l’extrem A. En el punt B,  la porta rep l’acció d’un contrapès Fcp = 500 N, el pes  de la porta, Fpes, i una força horitzontal provinent de la guia, Fguia. La massa de la porta és m = 30 kg. Per tal de mantenir la porta immobilitzada a α = 45°, determineu:
-               <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex1/imatgePregunta.png" alt="Imatge relacionada amb la pregunta" width="900">
+               <img src="https://mszabo4.github.io/selectivitat/2014/images/201406S4P3.png" alt="Imatge relacionada amb la pregunta" width="900">
               
                <br><strong>a)</strong> La força, F, necessària. [1 punt]
                <br><strong>b)</strong> La força que fa la barra CD. [1 punt]
