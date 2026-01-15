@@ -609,6 +609,614 @@ minuts, segons i miŀlèsimes de segon. [0,5 punts]
             \\]
             <strong>El cable NO es deforma permanentment</strong>
             <br><br>
+            `,
+         },
+    {
+        type: "questions", // Tipus de pregunta
+        category: "metrologia",
+        text: `El cost de producció de n unitats d’un producte és c = (50 000 + 20n) €. Si el producte es
+ven a 90 € la unitat, a partir de quin nombre d’unitats venudes la producció dóna beneficis?`,
+        options: [
+            { text: "715", value: "a" },
+            { text: "555", value: "b" },
+            { text: "714", value: "c" },
+            { text: "556", value: "d" }
+        ],
+        correctAnswer: "a",
+        steps: `
+            \\[	
+            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+
+            \\]
+            \\[
+            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
+            \\]
+            \\[
+            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
+            \\]
+            <br><br>
+            `,
+         },
+    {
+        type: "questions", // Tipus de pregunta
+        category: "metrologia",
+        text: `Un motor de corrent altern asíncron de dos parells de pols, que està connectat a una
+xarxa amb una tensió U = 230 V i una freqüència f = 50 Hz, té un lliscament relatiu de 0,10.
+Quina és la velocitat nominal del motor?`,
+        options: [
+            { text: " 2 700 min–1", value: "a" },
+            { text: " 675 min–1", value: "b" },
+            { text: " 1 350 min–1", value: "c" },
+            { text: " 750 min–1", value: "d" }
+        ],
+        correctAnswer: "c",
+        steps: `
+            \\[	
+            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+
+            \\]
+            \\[
+            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
+            \\]
+            \\[
+            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
+            \\]
+            <br><br>
+            `,
+         },
+    {
+        type: "questions", // Tipus de pregunta
+        category: "metrologia",
+        text: `En una instaŀlació d’àudio, es connecten en paraŀlel tres altaveus de 16 Ω, 16 Ω i 8 Ω a un
+amplificador. Quina és la impedància del conjunt d’altaveus en aquesta configuració?`,
+        options: [
+            { text: "16 Ω", value: "a" },
+            { text: "4 Ω", value: "b" },
+            { text: " 40 Ω", value: "c" },
+            { text: "34,67 Ω", value: "d" }
+        ],
+        correctAnswer: "b",
+        steps: `
+            \\[	
+            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+
+            \\]
+            \\[
+            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
+            \\]
+            \\[
+            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
+            \\]
+            <br><br>
+            `,
+         },
+    {
+        type: "questions", // Tipus de pregunta
+        category: "metrologia",
+        text: `Un model de cotxe està disponible en dues versions, l’una amb motor de gasolina i l’altra
+amb motor dièsel. El motor de gasolina emet 2,32 kg de CO2
+ i recorre 13 km per cada litre de
+gasolina consumit. El motor dièsel emet 2,6 kg de CO2
+ i recorre 16 km per cada litre de gasoil
+consumit. En un recorregut de 40 km, quants kilograms de CO2
+ emet cada versió?`,
+        options: [
+            { text: "8,923 kg de CO2 el de gasolina i 8,125 kg de CO2 el dièsel.", value: "a" },
+            { text: " 6,032 kg de CO2 el de gasolina i 8,32 kg de CO2 el dièsel.", value: "b" },
+            { text: "116 kg de CO2 el de gasolina i 130 kg de CO2 el dièsel", value: "c" },
+            { text: "7,138 kg de CO2 el de gasolina i 6,5 kg de CO2 el dièsel.", value: "d" }
+        ],
+        correctAnswer: "d",
+        steps: `
+            \\[	
+            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+
+            \\]
+            \\[
+            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
+            \\]
+            \\[
+            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
+            \\]
+            <br><br>
+            `,
+        },
+    {
+        type: "questions", // Tipus de pregunta
+        category: "metrologia",
+        text: `Un aliatge de plata per a soldadures d’alta resistència conté un 0,5 % de cadmi (Cd),
+un 28 % de coure (Cu) i un 11,5 % de zinc (Zn), a més de plata (Ag). Quina quantitat de
+plata pura cal per a obtenir 300 kg d’aliatge?`,
+        options: [
+            { text: "108 kg", value: "a" },
+            { text: "120 kg", value: "b" },
+            { text: "102 kg", value: "c" },
+            { text: "180 kg", value: "d" }
+        ],
+        correctAnswer: "d",
+        steps: `
+            \\[	
+            R_{1_{min}} = 30 - 2\\; \\% = 30(100 - 2)\\; \\% = 30 \\; \\cdot \\; 98 \\;\\% = 30 \\; \\cdot \\; 0{,}98 = 29{,}4 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{1_{max}} = 30 + 2\\; \\% = 30(100 + 2)\\; \\% = 30 \\; \\cdot \\; 102 \\;\\% = 30 \\; \\cdot \\; 1{,}02 = 30{,}6 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{min}} = 30 - 5\\; \\% = 30(100 - 5)\\; \\% = 30 \\; \\cdot \\; 95 \\;\\% = 30 \\; \\cdot \\; 0{,}95 = 28{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+            R_{2_{max}} = 30 + 5\\; \\% = 30(100 + 5)\\; \\% = 30 \\; \\cdot \\; 105 \\;\\% = 30 \\; \\cdot \\; 1{,}05 = 31{,}5 \\; \\text{Ω}
+            \\]
+            \\[
+
+            \\]
+            \\[
+            R_{min} = \\frac{R_{1_{min}} \\cdot R_{2_{min}}}{R_{1_{min}} + R_{2_{min}}} = \\frac{29,4 \\cdot 28,5}{29,4 + 28,5} = 14,47 \\; \\Omega
+            \\]
+            \\[
+            R_{max} = \\frac{R_{1_{max}} \\cdot R_{2_{max}}}{R_{1_{max}} + R_{2_{max}}} = \\frac{30,6 \\cdot 31,5}{30,6 + 31,5} = 15,52 \\; \\Omega
+            \\]
+            <br><br>
+            `,
+        },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `
+      Un any és de traspàs si és divisible per 4, excepte els que són divisibles per 100. Entre els
+divisibles per 100, només són de traspàs els que també són divisibles per 400. Responeu a les
+qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+               <img src="https://mszabo4.github.io/selectivitat/2014/images/201706s1p2.png" alt="Imatge relacionada amb la pregunta" width="900">
+               <br><strong>a)</strong>Escriviu la taula de veritat del sistema i indiqueu els casos que no són possibles.  [0,5 punts]
+               <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [0,5 punts]
+               <br><strong>c)</strong> Dibuixeu l’esquema de portes lògiques equivalent. [1 punt]
+               <br><br>
+               `, 
+        correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
+        steps: `
+            <strong>a) Diagrama del cos lliure:</strong>
+            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+
+            <strong>b) Massa de la placa:</strong>
+            <br>
+            \\[
+            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
+            \\]
+            \\[
+            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
+            \\]
+            \\[
+            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
+            \\]
+            <br>
+            <strong>c) Tensió del cable i forces a O:</strong>
+            <br>
+            \\[
+            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
+            \\]
+            \\[
+            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
+            \\]
+            \\[
+            T = 265,8 \\; \\text{N}
+            \\]
+            \\[
+            - Eix y
+            \\]
+            \\[
+            F_{v} + T \\text{sin}30º - W = 0
+            \\]
+            \\[
+            F_{v} + 132,9 - 265,8 = 0
+            \\]
+            \\[
+            F_{v} = 132,9 \\; \\text{N}
+            \\]
+            \\[
+            - Eix x
+            \\]
+            \\[
+            F_{h} - T \\text{sin}30º = 0
+            \\]
+            \\[
+            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
+            \\]
+            <br>
+            <strong>d) Tensió normal i allargament unitari del cable:</strong>
+            <br>
+            \\[
+            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
+            \\]
+            \\[
+            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
+            \\]
+            \\[
+            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
+            \\]
+            \\[
+            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
+            \\]
+            <strong>El cable NO es deforma permanentment</strong>
+            <br><br>
+            `,
+         },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `
+     Aquesta figura esquematitza un llum ornamental penjat del
+sostre mitjançant dos cables fixats en els punts A i B. Els cables,
+que tenen una longitud L1 = 5 m i un diàmetre d = 8 mm, són fets
+d’un material que té un mòdul d’elasticitat E = 50 GPa.
+              
+               <br><strong>a)</strong>Determineu l’angle, α, que formen els cables amb l’horitzontal.  [0,5 punts]
+               <br><strong>b)</strong> Determineu la força, F, que fa cadascun dels cables en funció de la massa, m, del llum.[0,5 punts]
+               <br><strong>c)</strong>Representeu, de manera aproximada i indicant les escales, la tensió normal, σ, dels cables deguda a la forçaque exerceixen, en funció de la massa, m, del llum per a 200 kg ≤ m ≤ 600 kg. [1 punt]
+               <br><strong>d)</strong>Si es decideix penjar un llum de massa m = 450 kg, quina ésla deformació unitària, ε, dels cables a causa de la tensió que hauran de suportar?[1 punt]
+               <br><br>
+               `, 
+        correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
+        steps: `
+            <strong>a) Diagrama del cos lliure:</strong>
+            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+
+            <strong>b) Massa de la placa:</strong>
+            <br>
+            \\[
+            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
+            \\]
+            \\[
+            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
+            \\]
+            \\[
+            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
+            \\]
+            <br>
+            <strong>c) Tensió del cable i forces a O:</strong>
+            <br>
+            \\[
+            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
+            \\]
+            \\[
+            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
+            \\]
+            \\[
+            T = 265,8 \\; \\text{N}
+            \\]
+            \\[
+            - Eix y
+            \\]
+            \\[
+            F_{v} + T \\text{sin}30º - W = 0
+            \\]
+            \\[
+            F_{v} + 132,9 - 265,8 = 0
+            \\]
+            \\[
+            F_{v} = 132,9 \\; \\text{N}
+            \\]
+            \\[
+            - Eix x
+            \\]
+            \\[
+            F_{h} - T \\text{sin}30º = 0
+            \\]
+            \\[
+            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
+            \\]
+            <br>
+            <strong>d) Tensió normal i allargament unitari del cable:</strong>
+            <br>
+            \\[
+            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
+            \\]
+            \\[
+            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
+            \\]
+            \\[
+            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
+            \\]
+            \\[
+            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
+            \\]
+            <strong>El cable NO es deforma permanentment</strong>
+            <br><br>
+            `,
+         },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `
+    Una piscina climatitzada necessita, durant les 16 h que funciona diàriament, un volum
+V= 530 m3
+ d’aigua calenta a una temperatura t
+f = 28 °C. Per a escalfar l’aigua, que inicialment
+arriba a una temperatura t
+i
+= 20 °C, s’empra una caldera de biomassa que té un rendiment
+η = 78 %.
+Tenint en compte que el poder calorífic de la biomassa és pb=12,54MJ/kg i la calor específica de l’aigua és ce=4,187kJ/(kg °C), determineu:
+              
+               <br><strong>a)</strong>La massa d’aigua, ma, diària escalfada i l’energia, Edia, necessària per a escalfar-la, en kW h.  [0,5 punts]
+               <br><strong>b)</strong>La massa de biomassa, mb, diària necessària i l’energia dissipada, Ediss, en la combustió, en kW h. [0,5 punts]
+               <br><strong>c)</strong>El cabal mitjà, q, en L/s, d’aigua calenta que necessita la piscina. [1 punt]
+               <br><br>
+               `, 
+        correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
+        steps: `
+            <strong>a) Diagrama del cos lliure:</strong>
+            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+
+            <strong>b) Massa de la placa:</strong>
+            <br>
+            \\[
+            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
+            \\]
+            \\[
+            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
+            \\]
+            \\[
+            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
+            \\]
+            <br>
+            <strong>c) Tensió del cable i forces a O:</strong>
+            <br>
+            \\[
+            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
+            \\]
+            \\[
+            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
+            \\]
+            \\[
+            T = 265,8 \\; \\text{N}
+            \\]
+            \\[
+            - Eix y
+            \\]
+            \\[
+            F_{v} + T \\text{sin}30º - W = 0
+            \\]
+            \\[
+            F_{v} + 132,9 - 265,8 = 0
+            \\]
+            \\[
+            F_{v} = 132,9 \\; \\text{N}
+            \\]
+            \\[
+            - Eix x
+            \\]
+            \\[
+            F_{h} - T \\text{sin}30º = 0
+            \\]
+            \\[
+            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
+            \\]
+            <br>
+            <strong>d) Tensió normal i allargament unitari del cable:</strong>
+            <br>
+            \\[
+            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
+            \\]
+            \\[
+            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
+            \\]
+            \\[
+            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
+            \\]
+            \\[
+            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
+            \\]
+            <strong>El cable NO es deforma permanentment</strong>
+            <br><br>
+            `,
+         },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `
+    En la figura es mostra el circuit d’una estoreta elèctrica que té un commutador per a
+seleccionar la potència que subministra. El comandament només permet les combinacions
+d’interruptors tancats: 1-3-4, 1-3, 1-4 i 2-4. Les dues resistències tenen els valors R3 = 1,4 kΩ i
+R4 = 1,8 kΩ, i el circuit s’alimenta amb una tensió U = 230 V. Determineu:
+              
+               <br><strong>a)</strong> La resistència mínima, Rmín, del circuit.  [0,5 punts]
+               <br><strong>b)</strong> El corrent, I, consumit quan la resistència és la mínima. [0,5 punts]
+               <br><strong>c)</strong> El valor de les quatre potències, P1, P2, P3 i P4, que proporciona l’estoreta quan es connecten els interruptors amb les combinacions 1-3-4, 1-3, 1-4 i 2-4. [1 punt]
+               <br><strong>b)</strong> L’energia elèctrica consumida, Eelèctr, en W h, si l’estoreta es manté encesa durant un temps t = 2 h a la màxima potència. [0,5 punts]
+               <br><br>
+               `, 
+        correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
+        steps: `
+            <strong>a) Diagrama del cos lliure:</strong>
+            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+
+            <strong>b) Massa de la placa:</strong>
+            <br>
+            \\[
+            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
+            \\]
+            \\[
+            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
+            \\]
+            \\[
+            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
+            \\]
+            <br>
+            <strong>c) Tensió del cable i forces a O:</strong>
+            <br>
+            \\[
+            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
+            \\]
+            \\[
+            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
+            \\]
+            \\[
+            T = 265,8 \\; \\text{N}
+            \\]
+            \\[
+            - Eix y
+            \\]
+            \\[
+            F_{v} + T \\text{sin}30º - W = 0
+            \\]
+            \\[
+            F_{v} + 132,9 - 265,8 = 0
+            \\]
+            \\[
+            F_{v} = 132,9 \\; \\text{N}
+            \\]
+            \\[
+            - Eix x
+            \\]
+            \\[
+            F_{h} - T \\text{sin}30º = 0
+            \\]
+            \\[
+            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
+            \\]
+            <br>
+            <strong>d) Tensió normal i allargament unitari del cable:</strong>
+            <br>
+            \\[
+            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
+            \\]
+            \\[
+            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
+            \\]
+            \\[
+            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
+            \\]
+            \\[
+            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
+            \\]
+            <strong>El cable NO es deforma permanentment</strong>
+            <br><br>
+            `,
+         },
+    {
+        type: "exercicis",
+        category: "maquines",
+        text: `
+      Una embarcació té un dipòsit de capacitat V= 600 L i un motor que, en règim de funcionament nominal, proporciona una potència Ps = 150 kW quan gira a n = 3 800 min–1. El
+combustible que utilitza és el gasoil, de poder calorífic pc = 41,7 MJ/L i densitat ρ = 0,85 kg/L.
+Amb el dipòsit ple i funcionant en règim nominal, l’embarcació té una autonomia d’un temps
+t = 19,5 h. Determineu:
+              
+               <br><strong>a)</strong> El parell a l’eix de sortida, Γs.  [0,5 punts]
+               <br><strong>b)</strong> El consum específic, c, en kg/(kW h). [0,5 punts]
+               <br><strong>c)</strong> El rendiment, η, del motor. [1 punt]
+               <br><br>
+               `, 
+        correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
+        steps: `
+            <strong>a) Diagrama del cos lliure:</strong>
+            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+
+            <strong>b) Massa de la placa:</strong>
+            <br>
+            \\[
+            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
+            \\]
+            \\[
+            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
+            \\]
+            \\[
+            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
+            \\]
+            <br>
+            <strong>c) Tensió del cable i forces a O:</strong>
+            <br>
+            \\[
+            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
+            \\]
+            \\[
+            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
+            \\]
+            \\[
+            T = 265,8 \\; \\text{N}
+            \\]
+            \\[
+            - Eix y
+            \\]
+            \\[
+            F_{v} + T \\text{sin}30º - W = 0
+            \\]
+            \\[
+            F_{v} + 132,9 - 265,8 = 0
+            \\]
+            \\[
+            F_{v} = 132,9 \\; \\text{N}
+            \\]
+            \\[
+            - Eix x
+            \\]
+            \\[
+            F_{h} - T \\text{sin}30º = 0
+            \\]
+            \\[
+            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
+            \\]
+            <br>
+            <strong>d) Tensió normal i allargament unitari del cable:</strong>
+            <br>
+            \\[
+            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
+            \\]
+            \\[
+            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
+            \\]
+            \\[
+            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
+            \\]
+            \\[
+            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
+            \\]
+            <strong>El cable NO es deforma permanentment</strong>
+            <br><br>
             `
     },
 ];
