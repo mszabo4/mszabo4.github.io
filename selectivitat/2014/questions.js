@@ -323,52 +323,72 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         <br><strong>d)</strong> El cost de cadascuna de les opcions. Quina és la més econòmica?  [0,5 punts]`,
 
         correctAnswer: "",
-    steps: `
-<strong>OPCIÓ A – Exercici 3</strong>
-<br><br>
-<strong>a) Càlcul de la superfície</strong>
-<br>
-La superfície total es calcula com:
-\\[
-s = 10 \cdot \frac{b \cdot h}{2} = 1,869 \; \text{m}^2
-\\]
-<br>
-<strong>b) Càlcul de la longitud del costat inclinat i perímetre</strong>
-<br>
-Primer trobem la longitud $L$:
-\\[
-L = \sqrt{\left(\frac{b}{2}\right)^2 + h^2} = 0,6260 \; \text{m}
-\\]
-I el perímetre $p_1$:
-\\[
-p_1 = 10(b + 2L) = 22,62 \; \text{m}
-\\]
-<br>
-<strong>c) Càlcul del segon perímetre</strong>
-<br>
-\\[
-p_2 = 10L = 6,260 \; \text{m}
-\\]
-<br>
-<strong>d) Comparació de costos</strong>
-<br>
-Cost de l'opció A:
-\\[
-c_A = 10 \cdot 1,869 + 0,5 \cdot 22,62 = 30,00 \; €
-\\]
-Cost de l'opció B:
-\\[
-c_B = 10 \cdot 1,869 + 1,3 \cdot 6,260 = 26,82 \; €
-\\]
-<br>
-<strong>Conclusió:</strong>
-<br>
-\\[
-\boxed{\text{L'opció B resulta més econòmica.}}
-\\]
-            <br><br>
-            `,
-    },
+  steps: `
+  <strong>a)</strong> Superfície:
+  <br>
+  \
+
+\[
+    s = 10 \\cdot \\frac{b \\cdot h}{2} = 1{,}869\\;\\text{m}^2
+  \\]
+
+
+  <br>
+
+  <strong>b)</strong> Longitud del costat inclinat:
+  <br>
+  \
+
+\[
+    L = \\sqrt{\\left(\\frac{b}{2}\\right)^2 + h^2} = 0{,}6260\\;\\text{m}
+  \\]
+
+
+  <br>
+  \
+
+\[
+    p_1 = 10(b + 2L) = 22{,}62\\;\\text{m}
+  \\]
+
+
+  <br>
+
+  <strong>c)</strong> Perímetre associat a l’altra opció:
+  <br>
+  \
+
+\[
+    p_2 = 10L = 6{,}260\\;\\text{m}
+  \\]
+
+
+  <br>
+
+  <strong>d)</strong> Cost de cada opció:
+  <br>
+  Opció A:
+  \
+
+\[
+    c_A = 10 \\cdot 1{,}869 + 0{,}5 \\cdot 22{,}62 = 30{,}00\\;€
+  \\]
+
+
+  <br>
+  Opció B:
+  \
+
+\[
+    c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82\\;€
+  \\]
+
+
+  <br>
+  L’opció B resulta més econòmica.
+  <br><br>
+  `
+},
     {
         type: "exercicis",
         category: "mecanica",
@@ -378,35 +398,51 @@ c_B = 10 \cdot 1,869 + 1,3 \cdot 6,260 = 26,82 \; €
         <br><strong>a)</strong> El rendiment, η, del motor. [0,5 punt]
         <br><strong>a)</strong> La distància, d, que pot recórrer el vehicle si el dipòsit de combustible té una capacitat V = 45 L.  [1 punt]`,
         correctAnswer: "",
-      steps: `
-<strong>Exercici 4</strong>
-<br>
-Un vehicle utilitza gasolina de poder calorífic $p_c = 42 \; \text{MJ/L}$. Quan circula per un terreny horitzontal a una velocitat $v = 100 \; \text{km/h}$, el motor gasta $c_e = 4,7 \; \text{L/(100 km)}$ i desenvolupa una potència mecànica $P_{\text{mec}} = 21 \; \text{kW}$. Determineu:
-<br><br>
-<strong>a) El consum, c, de gasolina en L/s.</strong>
-<br>
-\\[
-c = c_e \cdot v = 0,047 \cdot \frac{100}{3600} = 1,306 \cdot 10^{-3} \; \text{L/s}
-\\]
-<br>
-<strong>b) La potència tèrmica consumida, $P_{\text{tèrm}}$.</strong>
-<br>
-\\[
-P_{\text{tèrm}} = c \cdot p_c = 1,306 \cdot 10^{-3} \cdot 42 \cdot 10^6 = 54,83 \; \text{kW}
-\\]
-<br>
-<strong>c) El rendiment, $\eta$, del motor.</strong>
-<br>
-\\[
-\eta = \frac{P_{\text{mec}}}{P_{\text{tèrm}}} = \frac{21}{54,83} = 0,3833
-\\]
-<br>
-<strong>d) La distància, d, que pot recórrer el vehicle si el dipòsit té una capacitat $V = 45 \; \text{L}$.</strong>
-<br>
-\\[
-d = \frac{V}{c_e} = \frac{45}{0,047} = 957,4 \; \text{km}
-\\]
-`,
+     steps: `
+  <strong>a)</strong> Cabal real:
+  <br>
+  
+
+\[
+    c = c_e \cdot v = 0{,}047 \cdot \frac{100}{3600} = 1{,}306 \cdot 10^{-3} \; \text{L/s}
+  \]
+
+
+  <br>
+
+  <strong>b)</strong> Potència tèrmica:
+  <br>
+  
+
+\[
+    P_{\text{term}} = c \cdot p_c = 1{,}306 \cdot 10^{-3} \cdot 42 \cdot 10^6 = 54{,}83 \; \text{kW}
+  \]
+
+
+  <br>
+
+  <strong>c)</strong> Rendiment del sistema:
+  <br>
+  
+
+\[
+    \eta = \frac{P_{\text{mec}}}{P_{\text{term}}} = \frac{21}{54{,}83} = 0{,}3833
+  \]
+
+
+  <br>
+
+  <strong>d)</strong> Distància amb 45 L:
+  <br>
+  
+
+\[
+    d = \frac{V}{c_e} = \frac{45}{0{,}047} = 957{,}4 \; \text{km}
+  \]
+
+
+  <br><br>
+`
    },
     {
         type: "exercicis",
@@ -422,40 +458,29 @@ d = \frac{V}{c_e} = \frac{45}{0,047} = 957,4 \; \text{km}
         correctAnswer: "",
        steps: `
 <strong>OPCIÓ B – Exercici 3</strong>
-<br><br>
-<strong>a) Càlcul de la massa màxima</strong>
 <br>
-La grua començarà a bolcar quan la força $F_B = 0$. Analitzant el sumatori de moments respecte al punt A:
+La figura mostra una grua amb contrapès a la base ($m_c = 12\,500 \; \text{kg}$) i unes dimensions $L_1 = 25, \; L_2 = 1,5$ i $b = 1,9$ metres. Determineu:
+<br><br>
+<strong>a) La massa màxima, $m_{\text{màx}}$, que pot elevar la grua sense que bolqui.</strong>
+<br>
+La grua comença a bolcar quan la força $F_B = 0$. Analitzant el sumatori de moments respecte al punt A:
 \\[
 \sum M(A) = 0 \quad \rightarrow \quad m_{\text{màx}} g (L_1 - b) - m_c g (L_2 + b) = 0
 \\]
-Aïllant la massa màxima:
 \\[
-m_{\text{màx}} = m_c \frac{L_2 + b}{L_1 - b} = 12500 \frac{1,5 + 1,9}{25 - 1,9}
-\\]
-Substituint els valors:
-\\[
-m_{\text{màx}} = 1840 \; \text{kg}
+m_{\text{màx}} = m_c \frac{L_2 + b}{L_1 - b} = 12\,500 \frac{1,5 + 1,9}{25 - 1,9} = 1840 \; \text{kg}
 \\]
 <br>
-<strong>b) Càlcul de l'energia mecànica</strong>
+<strong>b) L'energia mecànica, $E_{\text{mec}}$, necessària per pujar $1000 \; \text{kg}$ a una altura $\Delta h = 20 \; \text{m}$.</strong>
 <br>
-L'energia potencial guanyada és:
 \\[
-E_{\text{mec}} = m g \Delta h = 1000 \cdot 9,807 \cdot 20
-\\]
-\\[
-E_{\text{mec}} = 196,1 \; \text{kJ}
+E_{\text{mec}} = m g \Delta h = 1000 \cdot 9,807 \cdot 20 = 196,1 \; \text{kJ}
 \\]
 <br>
-<strong>c) Càlcul de la potència mecànica</strong>
+<strong>c) La potència, $P_m$, si la velocitat d'elevació és $v = 30 \; \text{m/min}$.</strong>
 <br>
-La potència mecànica en funció de la velocitat és:
 \\[
-P_m = m g v = 1000 \cdot 9,807 \cdot \frac{30}{60}
-\\]
-\\[
-P_m = 4904 \; \text{W}
+P_m = m g v = 1000 \cdot 9,807 \cdot \frac{30}{60} = 4904 \; \text{W}
 \\]
 <br><br>
 `,
