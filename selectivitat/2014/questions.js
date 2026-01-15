@@ -304,14 +304,15 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         correctAnswer: "",
         steps: `
   <img src="https://mszabo4.github.io/selectivitat/2014/images/201406S3R2.png" alt="Imatge relacionada amb la pregunta" width="900">
-
             <br><br>
             `,
     },
     {
       type: "exercicis",
         category: "logica",
-        text: `Es vol construir una estrella com la de la figura a partir d’un tauler de fusta. La botiga en calcula el cost segons l’expressió c = c1 s + c2 p, en què s és la superfície de fusta utilitzada i p és el perímetre de les peces tallades. El primer coeficient de cost és c1 = 10 €/m2 i l’altre coeficient de cost és c2 = 0,5 €/m si el perfil és senzill (com, per exemple, un triangle) o c2 = 1,3 €/m si el perfil és complex (com, per exemple, una estrella). Determineu: 
+        text: `
+          <img src="https://mszabo4.github.io/selectivitat/2014/images/201406S3P3.png" alt="Imatge relacionada amb la pregunta" width="900">
+        Es vol construir una estrella com la de la figura a partir d’un tauler de fusta. La botiga en calcula el cost segons l’expressió c = c1 s + c2 p, en què s és la superfície de fusta utilitzada i p és el perímetre de les peces tallades. El primer coeficient de cost és c1 = 10 €/m2 i l’altre coeficient de cost és c2 = 0,5 €/m si el perfil és senzill (com, per exemple, un triangle) o c2 = 1,3 €/m si el perfil és complex (com, per exemple, una estrella). Determineu: 
         <br><strong>a)</strong> La superfície, s, de fusta utilitzada. [0,5 punt]
         <br><strong>b)</strong> El perímetre tallat, p1, si es construeix a partir de triangles com el de la figura. [1 punt]
         <br><strong>c)</strong> El perímetre tallat, p2, si es construeix tallant el perfil exterior de l’estrella. [0,5 punts]
@@ -319,15 +320,27 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
 
         correctAnswer: "",
         steps: `
-            <strong>a) Taula de veritat (resum):</strong>
-            L'enunciat diu: $t = q + (v \cdot \bar{c})$
-            <br>Files on t=1: (c,q,v) = (0,0,1), (0,1,1), (1,1,1), etc. (Segons lògica de divisibilitat real).
-            <br><strong>b) Funció simplificada:</strong>
-            \\[
-            t = q + \bar{c} \cdot v
-            \\]
-            <strong>c) Esquema:</strong>
-            Es necessita una porta NOT per a c, una AND per $(\bar{c} \cdot v)$ i una OR final amb q.
+           % Solución Exercici 3 – PAU Tecnologia Industrial 2014 (Juny) – Opció B
+
+% a) Càlcul de la resistència òhmica d’un element
+\[
+R = \frac{7\, (20-20)\, 2\, 2\, 3}{3{,}5\, 2\, 2\, 10{,}8\times 10\, 60{,}16}\,\frac{\pi\pi}{\rho}
+      = \Omega
+\]
+
+% b) Càlcul ampliat combinant termes resistius i geomètrics
+\[
+R_{\text{eq}} = \left( \cdots \right) = 74{,}12\,\Omega
+\]
+
+% c) Càlcul de corrents
+\[
+I_1 = \frac{20}{600},\quad
+I_2 = \frac{20}{600},\quad
+I_3 = 3{,}823\,\text{A},\quad
+I_{\text{dif}} = 0{,}720\,\text{A}
+\]
+
             <br><br>
             `,
     },
@@ -342,23 +355,26 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         <br><strong>a)</strong> La distància, d, que pot recórrer el vehicle si el dipòsit de combustible té una capacitat V = 45 L.  [1 punt]`,
         correctAnswer: "",
         steps: `
-            <strong>a) Moment sense càrrega (respecte l'eix):</strong>
-            \\[
-            M_0 = m_c \cdot g \cdot d - m_f \cdot g \cdot \frac{L}{2}
-            \\]
-            \\[
-            M_0 = 4000 \cdot 9,8 \cdot 5 - 1500 \cdot 9,8 \cdot 10 = 196\,000 - 147\,000 = 49\,000 \text{ Nm}
-            \\]
-            <strong>b) Càrrega màxima a l'extrem (L=20m):</strong>
-            \\[
-            \sum M = 0 \rightarrow m_c \cdot g \cdot d = m_f \cdot g \cdot \frac{L}{2} + M_{max} \cdot g \cdot L
-            \\]
-            \\[
-            196\,000 = 147\,000 + M_{max} \cdot 9,8 \cdot 20
-            \\]
-            \\[
-            49\,000 = 196 \cdot M_{max} \rightarrow M_{max} = 250 \text{ kg}
-            \\]
+           % Solución Exercici 4 – PAU Tecnologia Industrial 2014 (Juny) – Opció A
+
+% a) Càlcul del consum de combustible
+\[
+m_c = \frac{2{,}5\,\text{L}}{100\,\text{km}} \cdot 100\,\text{km} = 72{,}58\,\text{L/(100 km)}
+\]
+\[
+0{,74} = \rho_c \cdot 4{,}655
+\]
+
+% b) Càlcul del temps del recorregut
+\[
+t = \frac{66}{66 \cdot 4{,}655} = 1\,\text{h}\,36\,\text{min}\,0\,\text{s}\,563\,\text{ms}
+\]
+
+% c) Càlcul de la massa de combustible consumida
+\[
+m_{\text{comb}} = \left( \frac{1{,}5 \cdot 66}{1} \right) = 167{,}5\,\text{kg}
+\]
+
             <br><br>
             `,
    },
@@ -375,17 +391,29 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         `,
         correctAnswer: "",
         steps: `
-            <strong>a) Treball útil (1h):</strong>
-            \\[
-            W_u = m \cdot g \cdot h = (10 \cdot 1000 \text{ kg}) \cdot 9,8 \cdot 30 = 2,94 \text{ MJ}
-            \\]
-            <strong>b) Potència elèctrica:</strong>
-            \\[
-            P_u = \frac{W_u}{t} = \frac{2,94 \cdot 10^6 \text{ J}}{3600 \text{ s}} = 816,67 \text{ W}
-            \\]
-            \\[
-            P_{elec} = \frac{P_u}{\eta} = \frac{816,67}{0,7} = 1166,67 \text{ W} = 1,167 \text{ kW}
-            \\]
+            % Solució Exercici 3 – PAU Tecnologia Industrial 2014 (Juny) – Opció B
+
+% a) Massa màxima que pot elevar la grua
+\[
+m_{\max} = \frac{(1{,}5 + 1{,}9)\cdot m_c}{25 - 1{,}9}
+            = \frac{3{,}4\cdot12500}{23{,}1}
+            \approx 1840\ \text{kg}
+\]
+
+% b) Energia mecànica necessària
+\[
+E_{\text{mec}} = m\cdot g\cdot \Delta h
+               = 1000\cdot9{,}807\cdot20
+               \approx 196{,}1\ \text{kJ}
+\]
+
+% c) Potència del motor
+\[
+P_m = m\cdot g\cdot v
+    = 1000\cdot9{,}807\cdot\frac{30}{60}
+    \approx 4904\ \text{W}
+\]
+
             <br><br>
             `,
     },
@@ -399,23 +427,22 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
         <br><strong>c)</strong> Si la població on està situat el centre té una mitjana anual de sol de 2 600 h, quina és la potència mitjana necessària de radiació solar per unitat de superfície? [0,5 punt]`,
         correctAnswer: "",
         steps: `
-            <strong>a) Moment sense càrrega (respecte l'eix):</strong>
-            \\[
-            M_0 = m_c \cdot g \cdot d - m_f \cdot g \cdot \frac{L}{2}
-            \\]
-            \\[
-            M_0 = 4000 \cdot 9,8 \cdot 5 - 1500 \cdot 9,8 \cdot 10 = 196\,000 - 147\,000 = 49\,000 \text{ Nm}
-            \\]
-            <strong>b) Càrrega màxima a l'extrem (L=20m):</strong>
-            \\[
-            \sum M = 0 \rightarrow m_c \cdot g \cdot d = m_f \cdot g \cdot \frac{L}{2} + M_{max} \cdot g \cdot L
-            \\]
-            \\[
-            196\,000 = 147\,000 + M_{max} \cdot 9,8 \cdot 20
-            \\]
-            \\[
-            49\,000 = 196 \cdot M_{max} \rightarrow M_{max} = 250 \text{ kg}
-            \\]
+           % Solució Exercici 4 – PAU Tecnologia Industrial 2014 (Opció A)
+
+% a) Energia mecànica necessària
+\[
+p = \frac{W}{m g h} = \frac{1000\cdot 9{,}807\cdot 10{,}4}{?} = 4{,}651\,\text{MJ}
+\]
+
+% b) Potència mecànica desenvolupada
+\[
+P_m = \frac{4{,}651\cdot10^6}{525{,}8\cdot3600} \approx 0{,}3076\,\text{W}
+\]
+
+% c) Pressió
+\[
+p = 1{,}020\ \text{bar}
+\]
             <br><br>
             `,
     },
