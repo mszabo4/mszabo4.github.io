@@ -324,68 +324,74 @@ Com que les dues resistències són **iguals** i tenen la **mateixa tolerància 
 
         correctAnswer: "",
   steps: `
-<strong>OPCIÓ A – Exercici 3</strong>
+<strong>Qüestió 3 – Càlculs de superfícies, cost i temps</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Superfícies i dimensions dels productes:  
+  S1 = 10 × 1,869 = 18,69 m²  
+  S2 = 0,5 × 0,626 = 0,313 m²  
+- Costos per unitat:  
+  Opció A i B amb valors donats al PDF
 <br><br>
 
-<strong>a) Càlcul de la superfície del triangle</strong>
+<strong>Pas 1: Superfície total del primer producte</strong>
 <br>
-La fórmula de la superfície d’un triangle és:
 \\[
-s = \\frac{b \\cdot h}{2}
-\\]
-Substituïm els valors:
-\\[
-s = \\frac{2 \\cdot 1{,}869}{2} = 1{,}869 \\; \\text{m}^2
+S_1 = 10 × 1{,}869 = 18{,}69 \\, \\text{m²}
 \\]
 <br>
 
-<strong>b) Càlcul de la longitud del costat inclinat</strong>
+<strong>Pas 2: Superfície total del segon producte</strong>
 <br>
-La longitud \(L\) del costat inclinat es calcula amb el teorema de Pitàgores:
 \\[
-L = \\sqrt{\\left(\\frac{b}{2}\\right)^2 + h^2}
-\\]
-Substituïm les dades:
-\\[
-L = \\sqrt{(1{,}0)^2 + (0{,}6260)^2} = 0{,}6260 \\; \\text{m}
+S_2 = 0{,}5 × 0{,}626 = 0{,}313 \\, \\text{m²}
 \\]
 <br>
 
-El perímetre que envolta la figura considerada (dos costats inclinats + base) és:
-\\[
-p_1 = 10(b + 2L)
-\\]
-\\[
-p_1 = 10(2 + 2 \\cdot 0{,}6260) = 22{,}62 \\; \\text{m}
-\\]
+<strong>Pas 3: Càlcul del cost</strong>
 <br>
-
-<strong>c) Càlcul del segon perímetre</strong>
-<br>
-Si només considerem tots els costats inclinats (10 vegades \(L\)):
+- Cost Opció A = 10·1,869 + 0,5·22,62 = 30,00 €  
+- Cost Opció B = 10·1,869 + 1,3·6,260 = 26,82 €  
 \\[
-p_2 = 10L = 10 \\cdot 0{,}6260 = 6{,}260 \\; \\text{m}
+\\text{Opció B és més econòmica}
 \\]
 <br>
 
-<strong>d) Comparació de costos</strong>
+<strong>Pas 4: Temps de producció (apartat d)</strong>
 <br>
-Cost de l’opció A:
+- Temps per operació:  
+  t_A = 25 s, t_B = 30 s (simultànies)  
+  t_C = 30 s, t_D = 45 s (secuencials)  
+<br>
+- Temps primer bloc (A i B):
 \\[
-c_A = 10 \\cdot 1{,}869 + 0{,}5 \\cdot 22{,}62 = 30{,}00 \\; €
+t_{AB} = \\max(25, 30) = 30 \\, \\text{s}
 \\]
-Cost de l’opció B:
+- Temps segon bloc (C i D):
 \\[
-c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82 \\; €
+t_{CD} = 30 + 45 = 75 \\, \\text{s}
+\\]
+- Temps total mínim dins la línia:
+\\[
+t_{total} = t_{AB} + t_{CD} = 30 + 75 = 105 \\, \\text{s}
 \\]
 <br>
 
-<strong>Conclusió:</strong>
+<strong>Resposta:</strong>
 <br>
+Superfícies i cost:
 \\[
-\\boxed{L’opció\\; B\\; és\\; més\\; econòmica}
+\\boxed{S_1 = 18{,}69 \\, \\text{m²}, \\; S_2 = 0{,}313 \\, \\text{m²}}
 \\]
-
+\\[
+\\boxed{\\text{Opció B és més barata: 26{,}82 €}}
+\\]
+Temps mínim unitat:
+\\[
+\\boxed{t_{min} = 105 \\, \\text{s}}
+\\]
   <br><br>
   `
 },
@@ -399,73 +405,91 @@ c_B = 10 \\cdot 1{,}869 + 1{,}3 \\cdot 6{,}260 = 26{,}82 \\; €
         <br><strong>a)</strong> La distància, d, que pot recórrer el vehicle si el dipòsit de combustible té una capacitat V = 45 L.  [1 punt]`,
         correctAnswer: "",
      steps: `
-<strong>OPCIÓ A – Exercici 4</strong>
+<strong>Qüestió 4 – Consum, potència i rendiment del vehicle</strong>
+<br>
+
+<strong>Dades:</strong>
+<br>
+- Poder calorífic de la gasolina:  
+\\[
+pc = 42 \\, \\text{MJ/L}
+\\]
+- Velocitat del vehicle:  
+\\[
+v = 100 \\, \\text{km/h} = 27{,}78 \\, \\text{m/s}
+\\]
+- Consum del motor:  
+\\[
+ce = 4{,}7 \\, \\text{L/100 km}
+\\]
+- Potència mecànica del motor:  
+\\[
+P_{mec} = 21 \\, \\text{kW} = 21\,000 \\, \\text{W}
+\\]
+- Capacitat del dipòsit:  
+\\[
+V = 45 \\, \\text{L}
+\\]
 <br><br>
 
-<strong>a) Energia diària per escalfar l’aigua</strong>
+<strong>Pas 1: Consum de gasolina en L/s (apartat a)</strong>
 <br>
-Sabem que:
-<br>
-• Consum d’aigua: \\( V = 850 \\; \\text{L} \\)<br>
-• Variació de temperatura: \\( \\Delta t = 20 \\; ^\\circ\\text{C} \\)<br>
-• Densitat de l’aigua: \\( \\rho = 1000 \\; \\text{g/L} \\)<br>
-• Calor específica de l’aigua: \\( c_e = 4{,}18 \\; \\text{J/(g °C)} \\)
-<br><br>
-L’energia que cal per escalfar l’aigua és:
+El consum per metre recorregut:
 \\[
-E = \\rho \\cdot V \\cdot c_e \\cdot \\Delta t
+ce_{km} = \\frac{4{,}7}{100} = 0{,}047 \\, \\text{L/km}
 \\]
-Substituïm:
+Convertim a L/s a la velocitat v:
 \\[
-E = 1000 \\cdot 850 \\cdot 4{,}18 \\cdot 20
-\\]
-\\[
-E = 71{,}06 \\; \\text{MJ}
+c = ce_{km} \\cdot \\frac{v}{1000} = 0{,}047 \\cdot \\frac{27{,}78}{1} \\approx 0{,}0013 \\, \\text{L/s}
 \\]
 <br>
 
-<strong>b) Energia diària que ha de captar cadascun dels captadors</strong>
+<strong>Pas 2: Potència tèrmica consumida (apartat b)</strong>
 <br>
-Hi ha 20 captadors i cada un ha de captar igual energia, així que:
+Potència tèrmica = consum × poder calorífic:
 \\[
-E_{captador} = \\frac{E}{20}
-\\]
-Substituïm:
-\\[
-E_{captador} = \\frac{71{,}06}{20} = 3{,}553 \\; \\text{MJ}
-\\]
-<br>
-
-<strong>c) Potència mitjana de radiació solar per unitat de superfície</strong>
-<br>
-Hi ha:
-<br>
-• Mitjana anual de sol: \\( t_{sol} = 2600 \\; \\text{h} \\)
-<br>
-• Superfície de cada captador: \\( s = 1{,}3 \\; \\text{m}^2 \\)
-<br><br>
-La potència mitjana per superfície és:
-\\[
-P = \\frac{E_{captador}}{t_{sol} \\cdot s}
-\\]
-Convertim hores a segons:
-\\[
-2600 \\; \\text{h} \\times 3600 = 9{,}36 \\times 10^6 \\; \\text{s}
-\\]
-Ara calculem:
-\\[
-P = \\frac{3{,}553 \\times 10^6}{9{,}36 \\times 10^6 \\cdot 1{,}3}
+P_{tèrm} = c \\cdot pc = 0{,}0013 \\cdot 42 \\cdot 10^6 \\, \\text{W}
 \\]
 \\[
-P = 0{,}291 \\; \\text{W/m}^2
+P_{tèrm} \approx 54{,}6 \\, \\text{kW}
 \\]
 <br>
 
-<strong>Resposta final:</strong>
+<strong>Pas 3: Rendiment del motor (apartat c)</strong>
 <br>
-• \\(E = 71{,}06 \\; \\text{MJ}\\)  
-• \\(E_{captador} = 3{,}553 \\; \\text{MJ}\\)  
-• \\(P = 0{,}291 \\; \\text{W/m}^2\\)
+\\[
+\\eta = \\frac{P_{mec}}{P_{tèrm}} = \\frac{21}{54{,}6} \\approx 0{,}384
+\\]
+\\[
+\\eta \\approx 38,4\%
+\\]
+<br>
+
+<strong>Pas 4: Distància màxima amb dipòsit ple (apartat d)</strong>
+<br>
+\\[
+d = \\frac{V}{ce_{km}} = \\frac{45}{0{,}047} \\approx 957{,}45 \\, \\text{km}
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+Consum de gasolina:
+\\[
+\\boxed{c \\approx 0{,}0013 \\, \\text{L/s}}
+\\]  
+Potència tèrmica consumida:
+\\[
+\\boxed{P_{tèrm} \\approx 54{,}6 \\, \\text{kW}}
+\\]  
+Rendiment del motor:
+\\[
+\\boxed{\\eta \\approx 38{,}4\%}
+\\]  
+Distància amb dipòsit ple:
+\\[
+\\boxed{d \\approx 957{,}45 \\, \\text{km}}
+\\]
 <br><br>
 `
    },
