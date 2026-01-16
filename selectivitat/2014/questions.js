@@ -998,9 +998,7 @@ La barra s’haurà allargat un 0,1 % a:
     {
         type: "exercicis",
         category: "energia",
-        text: `Una màquina expenedora automàtica disposa d’una pantalla tàctil amb un sistema de menús. La màquina retorna al menú principal si es prem el botó habilitat per a aquesta finalitat, després de fer una comanda o quan transcorren 30 segons sense que ningú toqui la pantalla. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
-               <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex1/imatgePregunta.png" alt="Imatge relacionada amb la pregunta" width="900">
-              
+        text: `Una màquina expenedora automàtica disposa d’una pantalla tàctil amb un sistema de menús. La màquina retorna al menú principal si es prem el botó habilitat per a aquesta finalitat, després de fer una comanda o quan transcorren 30 segons sense que ningú toqui la pantalla. Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:              
                <br><strong>a)</strong> Escriviu la taula de veritat del sistema i indiqueu els casos que no són possibles. [1 punt]
                <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
                <br><strong>c)</strong> Dibuixeu l’esquema de portes lògiques equivalent. [0,5 punts]
@@ -1516,13 +1514,13 @@ I(n) > C(n)
 <strong>Pas 3: Resoldre per n</strong>
 <br>
 \\[
-90 n - 20 n > 50\,000
+90 n - 20 n > 50\\,000
 \\]
 \\[
-70 n > 50\,000
+70 n > 50\\,000
 \\]
 \\[
-n > \\frac{50\,000}{70} \\approx 714{,}2857
+n > \\frac{50\\,000}{70} \\approx 714{,}2857
 \\]
 <br>
 
@@ -1537,7 +1535,7 @@ n_{min} = 715
 <strong>Resposta:</strong>
 <br>
 \\[
-\\boxed{n_{min} = 715 \\, \\text{unitats}} \\quad \\text{(opció a))}
+\\boxed{n_{min} = 715 \\, \\text{unitats}} \\quad \\text{(opció a)}
 \\]
             <br><br>
             `,
@@ -1606,7 +1604,7 @@ n = 1\,500 (1 - 0{,}10) = 1\,500 \\cdot 0{,}9 = 1\,350 \\, \\text{rpm}
 <br>
 Velocitat nominal del motor:
 \\[
-\\boxed{n = 1\,350 \\, \\text{min}^{-1}} \\quad \\text{(opció c))}
+\\boxed{n = 1\,350 \\, \\text{min}^{-1}} \\quad \\text{(opció c)}
 \\]
 
             <br><br>
@@ -1665,7 +1663,7 @@ R_{eq} = \\frac{1}{0{,}25} = 4 \\, \\Omega
 <br>
 Impedància del conjunt d’altaveus en paral·lel:
 \\[
-\\boxed{R_{eq} = 4 \\, \\Omega} \\quad \\text{(opció b))}
+\\boxed{R_{eq} = 4 \\, \\Omega} \\quad \\text{(opció b)}
 \\]
             <br><br>
             `,
@@ -1761,7 +1759,7 @@ plata pura cal per a obtenir 300 kg d’aliatge?`,
 <br>
 - Percentatges de l’aliatge:  
 \\[
-\\text{Cd} = 0{,}5\%, \\quad \\text{Cu} = 28\%, \\quad \\text{Zn} = 11{,}5\%, \\quad \\text{Ag} = ? 
+\\text{Cd} = 0{,}5\\%, \\quad \\text{Cu} = 28\\%, \\quad \\text{Zn} = 11{,}5\\%, \\quad \\text{Ag} = ? 
 \\]
 - Massa total de l’aliatge:  
 \\[
@@ -1772,21 +1770,21 @@ m_{aliatge} = 300 \\, \\text{kg}
 <strong>Pas 1: Sumar els percentatges dels altres metalls</strong>
 <br>
 \\[
-\text{Cd + Cu + Zn} = 0{,}5 + 28 + 11{,}5 = 40\%
+\text{Cd + Cu + Zn} = 0{,}5 + 28 + 11{,}5 = 40\\%
 \\]
 <br>
 
 <strong>Pas 2: Percentatge de plata</strong>
 <br>
 \\[
-\text{Ag} = 100 - 40 = 60\%
+\text{Ag} = 100 - 40 = 60\\%
 \\]
 <br>
 
 <strong>Pas 3: Càlcul de la massa de plata</strong>
 <br>
 \\[
-m_{Ag} = m_{aliatge} \\cdot \frac{\text{Ag}}{100} = 300 \\cdot 0{,}60 = 180 \\, \\text{kg}
+m_{Ag} = m_{aliatge} \\cdot \\frac{\text{Ag}}{100} = 300 \\cdot 0{,}60 = 180 \\, \\text{kg}
 \\]
 <br>
 
@@ -1794,7 +1792,7 @@ m_{Ag} = m_{aliatge} \\cdot \frac{\text{Ag}}{100} = 300 \\cdot 0{,}60 = 180 \\, 
 <br>
 Massa de plata necessària:
 \\[
-\\boxed{m_{Ag} = 180 \\, \\text{kg}} \\quad \\text{(opció d))}
+\\boxed{m_{Ag} = 180 \\, \\text{kg}} \\quad \\text{(opció d)}
 \\]
             <br><br>
             `,
@@ -2115,69 +2113,60 @@ t = 19,5 h. Determineu:
                `, 
         correctAnswer: "",  // No és necessari aquí perquè es tracta d'un exercici obert
         steps: `
-            <strong>a) Diagrama del cos lliure:</strong>
-            <img src="https://ecastro4.github.io/tecno/selectivitat/2017/Ex4/imatgeResposta.png" alt="Imatge relacionada amb la resposta" width="900">
+          <strong>Exercici 4 – Motor d’una embarcació</strong>
+<br>
 
-            <strong>b) Massa de la placa:</strong>
-            <br>
-            \\[
-            V = (2L) \\cdot L \\cdot e = 2 \\cdot 1 \\cdot 0,005 = 0,01 \\; \\text{m}^3
-            \\]
-            \\[
-            m = ρV = 2710 \\cdot 0,01 = 27,1 \\; \\text{kg}
-            \\]
-            \\[
-            W = mg = 27,1 \\cdot 9,98 = 265,8 \\; \\text{N}
-            \\]
-            <br>
-            <strong>c) Tensió del cable i forces a O:</strong>
-            <br>
-            \\[
-            T \\text{sin}30º \\cdot 2L - W \\cdot L = 0
-            \\]
-            \\[
-            T \\cdot 0,5 \\cdot 2 - 265,8 = 0
-            \\]
-            \\[
-            T = 265,8 \\; \\text{N}
-            \\]
-            \\[
-            - Eix y
-            \\]
-            \\[
-            F_{v} + T \\text{sin}30º - W = 0
-            \\]
-            \\[
-            F_{v} + 132,9 - 265,8 = 0
-            \\]
-            \\[
-            F_{v} = 132,9 \\; \\text{N}
-            \\]
-            \\[
-            - Eix x
-            \\]
-            \\[
-            F_{h} - T \\text{sin}30º = 0
-            \\]
-            \\[
-            F_{h} = 265,8 \\cdot 0,866 = 230,2 \\; \\text{N}
-            \\]
-            <br>
-            <strong>d) Tensió normal i allargament unitari del cable:</strong>
-            <br>
-            \\[
-            A = \\frac{\\pi d^{2}}{4} = \\frac{\\pi (0,002)^{2}}{4} = 3,14 \\cdot 10^{-6} \\; \\text{m}^2
-            \\]
-            \\[
-            σ = \\frac{T}{A} = \\frac{265,8}{3,14 \\cdot 10^{-6}} = 84,6 \\; \\text{MPa}
-            \\]
-            \\[
-            ε = \\frac{σ}{E} = \\frac{84,6 \\cdot 10^{6}}{207 \\cdot 10^{7}} = 4,1 \\cdot 10^{-4}
-            \\]
-            \\[
-            σ = 84,6 \\; \\text{MPa} < 350 \\; \\text{MPa}
-            \\]
-            <strong>El cable NO es deforma permanentment</strong>
+<strong>a) Parell a l’eix de sortida</strong>
+<br>
+\\[
+\\Gamma_s = \\frac{P_s}{\\omega}
+\\]
+\\[
+\\omega = \\frac{2\\pi n}{60}
+\\]
+\\[
+\\Gamma_s = \\frac{150 \\cdot 10^3}{\\dfrac{2\\pi \\cdot 3800}{60}} = 376{,}9 \\, \\text{Nm}
+\\]
+<br>
+
+<strong>b) Consum específic</strong>
+<br>
+\\[
+c = \\frac{V \\cdot \\rho}{P_s \\cdot t}
+\\]
+\\[
+c = \\frac{600 \\cdot 0{,}85}{150 \\cdot 19{,}5} = 0{,}1744 \\, \\text{kg/(kW·h)}
+\\]
+<br>
+
+<strong>c) Rendiment del motor</strong>
+<br>
+\\[
+\\eta = \\frac{P_s}{P_e}
+\\]
+\\[
+\\eta = \\frac{P_s}{\\rho \\cdot P_s \\cdot c} \\cdot \\frac{\\rho}{p_c} \\cdot \\frac{1}{3600}
+\\]
+\\[
+\\eta = \\frac{0{,}85}{41700 \\cdot 0{,}1744} \\cdot \\frac{1}{3600}
+\\]
+\\[
+\\eta = 0{,}4209
+\\]
+<br>
+
+<strong>Resposta:</strong>
+<br>
+\\[
+\\boxed{\\Gamma_s = 376{,}9 \\, \\text{Nm}}
+\\]
+\\[
+\\boxed{c = 0{,}1744 \\, \\text{kg/(kW·h)}}
+\\]
+\\[
+\\boxed{\\eta = 0{,}4209 \\; (42{,}09\\%)}
+\\]
+
             <br><br>
             `
     },
