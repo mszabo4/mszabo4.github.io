@@ -1132,7 +1132,7 @@ Força horitzontal de la guia:
 <br>
 - Volum d’aigua elevat:  
 \\[
-V = 45\,600 \\, \\text{L} = 45{,}6 \\, \\text{m³} \quad (1\,L = 10^{-3}\,m³)
+V = 45\,600 \\, \\text{L} = 45{,}6 \\, \\text{m³} \\quad (1\\,L = 10^{-3}\\,m³)
 \\]
 - Temps de funcionament:  
 \\[
