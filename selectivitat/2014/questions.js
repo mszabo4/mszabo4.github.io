@@ -431,7 +431,7 @@ Potència tèrmica = consum × poder calorífic:
 P_{tèrm} = c \\cdot pc = 0{,}0013 \\cdot 42 \\cdot 10^6 \\, \\text{W}
 \\]
 \\[
-P_{tèrm} \approx 54{,}6 \\, \\text{kW}
+P_{tèrm} \\approx 54{,}6 \\, \\text{kW}
 \\]
 <br>
 
@@ -539,7 +539,7 @@ m_{màx} = 12\,500 \\cdot \\frac{3}{15} = 2\,500 \\, \\text{kg}
 E_{mec} = m \\, g \\, \\Delta h
 \\]
 \\[
-E_{mec} = 1\,000 \\cdot 9{,}807 \\cdot 20 \approx 196\,140 \\, \\text{J} \\approx 196,1 \\, \\text{kJ}
+E_{mec} = 1\,000 \\cdot 9{,}807 \\cdot 20 \\approx 196\,140 \\, \\text{J} \\approx 196,1 \\, \\text{kJ}
 \\]
 <br>
 
@@ -562,7 +562,7 @@ P_m = 1\,000 \\cdot 9{,}807 \\cdot 0{,}5 \approx 4\,903{,}5 \\, \\text{W} \\appr
 <br>
 Suposant un rendiment de la bomba η ≈ 0,85:
 \\[
-P_{elèc} = \\frac{P_m}{\\eta} = \\frac{4{,}903{,}5}{0{,}85} \approx 5{,}77 \\, \\text{kW}
+P_{elèc} = \\frac{P_m}{\\eta} = \\frac{4{,}903{,}5}{0{,}85} \\approx 5{,}77 \\, \\text{kW}
 \\]
 <br>
 
@@ -603,7 +603,7 @@ Potència elèctrica consumida pel motor:
 <br>
 - Consum d’aigua diari:  
 \\[
-c = 850 \\, \\text{L} = 850 \\, \\text{kg} \quad (1\,L \\approx 1\,kg)
+c = 850 \\, \\text{L} = 850 \\, \\text{kg} \\quad (1\,L \\approx 1\,kg)
 \\]
 - Increment de temperatura:  
 \\[
