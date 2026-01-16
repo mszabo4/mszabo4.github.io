@@ -464,7 +464,7 @@ Potència tèrmica consumida:
 \\]  
 Rendiment del motor:
 \\[
-\\boxed{\\eta \\approx 38{,}4\%}
+\\boxed{\\eta \\approx 38{,}4\\%}
 \\]  
 Distància amb dipòsit ple:
 \\[
@@ -766,28 +766,28 @@ La massa total de Vitallium que es pot obtenir:
         steps: `
           <strong>Qüestió 2</strong>
 <br><br>
-En l'ajust $36 \text{ G7/h6}$, la tolerància $\text{G7}$ del forat és $\binom{+34}{+9} \mu\text{m}$ i la $\text{h6}$ de l'eix és $\binom{0}{-13} \mu\text{m}$. Quin és el joc màxim d'aquest ajust?
+En l'ajust $36 \\text{ G7/h6}$, la tolerància $\\text{G7}$ del forat és $\\binom{+34}{+9} \\mu\\text{m}$ i la $\\text{h6}$ de l'eix és $\\binom{0}{-13} \\mu\\text{m}$. Quin és el joc màxim d'aquest ajust?
 <br><br>
 <strong>Resolució:</strong>
 <br>
-El joc màxim ($J_{\text{màx}}$) es calcula restant la mida mínima de l'eix a la mida màxima del forat:
+El joc màxim ($J_{\\text{màx}}$) es calcula restant la mida mínima de l'eix a la mida màxima del forat:
 \\[
-J_{\text{màx}} = D_{\text{màx}} - d_{\text{mín}}
+J_{\\text{màx}} = D_{\\text{màx}} - d_{\\text{mín}}
 \\]
 On:
 <ul>
-    <li>$D_{\text{màx}} (\text{forat}) = 36 + 0,034 = 36,034 \text{ mm}$</li>
-    <li>$d_{\text{mín}} (\text{eix}) = 36 - 0,013 = 35,987 \text{ mm}$</li>
+    <li>$D_{\\text{màx}} (\\text{forat}) = 36 + 0,034 = 36,034 \\text{ mm}$</li>
+    <li>$d_{\\text{mín}} (\\text{eix}) = 36 - 0,013 = 35,987 \\text{ mm}$</li>
 </ul>
 Càlcul final:
 \\[
-J_{\text{màx}} = 36,034 - 35,987 = 0,047 \text{ mm} = 47 \mu\text{m}
+J_{\\text{màx}} = 36,034 - 35,987 = 0,047 \\text{ mm} = 47 \\mu\\text{m}
 \\]
 <br>
 <strong>Conclusió:</strong>
 <br>
 \\[
-\boxed{\text{Resposta b) } 47 \mu\text{m}}
+\\boxed{\\text{Resposta b) } 47 \\mu\\text{m}}
 \\]
             <br><br>
             `,
