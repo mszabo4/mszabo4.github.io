@@ -1824,7 +1824,7 @@ qüestions que hi ha a continuació utilitzant les variables d’estat següents
 sostre mitjançant dos cables fixats en els punts A i B. Els cables,
 que tenen una longitud L1 = 5 m i un diàmetre d = 8 mm, són fets
 d’un material que té un mòdul d’elasticitat E = 50 GPa.
-<img src="https://mszabo4.github.io/selectivitat/2014/images/201409S5P3.png" alt="Imatge relacionada amb la resposta" width="900">
+<img src="https://mszabo4.github.io/selectivitat/2014/images/201409S5P3.png" alt="Imatge relacionada amb la resposta" width="400">
 
                <br><strong>a)</strong>Determineu l’angle, α, que formen els cables amb l’horitzontal.  [0,5 punts]
                <br><strong>b)</strong> Determineu la força, F, que fa cadascun dels cables en funció de la massa, m, del llum.[0,5 punts]
