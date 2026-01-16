@@ -755,7 +755,7 @@ La massa total de Vitallium que es pot obtenir:
     {
         type: "questions", // Tipus de pregunta
         category: "materials",
-        text: `Poner imagen Q2`,
+        text: `               <img src="https://mszabo4.github.io/selectivitat/2014/images/201406S4Q2.png" alt="Imatge relacionada amb la pregunta" width="900">`,
         options: [
             { text: "22 μm", value: "a" },
             { text: "47 μm", value: "b" },
