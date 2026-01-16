@@ -1187,7 +1187,7 @@ Rendiment:
 \\eta_b = \\frac{4\,651\,000}{15\,120\,000} \\approx 0{,}3076
 \\]
 \\[
-\\eta_b \\approx 30,8\%
+\\eta_b \\approx 30,8\\%
 \\]
 <br>
 
@@ -1198,7 +1198,7 @@ La pressió mitjana es calcula com la força sobre la superfície de l’aigua d
 p = \\rho g h
 \\]
 \\[
-p = 1\,000 \\cdot 9{,}807 \\cdot 10{,}4 \approx 102{,}0\\,000 \\, \\text{Pa} = 1{,}020 \\, \\text{bar}
+p = 1\,000 \\cdot 9{,}807 \\cdot 10{,}4 \\approx 102{,}0\\,000 \\, \\text{Pa} = 1{,}020 \\, \\text{bar}
 \\]
 <br>
 
@@ -1210,7 +1210,7 @@ Treball fet per la bomba:
 \\]  
 Rendiment de la bomba:
 \\[
-\\boxed{\\eta_b \\approx 30,8\%}
+\\boxed{\\eta_b \\approx 30,8\\%}
 \\]  
 Pressió mitjana de funcionament:
 \\[
