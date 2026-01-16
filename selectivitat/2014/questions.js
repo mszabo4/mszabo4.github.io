@@ -359,26 +359,6 @@ S_2 = 0{,}5 × 0{,}626 = 0{,}313 \\, \\text{m²}
 \\]
 <br>
 
-<strong>Pas 4: Temps de producció (apartat d)</strong>
-<br>
-- Temps per operació:  
-  t_A = 25 s, t_B = 30 s (simultànies)  
-  t_C = 30 s, t_D = 45 s (secuencials)  
-<br>
-- Temps primer bloc (A i B):
-\\[
-t_{AB} = \\max(25, 30) = 30 \\, \\text{s}
-\\]
-- Temps segon bloc (C i D):
-\\[
-t_{CD} = 30 + 45 = 75 \\, \\text{s}
-\\]
-- Temps total mínim dins la línia:
-\\[
-t_{total} = t_{AB} + t_{CD} = 30 + 75 = 105 \\, \\text{s}
-\\]
-<br>
-
 <strong>Resposta:</strong>
 <br>
 Superfícies i cost:
